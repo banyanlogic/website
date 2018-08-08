@@ -1,0 +1,20 @@
+---
+bg: "bg.jpg"
+layout: page
+title: "Programs"
+active: programs
+---
+## CyberSecurity Training Focus Areas
+* Technically Defensive Security
+* Tactically hands-on learning is our focus
+* Strategically Preventing our customers technical aging out
+* Sociologically increasing the number and competence of CyberSecurity professionals including Women in CyberSecurity
+* Ecologically we seek to increase awareness of major tools of the trade, open source and otherwise
+
+## CyberSecurity Process Automation
+* Automation of Security as the next level of efficiency is our focus
+* DevOps is the most recent incarnation of this need and is a specialization of our team
+
+## CyberSecurity Program Development
+* Enabling CxOs and CISOs to benchmark
+* Empower to go to next level
