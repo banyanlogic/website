@@ -8,7 +8,7 @@ active: programs
 * Technically Defensive Security is our scope
 * Tactically hands-on learning is our focus
 * Strategically Preventing our customers technical aging out isour service
-* Sociologically increasing the number and competence of CyberSecurity professionals including Women in CyberSecurity is our responsibility
+* Sociologically increasing the number and competence of CyberSecurity professionals including Women in CyberSecurity is our pay-it-forward
 * IT Security Ecology wise we seek to increase awareness of major tools of the trade, open source and otherwise
 
 ## CyberSecurity Process Automation
