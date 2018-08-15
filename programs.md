@@ -5,7 +5,7 @@ title: "Programs"
 active: programs
 ---
 ## CyberSecurity Training Focus Areas
-* Technically Defensive Security
+* Technically Defensive Security is our scope
 * Tactically hands-on learning is our focus
 * Strategically Preventing our customers technical aging out
 * Sociologically increasing the number and competence of CyberSecurity professionals including Women in CyberSecurity
