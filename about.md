@@ -23,4 +23,4 @@ Srinivasa Kasturi is an expert in the IT industry with a Masters Degree in Compu
 ### Standards expertise:
 * NIST CSF, RMF, 800-53
 * Quality: ISO 17020
-* Industrial Security: ISA 6244
+* Industrial Security: ISA 62443
