@@ -7,7 +7,7 @@ active: programs
 ## CyberSecurity Training Focus Areas
 * Technically Defensive Security is our scope
 * Tactically hands-on learning is our focus
-* Strategically Preventing our customers technical aging out is our service
+* Strategically preventing our customers technically aging out is our goal
 * Sociologically increasing the number and competence of CyberSecurity professionals including Women in CyberSecurity is our pay-it-forward
 * IT Security Ecology wise we seek to increase awareness of major tools of the trade, open source and otherwise
 
