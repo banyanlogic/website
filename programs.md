@@ -19,3 +19,4 @@ active: programs
 ## CyberSecurity Program Development
 * Enabling CxOs and CISOs to benchmark
 * Empower to go to next level
+* Obsolence risk assessment 
