@@ -20,7 +20,7 @@ Srinivasa Kasturi is an expert in the IT industry with a Masters Degree in Compu
 * Enhance Job Performance
 * Business OnSite Option
 #### Value
-#Improved understanding of cybersecurity, information systems, and development ability to discuss cloud technology in detail. Learn about Amazons powerful cloud tools such as EC2, Cloudtrail, Cloudwatch, and Cloud formation.
+Improved understanding of cybersecurity, information systems, and development ability to discuss cloud technology in detail. Learn about Amazons powerful cloud tools such as EC2, Cloudtrail, Cloudwatch, and Cloud formation.
 #### Skill(s) Learned / Enhanced
 Learn how to efficiently create a cloud-based infrastructure and how to secure it. All the while enhancing your ability to manage and understand what happens in a cloud-based network architecture.
 #### Who should take this training?
