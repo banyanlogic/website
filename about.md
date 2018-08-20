@@ -15,12 +15,15 @@ Srinivasa Kasturi is an expert in the IT industry with a Masters Degree in Compu
 * Standards and Certification Bodies: A2LA
 * Services: TRW, AceInfo Solutions, Senryo Technologies, Peridot Solutions, Karthik Consulting
 
-### Certifications
-* Security: CISSP, ISSAP, CSSLP, CCSK
-* Enterprise: TOGAF
-* Management: PMP
+### Certifications Bodies of Knowledge that we integrate and leverage
+* Security: CISSP, ISSAP (Security Architecture), CSSLP (Security Lifecycle), CCSK (Cloud Security)
+* Enterprise: TOGAF (Enterprise Architecture)
+* Management: PMP (Program, Portfolio and Project lifecycle)
 
-### Standards expertise:
-* NIST CSF, RMF, 800-53
+### Standards expertise we leverage
+* NIST CSF (Cybersecurity Framework)
+* NIST RMF (Risk Management Framework)
+* FedRAMP SAF (Security Assessment Framework) and templates
+* NIST 800-53 and other NIST standards
 * Quality: ISO 17020
 * Industrial Security: ISA 62443
