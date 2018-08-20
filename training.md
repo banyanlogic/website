@@ -7,9 +7,9 @@ active: training
 ## Technology Track: AWS Security BootCamp
 ### Industry need
 Amazon Web Services (AWS) is a secure cloud services platform, offering computing power, database storage, content delivery and other functionality to help businesses scale and grow. AWS provides secure infrastructure and services, while you, the customer, are responsible for secure operating systems, platforms, and data.
-This course will help you in understanding the security at the elevated level and to increase your confidence in securing the AWS environment hand on. Learning of theory is intentionally interspersed with labs on the main topics.### Course Advisor
+This course will help you in understanding the security at the elevated level and to increase your confidence in securing the AWS environment hand on. Learning of theory is intentionally interspersed with labs on the main topics.
+### Course Advisor
 Srinivasa Kasturi is an expert in the IT industry with a Masters Degree in Computer Engineering from Villanova University and certifications such as CISSP (Certified Information Systems Security Professional), ISSAP(Information Systems Security Architecture Professional) , CSSLP(07-17) (Certified Secure Software Lifecycle Professional), TOGAF(03-09), CCSK(Certificate of Cloud Security Knowledge), PMP (Project Management Professional); as well as about twenty five years of experience with network architectures, processes, Conducting thorough risk assessments, providing incident response, and last but not least Cloud Enterprise Security Strategy 
-
 ### The Offering
 #### Class Design
 * Designed for Individuals* Designed for Business teams
