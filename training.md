@@ -1,5 +1,7 @@
 ---
-bg: "bg.jpg"layout: pagetitle: "Training"
+bg: "bg.jpg"
+layout: page
+title: "Training"
 active: training
 ---
 ## Technology Track: AWS Security BootCamp
