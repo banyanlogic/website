@@ -73,6 +73,8 @@ Our class is designed to help you execute it with our hands-on help. If you feel
 Our courses are instructor-led by Srinivasa Kasturi who has over twenty-five years of experience in IT, Cybersecurity, and Cloud Systems.
 ###### What equipment do I need to take the course?
 A laptop
+Preferably a USB headset for better communication
+More than one display screen to view lab protocols while working on the lab
 Notebook and pen for notes
 Your desire to learn and excel in the technology field
 ###### Do I get Coffee & Tea if I take the class InPerson?
