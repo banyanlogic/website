@@ -40,5 +40,10 @@ images: '/assets/images'
 
 # Srini K edits starting d270818
 collections:
-- training_pages
+  - training_pages
+  
+collections:
+  training_pages:  
+    output: true
+
 collections_dir: training_pages_dir
