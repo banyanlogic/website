@@ -46,6 +46,6 @@ collections_dir: training_pages_dir
 
 collections:
   training_pages:
-    output: true
+    
 	
 # permalink: /training_pages_dir/training.md
