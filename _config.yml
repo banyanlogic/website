@@ -37,3 +37,8 @@ sass:
 
 
 images: '/assets/images'
+
+# Srini K edits starting d270818
+collections:
+- training_pages
+collections_dir: training_pages_dir
