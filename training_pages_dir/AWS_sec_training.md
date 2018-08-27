@@ -1,7 +1,7 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "AWS Security Training"
+title: "AWS Security One day bootcamp"
 active: training
 ---
 ## Technology Track: AWS Security BootCamp
