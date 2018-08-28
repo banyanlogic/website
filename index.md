@@ -6,7 +6,6 @@ layout: page
 bg: "bg.jpg"
 title: "Banyan Logic"
 summary: "We support your growth"
-order: 1
 ---
 
 ## Banyan Logic
