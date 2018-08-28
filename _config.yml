@@ -40,10 +40,4 @@ images: '/assets/images'
 
 # Srini K edits starting d270818
 collections:
-  - trainingpages
-  
-{% for album in site.trainingpages limit:3 %}
-      <li>
-        <a href="{{ trainingpages.url }}">{{ trainingpages.title }}</a>
-      </li>
-{% endfor %}
+  trainingpages:
