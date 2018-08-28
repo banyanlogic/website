@@ -4,6 +4,9 @@ layout: page
 title: "Classes and Courses"
 active: classes
 ---
+Classes: OnRamp / AWS Security / DevSecOps / RapidStart / RMF / OT Security / Azure Security / Office 365 Security
+Courses: Security Lifecycle  / Security Management / Certifications Prep
+
 ## Technology Track: AWS Security - One Day BootCamp
 ### Industry need
 Amazon Web Services (AWS) is a secure cloud services platform, offering computing power, database storage, content delivery and other functionality to help businesses scale and grow. AWS provides secure infrastructure and services, while you, the customer, are responsible for secure operating systems, platforms, and data.
@@ -69,3 +72,25 @@ Understand issues with web applications. Understand the impact of such issues on
 #### Module 6 Lab
 ##### Dynamics scans
 Review a sample vulnerable python web application; use automatic scan of the application using OWASP ZAP; invoke ZAP as a GUI, via command line invocation, via APIs, and via Jenkins plugin; review the output; pipe the results back into Jenkins; automate processing of some of the vulnerabilities data; invoke or abort next job based on the results
+
+
+## Technology Track: Security in DevOps - One Day BootCamp
+### Industry need
+Industrial Control Systems (ICS) operate the technology needed for our Critical Infrastructures such as Transportation, Manufacturing. Etc. This class brings students closer to understanding the security implication of OT Security. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class. The AWS Security class will also add value to this class during hands-on exercises. 
+This course will help you in understanding the security at a high level and to gain your confidence in securing the AWS environment interspersed with labs on the main topics.
+### Course Preview
+Industrial Control Systems (ICS) operate the technology needed for our Critical Infrastructures such as Transportation, Manufacturing. Etc. This class brings students closer to understanding the security implication of OT Security. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class. The AWS Security class will also add value to this class during hands-on exercises. 
+#### Module 1
+In our first module, we will discuss the key differences between IT and OT in terms of function and security. After we have identified the major differences we will introduce you to the IEC62443 standard and the Purdue Reference Model, both of which act as a guideline for merging your enterprise and industrial networks, while minimizing the risk of vulnerabilities. Then we will introduce you to the Department of Homeland Security's Cyber Security Evaluation Tool (often referred to as CSET).
+#### Module 2
+In module two we will introduce you to Programmable Logic Controllers, ladder logic, and common OT protocols. Once we have become familiar with how PLC’s work and their components, we will walk you through the setup of a Siemens S7 12007 PLC. Once it is operational we will then walk you through the installation of the S7/TIA software.
+#### Module 3
+In module three we will discuss what possible security flaws may have been created in the setup module. We will also discuss common security concerns that are unique to OT and PLC’s in general, including inventory development, identity issues, password management, patch management, network footprint, logs and log aggregation, etc. After discussion, we will attempt to look at what we set up in module 2 and audit it for the above concerns.
+#### Module 4
+In our next activity, we will discuss the protocols and other factors that allow devices in an OT system to communicate. You will learn about the Internet of Things and Industrial Internet of Things (IoT&IIoT). You will then get devices such as a fan, light, sensor, or actuator programmed and communicating with our Siemens PLC and demonstrate how Modbus enables the devices to communicate. We will then explore the internet accessibility of the PLC and see how the IoT adds a new challenge to security.
+#### Module 5
+Now that we understand the concepts of OT, we will look at how vulnerabilities are exploited and thwarted in the Industrial Controls Systems sector. First we will start by conducting a simple Denial of Service attack on a PLC using OWASP Zed Attack Proxy to shut it down with a flood of HTTP requests, next we Will show you how to use the Python programming language to create a simple yet crippling attack on the Modbus protocol of the PLC, and last but not least we will learn about using NMAP to conduct a port scan on the PLC.
+#### Module 6
+Now that we know how to force our way into OT networks and wreak havoc, we will so you how to prevent attacks and stay up to date on vulnerabilities in the ever-changing landscape of Critical Infrastructure. We will start by introducing you to Intrusion Detection and Intrusion Prevention systems and how they work, next we will set up an actual Intrusion Detection System from Radiflow.
+Once the IDS is working we will gather some network traffic data and transfer it to the NSA’s GrassMarlin tool and analyze traffic and identify network assets. Once a comprehensive set of data has been gathered we will then conduct an asset-based cybersecurity assessment using the DHS’ Cyber Security Evaluation Tool.
+Next, you will become familiar with NERC and CIP controls that dictate necessary security measures for Industrial Control Systems. You will then learn about some cool tools such as Splunk which can provide near-real-time continuous network monitoring. 
