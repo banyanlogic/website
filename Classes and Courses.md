@@ -8,8 +8,10 @@ order: 4
 ##### Current Offerings
 - [Technology Track: AWS Security - One Day BootCamp](#technology-track-aws-security---one-day-bootcamp)
 - [Technology Track: Security in DevOps - One Day BootCamp](#technology-track-security-in-devops---one-day-bootcamp)
+- [Management Track: RapidStart for Current IT Professionals - One Day BootCamp](#management-track-rapidstart-for-current-it-professionals---one-day-bootcamp)
+- [Beginner Track: OnRamp to Security for beginners - One Day BootCamp](#beginner-track-onramp-to-security-for-beginners---one-day-bootcamp)
 ##### Upcoming classes
-OnRamp / Rapid(re)Start / OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
+OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
 ##### Upcoming Courses
 Security Life-cycle  / Security Management / Certifications Prep
 
@@ -79,24 +81,35 @@ Understand issues with web applications. Understand the impact of such issues on
 ##### Dynamics scans
 Review a sample vulnerable python web application; use automatic scan of the application using OWASP ZAP; invoke ZAP as a GUI, via command line invocation, via APIs, and via Jenkins plugin; review the output; pipe the results back into Jenkins; automate processing of some of the vulnerabilities data; invoke or abort next job based on the results
 
-
-## Technology Track: Security in DevOps - One Day BootCamp
+## Management Track: RapidStart for Current IT Professionals - One Day BootCamp
 ### Industry need
-Industrial Control Systems (ICS) operate the technology needed for our Critical Infrastructures such as Transportation, Manufacturing. Etc. This class brings students closer to understanding the security implication of OT Security. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class. The AWS Security class will also add value to this class during hands-on exercises. 
-This course will help you in understanding the security at a high level and to gain your confidence in securing the AWS environment interspersed with labs on the main topics.
+* Recent survey of 40K jobs asked for IT Security background: 25% Project Management, 23% Business Development, 9% Customer Relationship, 8% Business Analysts, 7% Sales6% Technical Writing, 
+* Skills refresh is a reality today and IT Security can absorb retrained resources for a short while
 ### Course Preview
-Industrial Control Systems (ICS) operate the technology needed for our Critical Infrastructures such as Transportation, Manufacturing. Etc. This class brings students closer to understanding the security implication of OT Security. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class. The AWS Security class will also add value to this class during hands-on exercises. 
-#### Module 1
-In our first module, we will discuss the key differences between IT and OT in terms of function and security. After we have identified the major differences we will introduce you to the IEC62443 standard and the Purdue Reference Model, both of which act as a guideline for merging your enterprise and industrial networks, while minimizing the risk of vulnerabilities. Then we will introduce you to the Department of Homeland Security's Cyber Security Evaluation Tool (often referred to as CSET).
+Round-table discussion is a major component of this course. 
+Security Assessments overview and labs; Secure Software Development overview and labs; Security Testing overview and labs using DevOps tools where possible; Cloud Security Administration overview and labs; Security Job Market overview careers.
+#### Module 1 
+Security Assessments, Risk and Governance: Brief discussion on Risk Management Framework and CyberSecurity Framework, Controls assessments, gap determination and risk assessments are generally time consuming, cost a lot and are nuanced. It is also a 'Swiss cheese' method, with statistics giving the comfort of risk coverage of the holes. This class is meant to improve student’s ability to utilize assessment frameworks (RMF) and controls frameworks (800-53r4) with a more deeper understanding and with industry tools such as the DHS CSET, Cloud Security Alliance controls cross walks, Microsoft threat modeling tool among others.
 #### Module 2
-In module two we will introduce you to Programmable Logic Controllers, ladder logic, and common OT protocols. Once we have become familiar with how PLC’s work and their components, we will walk you through the setup of a Siemens S7 12007 PLC. Once it is operational we will then walk you through the installation of the S7/TIA software.
+Secure Software Development: Secure Software Development is often an awareness problem as much as it is a coding problem. Knowing what common pitfalls are and what solutions are available and where is key to secure speed coding. This section thus focuses on helping students understand the OWASP Top 10 issues over the last two iterations. The focus then shifts to cheat sheets based methods of avoiding these pitfalls. Subsequently utilization of security libraries as well as selection of software libraries that are more secure is covered. Lab implements mitigation samples of common issues such as SQL Injection, Cross Site scripting, Cross Site Request Forgery etc. Finally, students are encouraged to put their code out on the Internet, on BL servers of course, and see how their coding holds up.
 #### Module 3
-In module three we will discuss what possible security flaws may have been created in the setup module. We will also discuss common security concerns that are unique to OT and PLC’s in general, including inventory development, identity issues, password management, patch management, network footprint, logs and log aggregation, etc. After discussion, we will attempt to look at what we set up in module 2 and audit it for the above concerns.
+Security Testing: Security Testing is a complicated affair. It is easy to turn on one tool and feel secure but in truth multiple tools are required, operating the tool properly is essential, and being able to understand the results of scans is needed. Clearly no set of tools will ever suffice – hence ability to manual testing, including pen test pivoting is to be learnt and practiced. Lastly, most Controls cannot be tested automatically, hence controls testing flavors will be covered. Tools used in this class will cover Python Bandit for code review, OWASP Dependency Check, few AWS CIS benchmark based security checks, and OWASP ZAP Proxy based dynamic scans.
 #### Module 4
-In our next activity, we will discuss the protocols and other factors that allow devices in an OT system to communicate. You will learn about the Internet of Things and Industrial Internet of Things (IoT&IIoT). You will then get devices such as a fan, light, sensor, or actuator programmed and communicating with our Siemens PLC and demonstrate how Modbus enables the devices to communicate. We will then explore the internet accessibility of the PLC and see how the IoT adds a new challenge to security.
-#### Module 5
-Now that we understand the concepts of OT, we will look at how vulnerabilities are exploited and thwarted in the Industrial Controls Systems sector. First we will start by conducting a simple Denial of Service attack on a PLC using OWASP Zed Attack Proxy to shut it down with a flood of HTTP requests, next we Will show you how to use the Python programming language to create a simple yet crippling attack on the Modbus protocol of the PLC, and last but not least we will learn about using NMAP to conduct a port scan on the PLC.
-#### Module 6
-Now that we know how to force our way into OT networks and wreak havoc, we will so you how to prevent attacks and stay up to date on vulnerabilities in the ever-changing landscape of Critical Infrastructure. We will start by introducing you to Intrusion Detection and Intrusion Prevention systems and how they work, next we will set up an actual Intrusion Detection System from Radiflow.
-Once the IDS is working we will gather some network traffic data and transfer it to the NSA’s GrassMarlin tool and analyze traffic and identify network assets. Once a comprehensive set of data has been gathered we will then conduct an asset-based cybersecurity assessment using the DHS’ Cyber Security Evaluation Tool.
-Next, you will become familiar with NERC and CIP controls that dictate necessary security measures for Industrial Control Systems. You will then learn about some cool tools such as Splunk which can provide near-real-time continuous network monitoring. 
+Security Administration, Continuous Monitoring: Security Administration is the most important piece in keeping a Business Secure and to reduce the loss to a company in event of a breach. This section cover Administration of the Security Controls learnt before. Labs are based on the AWS and Azure clouds.
+
+## Beginner Track: OnRamp to Security for beginners - One Day BootCamp
+### Industry need
+* Technicians and junior analysts is the greatest gap in Security Job market
+* 1.8 Million more cybersecurity professionals will be needed by 2022 across the globe. Source: (ISC)2 2017 Global Information Security Workforce Study
+* 37% professionals showed that fewer than 25% of applicants were qualified – hands-on tests were 50% of the interviews. Source: ISACA State of Cybersecurity 2017: Current Trends in Workforce Development
+* 36.5 % Growth for InfoSec Analysts from 2012-2022, next only to Physician Assistants. Source: Bureau of Labor Statistics, Employment Projections Program
+### Course Preview
+Security Assessments overview and labs; Secure Software Development overview and labs; Security Testing overview and labs using devops tools where possible; Cloud Security Administration overview and labs; Security Job Market overview careers.
+#### Module 1 
+Security Assessments: Controls assessments, gap determination and risk assessments are generally time consuming, cost a lot and are nuanced. It is also a 'Swiss cheese' method, with statistics giving the comfort of risk coverage of the holes. This class is meant to improve student’s ability to utilize assessment frameworks (RMF) and controls frameworks (800-53r4) with a more deeper understanding and with industry tools such as the DHS CSET, Cloud Security Alliance controls cross walks, Microsoft threat modeling tool among others.
+#### Module 2
+Secure Software Development: Secure Software Development is often an awareness problem as much as it is a coding problem. Knowing what common pitfalls are and what solutions are available and where is key to secure speed coding. This section thus focuses on helping students understand the OWASP Top 10 issues over the last two iterations. The focus then shifts to cheat sheets based methods of avoiding these pitfalls. Subsequently utilization of security libraries as well as selection of software libraries that are more secure is covered. Lab implements mitigation samples of common issues such as SQL Injection, Cross Site scripting, Cross Site Request Forgery etc. Finally, students are encouraged to put their code out on the Internet, on BL servers of course, and see how their coding holds up.
+#### Module 3
+Security Testing: Security Testing is a complicated affair. It is easy to turn on one tool and feel secure but in truth multiple tools are required, operating the tool properly is essential, and being able to understand the results of scans is needed. Clearly no set of tools will ever suffice – hence ability to manual testing, including pen test pivoting is to be learnt and practiced. Lastly, most Controls cannot be tested automatically, hence controls testing flavors will be covered. Tools used in this class will cover Python Bandit for code review, OWASP Dependency Check, few AWS CIS benchmark based security checks, and OWASP ZAP Proxy based dynamic scans.
+#### Module 4
+Security Administration: Security Administration is the most important piece in keeping a Business Secure and to reduce the loss to a company in event of a breach. This section cover Administration of the Security Controls learnt before. Labs are based on the AWS and Azure clouds.
