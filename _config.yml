@@ -41,7 +41,7 @@ images: '/assets/images'
 # Srini K edits starting d270818
 collections:
   training_pages_dir:
-  update: true
+    output: true
     
 	
 # permalink: /training_pages_dir/training.md
