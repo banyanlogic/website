@@ -3,6 +3,7 @@ bg: "bg.jpg"
 layout: page
 title: "Classes and Courses"
 active: classes
+order: 4
 ---
 Classes: OnRamp / AWS Security / DevSecOps / RapidStart / RMF / OT Security / Azure Security / Office 365 Security
 Courses: Security Lifecycle  / Security Management / Certifications Prep

@@ -3,6 +3,7 @@ bg: "bg.jpg"
 layout: page
 title: "Training Philosophy"
 active: philosophy
+order: 3
 ---
 #### Class Design
 * Designed for Individuals* Designed for Business teams

@@ -3,6 +3,7 @@ bg: "bg.jpg"
 layout: page
 title: "About"
 active: about
+order: 6
 ---
 
 ## About Us

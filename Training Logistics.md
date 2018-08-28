@@ -3,6 +3,7 @@ bg: "bg.jpg"
 layout: page
 title: "Training Logistics"
 active: logistics
+order: 5
 ---
 ## Schedule and Locations
 ### AWS Security One Day Bootcamp

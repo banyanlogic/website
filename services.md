@@ -3,6 +3,7 @@ bg: "bg.jpg"
 layout: page
 title: "Services"
 active: services
+order: 2
 ---
 ## CyberSecurity Training Focus Areas
 * Technically Defensive Security is our scope
