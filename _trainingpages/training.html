@@ -1,0 +1,10 @@
+---
+layout: page
+title: Training
+---
+{% for classes in site.trainingpages %}
+  <div class="class">
+    <h2>{{ class.title }}</a></h2>
+    {{ class.content }}
+  </div>
+{% endfor %}
