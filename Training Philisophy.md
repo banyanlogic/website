@@ -22,6 +22,6 @@ Learn how to efficiently create a cloud-based infrastructure and how to secure i
 AWS junior Admins, Security Admins, IT Auditors, IT Project Manager, Software Professionals, Security Testers, IT Monitoring Personnel, programmers, developers, web app developers, App developers, Account Managers, Procurement Managers, Contract Managers, Project Managers, Technical Writers, Customer Service/Relations, Business Analysts, and Sales Representatives.
 #### Key Features / Highlights
 * 60% Interactive Learning Material
-* Work with real tools of the trad!
-* Learn AWS Cloud Technology
-* Coding/Development with Python
+* Work with real tools of the trade
+* Inherently learn Cloud Technology
+* Inherently learn Python
