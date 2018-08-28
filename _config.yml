@@ -41,3 +41,4 @@ images: '/assets/images'
 # Srini K edits starting d270818
 collections:
   trainingpages:
+    output: true
