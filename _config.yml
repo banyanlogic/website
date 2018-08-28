@@ -42,6 +42,4 @@ images: '/assets/images'
 collections:
   trainingpages:
     output: true
-
-  
-#	permalink: /_trainingpages/index.html
+	permalink: /trainingpages/:path/
