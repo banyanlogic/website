@@ -46,6 +46,7 @@ You will then assess a sample stack using a few of the CIS benchmark checks. You
 Monitoring, Alerting, Auditing, and Incident Response
 The lab will cover some of the topics mentioned above to provide you with hands-on training.
 By the end of the course, you will have hands-on experience and understanding of AWS and Cloud Security to help you do your job better and perhaps even help accelerate adoption of Cloud at your organization.
+- [Top Of The Page](#current-offerings)
 
 ## Technology Track: Security in DevOps - One Day BootCamp
 ### Industry need
@@ -80,6 +81,7 @@ Understand issues with web applications. Understand the impact of such issues on
 #### Module 6 Lab
 ##### Dynamics scans
 Review a sample vulnerable python web application; use automatic scan of the application using OWASP ZAP; invoke ZAP as a GUI, via command line invocation, via APIs, and via Jenkins plugin; review the output; pipe the results back into Jenkins; automate processing of some of the vulnerabilities data; invoke or abort next job based on the results
+- [Top Of The Page](#current-offerings)
 
 ## Management Track: RapidStart for Current IT Professionals - One Day BootCamp
 ### Industry need
@@ -96,6 +98,7 @@ Secure Software Development: Secure Software Development is often an awareness p
 Security Testing: Security Testing is a complicated affair. It is easy to turn on one tool and feel secure but in truth multiple tools are required, operating the tool properly is essential, and being able to understand the results of scans is needed. Clearly no set of tools will ever suffice – hence ability to manual testing, including pen test pivoting is to be learnt and practiced. Lastly, most Controls cannot be tested automatically, hence controls testing flavors will be covered. Tools used in this class will cover Python Bandit for code review, OWASP Dependency Check, few AWS CIS benchmark based security checks, and OWASP ZAP Proxy based dynamic scans.
 #### Module 4
 Security Administration, Continuous Monitoring: Security Administration is the most important piece in keeping a Business Secure and to reduce the loss to a company in event of a breach. This section cover Administration of the Security Controls learnt before. Labs are based on the AWS and Azure clouds.
+- [Top Of The Page](#current-offerings)
 
 ## Beginner Track: OnRamp to Security for beginners - One Day BootCamp
 ### Industry need
