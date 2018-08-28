@@ -41,4 +41,4 @@ images: '/assets/images'
 # Srini K edits starting d270818
 collections:
   trainingpages:
-	permalink: /trainingpages/index.html
+	permalink: /_trainingpages/index.html
