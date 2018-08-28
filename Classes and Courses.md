@@ -6,7 +6,7 @@ active: classes
 order: 4
 ---
 # Contents
-- [Technology Track: AWS Security - One Day BootCamp](#awssec)
+- [Technology Track: AWS Security - One Day BootCamp](#technology-track-aws-security---one-day-bootcamp)
 
 ##### Classes offered
 OnRamp / AWS Security / DevSecOps / RapidStart 
