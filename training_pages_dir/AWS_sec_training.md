@@ -5,6 +5,7 @@ title: "AWS Security - One Day Bootcamp"
 active: training
 ---
 ## Technology Track: AWS Security - One Day BootCamp
+DateLog: 8/27/18 9:31pm
 ### Industry need
 Amazon Web Services (AWS) is a secure cloud services platform, offering computing power, database storage, content delivery and other functionality to help businesses scale and grow. AWS provides secure infrastructure and services, while you, the customer, are responsible for secure operating systems, platforms, and data.
 This course will help you in understanding the security at the elevated level and to increase your confidence in securing the AWS environment hand on. Learning of theory is intentionally interspersed with labs on the main topics.
