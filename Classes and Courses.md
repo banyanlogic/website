@@ -5,15 +5,12 @@ title: "Classes and Courses"
 active: classes
 order: 4
 ---
-##### Contents
+##### Current Offerings
 - [Technology Track: AWS Security - One Day BootCamp](#technology-track-aws-security---one-day-bootcamp)
 - [Technology Track: Security in DevOps - One Day BootCamp](#technology-track-security-in-devops---one-day-bootcamp)
-
-##### Classes offered
-OnRamp / AWS Security / DevSecOps / RapidStart 
 ##### Upcoming classes
-OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
-##### Courses offered
+OnRamp / Rapid(re)Start / OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
+##### Upcoming Courses
 Security Life-cycle  / Security Management / Certifications Prep
 
 ## Technology Track: AWS Security - One Day BootCamp
