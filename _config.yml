@@ -42,10 +42,8 @@ images: '/assets/images'
 collections:
   - trainingpages
   
-{% for album in site.music limit:3 %}
+{% for album in site.trainingpages limit:3 %}
       <li>
-        <img src="{{ album.thumbnail-path }}" alt="{{ album.title }}"/>
-        <a href="{{ album.url }}">{{ album.title }}</a>
-        <p>{{ album.short-description }}</p>
+        <a href="{{ trainingpages.url }}">{{ trainingpages.title }}</a>
       </li>
 {% endfor %}
