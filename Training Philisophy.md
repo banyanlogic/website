@@ -1,8 +1,8 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "AWS Security - One Day Bootcamp"
-active: training
+title: "Training Philosophy"
+active: philosophy
 ---
 #### Class Design
 * Designed for Individuals* Designed for Business teams

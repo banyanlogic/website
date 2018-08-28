@@ -1,8 +1,8 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Security in DevOps - One Day Bootcamp"
-active: training
+title: "Classes and Courses"
+active: classes
 ---
 ## Technology Track: AWS Security - One Day BootCamp
 ### Industry need
