@@ -5,9 +5,10 @@ title: "Training Logistics"
 active: logistics
 order: 5
 ---
-## Schedule and Locations
+## Schedule Location and Payment
 ### AWS Security One Day Bootcamp
-* To be announced
+* Saturday, October  6th, Reston, VA (host location to be announced soon)
+* [Payment Gateway Link]https://banyanlogic.ecwid.com
 
 ### DevSecOps One Day Bootcamp
 * To be announced
