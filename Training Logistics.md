@@ -9,7 +9,7 @@ order: 5
 ### AWS Security One Day Bootcamp
 * Saturday, October  6th, 
 * Reston, VA (host location to be announced soon)
-* Secure Pay(https://banyanlogic.ecwid.com)
+* [Secure Pay](https://banyanlogic.ecwid.com "Secure Pay")
 
 ### DevSecOps One Day Bootcamp
 * To be announced
