@@ -10,7 +10,7 @@ order: 5
 * Saturday, October  6th, 
 * Reston, VA (host location to be announced soon)
 * [Secure Pay](https://banyanlogic.ecwid.com "Secure Pay")
-
+* <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
 ### DevSecOps One Day Bootcamp
 * To be announced
 
