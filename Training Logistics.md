@@ -7,7 +7,8 @@ order: 5
 ---
 ## Schedule Location and Payment
 ### AWS Security One Day Bootcamp
-* Saturday, October  6th, Reston, VA (host location to be announced soon), [Payment Gateway Link]https://banyanlogic.ecwid.com
+* Saturday, October  6th, Reston, VA (host location to be announced soon), 
+Payment Gateway Link [https://banyanlogic.ecwid.com]
 
 ### DevSecOps One Day Bootcamp
 * To be announced
