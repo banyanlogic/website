@@ -6,19 +6,19 @@ active: logistics
 order: 5
 ---
 ## Schedule Location and Payment
-### AWS Security One Day Bootcamp
+### AWS Security One Day HandsonBootcamp
 * Saturday, October  6th, 
 * Reston, VA (host location to be announced soon)
-* [Secure Pay](https://banyanlogic.ecwid.com "Secure Pay")
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
-### DevSecOps One Day Bootcamp
-* To be announced
 
-### Rapid(re)Start Careers One Day Bootcamp
-* To be announced
+### Security In DevOps One Day Handson Bootcamp
+* Date to be announced
 
-### Security OnRamp One Day Bootcamp
-* To be announced
+### Rapid Start for Professionals One Day Handson Bootcamp
+* Date to be announced
+
+### Security OnRamp for Beginners One Day Handson Bootcamp
+* Date to be announced
 
 ## Need to Know
 ### Certificate
