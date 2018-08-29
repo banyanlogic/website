@@ -7,7 +7,7 @@ order: 5
 ---
 ## Schedule Location and Payment
 ### AWS Security One Day HandsonBootcamp
-* Saturday, October  6th, 
+* Saturday, October  6th
 * Reston, VA (host location to be announced soon)
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
 
