@@ -1,7 +1,7 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Training Logistics"
+title: "Registration and Logistics"
 active: logistics
 order: 5
 ---
