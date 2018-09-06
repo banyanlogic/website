@@ -11,13 +11,12 @@ order: 3
 * Designed for Individuals
 * Designed for Business teams with strong performers
 * RapidLearn One Day Intense Bootcamp
-* Experience Heavy (Hands-On)
+* Hand-On Heavy / Experiential Learning
 * Weekend Class (Saturday 9am-6pm)
 * Weekday Evenings (Mon, Tue, Thu 7pm-10pm)
-* InPerson (Reston, VA), and OnLine
-* Instructor-Lead and OnLine
-* Enhance Job Performance
-* Business OnSite Option
+* InPerson (Reston, VA), and OnLine options
+* Instructor-Lead Hands-On execution
+* Job-Ready focus / Resume relevant topics
 
 #### Value
 Improved understanding of cybersecurity, information systems, and development ability to discuss cloud technology in detail. Learn about Amazons powerful cloud tools such as EC2, Cloudtrail, Cloudwatch, and Cloud formation.
