@@ -10,8 +10,10 @@ order: 4
 - [Technology Track: Security in DevOps - One Day BootCamp](#technology-track-security-in-devops---one-day-bootcamp)
 - [Management Track: RapidStart for Current IT Professionals - One Day BootCamp](#management-track-rapidstart-for-current-it-professionals---one-day-bootcamp)
 - [Beginner Track: OnRamp to Security for beginners - One Day BootCamp](#beginner-track-onramp-to-security-for-beginners---one-day-bootcamp)
+
 ##### Upcoming classes
 OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
+
 ##### Upcoming Courses
 Security Life-cycle  / Security Management / Certifications Prep
 
@@ -87,6 +89,7 @@ Review a sample vulnerable python web application; use automatic scan of the app
 ### Industry need
 * Recent survey of 40K jobs asked for IT Security background: 25% Project Management, 23% Business Development, 9% Customer Relationship, 8% Business Analysts, 7% Sales6% Technical Writing, 
 * Skills refresh is a reality today and IT Security can absorb retrained resources for a short while
+
 ### Course Preview
 Round-table discussion is a major component of this course. 
 Security Assessments overview and labs; Secure Software Development overview and labs; Security Testing overview and labs using DevOps tools where possible; Cloud Security Administration overview and labs; Security Job Market overview careers.
@@ -106,6 +109,7 @@ Security Administration, Continuous Monitoring: Security Administration is the m
 * 1.8 Million more cybersecurity professionals will be needed by 2022 across the globe. Source: (ISC)2 2017 Global Information Security Workforce Study
 * 37% professionals showed that fewer than 25% of applicants were qualified – hands-on tests were 50% of the interviews. Source: ISACA State of Cybersecurity 2017: Current Trends in Workforce Development
 * 36.5 % Growth for InfoSec Analysts from 2012-2022, next only to Physician Assistants. Source: Bureau of Labor Statistics, Employment Projections Program
+
 ### Course Preview
 Security Assessments overview and labs; Secure Software Development overview and labs; Security Testing overview and labs using devops tools where possible; Cloud Security Administration overview and labs; Security Job Market overview careers.
 #### Module 1 
