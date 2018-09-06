@@ -18,7 +18,6 @@ OT Security / Azure Security / Office 365 Security / Risk Management Framework a
 Security Life-cycle  / Security Management / Certifications Prep
 
 ## Technology Track: AWS Security - One Day BootCamp
-- [Top Of The Page](#current-offerings)
 ### Industry need
 Amazon Web Services (AWS) is a secure cloud services platform, offering computing power, database storage, content delivery and other functionality to help businesses scale and grow. AWS provides secure infrastructure and services, while you, the customer, are responsible for secure operating systems, platforms, and data.
 This course will help you in understanding the security at the elevated level and to increase your confidence in securing the AWS environment hand on. Learning of theory is intentionally interspersed with labs on the main topics.
@@ -52,7 +51,6 @@ By the end of the course, you will have hands-on experience and understanding of
 - [Top Of The Page](#current-offerings)
 
 ## Technology Track: Security in DevOps - One Day BootCamp
-- [Top Of The Page](#current-offerings)
 ### Industry need
 DevOps is the evolution of need for speed in software and systems delivery lifecycles. Security is one of the harder non-functional areas to be incorporated into DevOps. This class will teach students the concepts of integrating Enterprise processes with security processes with Automation in mind. Students will then get to automate a few of the DevSecOps security steps within a Jenkins reference pipeline. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class in terms of automation understanding. The AWS Security class will also add value to this class during hands-on exercises.  
 ### Course Preview
@@ -88,7 +86,6 @@ Review a sample vulnerable python web application; use automatic scan of the app
 - [Top Of The Page](#current-offerings)
 
 ## Management Track: RapidStart for Current IT Professionals - One Day BootCamp
-- [Top Of The Page](#current-offerings)
 ### Industry need
 * Recent survey of 40K jobs asked for IT Security background: 25% Project Management, 23% Business Development, 9% Customer Relationship, 8% Business Analysts, 7% Sales6% Technical Writing, 
 * Skills refresh is a reality today and IT Security can absorb retrained resources for a short while
@@ -107,7 +104,6 @@ Security Administration, Continuous Monitoring: Security Administration is the m
 - [Top Of The Page](#current-offerings)
 
 ## Beginner Track: OnRamp to Security for beginners - One Day BootCamp
-- [Top Of The Page](#current-offerings)
 ### Industry need
 * Technicians and junior analysts is the greatest gap in Security Job market
 * 1.8 Million more cybersecurity professionals will be needed by 2022 across the globe. Source: (ISC)2 2017 Global Information Security Workforce Study
