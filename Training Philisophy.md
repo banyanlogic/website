@@ -8,7 +8,8 @@ order: 3
 ## Banyan Logic Philosophy
 
 #### Class Design
-* Designed for Individuals* Designed for Business teams
+* Designed for Individuals
+* Designed for Business teams with strong performers
 * RapidLearn One Day Intense Bootcamp
 * Experience Heavy (Hands-On)
 * Weekend Class (Saturday 9am-6pm)
