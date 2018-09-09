@@ -6,19 +6,19 @@ active: logistics
 order: 5
 ---
 ## Schedule Location and Payment
-### AWS Security One Day HandsonBootcamp
+### AWS Security One Day Hands-on Boot camp
 * Registration open for Saturday, October 6th, 2018
 * On Line only (delivered via WebEx)
 * 9 am to 6 pm
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
 
-### Security In DevOps One Day Handson Bootcamp
+### Security In DevOps One Day Hands-on Boot camp
 * Date to be announced
 
-### Rapid Start for Professionals One Day Handson Bootcamp
+### Rapid Start for Professionals One Day Hands-on Boot camp
 * Date to be announced
 
-### Security OnRamp for Beginners One Day Handson Bootcamp
+### Security OnRamp for Beginners One Day Hands-on Boot camp
 * Date to be announced
 
 ## Need to Know

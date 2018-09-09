@@ -10,7 +10,7 @@ order: 3
 #### Class Design
 * Designed for Individuals
 * Designed for Business teams with strong performers
-* RapidLearn One Day Intense Bootcamp
+* RapidLearn One Day Intense Boot camp
 * Hand-On Heavy / Experiential Learning
 * Weekend Class (Saturday 9am-6pm)
 * Weekday Evenings (Mon, Tue, Thu 7pm-10pm)
