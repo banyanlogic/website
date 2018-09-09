@@ -6,10 +6,10 @@ active: classes
 order: 4
 ---
 ##### Current Offerings
-- [Technology Track: AWS Security - One Day BootCamp](#technology-track-aws-security---one-day-bootcamp)
-- [Technology Track: Security in DevOps - One Day BootCamp](#technology-track-security-in-devops---one-day-bootcamp)
-- [Management Track: RapidStart for Current IT Professionals - One Day BootCamp](#management-track-rapidstart-for-current-it-professionals---one-day-bootcamp)
-- [Beginner Track: OnRamp to Security for beginners - One Day BootCamp](#beginner-track-onramp-to-security-for-beginners---one-day-bootcamp)
+- [Technology Track: AWS Security - One Day Boot camp](#technology-track-aws-security---one-day-bootcamp)
+- [Technology Track: Security in DevOps - One Day Boot camp](#technology-track-security-in-devops---one-day-bootcamp)
+- [Management Track: RapidStart for Current IT Professionals - One Day Boot camp](#management-track-rapidstart-for-current-it-professionals---one-day-bootcamp)
+- [Beginner Track: OnRamp to Security for beginners - One Day Boot camp](#beginner-track-onramp-to-security-for-beginners---one-day-bootcamp)
 
 ##### Upcoming classes
 OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
@@ -17,7 +17,7 @@ OT Security / Azure Security / Office 365 Security / Risk Management Framework a
 ##### Upcoming Courses
 Security Life-cycle  / Security Management / Certifications Prep
 
-## Technology Track: AWS Security - One Day BootCamp
+## Technology Track: AWS Security - One Day Boot camp
 ### Industry need
 Amazon Web Services (AWS) is a secure cloud services platform, offering computing power, database storage, content delivery and other functionality to help businesses scale and grow. AWS provides secure infrastructure and services, while you, the customer, are responsible for secure operating systems, platforms, and data.
 This course will help you in understanding the security at the elevated level and to increase your confidence in securing the AWS environment hand on. Learning of theory is intentionally interspersed with labs on the main topics.
@@ -50,7 +50,7 @@ The lab will cover some of the topics mentioned above to provide you with hands-
 By the end of the course, you will have hands-on experience and understanding of AWS and Cloud Security to help you do your job better and perhaps even help accelerate adoption of Cloud at your organization.
 - [Top Of The Page](#current-offerings)
 
-## Technology Track: Security in DevOps - One Day BootCamp
+## Technology Track: Security in DevOps - One Day Boot camp
 ### Industry need
 DevOps is the evolution of need for speed in software and systems delivery lifecycles. Security is one of the harder non-functional areas to be incorporated into DevOps. This class will teach students the concepts of integrating Enterprise processes with security processes with Automation in mind. Students will then get to automate a few of the DevSecOps security steps within a Jenkins reference pipeline. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class in terms of automation understanding. The AWS Security class will also add value to this class during hands-on exercises.  
 ### Course Preview
@@ -85,7 +85,7 @@ Understand issues with web applications. Understand the impact of such issues on
 Review a sample vulnerable python web application; use automatic scan of the application using OWASP ZAP; invoke ZAP as a GUI, via command line invocation, via APIs, and via Jenkins plugin; review the output; pipe the results back into Jenkins; automate processing of some of the vulnerabilities data; invoke or abort next job based on the results
 - [Top Of The Page](#current-offerings)
 
-## Management Track: RapidStart for Current IT Professionals - One Day BootCamp
+## Management Track: RapidStart for Current IT Professionals - One Day Boot camp
 ### Industry need
 * Recent survey of 40K jobs asked for IT Security background: 25% Project Management, 23% Business Development, 9% Customer Relationship, 8% Business Analysts, 7% Sales6% Technical Writing, 
 * Skills refresh is a reality today and IT Security can absorb retrained resources for a short while
@@ -103,7 +103,7 @@ Security Testing: Security Testing is a complicated affair. It is easy to turn o
 Security Administration, Continuous Monitoring: Security Administration is the most important piece in keeping a Business Secure and to reduce the loss to a company in event of a breach. This section cover Administration of the Security Controls learnt before. Labs are based on the AWS and Azure clouds.
 - [Top Of The Page](#current-offerings)
 
-## Beginner Track: OnRamp to Security for beginners - One Day BootCamp
+## Beginner Track: OnRamp to Security for beginners - One Day Boot camp
 ### Industry need
 * Technicians and junior analysts is the greatest gap in Security Job market
 * 1.8 Million more cybersecurity professionals will be needed by 2022 across the globe. Source: (ISC)2 2017 Global Information Security Workforce Study
