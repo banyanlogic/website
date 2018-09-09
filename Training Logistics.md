@@ -7,8 +7,8 @@ order: 5
 ---
 ## Schedule Location and Payment
 ### AWS Security One Day HandsonBootcamp
-* Date to be announced
-* Reston, VA (host location to be announced soon)
+* Registration open for October 6th, 2018
+* On Line only (delivered via WebEx)
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
 
 ### Security In DevOps One Day Handson Bootcamp
