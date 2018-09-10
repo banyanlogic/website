@@ -7,7 +7,7 @@ order: 5
 ---
 ## Schedule Location and Payment
 ### AWS Security One Day Hands-on Boot camp
-* Registration open for Saturday, October 6th, 2018
+* Date to be announced
 * On Line only (delivered via WebEx)
 * 9 am to 6 pm
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
