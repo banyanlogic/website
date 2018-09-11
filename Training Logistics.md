@@ -38,10 +38,10 @@ Notebook and pen for notes
 Your desire to learn and excel in the technology field
 ##### Do I get Coffee & Tea if I take the class InPerson?
 Bottled water and freshly brewed coffee are available as well as lunch.
-##### Is this live InPerson training?
-We do offer live in-person training at our headquarters in Reston Virginia, as well as live on-site training for businesses.
-##### Is it live OnLine Training?
-We do offer live online training for our remote attendees.
+##### Is this live training?
+Yes. It is not a recorded session.
+##### Is it in person or on-line Training?
+October 6th session is on-line only.
 
 ## Course Advisors
 Srinivasa Kasturi is an expert in the IT industry with a Masters Degree in Computer Engineering from Villanova University and certifications such as CISSP (Certified Information Systems Security Professional), ISSAP(Information Systems Security Architecture Professional) , CSSLP(07-17) (Certified Secure Software Lifecycle Professional), TOGAF(03-09), CCSK(Certificate of Cloud Security Knowledge), PMP (Project Management Professional); as well as about twenty five years of experience with network architectures, processes, Conducting thorough risk assessments, providing incident response, and last but not least Cloud Enterprise Security Strategy 
