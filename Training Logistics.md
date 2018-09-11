@@ -36,8 +36,6 @@ Preferably a USB headset for better communication
 More than one display screen to view lab protocols while working on the lab
 Notebook and pen for notes
 Your desire to learn and excel in the technology field
-##### Do I get Coffee & Tea if I take the class InPerson?
-Bottled water and freshly brewed coffee are available as well as lunch.
 ##### Is this live training?
 Yes. It is not a recorded session.
 ##### Is it in person or on-line Training?
