@@ -7,9 +7,9 @@ order: 5
 ---
 ## Schedule Location and Payment
 ### AWS Security One Day Hands-on Boot camp
-* Date to be announced
+* Saturday, October 6th, 2018
 * On Line only (delivered via WebEx)
-* 9 am to 6 pm
+* 9 am EST to 6 pm EST
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay</a>
 
 ### Security In DevOps One Day Hands-on Boot camp
