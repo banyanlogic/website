@@ -6,16 +6,16 @@ active: logistics
 order: 5
 ---
 ## Schedule Location and Payment
-### RapidStart for Current IT Professionals - One Day Boot camp
+### Rapid Start for Professionals One Day Hands-on Boot camp
 * Saturday, November 10th, 2018, 9 am to 5:30 pm EST.
 * On-line only (delivered via WebEx).
 * Price $400 before November 4th, $450 after November 4th.
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay.</a>
 
-### Security In DevOps One Day Hands-on Boot camp
+### AWS Security One Day Hands-on Boot camp
 * Date to be announced.
 
-### Rapid Start for Professionals One Day Hands-on Boot camp
+### Security In DevOps One Day Hands-on Boot camp
 * Date to be announced.
 
 ### Security OnRamp for Beginners One Day Hands-on Boot camp
