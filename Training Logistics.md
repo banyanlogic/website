@@ -6,10 +6,10 @@ active: logistics
 order: 5
 ---
 ## Schedule Location and Payment
-### AWS Security One Day Hands-on Boot camp
-* Saturday, October 6th, 2018, 9 am to 6 pm EST.
+### RapidStart for Current IT Professionals - One Day Boot camp
+* Saturday, November 10th, 2018, 9 am to 5:30 pm EST.
 * On-line only (delivered via WebEx).
-* Price $400 before September 29th, $450 after September 29th.
+* Price $400 before November 4th, $450 after November 4th.
 * <a href="https://banyanlogic.ecwid.com" target="_blank">Secure Pay.</a>
 
 ### Security In DevOps One Day Hands-on Boot camp
