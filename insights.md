@@ -1,5 +1,5 @@
 ---
-bg: "bg.jpg"
+bg: "artlc.jpg"
 layout: page
 title: "insights"
 active: insights
