@@ -9,6 +9,6 @@ order: 1
 
 Here is the link to the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Security A.R.T. Coarse Grain Score v1</a> calculator.
 
-Here is a summary slide from the presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup
+Here is a summary slide from the presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
 
 ![Art of Security - LC](/assets/images/artlc.jpg)
