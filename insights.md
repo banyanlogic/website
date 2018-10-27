@@ -1,5 +1,5 @@
 ---
-bg: "artlc.jpg"
+bg: "bg.jpg"
 layout: page
 title: "insights"
 active: insights
@@ -11,4 +11,4 @@ Here is the link to the <a href="https://forms.office.com/Pages/ResponsePage.asp
 
 Here is a summary slide from the presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup
 
-![Art of Security - LC](artlc.jpg)
+![Art of Security - LC](/assets/images/artlc.jpg)
