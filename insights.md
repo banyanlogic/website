@@ -7,7 +7,7 @@ order: 1
 ---
 ## A.R.T. and Security
 ### Purpose
-The foundation of problem-solving is knowing \who's\ problem we are trying to solve and what there pushes and pull are. 
+The foundation of problem-solving is knowing who's problem we are trying to solve and what there pushes and pull are. The one word that represents this mindset is empathy. Not sympathy toward business needs at risk of long-term security of customers and neither apathy toward such needs. 
 
 ### Description
 The Absolute, Relative and Transactional views and Security can be summarized as below:
