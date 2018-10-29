@@ -11,6 +11,8 @@ The foundation of problem-solving is knowing who's problem we are trying to solv
 
 Toward this ends, evaluating a Security Organization or an SME state, needs a 360-degree scorecard. The A.R.T. and Security scorecard serves this purpose and is described below.
 
+Looking forward to your comments on this topic over LinkedIn @ <a href="http://www.linkedin.com/in/skasturi">http://www.linkedin.com/in/skasturi</a>
+
 ### Description
 The Absolute, Relative and Transactional views and Security can be summarized as below:
 * Three friction-factors effect Security Groups from serving the Enterprise / Agency / Business goals in a secure manner
