@@ -9,7 +9,7 @@ order: 1
 ### Purpose
 The foundation of problem-solving is knowing who's problem we are trying to solve and what there pushes and pull are. The one word that represents this mindset is empathy, a balance between Business / Enterprise / Agency operational needs and security.
 
-Toward this ends, evaluating a Security Organization or an SME, needs a 360 degree scorecard.
+Toward this ends, evaluating a Security Organization or an SME, needs a 360 degree scorecard. The A.R.T. and Security scorecard serves this purpose and is described below.
 
 ### Description
 The Absolute, Relative and Transactional views and Security can be summarized as below:
