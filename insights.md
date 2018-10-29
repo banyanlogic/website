@@ -5,11 +5,19 @@ title: "insights"
 active: insights
 order: 1
 ---
-## Art of Security - Dealing with Lifecycles that impact us
+## A.R.T. and Security
+The Absolute, Relative and Transactional views and Security
+* Three ‘friction factors’ fail Security from serving the Enterprise / Agency / Business goals in a secure manner
+* Absolute Friction occurs and snow balls when the Stakeholders are not heard or understood or when you are not heard or understood
+* Relative Friction occurs and snow balls when there is Process disconnect
+* Tactile Friction occurs and show balls when Stake-holder's technology is not understood sufficiently and deeply by Security or when security technology is not communicated sufficiently to Stakeholders
+* Method to assess A.R.T. score is advocated based on the 'Empathy' (not sympathy nor apathy) that Security Groups have toward Enterprise / Agency / Business's goal
+* Find below link to a calculator and a one slide summary of empathy factors
 
-Link to the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">A.R.T.* and Security (c) Coarse Grain Score v1</a> calculator.
-* Absolute, Relative and Transactional views and Security
 
-Summary of <i>the A.R.T. and Security - Lifecycles that impact us<i> - presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
+### Link to the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">A.R.T.* and Security (c) Coarse Grain Score v1</a> calculator.
+
+
+### Summary of <i>the A.R.T. and Security - Lifecycles that impact us</i> - presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
 
 ![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)
