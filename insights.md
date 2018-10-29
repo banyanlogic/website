@@ -18,6 +18,6 @@ The Absolute, Relative and Transactional views and Security
 ### Link to the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">A.R.T.* and Security (c) Coarse Grain Score v1</a> calculator.
 
 
-### Summary of <i>the A.R.T. and Security - Lifecycles that impact us</i> - presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
+### Summary of <em>The A.R.T. and Security - Lifecycles Impacting Security </em> presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
 
-![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)
+![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg) 
