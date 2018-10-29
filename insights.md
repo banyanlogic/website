@@ -21,7 +21,7 @@ The Absolute, Relative and Transactional views and Security can be summarized as
 ### Evaluation tool
 Method to assess A.R.T. score is advocated based on the 'Empathy' (not sympathy nor apathy) that Security Groups have toward Enterprise / Agency / Business's goal. A list of lifecycles and a 'key concept' for each is leveraged to generate the score. A detailed score card is under development.
 
-<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Link to the latest A.R.T. and Security (c) Coarse Grain Score v1</a> calculator. A more detailed calculator will be released soon.
+<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator form</a>. A more detailed calculator will be released soon.
 
 ### Visual
 Summary of The A.R.T. and Security - Lifecycles Impacting Security presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
