@@ -12,7 +12,7 @@ The foundation of problem-solving is knowing whose problem we are trying to solv
 I look forward to your comments on this topic over LinkedIn @ <a href="http://www.linkedin.com/in/skasturi">http://www.linkedin.com/in/skasturi</a>
 
 ### Description
-The Absolute, Relative and Transactional views and Security can be summarized as below:
+The * Absolute, Relative and Transactional (A.R.T.) friction factors can make or break Security. Consider these cause and effect relationships:
 * Three friction-factors effect Security Groups from serving the Enterprise / Agency / Business goals in a secure manner
 * Absolute Friction occurs and snowballs when the Stakeholders are not heard or understood or when Security is not heard or understood
 * Relative Friction occurs and snowballs when there is Process disconnect
