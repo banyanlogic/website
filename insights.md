@@ -14,7 +14,7 @@ I look forward to your comments on this topic over LinkedIn @ <a href="http://ww
 ### Description
 The * Absolute, Relative and Transactional (A.R.T.) friction factors can make or break Security. Consider these cause and effect relationships:
 * Absolute Friction occurs and snowballs when the Stakeholders are not heard or understood or when the Security Group is not heard or understood. Effect is irrelevancy of the Security Group.
-* Relative Friction occurs and snowballs when there is Process disconnect
+* Relative Friction occurs and snowballs when there is a Process disconnect. Effect is inefficiency.
 * Tactile Friction occurs and snowballs when Stakeholder's technology is not understood sufficiently and deeply by Security, or when security technology is not communicated sufficiently to Stakeholders
 
 ### Evaluation tool
