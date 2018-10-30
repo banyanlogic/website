@@ -23,6 +23,6 @@ Method to evaluate the A.R.T. score is advocated based on the ‘Empathy’ (not sym
 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator form</a>. A more detailed calculator will be released soon.
 
 ### Visual
-Summary of <em>The A.R.T. and Security - Lifecycles Impacting Security</em> is included below.
+Summary of The A.R.T. and Security - Lifecycles Impacting Security is included below.
 
 ![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)  
