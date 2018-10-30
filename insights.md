@@ -18,7 +18,7 @@ The Absolute, Relative and Transactional (A.R.T.) friction factors can make or b
 * Tactile Friction occurs and snowballs when the Stakeholder’s technology is not understood sufficiently and deeply by the Security Group, or when security technology is not communicated sufficiently to the Stakeholders. Effect is ineffectiveness against attacks.
 
 ### Evaluation tool
-Method to evaluate the A.R.T. score is advocated based on the ‘Empathy’ (not sympathy nor apathy) that Security Groups have toward their Enterprise, Agency, or Business’s goals. A list of lifecycles and one ‘key concept’ for each of the life cycles (scope as an example for Project Management Lifecycle) is collected and weighted to derive the score. Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator. A more detailed calculator will be released soon.
+Method to evaluate the A.R.T. score is advocated based on the <em>Empathy</em> (not sympathy nor apathy) that Security Groups have toward their Enterprise, Agency, or Business’s goals. A list of lifecycles and one ‘key concept’ for each of the life cycles (scope as an example for Project Management Lifecycle) is collected and weighted to derive the score. Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator. A more detailed calculator will be released soon.
 
 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator form</a>. A more detailed calculator will be released soon.
 
