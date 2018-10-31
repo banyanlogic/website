@@ -12,13 +12,13 @@ The foundation of problem-solving is knowing whose problem we are trying to solv
 I look forward to your comments on this topic over LinkedIn @ <a href="http://www.linkedin.com/in/skasturi">http://www.linkedin.com/in/skasturi</a>
 
 ### Description
-The * Absolute, Relative and Transactional (A.R.T.) friction factors can make or break Security. Consider these cause and effect relationships:
+The Absolute, Relative and Transactional (A.R.T.) friction factors can make or break Security. Consider these cause and effect relationships:
 * Absolute Friction occurs and snowballs when the Stakeholders are not heard or understood or when the Security Group is not heard or understood. Effect is irrelevancy of the Security Group.
 * Relative Friction occurs and snowballs when there is a Process disconnect. Effect is inefficiency.
 * Tactile Friction occurs and snowballs when Stakeholder's or Security Groups technology is not mutually understood in detail. Effect is insufficient automation.
 
 ### Evaluation tool
-Method to assess A.R.T. score is advocated based on the 'Empathy' (not sympathy nor apathy) that Security Groups have toward Enterprise / Agency / Business's goal. A list of lifecycles and a 'key concept' for each is leveraged to generate the score. A detailed scorecard is under development.
+Method to assess A.R.T. score is based on key 'Empathy' attribute for each of the lifecycles that impacting and impacted by security activities.
 
 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator form</a>. A more detailed calculator will be released soon.
 
