@@ -18,9 +18,7 @@ The Absolute, Relative and Transactional (A.R.T.) friction factors can make or b
 * Tactile Friction occurs and snowballs when Stakeholder's or Security Groups technology is not mutually understood in detail. Effect is insufficient automation.
 
 ### Evaluation tool
-Method to assess A.R.T. score is based on key 'Empathy' attribute for each of the lifecycles that impacting and impacted by security activities.
-
-<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator form</a>. A more detailed calculator will be released soon.
+Method to assess A.R.T. score is based on weighted key 'empathy' attributes for each of the lifecycles that impact and are impacted by security activities. <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sCcL4y7YvESdCVcMcTuu4OIitblMf7hIhnaXAD0Y67FUQk1DUUIxNTFPTDRTMDdMTlkxOEtTVTRIVy4u" target="_blank">Here is the link to the latest A.R.T. and Security (c) Coarse Grain Score v1 calculator form</a>. A more detailed calculator will be released soon.
 
 ### Visual
 Summary of The A.R.T. and Security - Lifecycles Impacting Security presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup.
