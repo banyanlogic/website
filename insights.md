@@ -25,3 +25,5 @@ Method to assess A.R.T. score is based on weighted key 'empathy' attributes for 
 Summary of <i>The A.R.T. and Security - Lifecycles Impacting Security</i> presentation I recently did at the DC / Dulles Corridor RMF LifeBoat meetup is included below.
 
 ![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)  
+
+<embed src="https://github.com/banyanlogic/website/blob/master/assets/artlcfullpdf.pdf” type="application/pdf" />
