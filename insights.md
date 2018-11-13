@@ -26,4 +26,5 @@ Summary of <i>The A.R.T. and Security - Lifecycles Impacting Security</i> presen
 
 ![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)  
 
-<embed src="https://github.com/banyanlogic/website/blob/master/assets/artlcfullpdf.pdf” type="application/pdf" />
+
+<embed src="https://github.com/banyanlogic/website/blob/master/assets/artlcfullpdf.pdf” />
