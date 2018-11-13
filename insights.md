@@ -27,4 +27,4 @@ Summary of <i>The A.R.T. and Security - Lifecycles Impacting Security</i> presen
 ![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)  
 
 
-You can see the full prrsentation [here](/assets/artlcfullpdf.pdf).
+You can see the full presentation [here](/assets/artlcfullpdf.pdf).
