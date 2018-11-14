@@ -8,7 +8,7 @@ order: 1
 ## A.R.T. and Security (c)
 ## A.R.T. and IT (c)
 ### Purpose
-The foundation of problem-solving is knowing whose problem we are trying to solve and what their pushes and pulls on an ongoing basis are. Therefore, a 360-degree scorecard is needed to evaluate a IT Organization or an SME relatability whom and for whom we serve. The A.R.T.* scorecards serve this purpose and the basis is described below using Security as an example. I am an active user of the score card and use it set my own learning targets.
+The foundation of problem-solving is knowing whose problem we are trying to solve and what their pushes and pulls on an ongoing basis are. Therefore, a 360-degree scorecard is needed to evaluate a IT Organization or an SME relatability whom and for whom we serve. The A.R.T.* scorecards serve this purpose and the basis is described below using Security as an example. I am an active user of the score card and use it to set my own learning targets and evaluate the outcome.
 
 I look forward to your comments on this topic and usage over LinkedIn @ <a href="http://www.linkedin.com/in/skasturi">http://www.linkedin.com/in/skasturi</a>
 
