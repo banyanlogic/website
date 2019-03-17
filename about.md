@@ -8,12 +8,13 @@ order: 6
 
 ## About Us
 ### Shekhar Tiwari, CEO, Founder
+Shekhar has over thirty five years of experience of starting and managing seven technology and telecom companies. For two decades, he worked for three blue chip American companies, AT&T, IBM, and MCI in a senior management capacity. After leaving the corporate world in 1990s, he co-founded International Ventures which helped European companies, including France Telecom, Deutsche Telecom, and Siemens invest, acquire or merge into American companies. He also advised US Private Equity firms, acquire distressed telecom assets. In early 2000s, his entrepreneurial passion had him found MXC, an Internet appliance company in Bethesda, Maryland and in 2013, co-founded Indiverse Broadband, a cable roll up in India. In 2016, he co-founded Cyber Force, a cyber security start-up in Reston, Virginia. He is also building Smart Broadband Partners, a broadband consolidation platform company for over 3 million subscribers in India. He holds a B.S. in electronics and Communications degree from Bihar Institute of Technology, Sindri, India and MS in Electrical Engineering from the Rutgers University, New Jersey.
 
 ### Srinivasa Kasturi, CTO, Founder
 Srini is an expert in the IT industry with a Masters Degree in Computer Engineering from Villanova University and certifications such as CISSP (Certified Information Systems Security Professional), ISSAP(Information Systems Security Architecture Professional) , CSSLP(07-17) (certified Secure Software Lifecycle Professional), TOGAF(03-09), CCSK(Certificate of Cloud Security Knowledge), PMP (Project Management Professional); as well as about twenty five years of experience with network architectures, processes, Conducting thorough risk assessments, providing incident response, and last but not least Cloud Enterprise Security Strategy
 
 ### Sudhita Kasturi, VP Business Research and Development, Founder
-Sudhita is an expert in understanding gaps in standard curriculum. Based on which she put together many integrated, hands-on supplement programs. These programs continue to deliver tangible, industry applicable skills to the students. As Director and Owner of multiple educational programs, she understands the dyanmics of education at scale.
+Sudhita is an expert in understanding gaps in standard curriculum. Based on which she put together many integrated, hands-on supplemental programs. These programs continue to deliver tangible, industry applicable skills to the students. As Director and Owner of multiple educational programs, she understands the dyanmics of education at scale.
 
 ### Who benefited from our expertise
 * Vendors: IBM, Semantifi, Esgyn
