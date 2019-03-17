@@ -17,7 +17,7 @@ Srini is an expert in the IT industry with a Masters Degree in Computer Engineer
 Sudhita is an expert in understanding gaps in standard curriculum. Based on which she put together many integrated, hands-on supplemental programs. These programs continue to deliver tangible, industry applicable skills to the students. As Director and Owner of multiple educational programs, she understands the dyanmics of education at scale.
 
 ### Who benefited from our expertise
-* Vendors: IBM, Semantifi, Esgyn
+* Vendors: AT&T, MCI, IBM, France Telecom, Deutsche Telecom, Siemens, Semantifi, Esgyn
 * Financial: The World Bank Group, Freddie Mac
 * Standards and Certification Bodies: A2LA
 * Services: TRW, AceInfo Solutions, Senryo Technologies, Peridot Solutions, Karthik Consulting
