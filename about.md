@@ -13,7 +13,7 @@ order: 6
 Srini is an expert in the IT industry with a Masters Degree in Computer Engineering from Villanova University and certifications such as CISSP (Certified Information Systems Security Professional), ISSAP(Information Systems Security Architecture Professional) , CSSLP(07-17) (certified Secure Software Lifecycle Professional), TOGAF(03-09), CCSK(Certificate of Cloud Security Knowledge), PMP (Project Management Professional); as well as about twenty five years of experience with network architectures, processes, Conducting thorough risk assessments, providing incident response, and last but not least Cloud Enterprise Security Strategy
 
 ### Sudhita Kasturi, VP Business Research and Development, Founder
-Sudhita is an expert in understanding gaps in standard curricula. Based on which she put togethr multiple integrated, hands-on supplements that deliver tangible, industry applicable skills to the students. As a Director and Owner of educational programs, she understands the dyanmics of education at scale.
+Sudhita is an expert in understanding gaps in standard curriculum. Based on which she put together many integrated, hands-on supplement programs. These programs continue to deliver tangible, industry applicable skills to the students. As Director and Owner of multiple educational programs, she understands the dyanmics of education at scale.
 
 ### Who benefited from our expertise
 * Vendors: IBM, Semantifi, Esgyn
