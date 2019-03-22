@@ -45,6 +45,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - ideal_image_slider.rb
+
+iis_slider_array: []
+
 # Srini K edits starting d270818 
 #collections:
 #  trainingpages:
