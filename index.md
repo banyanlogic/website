@@ -16,9 +16,3 @@ Banyan Logic is a cybersecurity firm headquartered in Reston, VA, USA. We provid
 E: info@banyanlogic.com
 <p>P: (571)449-6012
 <p>L: Reston, VA, USA
-
-{% slider %}
-  ![Bootcamp flyer](/assets/images/BLFlyer.jpg)
-  ![A.R.T. and Security - Lifecycle](/assets/images/artlc.jpg)
-  ![alt text 3](image3.jpg)
-{% endslider %}
