@@ -1,7 +1,7 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Contact Form"
+title: "Contact Us"
 active: contact
 order: 5
 ---
