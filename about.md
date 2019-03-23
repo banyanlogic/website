@@ -1,5 +1,6 @@
 ---
 bg: "bg.jpg"
+logo: "bg.jpg"
 layout: page
 title: "About"
 active: about
