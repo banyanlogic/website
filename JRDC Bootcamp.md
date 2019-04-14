@@ -9,7 +9,7 @@ order: 1
 
 Take a moment to think over the prompts below.
 
-<iframe width="98060px" height="980px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
+<iframe width="1200px" height="800px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
 
 [//]: #![Bootcamp flyer](/assets/images/BLFlyer.jpg)  
 
