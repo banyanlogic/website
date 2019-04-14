@@ -6,9 +6,10 @@ active: JRDC Bootcamp
 order: 1
 ---
 ## Job Ready Defensive Cybersecurity (c) Bootcamp
-One who read how to drive a bus is not the one you would hire to drive your child's school bus! So why hire those who are not trained in protecting assets of value to protect your Data and Services?
 
-<iframe width="760px" height="500px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
+Take a moment to think over the prompts below.
+
+<iframe width="98060px" height="980px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
 
 [//]: #![Bootcamp flyer](/assets/images/BLFlyer.jpg)  
 
