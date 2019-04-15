@@ -9,7 +9,8 @@ order: 1
 
 Take a moment to think over the prompts below.
 
+<div>
 <iframe src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
-
+</div>
 
 [//]: #![Bootcamp flyer](/assets/images/BLFlyer.jpg)  
