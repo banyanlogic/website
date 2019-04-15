@@ -9,7 +9,7 @@ order: 1
 
 Take a moment to think over the prompts below.
 
-[//]: <iframe width="1200px" height="800px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
+[//]: <iframe width="2000px" height="1500px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
 
 <iframe width="1200px" height="800px" src="https://banyanlogic-my.sharepoint.com/:p:/p/srinikasturi/EaXk_dFhiAJCk1nuI9RtMJ4BqrQB44GsbQpSsefnDEMk_Q?e=aDBsy2"></iframe>
 
