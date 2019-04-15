@@ -1,10 +1,15 @@
-<html>
-Take a moment to think over the prompts below.
+---
+bg: "bg.jpg"
+layout: page
+title: "JRDC Bootcamp"
+active: JRDC Bootcamp
+order: 1
+---
+## Job Ready Defensive Cybersecurity (c) Bootcamp
 
-<div>
-<iframe src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;left:300px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
-</div>
+Open the prompts in a new page. Take a moment to think over the prompts. Research them and then get back to us at info@banyanlogic.com
 
-</html>
-<!---
+<iframe width="2000px" height="1500px" src="https://sway.office.com/s/tGY8DyDZB6qsbOH4/embed"></iframe>
+
+
 [//]: #![Bootcamp flyer](/assets/images/BLFlyer.jpg)  
