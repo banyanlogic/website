@@ -5,7 +5,6 @@ title: "JRDC Bootcamp"
 active: JRDC Bootcamp
 order: 1
 ---
-## Job Ready Defensive Cybersecurity (c) Bootcamp
 
 Take a moment to think over the prompts below.
 
