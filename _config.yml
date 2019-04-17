@@ -18,6 +18,7 @@ logo: 'bg.jpg'
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title/
+# Adding new theme
 theme: jekyll-theme-time-machine
 
 # Posts settings
