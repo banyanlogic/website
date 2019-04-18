@@ -19,7 +19,7 @@ logo: 'bg.jpg'
 markdown: kramdown
 permalink: /:categories/:title/
 # Adding new theme
-theme: jekyll-theme-time-machine
+theme: jekyll-theme-leap-day
 
 # Posts settings
 future: true
