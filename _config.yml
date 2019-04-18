@@ -9,7 +9,7 @@
 title: Banyan Logic
 email: srinikasturi@banyanlogic.com
 description: > # this means to ignore newlines until "baseurl:"
- Banyan Logic is cybersecurity firm headquartered in Reston, VA, USA. We provide Cyber Security training, process automation, and auditing.
+ Banyan Logic is a cybersecurity firm headquartered in Reston, VA, USA. We provide job focused, hands on, live business solutions based Cyber Security training.
 baseurl: "" # the subpath of your site, e.g. /blog
 lang: "en"
 url: "http://localhost:4000" # the base hostname & protocol for your site
