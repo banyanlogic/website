@@ -9,7 +9,7 @@ summary: "We support your growth"
 ---
 
 ## Banyan Logic, LLC
-Banyan Logic is a cybersecurity firm headquartered in Reston, VA, USA. We provide Cyber Security training, process automation services, and auditing services.
+Banyan Logic is a cybersecurity firm headquartered in Reston, VA, USA. We provide job-ready hands-on live-defense Cyber Security training for securing business solutions.
 
 
 ### Coordinates
