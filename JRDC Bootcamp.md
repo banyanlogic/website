@@ -9,5 +9,5 @@ order: 1
 <p>
 Take a moment to think over the prompts. Research them and then get back to us at info@banyanlogic.com or fill out the JRDB boot camp interest form.
 <p>
-<iframe width="900" height="700" src="https://sway.office.com/tGY8DyDZB6qsbOH4"></iframe>
+<iframe width="900" height="700" src="https://sway.office.com/tGY8DyDZB6qsbOH4">
 
