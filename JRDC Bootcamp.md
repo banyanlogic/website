@@ -1,6 +1,5 @@
 ---
 bg: "bg.jpg"
-layout: page
 title: "JRDC Bootcamp"
 active: JRDC Bootcamp
 order: 1
