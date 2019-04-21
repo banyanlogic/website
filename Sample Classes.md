@@ -1,21 +1,15 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Classes and Courses"
+title: "Sample Classes"
 active: classes
 order: 4
 ---
-##### Current Offerings
+##### Sample Classes
 - [Technology Track: AWS Security - One Day Boot camp](#technology-track-aws-security---one-day-boot-camp)
 - [Technology Track: Security in DevOps - One Day Boot camp](#technology-track-security-in-devops---one-day-boot-camp)
 - [Management Track: RapidStart for Current IT Professionals - One Day Boot camp](#management-track-rapidstart-for-current-it-professionals---one-day-boot-camp)
 - [Beginner Track: OnRamp to Security for beginners - One Day Boot camp](#beginner-track-onramp-to-security-for-beginners---one-day-boot-camp)
-
-##### Upcoming classes
-OT Security / Azure Security / Office 365 Security / Risk Management Framework and CyberSecurity Framework
-
-##### Upcoming Courses
-Security Life-cycle  / Security Management / Certifications Prep
 
 ## Technology Track: AWS Security - One Day Boot camp
 ### Industry need
