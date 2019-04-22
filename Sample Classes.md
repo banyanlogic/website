@@ -22,13 +22,15 @@ while you, the customer, are responsible for secure operating systems,
 platforms, and data. This course will help you in understanding the security at
 the elevated level and to increase your confidence in securing the AWS
 environment hand on. Learning of theory is intentionally interspersed with labs
-on the main topics. \#\#\# Course Preview Interactive learning modules include:
+on the main topics. 
+\#\#\# Course Preview Interactive learning modules include:
 • Creating users • Assigning roles/privileges • Key encryption • Log monitoring
 • Log Analysis • Creating/launching EC2 instances • Creating S3 buckets •
 Conducting compliance based assessment \#\#\# Modules Following the introduction
 to Cloud Security, Shared Responsibility Model, and Cloud Knowledge bases, the
 class focuses on the following 5 modules. Most of the learning is in line with
-hands-on classes. \#\#\#\# Module 1 Lab Administration, you will learn how to an
+hands-on classes. 
+\#\#\#\# Module 1 Lab Administration, you will learn how to an
 on-ramp to AWS. You will work on AWS Console, AWS CLI and create a simple LAMP
 stack using Cloud Formation. You will create an EC2 machine and gain access to
 it. You will also set up an S3 bucket. To gain access to the course you will
