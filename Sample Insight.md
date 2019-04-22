@@ -5,8 +5,8 @@ title: "Sample Insight"
 active: Sample Insight
 order: 1
 ---
-## A.R.T. and Security (c)
-## A.R.T. and IT (c)
+## A.R.T. and Security &copy;
+## A.R.T. and IT &copy;
 ### Purpose
 The foundation of problem-solving is knowing whose problem we are trying to solve and what are their pushes and pulls on an ongoing basis. Therefore, a 360-degree scorecard is needed to evaluate an IT Organization or an SME relatability whom and for whom we serve. The A.R.T.* scorecards serve this purpose and the basis is described below using Security as an example. It is human centric, design-thinking inspired method. I am an active user of it and I use it to set my own learning targets and evaluate the outcome.
 
