@@ -43,5 +43,5 @@ Understand issues with web applications. Understand the impact of such issues on
 ##### Dynamics scans
 Review a sample vulnerable python web application; use automatic scan of the application using OWASP ZAP; invoke ZAP as a GUI, via command line invocation, via APIs, and via Jenkins plugin; review the output; pipe the results back into Jenkins; automate processing of some of the vulnerabilities data; invoke or abort next job based on the results
 
-[Top Of The Page](#Sample-Classes)
+[Top Of The Page](#sample-classes)
 
