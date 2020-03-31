@@ -1,15 +1,16 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Sample Classes"
+title: "Classes"
 active: classes
 order: 4
 ---
-## Sample Classes
+## Classes
+- [Technology Track: Security OnRamp - One Day Boot camp](#technology-track-security-onramp---one-day-boot-camp)
 - [Technology Track: AWS Security - One Day Boot camp](#technology-track-aws-security---one-day-boot-camp)
 - [Technology Track: Security in DevOps - One Day Boot camp](#technology-track-security-in-devops---one-day-boot-camp)
 
-## Sample Class Deep Dive - Security in DevOps
+## Class Deep Dive - Security in DevOps
 ### Industry need
 DevOps is the evolution of need for speed in software and systems delivery lifecycles. Security is one of the harder non-functional areas to be incorporated into DevOps. This class will teach students the concepts of integrating Enterprise processes with security processes with Automation in mind. Students will then get to automate a few of the DevSecOps security steps within a Jenkins reference pipeline. Though not a pre-requisite, we recommend leveraging our OnRamp to IT security offering to get the most out of this class in terms of automation understanding. The AWS Security class will also add value to this class during hands-on exercises.  
 ### Course Preview
