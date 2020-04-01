@@ -7,7 +7,7 @@ order: 4
 ---
 # Classes
 
-## Security OnRamp
+## Security OnRamp One Day Boot Camp
 ### You will first learn about:
 1. The NIST National Initiative for Cybersecurity Education (NICE) Framework and how to leverage it for your career planning.
 
