@@ -1,7 +1,7 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Insights you can use"
+title: "Useful Insights"
 active: Insight
 order: 1
 ---
