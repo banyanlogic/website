@@ -1,8 +1,8 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Sample Insight"
-active: Sample Insight
+title: "Insights you can use"
+active: Insight
 order: 1
 ---
 ## A.R.T. and Security &copy;
