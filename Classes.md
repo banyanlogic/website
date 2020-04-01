@@ -5,8 +5,7 @@ title: "Classes"
 active: classes
 order: 4
 ---
-## Classes
-- [Technology Track: Security OnRamp - One Day Boot camp](#security-onramp)
+# Classes
 
 ## Security OnRamp
 ### You will first learn about:
@@ -29,6 +28,8 @@ order: 4
 
 #### Registration and cost
 1. <a href="https://banyanlogic.ecwid.com/">Click on this link to go to the secure registration and payment system</a>
+
+2. Please register before midnight on April 9th.
 
 #### Economic Hardship
 Please email info@banyanlogic.com if you are interested but are unable to pay the full amount. The subject should mention 'Economic hardship and the security onramp class 04112020'.
