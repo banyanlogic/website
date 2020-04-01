@@ -30,4 +30,7 @@ order: 4
 #### Registration and cost
 1. <a href="https://banyanlogic.ecwid.com/">Click on this link to go secure registration and payment system</a>
 
+#### Economic Hardship
+Please email info@banyanlogic.com if you are interested but are unable to pay the full amount. Subject should mention 'Economic hardship and the security onramp class 04112020'.
+
 [Top Of The Page](#classes)
