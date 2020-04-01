@@ -28,7 +28,7 @@ order: 4
 4. Implement a reference multi-web layer python flask program with a simple database. Assess the security of the application via security code review, security third party library review, and a security dynamic scan.
 
 #### Registration and cost
-1. <a href="https://banyanlogic.ecwid.com/">Click on this link to go secure registration and payment system</a>
+1. <a href="https://banyanlogic.ecwid.com/">Click on this link to go to the secure registration and payment system</a>
 
 #### Economic Hardship
 Please email info@banyanlogic.com if you are interested but are unable to pay the full amount. Subject should mention 'Economic hardship and the security onramp class 04112020'.
