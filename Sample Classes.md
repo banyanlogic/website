@@ -28,4 +28,3 @@ order: 4
 4. Implement a reference multi-web layer python flask program with a simple database. Assess the security of the application via security code review, security third party library review, and a security dynamic scan.
 
 [Top Of The Page](#Classes)
-
