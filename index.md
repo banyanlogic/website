@@ -9,13 +9,9 @@ summary: "We support your growth"
 ---
 
 ## Banyan Logic, LLC
-Banyan Logic is a cybersecurity firm headquartered in Reston, VA, USA. We provide Cyber Security training, process automation training, and auditing training, for securing business solutions.
-
-Banyan Logic is proud to announce the newest addition to our Cybersecurity training line-up: The Job Ready Defensive Cybersecurity Bootcamp (JRDC Bootcamp).
-
-The Job Ready Defensive Cybersecurity Bootcamp is a unique training offering. In this course not only will you learn how to set up cloud-based business infrastructure and functionalities securely but you will have actually defend it from real cybercriminals; that is, the assets you create will be made live on the internet and tethered to valuable data such as a gift card number. As you fully understand the security techniques that we teach you and implement them correctly, you will learn to keep this data secure. That is you will be learning by doing, making you a real-world valuable job applicant in the ever-growing technology job market. What more for a duration, your secured portfolio of systems will your skills attestation live!
+Banyan Logic is an education firm headquartered in Oakton, VA, USA. We provide Secure Business Solutions Makers certification. We also provide Cyber Security training, process automation training, and auditing training, for securing business solutions.
 
 ### Coordinates
 E: info@banyanlogic.com
 <p>P: (571)449-6012
-<p>L: Reston, VA, USA
+<p>L: Oakton, VA, USA
