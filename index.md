@@ -14,7 +14,7 @@ Banyan Logic is an education firm headquartered in Oakton, VA, USA. We provide S
 Secure Business Solutions Maker (C) certificate
 The nocode/lowcode movement creates positive and negative risks. On the positive side, agility to create solutions is much higher. On the negative side, agility to push out mistake, errors, and even vulnerabilities is much higher as well. We aim to help individuals learn both what to do and what not to do. Studnets build multi-lifecycle sample deliverables, such as a Business Requirements Document and an actual Microsoft PowerPlatform Canvas App, first in a Business Analyst's role and the next in a Functional Consultant role, but both delivered with a Security Analyst mind set. It is a career oriented training not specific to today's one job. It is a fun journey and a profitable one for our students, and us.
 
-Want to see more, please visit https://blstudentcreations.powerappsportals.com/
+[Want to see student built samples, please visitt](https://blstudentcreations.powerappsportals.com/ "Want to see student built samples, please visit")
 
 ### Coordinates
 E: info@banyanlogic.com
