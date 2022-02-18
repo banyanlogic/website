@@ -28,3 +28,6 @@ Summary of <i>The A.R.T. and Security - Lifecycles Impacting Security</i> presen
 
 
 You can see the full presentation [here](/assets/artlcfullpdf.pdf).
+
+## Automation Lifecycle a primer
+![Automaton Lifecycle Primer](https://sway.office.com/C9qrcn0b8o5f2W7d)  
