@@ -1,8 +1,8 @@
 ---
 bg: "bg.jpg"
 layout: page
-title: "Useful Insights"
-active: Insight
+title: "Automation Lifecycle"
+active: Automation Lifecycle
 order: 1
 ---
 ## Automation Lifecycle a primer
