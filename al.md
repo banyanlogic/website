@@ -5,5 +5,8 @@ title: "Automation Lifecycle"
 active: Automation Lifecycle
 order: 1
 ---
-## Automation Lifecycle a primer
+## Continuous Security Automation Lifecycle Framework (C-SALF) primer link
 [Automaton Lifecycle Primer link](https://sway.office.com/C9qrcn0b8o5f2W7d) 
+
+## Portal to view apps built by the students and view deliverables they produced on their journey to building the app
+[Students Portfolios Portal] (https://blstudentcreations.powerappsportals.com/)
