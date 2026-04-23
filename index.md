@@ -9,6 +9,7 @@ summary: "We support your growth"
 ---
 
 ## Banyan Logic, LLC
+# A working frameworks company
 Banyan Logic is based out of Oakton, VA, USA. We pivoted to knowledge sharing as our main focus, instead of classes or consulting services. Please enjoy our insights section as and when your time permits. In past, we developed and provided Automation Lifecycle specialist (C) training. Upon request, we also provided Cyber Security training, process automation training, and auditing training, for securing business solutions.
 
 ## Automation Lifecycle specialist (C) training
