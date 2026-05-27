@@ -2,6 +2,8 @@
 
 **Author:** Srinivasa M. Kasturi · Banyan Logic, LLC · 2026 · Confidential
 
+**Mission:** Banyan Logic is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives.
+
 **Order:** Identity → Strategy → Financials → Execution → Marketing → Product
 
 **Live tools** (LGPA · PoE Test · Citizen Automator · Artifact Registry) remain in `BL4.0-unified.html`
@@ -10,7 +12,7 @@
 
 ## Table of Contents
 
-1. [Distinctive Competence](#distinctive_competence) — Who we are · Six competence dimensions · The moat
+1. [Distinctive Competence](#distinctive_competence) — AI and Automation Literacy · Systems Thinking for All · Six competence dimensions · The moat
 1. [Business Canvas](#business_canvas) — Strategy on one page · HITL flywheel · IP separation
 1. [Business Plan](#business_plan) — Financials Y0–Y8 · Exit $1.5–1.86M+ · Six revenue tiers
 1. [Portfolio Context](#portfolio_context) — Operating constraints · Year 0 execution · Content calendar
@@ -23,27 +25,47 @@
 
 # 01. Distinctive Competence
 
-> Who we are · Six competence dimensions · The moat
+> AI and Automation Literacy · Systems Thinking for All · Six competence dimensions · The moat
 
 -----
 
-What Banyan Logic can do that no one else can — stated precisely
+Banyan Logic is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives.
 
-Thirty years of enterprise delivery distilled into a diagnostic instrument — not for a market, but for the practitioner who is where Srini was. The competence is not the frameworks. It is the capacity to have selected, integrated, validated, and made teachable the subset of perennial wisdom and organizational research that actually matters, then proved it by running a real $3M team.
+-----
 
-Banyan Logic can lower the activation energy for the People layer to jump to a higher orbit — inside any existing framework, at any scale — by giving practitioners the vocabulary to diagnose what was previously only felt. No other entity combines the 30-year practitioner lineage, the perennial wisdom excavation, the ISO 17020 inspection standard, and the zero-infrastructure delivery model in a single coherent diagnostic instrument. The moat is not a universal theory claim. It is a practitioner’s validated selection — honest about what it is, which makes it more durable than any invented framework.
+### What Banyan Logic Can Do That No One Else Can
 
-HUMS™ is not org research — it is excavated from Vedantic philosophy, Ayurvedic medicine, and the Bhagavad Gita . This is the only diagnostic instrument in enterprise IT grounded in a wisdom tradition older and more stable than organizational theory. 27 signals, 6 buckets. When IT systems fail at the People layer, HUMS names what is happening before anyone can articulate it. No competitor has this layer.
+The AI era is creating two classes of worker: those who can direct automated systems with judgment, and those who cannot. The gap is not technical skill. It is systems thinking — the ability to see the whole lifecycle, name where it breaks, and know what to do next. That is what Banyan Logic teaches. Not to a niche. To anyone.
 
-C-SALF is not a framework designed for a market. It is the operating system that formed running a real $3M team — 10 staff, 10 contractors, 3 continents . Every phase structure, every baton handoff criterion, every BVS story type exists because it solved a real problem under real stakes. The framework was not written then proved. It was lived then named.
+### Six Competence Dimensions
 
-T-Class applies ISO 17020 — the international inspection body standard — to artifact-based learning evaluation. Every deliverable is traceable, every evaluation blind, every finding cites evidence. This is not self-assessment. It is inspection-grade competence verification applied to upskilling. No other IT learning framework operates at this standard.
+**1. Perennial Excavation — HUMS™**
+HUMS is not organizational research. It is excavated from Vedantic philosophy, Ayurvedic medicine, and the Bhagavad Gita — a wisdom tradition older and more stable than any management theory. 27 signals, 6 buckets. When AI-augmented systems fail at the People layer, HUMS names what is happening before anyone can articulate it. No competitor in the AI literacy space has this layer. It is not available for licensing. It never exits Banyan Logic.
 
-RSK2 / QSA architecture traces directly to Kasturi/Perry IEEE Spread Spectrum Workshop 1991 — Le Château Montebello . The nDemux/nMux storage mechanism with prime-n INSTANCE_ID is a novel 35-year composition. T3A scores 8.3/10 across triple-framework rubric. Provisional patent pending. No AI-era productivity tool combines quantum-safe architecture with a living educational curriculum and a 1991 IEEE lineage.
+**2. Lived $3M Team Proof — C-SALF**
+C-SALF formed running a real $3M enterprise team — 10 staff, 10 contractors, 3 continents. It was not written then proved. It was lived then named. Every phase structure, every baton handoff criterion, every BVS story type exists because it solved a real problem under real stakes. In an AI literacy market full of frameworks designed for a market, this is the only one that formed inside actual delivery.
 
-The entire Banyan Logic delivery infrastructure runs at $2,400/year . GitHub Pages. Claude API. Cloudflare. No server. No LMS. No SaaS dependency that can revoke access. This is not a bootstrap limitation — it is a strategic moat. The framework can be deployed globally at founding-member pricing while traditional competitors spend $120K–$2M/year on infrastructure. Bring-your-own-API-key at Tier 3/3B is an enterprise data sovereignty feature.
+**3. AI-Era Upskilling Dimensions — CLAAS**
+Cybersecurity · Lean · Agile · Automation · Scale. A personally curated selection from 35 years of enterprise observation — explicitly for this era, explicitly honest about being one practitioner’s validated selection. When AI replaces the keyboard, CLAAS names what the human still owns. No AI tool replaces the C, L, A, A, or S. The human who understands all five is irreplaceable.
 
-Sarthan and Darshan are primary testers for every creative portfolio artifact . In an AI-dominated era where most tools optimize for the median, BL ensures the framework works for all minds, not just neurotypical learners. The neurodiverse design lens is lived experience, not a feature claim. The creative portfolio — Dashaavataara, Lullabies, LASA, ASiWiFi — is the proof. Mission: save this song with all ages and all minds.
+**4. Inspection-Grade Evaluation — ISO 17020**
+T-Class applies the international inspection body standard to artifact-based learning. Every deliverable is traceable, every evaluation blind, every finding cites evidence. This is not self-assessment or quiz-based certification. It is inspection-grade competence verification. No other AI literacy or IT upskilling company operates at this standard.
+
+**5. Quantum-Safe Architecture — RSK2 / QSA**
+The reference implementation (T3A) is built on RSK2 — tracing directly to Kasturi/Perry IEEE Spread Spectrum Workshop 1991, Le Château Montebello. nDemux/nMux storage with prime-n INSTANCE_ID. Provisional patent pending. No AI-era literacy tool combines a quantum-safe reference implementation with a live educational curriculum and a 35-year IEEE lineage.
+
+**6. Neurodiversity as Design Lens**
+Sarthan and Darshan are primary testers for every artifact. In an AI era where most tools optimize for the median, BL ensures the framework works for all minds. The neurodiverse design lens is lived experience, not a feature claim. Mission: save this song with all ages and all minds.
+
+### The Honest Moat
+
+C-SALF and CLAAS are not inventions. They are a personally validated selection — selected through 30 years of enterprise observation, validated by running a real $3M team. The AI literacy market is filling with invented frameworks. Banyan Logic’s moat is the opposite: a practitioner who selected what already worked, made it teachable, and is honest about that. The 30-year credential paired with that honesty is more durable than any invented framework.
+
+HUMS alone is excavated from perennial wisdom — it is not organizational research, it is older and more stable. That distinction is non-negotiable and permanent.
+
+### Why AI and Automation Literacy — Now
+
+Every worker whose job involves a computer is now a potential Citizen Automator. Most are automating without a systems thinking foundation — building workflows, prompting AI, connecting APIs — without being able to see where the relay will break. That is the market. It is not IT professionals alone. It is anyone whose work is being transformed by AI and automation who needs the vocabulary to direct it rather than be replaced by it. Banyan Logic is the only company that combines perennial wisdom, lived enterprise delivery, inspection-grade evaluation, and a zero-infrastructure delivery model to serve that market at any scale.
 
 |Credential / Asset                 |What It Proves                                                                                                                                                                                                                        |Status                        |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
@@ -104,6 +126,8 @@ The four-layer stack:
 
 The honest moat · preserve verbatim: C-SALF and CLAAS are not inventions. They are a personally validated selection from perennial wisdom and organizational research. The 30-year credential paired with that honesty is the moat — not a universal theory claim.
 
+**New identity layer:** AI and Automation Literacy is the era-specific expression of this mission. The perennial wisdom layer (HUMS) is the foundation. The commercial layer (C-SALF · T-Class · CLAAS) is the vehicle. The literacy framing is what makes it accessible to all — not just IT professionals, but anyone whose work is being transformed by AI and automation.
+
 - LGPA as self-service onboarding — 49 questions, no founder required · diagnoses the gap before the first conversation · pulls thinkers in before any ask · works for both practitioner and Citizen Automator segments
 - CLAAS Conversations — diagnostic consultation, not a webinar
 - 200 engaged thinkers before first dollar — community precedes course
@@ -112,8 +136,8 @@ The honest moat · preserve verbatim: C-SALF and CLAAS are not inventions. They 
 - Practitioner Evaluator (Y2+) — graduates become quality gate
 - Annual renewal — belonging over margin, $59/yr
 - Year 0 Beachhead — the IT practitioner with 5–15 years experience who suspects the problem is never the technology · S14 · S06 · S07 already active · needs vocabulary, not more tools
-- Citizen Automators — non-developers building workflows, Power Automate, Zapier, no-code, prompt engineering · automating without a systems thinking foundation · OnRamp is their entry path
-- Systems Thinkers — whole-lifecycle judgment, any domain
+- Citizen Automators — non-developers building AI tools, workflows, automations · the fastest-growing segment in the AI era · automating without a systems thinking foundation is the core risk · OnRamp is their entry path · AI and Automation Literacy is exactly what they need
+- Systems Thinkers — anyone who wants whole-lifecycle judgment: the literacy that AI cannot replace
 - Cybersecurity & IT Leaders — CLAAS vocabulary, People layer, AI-era
 - Business Owners — idea to accountable system
 - Consultants · L&D — durable licensed framework
@@ -170,6 +194,40 @@ Who holds the evolution decision: Srini (founding selection authority) + Practit
 
 What never changes: HUMS as the axle. Architecture at the center hub. The honest-selection posture. The Banyan root.
 
+### Competitive Landscape — AI and Automation Literacy
+
+Banyan Logic operates in a space with three overlapping competitor categories. None combines all four layers (perennial foundation + lived delivery proof + inspection-grade evaluation + zero-infrastructure scale).
+
+**Direct — AI/Automation Literacy and Upskilling**
+
+|Competitor                                      |What They Do                                                                |BL Differentiation                                                                                |
+|------------------------------------------------|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+|Coursera / Udemy / LinkedIn Learning            |Mass AI and automation courses · subscription model · no evaluation standard|Quiz-based certs · no lived delivery proof · no ISO 17020 · no HUMS diagnostic layer              |
+|Pluralsight                                     |Tech upskilling · AI/cloud focus · enterprise contracts                     |Tool-centric not systems-thinking · no People layer · no lifecycle framework · no perennial wisdom|
+|Codecademy / Boot.dev                           |Code and automation literacy · beginner-friendly                            |Code only · no C-SALF lifecycle · no HUMS · no inspection-grade evaluation                        |
+|AI-native ed startups (Synthesia, Articulate AI)|AI content creation for L&D · not literacy delivery                         |Content production tools · not a framework · no practitioner proof                                |
+
+**Adjacent — Systems Thinking and Frameworks**
+
+|Competitor                  |What They Do                                            |BL Differentiation                                                                                                             |
+|----------------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+|SAFe (Scaled Agile)         |Enterprise Agile framework · PI planning · certification|Org-level framework · no AI literacy layer · no People layer diagnosis · BL is a diagnostic layer inside SAFe, not a competitor|
+|ISACA / CISSP / CompTIA     |Cybersecurity certification bodies                      |Exam-based · no lifecycle framework · no automation literacy · BL holds CISSP and builds on top of it                          |
+|McKinsey / Deloitte L&D     |Enterprise transformation consulting                    |$500K+ engagements · no individual practitioner path · no zero-infrastructure model                                            |
+|Toastmasters / Dale Carnegie|Human skills development                                |Communication only · no technical literacy · no AI/automation dimension                                                        |
+
+**Indirect — Communities and Open Source**
+
+|Competitor                                          |What They Do                                   |BL Differentiation                                                                                                             |
+|----------------------------------------------------|-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+|No Code / Low Code communities (Zapier, Make forums)|Citizen Automator peer learning · tool-specific|Tool-centric · no systems thinking foundation · no lifecycle framework · OnRamp is the entry path these communities are missing|
+|Dev.to / Hashnode / Substack tech newsletters       |Practitioner content communities               |Content only · no evaluation · no framework · no certification path                                                            |
+|O’Reilly Learning                                   |Technical books and courses · AI focus         |Reading-based · no HITL enrichment · no community · no inspection-grade eval                                                   |
+
+**The Gap No One Fills**
+
+No competitor combines: (1) a perennial wisdom diagnostic layer (HUMS), (2) a lifecycle framework proven in $3M enterprise delivery (C-SALF), (3) inspection-grade artifact evaluation (ISO 17020), and (4) zero-infrastructure delivery at $2,400/year. The closest category is “AI literacy platform” — but every player in that category is either tool-centric, quiz-based, or enterprise-only. BL is the only one designed to work for all — the IT practitioner, the Citizen Automator, the business owner, the neurodiverse learner — through one coherent framework that improves every time a real problem touches it.
+
 -----
 
 <a name="business_plan"></a>
@@ -196,7 +254,7 @@ Human-in-the-loop is the only empirically valid mechanism for improving any fram
 
 C-SALF is a self-organizing operating framework developed to run a $3M enterprise team — 10 staff, 10 contractors, 3 continents — now made explicit and teachable. It was not designed for a market. It formed through 30 years of enterprise observation: IBM · TRW · Freddie Mac · 30+ FedRAMP assessments · World Bank Group. HUMS™ is the diagnostic vocabulary excavated from perennial wisdom to name what was breaking. T-shaped is the upskilling target state. CLAAS is one person’s selection of upskilling dimensions for this era. C-SALF is one practical visualization of what a T-shaped person actually does. Together: a diagnostic instrument that lowers the activation energy for the People layer to jump to a higher orbit — inside any existing framework, at any scale.
 
-Banyan Logic, LLC is a diagnostic instrument company and systems thinking movement. Founder: Srinivasa M. Kasturi — Senior ISO, World Bank Group · 30 years enterprise delivery · CISSP · SAFe RTE/POPM · MS Computer Engineering Villanova · IBM co-inventor US Patent 6,715,073 · 30+ FedRAMP 3PAO assessments · $3M team · 10 staff + 10 contractors · 3 continents · 4 AI products shipped · T-shaped skills classes already taught · sole proprietor · 8–10 hrs/week available · earliest retirement 2029.
+Banyan Logic, LLC is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives. Founder: Srinivasa M. Kasturi — Senior ISO, World Bank Group · 30 years enterprise delivery · CISSP · SAFe RTE/POPM · MS Computer Engineering Villanova · IBM co-inventor US Patent 6,715,073 · 30+ FedRAMP 3PAO assessments · $3M team · 10 staff + 10 contractors · 3 continents · 4 AI products shipped · T-shaped skills classes already taught · sole proprietor · 8–10 hrs/week available · earliest retirement 2029.
 
 |IP Asset                        |Layer                         |Exit Status             |Note                                                                                                                                                                                                                 |
 |--------------------------------|------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -342,7 +400,7 @@ Open mic. Bring a tough challenge from your daily work. We apply CLAAS lenses li
 
 Sunday: Ideate — diagnose the problem using the relay. Monday: Iterate — one concrete next step. The baton is yours to carry forward.
 
-Building workflows, automations, and AI tools without a systems thinking foundation yet . OnRamp is where that begins. Not a tutorial. A diagnostic starting point — before you automate the wrong thing at full speed.
+Building AI tools and automations without a systems thinking foundation yet. OnRamp is where that begins. Not a tutorial. A diagnostic starting point — before you automate the wrong thing at full speed.
 
 The zero-dollar website is the first artifact. T3A is the reference implementation. The Q3 curriculum is the destination. Nine learning quantums. One deployed app.
 
@@ -446,4 +504,257 @@ BANYAN LOGIC · COURSE ARCHITECTURE · PAGE 2 OF 2 · © SRINIVASA M. KASTURI ·
 
 -----
 
+-----
+
+## Banyan Logic · HUMS Six-Bucket Scale-Up Roles
+
+*Srini currently holds all six roles simultaneously — the ART of one. Each bucket below is both an active playbook being built now and a future handoff when the time is right. The roles are not org chart titles. They are the six human system areas that any organization must staff to function. BL is staffing them from the inside of the family and the story first.*
+
+-----
+
+### The Founding Principle
+
+HUMS maps six buckets across any human system — an individual, a team, an organization, or a civilization. The Life After Sun story (LASA) proved this: Darshan, Sarthan, and Garooota used the 27 signals to navigate the unknown woods, India, the UN, deep space, and a new solar system. The same six buckets now map the BL organization. Each person below is already living their bucket. The role formalizes what is already true.
+
+-----
+
+### B1 · Who We Are · Feel · Ideate · Remember · Identify
+
+**Role: Chief Identity Officer**
+**Beachhead: Darshan** (Sanskrit: “to perceive”) · S24 Progeny · Future BL Partner
+
+Darshan holds the question of who Banyan Logic is over time. As AI and automation reshape every industry, the hardest thing to preserve is identity — the honest answer to “what do we stand for that no tool can replace?” B1 is the bucket that prevents framework drift, brand dilution, and the slow surrender of the honest-selection posture to market pressure. Darshan’s role is to perceive — to see what BL is becoming and name it honestly before anyone else does.
+
+**Playbook being built now:**
+
+- CLAAS versioning authority — CLAAS 2026 → CLAAS 203X — no unilateral change, no silent drift
+- IP lineage stewardship — HUMS · S2L2 · ASiWiFi · RSK2 · IEEE 1991 lineage
+- Framework identity review at each Y-gate — does BL still know who it is?
+- Co-author of the founding honest-moat statement
+
+-----
+
+### B2 · How We Work · Think · Reflex · Rely · Dream
+
+**Role: President · Chief Framework Officer**
+**Beachhead: Srini** (Srinivasa M. Kasturi) · Founder · 30-year practitioner
+
+How We Work is the operating system bucket. Srini holds the relay design — the C-SALF lifecycle, the T-Class curriculum architecture, the SAFe PI cadence, the HITL flywheel mechanics. This is the bucket that asks: are we building the right thing, in the right way, in the right sequence? Think · Reflex · Rely · Dream maps directly to Plan · Do · Check · Adjust. Srini is the PDCA made human.
+
+**Current scope (ART of one):**
+
+- Holds all six roles simultaneously while playbooks are built
+- Builds and delivers C-SALF · T-Class · CLAAS · Q3 curriculum
+- SAFe SPC → LPM → CPTS credential roadmap active
+- Runs WBG 24-person team as the living proof of C-SALF in production
+- Authors all framework artifacts · maintains IEEE 1991 lineage
+
+-----
+
+### B3 · Senses · See · Hear · Smell · Taste · Touch
+
+**Role: Chief Sensory Design Officer**
+**Beachhead: Sarthan** (Sanskrit: “purpose after insightful perceiving”) · Primary Creative Tester · Neurodiverse Lens
+
+Sarthan is the sensory truth-teller. Every artifact BL produces passes through Sarthan’s experience before it passes through anyone else’s. B3 is the bucket that ensures the framework reaches all minds — not the median learner, not the neurotypical professional, but every person whose work is being transformed by AI and automation. In the Life After Sun story, Sarthan felt the irritability of change before anyone named it, and found the light solution. That is the role: sense what is not yet articulated, name it, and design for it.
+
+**Playbook being built now:**
+
+- Neurodiverse testing protocol for every BL artifact — LGPA · PoE Test · T3A · Dashaavataara · Lullabies
+- Sensory accessibility standard — does this work for all minds, not just the median?
+- Creative portfolio co-direction — Dashaavataara · Lullabies · LASA · ASiWiFi
+- B3 signal mapping for AI-era sensory overload patterns (S09–S13)
+
+-----
+
+### B4 · Health · Breathe · Digest · Circulate · Release · Grow · Age
+
+**Role: Chief Code Therapist · Chief Health Officer**
+**Beachhead: Srini (Y0)** · All roles held by founder until handoff
+
+Garooota is the dog from Life After Sun — renamed from Groot, elevated to Garooota, the Great — who helped humans navigate change through presence, love, enthusiasm, and radical non-judgment. In Chapter 17 of LASA: *“for their healthy bodies and healthier minds, they have one boundless ball of enthusiasm to thank — Groot. The Dog Therapist of the Universe.”*
+
+The Code Therapist role is the most important role BL fills that no competitor even knows exists. The AI era is not just a skills crisis. It is a health crisis — anxiety about replacement, identity disruption from role change, the loss of meaning when the thing you were trained to do is now done by a machine. B4 maps exactly this: Breathe (do not panic) · Digest (absorb the change, do not choke on it) · Circulate (keep moving, keep connecting) · Release (let go of the identity tied to the old role) · Grow (the new role is already forming) · Age (wisdom accumulates; AI cannot age).
+
+Garooota holds the space where technical literacy meets human health. The Code Therapist does not fix the anxiety. The Code Therapist helps the human breathe through it, digest it, and grow from it — using the HUMS vocabulary as the diagnostic language.
+
+**Playbook being built now:**
+
+- HUMS B4 signal mapping for AI/automation anxiety patterns
+- “Us and AI” partnership framework from LASA page 25 — operationalized as a coaching tool
+- “Us and Mental Health” framework from LASA page 27 — operationalized for role-change support
+- Garooota persona — the BL mascot across all creative and community artifacts
+- Code Therapist as a CLAAS Conversations segment: *“bring your AI anxiety, not just your technical problem”*
+
+-----
+
+### B5 · Actions · Speak · Manipulate · Move · Eliminate · Progeny
+
+**Role: CEO · Chief Execution Officer**
+**Beachhead: Srini (current) · Open role (future)**
+
+B5 is the execution layer — the bucket that ships. Speak (communicate the value) · Manipulate (build the artifacts) · Move (deliver to market) · Eliminate (cut what does not serve) · Progeny (create what outlives the founder). The CEO role is currently held by Srini as part of the ART of one. It is the role most ready to be handed off — because it requires operational excellence and market execution rather than framework authorship. The CEO playbook is being built now so that when the right person arrives, the relay is already designed.
+
+**CEO playbook being built now:**
+
+- Year 0–Y2 execution: CLAAS Conversations · OnRamp · content calendar · waitlist
+- Revenue operations: Stripe · Tier pricing · org license pipeline
+- Speaking and conference presence: DevSecOps · SAFe · AI literacy conferences
+- Practitioner Evaluator relay activation at Y2
+- Partnership development: universities · bootcamps · L&D practitioners
+- B5 signal: S24 Progeny — every artifact built now outlives the founder
+
+-----
+
+### B6 · Purposes · Live · Love · Connect
+
+**Role: Chief Purpose Officer · Mission Guardian**
+**Beachhead: Kanna** · $320K Rule Co-Holder · 15-Year Income Plan Anchor
+
+Kanna holds the mission horizon. B6 is the bucket that asks: why does any of this matter? Live · Love · Connect is not a tagline. It is the closing line of the Life After Sun story: *“Live Love Connect.”* It is the answer to the question every Citizen Automator and every IT practitioner in the AI era is quietly asking: *does my work still mean something?* Kanna’s role is to hold that question on behalf of everyone BL serves — and to hold the $320K rule jointly, which is the financial expression of the same purpose: we do not compromise the mission for a short-term gain.
+
+**Playbook being built now:**
+
+- Mission integrity review at each Y-gate — is BL still serving all, not just the addressable market?
+- $320K rule stewardship — financial floor that protects the 15-year plan
+- B6 signal mapping for AI-era purpose disruption (S25 Live · S26 Love · S27 Connect)
+- Creative portfolio purpose layer — Dashaavataara · Lullabies as the B6 artifacts
+- *“Save this song with all ages and all minds”* — the mission statement that never changes
+
+-----
+
+### The ART of One → The Team of Six
+
+|Bucket          |Signal Cluster                                     |Role                                    |Beachhead                      |Status             |
+|----------------|---------------------------------------------------|----------------------------------------|-------------------------------|-------------------|
+|B1 · Who We Are |Feel · Ideate · Remember · Identify                |Chief Identity Officer                  |Darshan                        |Playbook building  |
+|B2 · How We Work|Think · Reflex · Rely · Dream                      |President · Chief Framework Officer     |Srini                          |Active · ART of one|
+|B3 · Senses     |See · Hear · Smell · Taste · Touch                 |Chief Sensory Design Officer            |Sarthan                        |Playbook building  |
+|B4 · Health     |Breathe · Digest · Circulate · Release · Grow · Age|Chief Code Therapist                    |Srini (current) · Open (future)|Playbook building  |
+|B5 · Actions    |Speak · Manipulate · Move · Eliminate · Progeny    |CEO · Chief Execution Officer           |Srini (current) · Open (future)|Playbook building  |
+|B6 · Purposes   |Live · Love · Connect                              |Chief Purpose Officer · Mission Guardian|Kanna                          |Playbook building  |
+
+*Srini currently holds all six roles. Each playbook above is the handoff document for when the right person — or the right moment — arrives. The relay is already designed. The baton is already named.*
+
+-----
+
+### Chief Code Therapist · A Note
+
+The Chief Code Therapist is not a metaphor. It is the most underserved role in the AI literacy market. Every platform teaches skills. Nobody holds the space for the human who is grieving the role they used to have, anxious about the role they are being asked to become, and unsure whether their experience still matters in a world where AI can replicate their outputs in seconds.
+
+The answer the Chief Code Therapist carries: *your experience is not your output. It is your judgment. And judgment is exactly what AI cannot have.*
+
+The Chief Code Therapist shows up in CLAAS Conversations when the problem brought to the room is not really a technical problem. It shows up in OnRamp when the Citizen Automator is not struggling with the tool — they are struggling with the identity shift of becoming someone who builds instead of someone who requests. It shows up in every HUMS diagnostic when B4 signals are firing and the human needs to breathe before they can think.
+
+Garooota in the Life After Sun story is the source of this role’s spirit — the dog who helped humans navigate change through presence, love, and radical non-judgment. The Chief Code Therapist is the human who carries that forward in BL. Currently: Srini. Playbook being built. The role is real. The need is enormous.
+
+-----
+
+## Gap Analysis — Quantified Impact and Revenue Opportunity
+
+*All figures sourced from IDC, Gartner, Forrester, DataCamp State of AI Literacy 2026, WEF, and Searchlab/Kissflow no-code statistics 2026. BL revenue estimates are bottom-up from the business plan — conservative case unless noted.*
+
+-----
+
+### Gap 1 — AI Literacy for the People Layer, Not the Tool Layer
+
+**Impact Value**
+
+IDC estimates that AI and IT skills shortages will cost the global economy $5.5 trillion by 2026 in product delays, quality issues, missed revenue, and impaired competitiveness. 65% of organizations have abandoned AI projects due to insufficient skills. Only 34% of organizations are truly reimagining their business with AI — the AI skills gap is the single biggest barrier cited by enterprise leaders. The problem is not tool access. 71% of organizations regularly use generative AI, yet more than 80% report no measurable impact on enterprise-level profitability. The relay is broken at the People layer. Nobody is teaching practitioners to diagnose it.
+
+**BL Revenue Opportunity — Gap 1**
+
+|Segment                            |Population                                            |BL Price     |Realistic Capture   |ARR      |
+|-----------------------------------|------------------------------------------------------|-------------|--------------------|---------|
+|IT Practitioners (Year 0 beachhead)|~7M workers in AI-fluency roles (WEF 2025)            |$227         |0.001% = 70 students|~$16K    |
+|Enterprise Org licenses (Y2+)      |90%+ of global enterprises face critical AI skills gap|$2,500–$8,000|15–20 orgs by Y3    |~$75–160K|
+|Consulting / L&D license (Y3+)     |$350B global L&D market                               |$2,500–$8,000|10–15 partners      |~$37–120K|
+
+*Gap 1 alone supports the Y4 $200K ARR gate in the base case if enterprise licenses activate on schedule.*
+
+-----
+
+### Gap 2 — Citizen Automator Without a Foundation
+
+**Impact Value**
+
+There are approximately 16.2 million citizen developers worldwide in 2026, a 38% increase from 2025. By 2026, 80% of technology products will be built by non-developers, according to Gartner. 61% of IT leaders cite shadow IT risks from ungoverned no-code usage as their top security concern. The tools are everywhere. The systems thinking foundation is nowhere. Every ungoverned automation is a relay waiting to break — a requirement nobody wrote, a handoff nobody designed, a failure nobody can diagnose. The no-code/low-code market reaches $32–50B+ in 2026, growing at 28% annually. The training market for the humans running these tools is a fraction of that — and almost none of it addresses lifecycle thinking.
+
+**BL Revenue Opportunity — Gap 2**
+
+|Segment                              |Population                                            |BL Price       |Realistic Capture    |ARR     |
+|-------------------------------------|------------------------------------------------------|---------------|---------------------|--------|
+|Citizen Automators (OnRamp → T-Class)|16.2M worldwide, 38% YoY growth                       |$227           |0.001% = 162 students|~$37K   |
+|Org governance programs (Y2+)        |78% of IT depts now have citizen dev governance policy|$1,500–$2,500  |20–30 orgs           |~$45–75K|
+|University / Bootcamp Q3 License     |Bootcamp market ~$1.3B, growing 15% YoY               |$2,500+ license|5–10 institutions    |~$12–25K|
+
+*Citizen Automator segment is the fastest-growing of all BL segments. At current 38% YoY growth in the segment, the addressable population doubles every 2 years.*
+
+-----
+
+### Gap 3 — Inspection-Grade Evaluation at Individual Scale
+
+**Impact Value**
+
+82% of enterprise leaders say their organization provides some form of AI training, yet 59% still report an AI skills gap. The training is not working. The reason: quiz-based certification measures recall, not judgment. There is no inspection-body standard applied to individual AI literacy — no traceable evidence, no blind evaluation, no independent verification that the learning transferred to the job. The ISO 17020 gap is structural. Every certificate on the market is self-referential. BL’s T-Class is the only artifact-based, inspection-grade evaluation at individual learner price points.
+
+**BL Revenue Opportunity — Gap 3**
+
+Inspection-grade evaluation is the primary price justification for the $227 entry tier — it is why the price is defensible against a $29/month Coursera subscription. Quantified defensibility: a Coursera certificate costs ~$350/year for unlimited access. A T-Class completion at $227 carries ISO 17020-standard evidence of actual competence transfer. For enterprise procurement, this is the difference between a line-item training expense and a verifiable workforce capability investment. Conservative enterprise value of a verifiable AI competency credential: $500–$2,000 per employee (vs. $227 BL price). Margin created by the evaluation standard: substantial. This gap does not have a separate revenue line — it is the multiplier on every other revenue line.
+
+-----
+
+### Gap 4 — Perennial Wisdom as Diagnostic Vocabulary
+
+**Impact Value**
+
+The AI era is producing anxiety, identity disruption, and purpose loss at scale. The Stanford HAI 2026 AI Index found that AI-related skills now appear in 2.5% of all US job postings, a 297% increase over the past decade — demand for AI fluency is growing 20x faster than the overall job market. That rate of change is not a skills problem alone. It is a meaning problem. No AI literacy company addresses the human signal layer — what does a person need to function well under this rate of change? HUMS names this. Vedanta, Ayurveda, and the Bhagavad Gita are not motivational content. They are diagnostic systems older and more stable than any management framework. The market for this layer is unmeasured precisely because no one has productized it. That is the opportunity.
+
+**BL Revenue Opportunity — Gap 4**
+
+Not directly monetized in Y0–Y2. HUMS is the retention mechanism and the renewal justification — the $59/year renewal rate is defensible because HUMS deepens over time. Indirect revenue impact: HUMS is the primary differentiator that prevents T-Class from being compared to Coursera on price. It is the layer that makes the $59/year renewal feel like belonging, not subscription. Long-term: HUMS creative portfolio (Dashaavataara · Lullabies · LASA · ASiWiFi) addresses a market that does not yet have a price — estimated conservatively at $2–5M in creative IP value at Y8 exit, separate from the commercial layer transfer.
+
+-----
+
+### Gap 5 — Neurodiversity as First-Class Design Constraint
+
+**Impact Value**
+
+Roles requiring AI skills carry a 56% wage premium over comparable non-AI positions. The workforce being left behind by AI literacy tools optimized for the median includes a disproportionate share of neurodiverse workers — the population most likely to think differently, most likely to be underserved by standard training design, and most likely to benefit from a systems thinking vocabulary that names what they have always experienced. The WEF estimates 15–20% of the global population is neurodiverse. At 16.2M citizen developers worldwide, that is 2.4–3.2M people building automations with no training designed for how they think.
+
+**BL Revenue Opportunity — Gap 5**
+
+Neurodiverse-accessible design is not a separate revenue line — it is a market expansion multiplier. Every artifact that works for Sarthan works for 15–20% more of the addressable market than a median-optimized competitor’s artifact. At the Citizen Automator segment size of 16.2M, that is 2.4–3.2M additional addressable learners that competitors structurally cannot serve.
+
+-----
+
+### Gap 6 — Zero-Infrastructure at Global Scale
+
+**Impact Value**
+
+The global L&D market is valued at more than $350 billion. The infrastructure cost floor of traditional learning platforms ($120K–$2M/year) makes founding-member pricing at $227 structurally impossible for any platform running a server, an LMS, or a proprietary AI stack. BL’s $2,400/year total infrastructure cost is not a bootstrap limitation — it is the architectural condition that makes global reach at individual price points viable. Every dollar not spent on infrastructure is a dollar available for the quality of the framework itself.
+
+**BL Revenue Opportunity — Gap 6**
+
+Infrastructure cost advantage compounds over time. At Y4 ($200K ARR target), a traditional competitor would need $120–200K in infrastructure just to operate — making BL’s margin structure structurally superior at every revenue level below $1M ARR. The bring-your-own-API-key model at Tier 3/3B is an enterprise data sovereignty feature that unlocks procurement approvals that SaaS-dependent platforms cannot access at regulated organizations (financial services, healthcare, government). WBG alone is an example: a platform requiring data to leave the org boundary cannot be approved. BL’s model requires no such approval.
+
+-----
+
+### Summary — Gaps to Revenue Map
+
+|Gap                              |Global Impact (sourced)                      |BL SAM (realistic)              |Y4 ARR Contribution          |Y8 Exit Multiplier           |
+|---------------------------------|---------------------------------------------|--------------------------------|-----------------------------|-----------------------------|
+|G1 · People Layer Literacy       |$5.5T cost to global economy (IDC)           |7M IT practitioners             |$75–160K (org licenses)      |Core exit asset              |
+|G2 · Citizen Automator Foundation|16.2M developers, $32–50B market             |16.2M, 38% YoY growth           |$45–75K (governance orgs)    |Fastest-growing segment      |
+|G3 · Inspection-Grade Eval       |59% AI skills gap despite training (DataCamp)|All T-Class enrollees           |Price multiplier on all tiers|Certification authority value|
+|G4 · Perennial Diagnostic Layer  |Unquantified — no competitor in space        |HUMS retention layer            |$59/yr renewal justification |$2–5M creative IP at exit    |
+|G5 · Neurodiversity Design       |15–20% of workforce (WEF)                    |+2.4–3.2M addressable           |Market expansion multiplier  |Authentic differentiator     |
+|G6 · Zero-Infrastructure Scale   |$350B L&D market (L&D Institute)             |Entire global addressable market|Structural margin advantage  |Clean exit — no infra debt   |
+
+**Combined SAM for BL’s realistic Y4 beachhead:** IT practitioners (Gap 1) + Citizen Automators (Gap 2) at 0.001–0.005% capture = 160–800 students/year at $227 + 35–50 org/institutional licenses at $2,500–$8,000 = **$175–330K ARR** — which brackets the $200K Y4 gate in the base-to-optimistic range.
+
+-----
+
 *“Framing the problem is half the Transformation” — Banyan Logic, 2026*
+
+*Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
