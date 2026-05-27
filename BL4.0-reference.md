@@ -4,7 +4,14 @@
 
 **Mission:** Banyan Logic is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives.
 
-**Order:** Identity → Strategy → Financials → Execution → Marketing → Product
+**The Business Value Lifecycle — how BL runs itself:**
+
+> Identity births Strategy. Strategy shapes Financials. Financials fund Execution. Execution enables Marketing. Marketing delivers Product. Product is operated through Operating. Operating generates Value — and Value measurement feeds back to every prior stage, completing the cycle. BL does not just teach this lifecycle. It runs by it. The framework and the business are the same thing.
+
+```
+Identity → Strategy → Financials → Execution → Marketing → Product → Operating → Value
+   ↑____________________________________________________________feedback loop____________↓
+```
 
 **Live tools** (LGPA · PoE Test · Citizen Automator · Artifact Registry) remain in `BL4.0-unified.html`
 
@@ -12,16 +19,16 @@
 
 ## Table of Contents
 
-1. [Distinctive Competence](#distinctive_competence) — AI and Automation Literacy · Systems Thinking for All · Six competence dimensions · The moat
-1. [Business Canvas](#business_canvas) — Strategy on one page · HITL flywheel · IP separation
-1. [Business Plan](#business_plan) — Financials Y0–Y8 · Exit $1.5–1.86M+ · Six revenue tiers
-1. [Portfolio Context](#portfolio_context) — Operating constraints · Year 0 execution · Content calendar
-1. [CLAAS Marketing](#claas_marketing) — Two tracks · CLAAS Conversations · OnRamp · Zero-friction path
-1. [Course Architecture](#course_architecture) — The product blueprint · 18-cell grid · ISO 17020
+1. [Distinctive Competence](#01-distinctive-competence) — AI and Automation Literacy · Systems Thinking for All · Six competence dimensions · The moat
+1. [Business Canvas](#02-business-canvas) — Strategy on one page · HITL flywheel · IP separation
+1. [Business Plan](#03-business-plan) — Financials Y0–Y8 · Exit $1.5–1.86M+ · Six revenue tiers
+1. [Portfolio Context](#04-portfolio-context) — Operating constraints · Year 0 execution · Content calendar
+1. [CLAAS Marketing](#05-claas-marketing) — Two tracks · CLAAS Conversations · OnRamp · Zero-friction path
+1. [Course Architecture](#06-course-architecture) — The product blueprint · 18-cell grid · ISO 17020
+1. [COO Operational Manual](#07-coo-operational-manual) — 27 Signals governance · Shreyas over Preyas · Karma Yoga & Magnifica Humanitas
+1. [Value Measurement & Feedback](#08-value-measurement--feedback) — 27-Signal health · Market & revenue signals · Full loop back to all stages
 
 -----
-
-<a name="distinctive_competence"></a>
 
 # 01. Distinctive Competence
 
@@ -80,8 +87,6 @@ Every worker whose job involves a computer is now a potential Citizen Automator.
 C-SALF and CLAAS are not inventions . They are a personally validated selection from perennial wisdom and organizational research — selected through 30 years of lived enterprise observation and validated by running a real $3M team. Organizational research already knows T-shaped people are more effective. It already knows lifecycle thinking reduces failure. It already knows security belongs in requirements. Banyan Logic does not claim to have discovered these things. Banyan Logic claims to have selected the subset that matters most right now, integrated it through one coherent diagnostic lens, and made it teachable to people who would never read the original research. The 30-year credential paired with this honesty is the moat — not a universal claim, but a practitioner’s validated selection. HUMS alone is excavated from perennial wisdom — it is not organizational research, it is older and more stable. That distinction is non-negotiable and permanent.
 
 -----
-
-<a name="business_canvas"></a>
 
 # 02. Business Canvas
 
@@ -230,8 +235,6 @@ No competitor combines: (1) a perennial wisdom diagnostic layer (HUMS), (2) a li
 
 -----
 
-<a name="business_plan"></a>
-
 # 03. Business Plan
 
 > Financials Y0–Y8 · Exit $1.5–1.86M+ · Six revenue tiers
@@ -328,8 +331,6 @@ BANYAN LOGIC, LLC · BUSINESS PLAN 2026–2034 · PAGE 2 OF 2 · CONFIDENTIAL ·
 
 -----
 
-<a name="portfolio_context"></a>
-
 # 04. Portfolio Context
 
 > Operating constraints · Year 0 execution · Content calendar
@@ -386,8 +387,6 @@ What problem should we tackle next? LinkedIn post follows within 48 hours. One s
 
 -----
 
-<a name="claas_marketing"></a>
-
 # 05. CLAAS Marketing
 
 > Two tracks · CLAAS Conversations · OnRamp · Zero-friction path
@@ -435,8 +434,6 @@ T-Class launches Q3 2027. Founding-member pricing for the first 50.
 srinimkasturi.github.io/Hums/bl-lgpa.html · No signup · No email · Results instant · No pitch
 
 -----
-
-<a name="course_architecture"></a>
 
 # 06. Course Architecture
 
@@ -759,9 +756,9 @@ Infrastructure cost advantage compounds over time. At Y4 ($200K ARR target), a t
 
 ## *Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
 
-# BANYAN LOGIC OPERATIONAL BLUEPRINT
+# 07. COO Operational Manual
 
-## COO Operational Manual: Sustaining BL 4.0 via the 27 Signals
+## Sustaining BL 4.0 via the 27 Signals
 
 **Document ID:** BL-COO-4.0-2026
 **Core Mandate:** *Shreyas* (The Lasting, Evolutionary Good) over *Preyas* (The Short-Term, Pleasurable/Expedient)
@@ -914,3 +911,132 @@ The five cautions of *Magnifica Humanitas* (MH) map directly onto the 27-signal 
 *By Order of the Office of the Chief Operating Officer — Banyan Logic 4.0 Architecture*
 
 *Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
+
+-----
+
+# 08. Value Measurement & Feedback
+
+> Full-loop signal health and market intelligence · Feeds back to all seven prior stages
+
+-----
+
+## The Governing Principle
+
+BL does not close its books at delivery. Value Measurement is the stage where the Business Value Lifecycle becomes a living system rather than a linear plan. This section defines what BL measures, how it measures it, and — critically — which measurement feeds back to which upstream stage. Running this loop *is* the proof of concept. An AI and Automation Literacy company that cannot trace its own value delivery has no standing to teach others to do it.
+
+Two measurement streams run in parallel: **27-Signal Health** (the human system) and **Market & Revenue Signals** (the business system). Neither is sufficient alone. A business hitting revenue targets while degrading human signals is the *Preyas* outcome this entire framework exists to prevent. A business with healthy signals but no revenue cannot sustain its mission. The loop closes when both streams are read together and fed back upstream.
+
+-----
+
+## Stream 1: 27-Signal Health Measurement
+
+### What is measured
+
+The 27 Signals (HUMS™) are the diagnostic vocabulary for how the human system is functioning across BL’s three stakeholder groups: **learners**, **staff/collaborators**, and **partners/vendors**. Value Measurement uses signals as leading indicators — they fire *before* revenue or retention metrics show stress.
+
+|Signal Layer            |Key Signals Tracked                           |Measurement Method                                           |Cadence   |
+|------------------------|----------------------------------------------|-------------------------------------------------------------|----------|
+|Identity & Governance   |S1 Self · S2 Intelligence · S3 Emotions       |Qualitative peer review · COO weekly check                   |Weekly    |
+|Vital Flows             |S4 Breathing · S6 Circulation · S8 Upward Flow|Community session tone audit · session dropout pattern       |Bi-weekly |
+|Organs of Action        |S9 Speech · S11 Walk/Run · S13 Procreate      |Content integrity review · deployment velocity check         |Monthly   |
+|Senses / Market Feedback|S14–S18 Seeing/Hearing/Touching               |Brand perception monitoring · learner distress signals       |Continuous|
+|Purposes                |S25 Live · S26 Love · S27 Connect             |Renewal rate · workaround rate · community connection density|Quarterly |
+
+### Signal health → feedback destinations
+
+|Signal Alert                                        |Root Cause Stage              |Feedback Action                                                                   |
+|----------------------------------------------------|------------------------------|----------------------------------------------------------------------------------|
+|S2 Intelligence degrading (passive dependency on AI)|**01 Identity**               |Revisit honest-moat statement; reinforce human-in-the-loop design in all artifacts|
+|S3 Emotions degrading (simulated care rising)       |**07 Operating**              |Trigger Anti-Simulated Care review; restore human-to-human touchpoints            |
+|S6 Circulation blocked (resource or info asymmetry) |**03 Financials**             |Audit capital allocation; check Universal Destination Compliance                  |
+|S8 Upward Flow suppressed (voice not heard)         |**04 Execution**              |PI retrospective; open escalation channel; review session facilitation design     |
+|S9 Speech eroding (message drift toward *Preyas*)   |**05 Marketing**              |Content integrity review; realign messaging to *Shreyas* frame                    |
+|S11 Walk/Run unconstrained (speed over dignity)     |**06 Product**                |Dignity-by-Design audit of latest artifact; slow deployment if needed             |
+|S25–S27 Purposes weakening (meaning loss)           |**01 Identity + 04 Execution**|Mission integrity review at next Y-gate; Code Therapist engagement                |
+
+-----
+
+## Stream 2: Market & Revenue Signal Measurement
+
+### What is measured
+
+Revenue signals are the business system’s equivalent of the vital flows. They confirm that value is being delivered to the market at a rate sufficient to sustain the mission. The $200K ARR Y4 gate is not an aspiration — it is the decision trigger that determines whether BL continues as a solo-founder model or activates the next phase of the 15-year income plan.
+
+|Signal                  |Metric                                            |Threshold               |Cadence         |
+|------------------------|--------------------------------------------------|------------------------|----------------|
+|**Enrollment velocity** |New T-Class enrollees / quarter                   |15–20/Q by Y2           |Quarterly       |
+|**Renewal rate**        |$59/yr renewal at M12                             |≥ 65%                   |Annual cohort   |
+|**Workaround rate**     |% learners using BL artifacts outside the course  |≥ 30% (healthy adoption)|Quarterly survey|
+|**Org license pipeline**|Enterprise / institutional license conversations  |5 active by end Y1      |Monthly         |
+|**Community density**   |CLAAS Conversations attendance · OnRamp attendance|50+ by Q4 Y0            |Monthly         |
+|**ARR progress**        |Cumulative annual recurring revenue               |$200K by Y4             |Quarterly       |
+|**Content compounding** |Evergreen asset reuse rate (views / new sessions) |Rising ratio over time  |Quarterly       |
+
+### Revenue signals → feedback destinations
+
+|Revenue Signal                     |Root Cause Stage               |Feedback Action                                                                  |
+|-----------------------------------|-------------------------------|---------------------------------------------------------------------------------|
+|Enrollment velocity below target   |**05 Marketing**               |Review CLAAS Conversations conversion path; test OnRamp zero-friction entry      |
+|Renewal rate below 65%             |**01 Identity + 06 Product**   |Deepen HUMS layer in curriculum; audit whether the renewal *feels* like belonging|
+|Org license pipeline stalled       |**02 Strategy**                |Revisit Canvas HITL flywheel; check enterprise data sovereignty positioning      |
+|Community density flat             |**04 Execution**               |Adjust session cadence or format; Code Therapist segment activation              |
+|ARR growth below Y-gate trajectory |**03 Financials**              |Rerun financial model; evaluate Tier pricing elasticity; assess Y-gate timing    |
+|Content compounding ratio declining|**04 Execution + 05 Marketing**|Audit content calendar; prioritize evergreen over ephemeral output               |
+
+-----
+
+## The Feedback Architecture — Full Loop
+
+Every measurement in both streams resolves to an upstream stage. Nothing in this document is a dead-end. The loop is the point.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   BL BUSINESS VALUE LIFECYCLE                   │
+│                                                                  │
+│  01 Identity ──→ 02 Strategy ──→ 03 Financials ──→ 04 Execution │
+│      ↑                                                    │      │
+│      │                                                    ↓      │
+│  08 Value  ←── 07 Operating ←── 06 Product ←── 05 Marketing     │
+│  Measurement                                                     │
+│      │                                                           │
+│      └── 27-Signal Health feedback ──→ all seven stages          │
+│      └── Market & Revenue feedback ──→ all seven stages          │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Quarterly Review Protocol
+
+The COO (Section 07) runs the Value Measurement review quarterly using a two-track scorecard:
+
+**Track A — Signal Health Index**
+
+- Pull bi-weekly signal observations from sessions, content audits, and peer reviews
+- Map any degraded signals to their root cause stage
+- Initiate targeted feedback action before the next PI boundary
+
+**Track B — Revenue Momentum Index**
+
+- Pull enrollment, renewal, pipeline, community, and ARR figures
+- Compare against Y-gate trajectory
+- Map any gap to its root cause stage
+- Distinguish *structural* gaps (strategy or product) from *execution* gaps (marketing or cadence)
+
+**Integration check — the *Shreyas* test:**
+Before any corrective action is triggered, the COO asks: *is the gap a signal that we are moving too fast toward Preyas, or too slow toward Shreyas?* A revenue gap caused by refusing to use engagement-maximizing dark patterns is not a failure. It is the framework working as designed. A signal health gap caused by chasing revenue is the failure this entire architecture exists to prevent.
+
+-----
+
+## Value Measurement as the Living Proof of Concept
+
+BL teaches the Business Value Lifecycle (C-SALF · ISO 17020 · HUMS) as the foundation of AI and Automation Literacy. Section 08 is where BL *runs* that lifecycle on itself. Every CLAAS Conversations session is a Phase 5 + Phase 6 exercise. Every cohort renewal is an S26 Love signal measurement. Every enterprise license conversation is a Phase 3 Plan artifact being stress-tested in the real market.
+
+The framework improves through the humans who use it. The humans who use it first are inside BL. Value Measurement is the mechanism that makes BL the first and most rigorous test case of everything it teaches.
+
+> *“The relay is the instrument. The content adapts to the domain.”* — BL Course Architecture
+> 
+> The relay here is the Business Value Lifecycle. The domain is BL itself.
+
+-----
+
+*Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
+*“Framing the problem is half the Transformation” — Banyan Logic, 2026*
