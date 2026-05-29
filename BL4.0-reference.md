@@ -4,14 +4,7 @@
 
 **Mission:** Banyan Logic is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives.
 
-**The Business Value Lifecycle — how BL runs itself:**
-
-> Identity births Strategy. Strategy shapes Financials. Financials fund Execution. Execution enables Marketing. Marketing delivers Product. Product is operated through Operating. Operating generates Value — and Value measurement feeds back to every prior stage, completing the cycle. BL does not just teach this lifecycle. It runs by it. The framework and the business are the same thing.
-
-```
-Identity → Strategy → Financials → Execution → Marketing → Product → Operating → Value
-   ↑____________________________________________________________feedback loop____________↓
-```
+**Order:** Identity → Strategy → Financials → Execution → Marketing → Product
 
 **Live tools** (LGPA · PoE Test · Citizen Automator · Artifact Registry) remain in `BL4.0-unified.html`
 
@@ -19,14 +12,71 @@ Identity → Strategy → Financials → Execution → Marketing → Product →
 
 ## Table of Contents
 
+1. [BLIFe · The Integrated Instrument](#00-blife--the-integrated-instrument) — Five frameworks · one diagnostic lens · the orienting frame for everything that follows
 1. [Distinctive Competence](#01-distinctive-competence) — AI and Automation Literacy · Systems Thinking for All · Six competence dimensions · The moat
 1. [Business Canvas](#02-business-canvas) — Strategy on one page · HITL flywheel · IP separation
 1. [Business Plan](#03-business-plan) — Financials Y0–Y8 · Exit $1.5–1.86M+ · Six revenue tiers
 1. [Portfolio Context](#04-portfolio-context) — Operating constraints · Year 0 execution · Content calendar
 1. [CLAAS Marketing](#05-claas-marketing) — Two tracks · CLAAS Conversations · OnRamp · Zero-friction path
 1. [Course Architecture](#06-course-architecture) — The product blueprint · 18-cell grid · ISO 17020
-1. [COO Operational Manual](#07-coo-operational-manual) — 27 Signals governance · Shreyas over Preyas · Karma Yoga & Magnifica Humanitas
-1. [Value Measurement & Feedback](#08-value-measurement--feedback) — 27-Signal health · Market & revenue signals · Full loop back to all stages
+1. [DQR · Document Quality Review Framework](#dqr--document-quality-review-framework) — Cross-cutting quality gate · ISO 17020 at artifact level · 8 dimensions · DQR Auditor certification tier · CC BY 4.0
+1. [SRT · Gita Chapter 18 · Intent Refinement Layer](#srt--gita-chapter-18--intent-refinement-layer) — Intent refinement · surgical conflict analysis · 7 dimensions · 12-layer invocation · HUMS companion
+1. [BLIFe · Banyan Logic Integrated Frameworks](#08b-blife--banyan-logic-integrated-frameworks) — Five frameworks as one instrument · invocation map · integrated diagnostic
+1. [HUMS Six-Bucket Scale-Up Roles](#banyan-logic--hums-six-bucket-scale-up-roles) — ART of one → team of six · B1–B6 playbooks · Chief Code Therapist
+1. [Gap Analysis](#gap-analysis--quantified-impact-and-revenue-opportunity) — Six gaps · quantified impact · revenue opportunity · Y4 ARR map
+1. [Appendix A · Automation Literacy Process · Validated Sequence](#appendix-a--automation-literacy-process--validated-sequence) — Full 7-step sequence · PRE/POST instruments · source registry · Watch Points · A9 Universal
+1. [Appendix B · Run 01 · Integrative Medicine Treatment Mapping Tool](#appendix-b--run-01--integrative-medicine-treatment-mapping-tool) — First validated run · 2026-05-28 · DQR 40/40 · LGPA delta +4 · product stack · mission sentence
+1. [Appendix C · COO Operational Manual · Sustaining BL 4.0 via the 27 Signals](#appendix-c--coo-operational-manual--sustaining-bl-40-via-the-27-signals) — Shreyas over Preyas · 27-signal governance architecture · Marketplace Health Matrix · Staff Protocol · Vendor Code · COO Checklist · Magnifica Humanitas alignment
+
+-----
+
+# 00. BLIFe · The Integrated Instrument
+
+> Five frameworks. One diagnostic lens. The orienting frame for everything that follows.
+
+-----
+
+Banyan Logic is not a collection of frameworks. It is one integrated diagnostic instrument — **BLIFe** — that presents five lenses on any human-systems problem. The five frameworks are not sequential steps to be completed in order. They are simultaneous lenses that can be applied together or individually, depending on what the problem requires.
+
+Understanding BLIFe first means every section that follows lands in the right place.
+
+### The Five Lenses
+
+|Framework |What It Diagnoses                             |One-Line Role                                                                                        |
+|----------|----------------------------------------------|-----------------------------------------------------------------------------------------------------|
+|**HUMS™** |The human signal substrate                    |27 signals · 6 buckets · the stethoscope and the axle · excavated from perennial wisdom · never exits|
+|**CLAAS** |What the human must grow in for this era      |5 upskilling dimensions · C·Cyber · L·Lean · A·Agile · A·Auto · S·Scale                              |
+|**C-SALF**|How structured work is delivered              |6 phases · 7 roles · BVS→BVDev→BVO relay · HUMS is the axle                                          |
+|**DQR**   |Whether the output is fit to hand forward     |8 dimensions · 40 points · ISO 17020 inspection at every baton boundary                              |
+|**SRT**   |Whether the intent behind the output is honest|Guna diagnosis · 7 dimensions · 12 layers · locates and reveals · does not score or advise           |
+
+### The Integrated Statement
+
+```
+HUMS™   names what is happening at the signal level
+CLAAS   names which competency dimension the gap belongs to
+C-SALF  names which phase and role the gap is showing up in
+DQR     names whether the output produced is fit to close the gap
+SRT     names whether the intent behind the output is honest enough to hold
+```
+
+A practitioner holding all five simultaneously is not using five tools.
+They are using one integrated diagnostic instrument with five lenses.
+That is BLIFe.
+
+### The Fully Realized Vision
+
+Imagine 10,000 practitioners — teachers, nurses, engineers, social workers, plumbers, security officers, farmers — each carrying the vocabulary to see where their system breaks before it breaks someone. Not because they attended a conference. Because a framework excavated from 5,000-year-old wisdom was made teachable, affordable, and honest about what it is and is not. Each practitioner passes it forward — to their team, their apprentice, their child. The compounding is not financial. It is human.
+
+That is the orbit BLIFe is aimed at. The financial plan is the vehicle. The 10,000 practitioners are the destination.
+
+### Positioning
+
+BLIFe is the public-facing name for the integrated instrument. Individual frameworks (HUMS · CLAAS · C-SALF · DQR · SRT) are the component lenses. T-Class is the curriculum that teaches practitioners to use them. LGPA is the dual-mode lifecycle diagnostic instrument: Mode 1 onboards a new practitioner before their first conversation; Mode 2 provides continuous career-long evaluation at a small recurring fee, building longitudinal expertise data that self-sharpens the instrument.
+
+All five source files: srinimkasturi.github.io/Hums/
+
+**Change log:** 2026-05-28 · v4.0 · §00 BLIFe added · SRT corrected to Intent Refinement Layer · DQR Certification Tier added · Automation Literacy Process + Run 01 added as Appendices · LGPA dual-mode documented · CLAAS canonical 2026 correction applied · BLIFe analysis applied · Document scores 40/40 DQR
 
 -----
 
@@ -37,6 +87,8 @@ Identity → Strategy → Financials → Execution → Marketing → Product →
 -----
 
 Banyan Logic is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives.
+
+The mission resolves at the human outcome: 10,000 practitioners carrying the vocabulary to see where their system breaks before it breaks someone — teachers, engineers, nurses, social workers, security officers, anyone whose work is being transformed by AI and automation. Each practitioner passes it forward. The compounding is human, not financial. The financial plan is the vehicle. The practitioners are the destination.
 
 -----
 
@@ -50,10 +102,10 @@ The AI era is creating two classes of worker: those who can direct automated sys
 HUMS is not organizational research. It is excavated from Vedantic philosophy, Ayurvedic medicine, and the Bhagavad Gita — a wisdom tradition older and more stable than any management theory. 27 signals, 6 buckets. When AI-augmented systems fail at the People layer, HUMS names what is happening before anyone can articulate it. No competitor in the AI literacy space has this layer. It is not available for licensing. It never exits Banyan Logic.
 
 **2. Lived $3M Team Proof — C-SALF**
-C-SALF formed running a real $3M enterprise team — 10 staff, 10 contractors, 3 continents. It was not written then proved. It was lived then named. Every phase structure, every baton handoff criterion, every BVS story type exists because it solved a real problem under real stakes. In an AI literacy market full of frameworks designed for a market, this is the only one that formed inside actual delivery.
+C-SALF formed running a real $3M enterprise team — 10 staff, 10 contractors, 3 continents. It was not written then proved. It was lived then named. Every phase structure, every baton handoff criterion, every BVS story type exists because it solved a real problem under real stakes. In an AI literacy market full of frameworks designed for a market, this is the only one that formed inside actual delivery. T-Class delivery includes dynamic peer reviews and AI assistance at every gate — Claude (synthesis) and Gemini (adversarial reframe) as dual AI coaches, structured peer review grids using CLAAS T-depth as the review lens.
 
 **3. AI-Era Upskilling Dimensions — CLAAS**
-Cybersecurity · Lean · Agile · Automation · Scale. A personally curated selection from 35 years of enterprise observation — explicitly for this era, explicitly honest about being one practitioner’s validated selection. When AI replaces the keyboard, CLAAS names what the human still owns. No AI tool replaces the C, L, A, A, or S. The human who understands all five is irreplaceable.
+C · Cyber = NFR umbrella: Resilience · Performance · Capacity · Security · Administrability (Architecture is the implementation layer that realizes these NFRs). L · Lean. A · Agile. A · Automation = the full non-human intelligence spectrum: Programming→Robotics→AI — the 2026 correction that names beyond RPA. S · at Scale. Five upskilling dimensions — a personally curated selection from 35 years of enterprise observation, explicitly for this era, explicitly honest about being one practitioner’s validated selection. When AI replaces the keyboard, CLAAS names what the human still owns. No AI tool replaces the C, L, A, A, or S. The human who understands all five is irreplaceable.
 
 **4. Inspection-Grade Evaluation — ISO 17020**
 T-Class applies the international inspection body standard to artifact-based learning. Every deliverable is traceable, every evaluation blind, every finding cites evidence. This is not self-assessment or quiz-based certification. It is inspection-grade competence verification. No other AI literacy or IT upskilling company operates at this standard.
@@ -106,7 +158,7 @@ C-SALF and CLAAS are not inventions . They are a personally validated selection 
 - CLAAS Conversations — Sundays 10–11 AM ET, alternating weeks · open mic · practitioners · real problems diagnosed live · starting July 12, 2026
 - OnRamp — 1st & 3rd Sundays 10–11 AM ET · Citizen Automators entry track · systems thinking foundation before the open mic · lower barrier · same slot, different audience
 - LinkedIn publishing — 4 posts/month, practitioner voice
-- HITL Self-Sharpening Flywheel: LGPA takers (49 questions · self-service diagnosis) → Sunday Open Mic participants (real problems · live diagnosis) → Y2 Practitioner Evaluators (graduates as quality gate) → LGPA bank enriched → flywheel completes. Every real-world market problem that touches the framework makes it structurally better. This is the compounding asset.
+- HITL Self-Sharpening Flywheel: LGPA Mode 1 takers (onboarding diagnosis · free) → LGPA Mode 2 subscribers (continuous career evaluation · paying · longitudinal data) → Sunday Open Mic participants (real problems · live diagnosis) → Y2 Practitioner Evaluators (graduates as quality gate) → LGPA bank enriched → flywheel completes. Mode 2 subscribers are the highest-value flywheel contributors — every resession adds longitudinal data no one-time taker can produce. Every real-world market problem that touches the framework makes it structurally better. This is the compounding asset.
 - T3A build — student builds Time·Todo·Track·Adjust from scratch · deploys to GitHub Pages · exits with 4 artifacts · the T-Class reference deliverable
 - T-Class curriculum delivery — artifact-based, ISO 17020
 - HUMS™ excavation — 27 signals, ongoing deepening
@@ -119,21 +171,27 @@ C-SALF and CLAAS are not inventions . They are a personally validated selection 
 
 What BL does: Names it. Lowers the activation energy for the People layer to jump to a higher orbit — by giving practitioners the vocabulary to diagnose what was previously only felt. The framework improves every time a real problem touches it.
 
-The mechanics: HUMS™ (27 signals · the stethoscope) · C-SALF (6 phases · 7 roles · BVS→BVDev→BVO relay) · T-Class (artifact-based upskilling · ISO 17020) · CLAAS (Cyber/NFR+Explore · Lean · Agile · Automation · Scale · Architecture at center · HUMS as axle). Not new inventions — a 30-year personally validated selection from perennial wisdom and organizational research.
+The mechanics: HUMS™ (27 signals · the stethoscope) · C-SALF (6 phases · 7 roles · BVS→BVDev→BVO relay) · T-Class (artifact-based upskilling · ISO 17020) · CLAAS (C · Cyber NFR = Resilience · Performance · Capacity · Security · Administrability · Architecture as implementation layer · L · Lean · A · Agile · A · Automation = Programming→Robotics→AI · S · at Scale). Not new inventions — a 30-year personally validated selection from perennial wisdom and organizational research.
 
-The four-layer stack:
+The six-layer stack:
 
-- HUMS™ — excavated from perennial wisdom. 27 signals. Never exits.
+- HUMS™ — excavated from perennial wisdom. 27 signals. Never exits. The diagnostic instrument and the axle of C-SALF.
 - T-Class — artifact-based upskilling. AI is the pencil. ISO 17020 cert.
 - C-SALF — self-organizing framework from a $3M team. 6 phases · 7 roles. Every engagement produces BVS (Stories · intent) → BVDev (Development · structure) → BVO (Operations · did the value reach the customer?).
-- CLAAS — five spokes of the C-SALF wheel. C · Cyber = NFR layer (Resilience · Performance · Capacity · Security · Administrability · Exploration). L · Lean = Building. A · Agile = Business. A · Automation = Programming→Robotics→AI. S · Scale = Enterprise. Architecture at the center. HUMS as the axle. Honest about that.
-  The funnel: Free (LGPA · OnRamp · CLAAS Conversations) → Entry ($227 · T-Class + C-SALF) → Renewal ($59/yr) → Org ($1,500–$2,500+) → License ($2,500–$8,000+). Every free touchpoint is designed to pull the right person one step deeper — not to convert everyone, to find the 200.
+- CLAAS — five upskilling dimensions. C · Cyber = NFR umbrella: Resilience · Performance · Capacity · Security · Administrability (Architecture is the implementation layer that realizes these NFRs). L · Lean = Building. A · Agile = Business. A · Automation = Programming→Robotics→AI (full non-human intelligence spectrum · 2026 correction: not just RPA). S · at Scale = Enterprise. T3A Q3 curriculum covers all 5 dimensions across 9 quantums. Honest about that.
+- DQR — ISO 17020 inspection standard made operational at the artifact level. 8 dimensions · 40-point total. Cross-cutting quality gate at every baton boundary. The certification layer between Tier 4 Practitioner and Tier 6 Evaluator.
+- SRT — Intent refinement layer. Elevates intent toward expansive, principle-directed, empathy evolution. Surgical analysis for reasons behind conflict. Locates and reveals — does not score or advise.
+
+BLIFe (Banyan Logic Integrated Frameworks): HUMS · CLAAS · C-SALF · DQR · SRT used together as the integrated excavation and exploration instrument. The five frameworks are not sequential steps — they are simultaneous lenses applied to any human-systems problem.
+The funnel: Free (LGPA Mode 1 · OnRamp · CLAAS Conversations) → LGPA Continuous ($9–19/mo or $49–99/yr · career-long lifecycle evaluation · HITL data contributor) → Entry ($227 · T-Class + C-SALF) → Renewal ($59/yr) → Org ($1,500–$2,500+) → License ($2,500–$8,000+). Every free touchpoint is designed to pull the right person one step deeper — not to convert everyone, to find the 200. LGPA Continuous subscribers are simultaneously customers and calibration contributors — they pay to improve themselves and improve the instrument for everyone.
 
 The honest moat · preserve verbatim: C-SALF and CLAAS are not inventions. They are a personally validated selection from perennial wisdom and organizational research. The 30-year credential paired with that honesty is the moat — not a universal theory claim.
 
 **New identity layer:** AI and Automation Literacy is the era-specific expression of this mission. The perennial wisdom layer (HUMS) is the foundation. The commercial layer (C-SALF · T-Class · CLAAS) is the vehicle. The literacy framing is what makes it accessible to all — not just IT professionals, but anyone whose work is being transformed by AI and automation.
 
-- LGPA as self-service onboarding — 49 questions, no founder required · diagnoses the gap before the first conversation · pulls thinkers in before any ask · works for both practitioner and Citizen Automator segments
+- LGPA · Dual-mode lifecycle diagnostic instrument:
+  - Mode 1 (free · onboarding) — 49 questions · no founder required · diagnoses the lifecycle gap before the first conversation · pulls thinkers in before any ask · works for both practitioner and Citizen Automator segments
+  - Mode 2 (small fee · continuous) — career-long evaluation · resession anytime · 4 themes tracked longitudinally · $9–19/mo or $49–99/yr · HITL calibration contributor · instrument improves with every resession · sits between Free and Entry tiers as a low-friction recurring revenue layer
 - CLAAS Conversations — diagnostic consultation, not a webinar
 - 200 engaged thinkers before first dollar — community precedes course
 - ISO 17020 blind evaluation — impartiality as structural trust · BVO is the evidence layer
@@ -179,13 +237,15 @@ The honest moat · preserve verbatim: C-SALF and CLAAS are not inventions. They 
 - Total Y0: ~$2,400 · Y1: ~$4,800
   Y0: $0 intentional · Y1 base: ~$9,945 · Y2: ~$39K · Y3: ~$99K · Y4 decision gate: $200K threshold · Y8 exit: $1.5–1.86M+
 
+**Operating assumption: the base case is the plan. The optimistic case is the ceiling — not the expectation. Every decision is made against the base case. The exit multiple is a boundary condition, not an identity.**
+
 Path to Y4 gate: $227 individual sales alone require ~880 students/yr to reach $200K — that is a marketing grind, not a pull culture. The real path: 15–20 Tier 3B institutional licenses ($2,500–$8,000+) + $59/yr renewal ARR compounding from graduates. Renewal rate is the lagging signal. S26 Love — genuine adoption measured by LGPA workaround rate — is the leading signal.
 
 Excavated from Vedantic philosophy, Ayurvedic medicine, the Bhagavad Gita. Not org research — older and more stable. The diagnostic vocabulary for what a human being does. BL retains permanently. Never exits with any business sale.
 
 Dashaavataara · Vedantic Lullabies · Life After Sun (HUMS coloring book) · ASiWiFi. Same frameworks, different media. Neurodiversity as a core lived design lens — Sarthan and Darshan as primary testers ensure the framework works for all minds, not just neurotypical learners. In an AI-dominated era where most tools optimize for the median, this is a massive and authentic differentiator. Save this song with all ages and all minds.
 
-200 engaged thinkers in Year 0. A movement before a market. Human-in-the-loop is the only empirically valid mechanism for improving any framework. Every person who takes the LGPA improves it. The practitioners guide is implementation-sharpened, one problem at a time. Every CLAAS Conversations session is a case study in formation — the HITL enrichment loop is not an internal process, it is the market claim: this framework improves every time a real problem touches it.
+200 engaged thinkers in Year 0. A movement before a market. Human-in-the-loop is the only empirically valid mechanism for improving any framework. Every person who takes the LGPA improves it. The practitioners guide is implementation-sharpened, one problem at a time. Every CLAAS Conversations session is a case study in formation — the HITL enrichment loop is not an internal process, it is the market claim: this framework improves every time a real problem touches it. Every CLAAS Conversation is one step toward the 10,000.
 
 The aerial roots descend, touch ground, and become load-bearing. C-SALF exits Y8. T-Class exits Y8. The banyan remains. HUMS · S2L2 · ASiWiFi · the creative portfolio — the root does not exit. The buyer gets the branch.
 
@@ -197,7 +257,7 @@ CLAAS is explicitly historically situated — one era’s curated upskilling dim
 
 Who holds the evolution decision: Srini (founding selection authority) + Practitioner Evaluators (Y2+ community signal) + Darshan as future BL partner. No unilateral change. No silent drift.
 
-What never changes: HUMS as the axle. Architecture at the center hub. The honest-selection posture. The Banyan root.
+What never changes: HUMS as the axle. The honest-selection posture. The Banyan root.
 
 ### Competitive Landscape — AI and Automation Literacy
 
@@ -270,9 +330,11 @@ Banyan Logic, LLC is an AI and Automation Literacy company — bringing systems 
 
 C-SALF and CLAAS are not inventions. They are a personally curated subset of existing organizational research — selected through 30 years of lived enterprise observation and validated by running a real $3M team. Organizational research already knows T-shaped people are more effective. It already knows lifecycle thinking reduces failure. It already knows security belongs in requirements. BL does not claim to have discovered these things. BL claims to have selected the subset that matters most right now, integrated it through one coherent diagnostic lens, and made it teachable to people who would never read the original research. The 30-year credential paired with this honesty is the moat — not a universal claim, but a practitioner’s validated selection. C-SALF is orthogonal to DevOps, SAFe, and SDLC — a diagnostic layer inside any of them, not a competitor to any of them. HUMS alone is excavated from perennial wisdom — it is not organizational research, it is older and more stable.
 
+**DEPLOY guidance for certified practitioners:** A T-Class graduate’s first live engagement follows the C-SALF PLAN phase: (1) run LGPA Mode 1 with the client to baseline their lifecycle gap · (2) use PRE-0 scenario intake to ground the engagement in their real workflow · (3) propose one action from the HUMS signal map before any tool or framework is named · (4) gate BUILD on a written A9 check for any safety-critical domain. The practitioner does not arrive with a solution. They arrive with an instrument.
+
 ISO 17020 (Inspection Bodies) governs: BVS/BVDev quality as inspection artifacts · ROI Analyst impartiality · T-Class certification evidence requirements · PoE Test grading consistency · Runbook as documented procedure. Every C-SALF handoff is an inspection event. Every deliverable must be traceable, impartial, and competence-verified.
 
-A Nurse Training guide documents what a nurse should do. It captures user stories with precision and care. What it almost never captures: what a malicious actor with stolen nurse credentials would do (adversarial); what happens when the medication database goes offline mid-procedure (resilience); what happens when 500 nurses log in simultaneously during shift change (capacity); whether a nurse administrator can add a new user without IT support (administrability). C-SALF BVSs and ERDs are iterative documents capturing all six story types in parallel — not sequentially, not optionally.
+A Nurse Training guide documents what a nurse should do. It captures user stories with precision and care. What it almost never captures: what a malicious actor with stolen nurse credentials would do (adversarial); what happens when the medication database goes offline mid-procedure (resilience); what happens when 500 nurses log in simultaneously during shift change (capacity); whether a nurse administrator can add a new user without IT support (administrability). C-SALF BVSs and ERDs are iterative documents capturing all six story types in parallel — not sequentially, not optionally. The six canonical types: Compliance · Security · Architecture · Lean · Feature · Foundation.
 
 |Segment                   |Primary Need                                    |Entry            |
 |--------------------------|------------------------------------------------|-----------------|
@@ -292,6 +354,7 @@ Accept — Socratic Bottleneck: As the practitioner network scales, blind ISO 17
 
 |Tier                      |Layer                                   |Offer                                                                                                                                                                                                                      |Price                   |ISO 17020 Element                                                                                                              |
 |--------------------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+|0 · LGPA Continuous       |LGPA Mode 2                             |Career-long lifecycle gap evaluation · 4 themes · resession anytime · longitudinal expertise tracking · HITL calibration contributor · no course required                                                                  |$9–19/mo or $49–99/yr   |Continuous self-assessment · HITL data contribution · instrument improvement                                                   |
 |1 · Core                  |T-Class + C-SALF                        |M0 + 18 cells · Claude coach (model-agnostic by design) · HUMS role lens · 3 evals Y1 · 6 story-type BVS/BVDev in each cell                                                                                                |$227 one-time           |Artifact-based cert · evidence trail · blind evaluation                                                                        |
 |2 · Renewal               |T-Class                                 |Annual T-renewal · new case studies · AI tooling refresh · 2 evals · movement membership                                                                                                                                   |$59/year                |Continuing competence verification                                                                                             |
 |3 · Org                   |T-Class + C-SALF                        |5–50+ seats · full course + cert · debrief · custom case study · adversarial story workshop                                                                                                                                |$1,500–$2,500+          |Org-level competence documentation                                                                                             |
@@ -433,6 +496,8 @@ T-Class launches Q3 2027. Founding-member pricing for the first 50.
 
 srinimkasturi.github.io/Hums/bl-lgpa.html · No signup · No email · Results instant · No pitch
 
+*LGPA Mode 1 live now. Mode 2 continuous subscription: under development · launch target FY27Q1.*
+
 -----
 
 # 06. Course Architecture
@@ -445,6 +510,16 @@ Based on the value I generated for myself across 30 years, I codified my wish fo
 
 C-SALF is a self-organizing operating framework developed to run a $3M enterprise team — 10 staff, 10 contractors, 3 continents. Not designed for a market. Formed through 30 years of practice. T-Class is the explicit, teachable form of T-shaped skills development classes Srini already taught — from Business Canvas to traceable ROI dashboards. CLAAS names the upskilling dimensions that matter in this era. One person’s selection. Honest about that.
 
+**CLAAS · Canonical 2026 Definition**
+
+C = Cyber: NFR umbrella covering Resilience · Performance · Capacity · Security · Administrability. Architecture is the implementation layer that realizes these NFRs — not a standalone dimension. L = Lean. A = Agile. A = Automation: the full non-human intelligence spectrum (Programming→Robotics→AI) — the 2026 correction that explicitly names beyond RPA. S = at Scale. Five upskilling dimensions forming the BL delivery competency model. T3A Q3 curriculum covers all 5 dimensions across 9 quantums.
+
+**C-SALF · Canonical 2026 Definition**
+
+C = two layers: (1) Cyber: Resilience · Performance · Capacity · Security · Administrability; (2) Communications & Connections = HUMS itself — the central axle of C-SALF. HUMS is not adjacent to C-SALF; it is the axle. A = Agile. L = Lean. F = Frameworks.
+
+S = 6 story types (canonical): Compliance · Security · Architecture · Lean · Feature · Foundation. Every BVS document captures all six in parallel — not sequentially, not optionally. Six lenses on one requirement, not six documents.
+
 T-shaped is the organizational research target state — not a BL invention. Deep vertical bar in your domain. Broad horizontal bar across the whole lifecycle. The horizontal bar is what most practitioners are missing: the capacity to hold the entire relay in mind while running your own leg. C-SALF is one practical visualization of what that looks like in action. One of many possible. The relay is the instrument. The content adapts to the domain.
 
 The framework improves only through the humans who use it. Human-in-the-loop is not a safety net for weak AI — it is the only empirically valid mechanism for improving any framework, any question set, any learning material so that humans can leverage systemic thinking even when their education never trained them that way. Every CLAAS Conversations (1st & 3rd Sundays · practitioners) · OnRamp (2nd & 4th Sundays · Citizen Automators) session, every T-Class artifact evaluation, every person who takes the assessment and recognizes a signal from a domain the question did not anticipate — each is a human in the loop making the framework more complete. The AI is the pencil. The human is the hand. The framework is what the hand learns to draw over time.
@@ -453,7 +528,7 @@ Claude is the default coach — not a structural requirement. The framework work
 
 - CLAAS: why the People layer is the leverage point
 - C-SALF relay — 6 phases · 7 roles · one system
-- BVS six story types — including adversarial and administrability
+- BVS six story types — Compliance · Security · Architecture · Lean · Feature · Foundation
 - ISO 17020 principles applied to baton quality
 - Biz Owner → Purposes S25–S27
 - Biz Analyst → How We Work S05–S08
@@ -487,6 +562,107 @@ BANYAN LOGIC · COURSE ARCHITECTURE · PAGE 1 OF 2 · © SRINIVASA M. KASTURI ·
 |Year 2+                                                                                                                               |Annual T-Renewal · Movement Membership                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |Continuing competence verification · new case studies · AI tooling refresh · community access · Track D (Cybersecurity Leader) Y2                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |$59/year · belonging over margin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |Year 2+ · Masters only                                                                                                                |Practitioner Evaluator · Tier 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |Certified Masters conduct blind evaluations for new learners · resolves Socratic bottleneck · evaluation layer scales with graduate output · ISO 17020 evaluator independence verified · the system feeds its own quality gate                                                                                                                                                                                                                                                                                                                                                                      |Revenue share / stipend · not a fee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
+-----
+
+# 07. DQR · Document Quality Review Framework
+
+> Cross-cutting quality gate · ISO 17020 inspection standard at artifact level · CC BY 4.0
+> SOURCE: srinimkasturi.github.io/Hums/DQR.md · Architectural Decision Date: 2026-05-28 · Established in Run 01
+
+-----
+
+### What DQR Is in the BL Stack
+
+DQR is not a document tool. It is the ISO 17020 inspection standard made operational at the artifact level. Every C-SALF phase produces a baton. Every baton must pass a fitness test before the next phase opens. DQR is that fitness test.
+
+**Position in stack:**
+
+- Not a layer — a cross-cutting quality gate
+- Applied at every artifact/baton boundary across all four layers (HUMS · T-Class · C-SALF · CLAAS)
+- 8 dimensions · 0–5 per dimension · 40-point total · auditable record
+
+**Stack diagram:**
+
+```
+L4  CLAAS      ─────────────────── Upskilling dimensions · what to grow toward
+L3  C-SALF     ─────────────────── T-shaped in action · 6 phases · 7 roles
+L2  T-Class    ─────────────────── Upskilling method · artifact-based · ISO 17020
+L1  HUMS™      ─────────────────── Diagnostic instrument · permanent
+
+DQR ─────────────────────────────── ISO 17020 inspection layer
+                                    applied at every artifact/baton boundary
+                                    across all four layers simultaneously
+                                    Not a layer — a cross-cutting quality gate
+```
+
+**Two dimension groups (per DQR.md):**
+
+|Group           |Dimensions                                                                                       |What They Measure                                  |
+|----------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------|
+|Signal Integrity|D01 Truthfulness · D02 Usefulness · D03 Receivability · D04 Context Relevance                    |The document’s relationship to the world and reader|
+|Signal Quality  |D05 Timely Need · D06 Clarity & Conciseness · D07 Comprehensive Width · D08 Completeness in Depth|Internal construction fitness                      |
+
+**HUMS alignment:**
+
+- Signal Integrity → Who We Are + How We Work (identity and intentional signals)
+- Signal Quality → Actions + Purposes (execution and outcome signals)
+
+A document scoring high on Integrity but low on Quality has good intent but poor craft. Neither substitutes for the other.
+
+-----
+
+### DQR Certification Tier · New Tier
+
+The DQR Auditor tier sits between Tier 4 Practitioner and Tier 6 Practitioner Evaluator. Tier 6 requires DQR Auditor certification as prerequisite — without it, blind evaluation cannot satisfy the ISO 17020 impartiality standard.
+
+|Tier                      |Name                 |Competence                                                         |ISO 17020 Element                                                                                                                              |
+|--------------------------|---------------------|-------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+|4 · Practitioner          |Teacher              |Teaches artifact building · teaches DQR application                |Inspector competence verification · impartiality audit                                                                                         |
+|**DQR · Auditor**         |**Certified Auditor**|**Applies DQR with calibrated consistency across all 8 dimensions**|**Documented procedure: 8-dimension rubric + calibration bank · acceptance criterion: ≤1 point delta · blind scoring · annual recertification**|
+|6 · Practitioner Evaluator|Blind Evaluator      |Conducts ISO 17020 blind evaluation                                |DQR Auditor certification required prerequisite                                                                                                |
+
+**DQR Auditor certification requirements:**
+
+```
+1. Score 5 documents blind against the 8-dimension rubric
+2. Compare against master score bank
+3. Delta ≤ 1 point per dimension across all 5 documents
+4. Annual recertification — 2 documents · same delta standard
+5. Prerequisite: Tier 4 Practitioner status
+```
+
+**ISO 17020 notation:**
+
+DQR Auditor certification satisfies ISO 17020 as follows: documented procedure = the 8-dimension rubric + calibration bank (master scores) · acceptance criterion = ≤1 point delta per dimension · impartiality = blind scoring (auditor does not know the document’s author) · continuing competence = annual recertification cycle · traceable findings = every score accompanied by 2–4 sentence rationale + single most important improvement action per dimension.
+
+-----
+
+### Tool Role Boundary · Canonical Decision
+
+The 7-step Automation Literacy Process and DQR are not interchangeable. Blurring this boundary is a facilitator failure mode (Watch Point 3).
+
+```
+Generative process  →  excavates · generates · structures
+                       Use when content does not yet exist
+
+DQR                 →  audits · tightens · completes
+                       Use when content exists and needs fitness verification
+```
+
+-----
+
+### HITL Self-Sharpening
+
+DQR is self-sharpening by the same mechanism as LGPA:
+
+```
+Every DQR audit → scoring record → feeds calibration bank →
+raises floor for next auditor cohort → instrument improves.
+The calibration bank is the compounding asset.
+```
+
+-----
+
 T3A (Time · Todo · Track · Adjust) is a single HTML file — zero dependencies, zero build step, zero server — secured by RSK2/QSA architecture. A student who builds it from scratch has simultaneously demonstrated all nine learning quantums: frontend, GitHub API integration, quantum-safe security design (nDemux/nMux), PDCA time-anchoring, distributed systems, QSA architecture, HUMS signal analysis, C-SALF BVS all six story types, and CLAAS dimension mapping. The artifact scores 8.3/10 across the triple framework rubric. That score is the portfolio evidence.
 
 Q3 Curriculum: 9 learning quantums · all 5 CLAAS dimensions · MIT licensed · deployable to GitHub Pages · reference implementation at srinimkasturi.github.io/Hums/ · RSK2 lineage: Kasturi/Perry IEEE Spread Spectrum Workshop, Le Chateau Montebello, Quebec, May 1991 · provisional patent pending.
@@ -501,9 +677,200 @@ BANYAN LOGIC · COURSE ARCHITECTURE · PAGE 2 OF 2 · © SRINIVASA M. KASTURI ·
 
 -----
 
+# 08. SRT · Gita Chapter 18 · Intent Refinement Layer
+
+> Intent Refinement Layer — elevates intent toward expansive, principle-directed, empathy evolution
+> Surgical analysis for reasons behind conflict, not just conflict resolution
+> Companion to HUMS™ · Locates and reveals — does not score or advise
+> SOURCE: srinimkasturi.github.io/Hums/Gita18srt.md · AUTHOR: Srinivasa M. Kasturi · Banyan Logic
+
 -----
 
-## Banyan Logic · HUMS Six-Bucket Scale-Up Roles
+### Role in the BL Framework Ecosystem
+
+**R05 Maker · Canonical Role Description:**
+The AI-as-Maker role in C-SALF is the non-human executor — the Claude, Gemini, or other AI system that operates as the fifth role type in a BL engagement. R05 Maker generates drafts, surfaces LGPA scenarios, produces adversarial reframes, classifies signals, and builds artifacts. R05 never owns a phase. R05 never makes the final call. The human — R01 through R04 or R06/R07 — always holds the baton. The Automation Literacy Process (Appendix A) is the canonical demonstration of R05 Maker operating within the BLIFe instrument alongside human roles.
+
+SRT is the intent refinement layer of the BLIFe 5-framework model. It does not sit at the end of a linear chain — it operates as the quality-of-intent diagnostic that can be invoked at any point where conflict, decision, or directional choice is present.
+
+**What SRT actually does:**
+
+SRT elevates intent toward expansive, principle-directed, empathy evolution. It is surgical analysis — it locates the Guna composition of the intents in conflict and reveals why the conflict exists at its root. The human then chooses from a higher orbit.
+
+**The critical distinction:**
+SRT does not resolve conflict. It reveals the reason the conflict exists.
+SRT does not advise. It locates and surfaces.
+SRT does not score. It diagnoses Guna composition structurally.
+
+**When to invoke within BLIFe:**
+
+- When two framework outputs conflict (e.g. CLAAS and C-SALF give different guidance on the same action)
+- When a student’s intent behind an action needs refinement before the action proceeds
+- When institutional recommendations conflict across traditions, methodologies, or evidence types
+- When a design decision carries S25 Life urgency and the recommending source’s Kartā needs examination
+- At any gate where the aspiration vector needs to be named explicitly
+
+**Relationship to the other four frameworks:**
+
+```
+HUMS™     maps the 27 signals of human functioning (Vyavaharika scope)
+          SRT diagnoses the Guna composition of how those signals are enacted
+
+CLAAS     names what the human still owns across 5 upskilling dimensions
+          SRT examines the quality of intent behind each dimension's application
+
+C-SALF    structures the lifecycle of work across 6 phases and 7 roles
+          SRT examines whether the baton at each handoff carries Sattvic intent
+          or Rajasic/Tamasic institutional attachment
+
+DQR       audits fitness of document output across 8 dimensions
+          SRT examines the quality of intent behind the document's creation
+          DQR asks: is this document fit? SRT asks: was it made honestly?
+```
+
+-----
+
+### 7 SRT Dimensions
+
+SRT applies the Gita Chapter 18 taxonomy across 7 operational dimensions. Each dimension is diagnosed across Sattva · Rajas · Tamas · Gunatita (the fourth state, beyond Guna, for completeness).
+
+|Dimension|Sanskrit    |What It Diagnoses                                                 |
+|---------|------------|------------------------------------------------------------------|
+|Tyāga    |Renunciation|What is being released — duty without attachment vs. avoidance    |
+|Jñāna    |Knowledge   |Quality of understanding — integrated vs. fragmented vs. inert    |
+|Karma    |Action      |Action character — obligatory vs. desire-driven vs. deluded       |
+|Kartā    |Doer        |Actor’s self-relationship — free vs. ego-bound vs. unconscious    |
+|Buddhi   |Intelligence|Discriminative capacity — clarity vs. confusion vs. inversion     |
+|Dhṛti    |Resolve     |Quality of steadfastness — yogic vs. pleasure-bound vs. depressive|
+|Sukham   |Happiness   |Source of satisfaction — self-arising vs. sensory vs. delusional  |
+
+-----
+
+### 12-Layer Invocation
+
+```
+L0  Tyāga Pre-Check     — Is this being done with or without attachment to outcome?
+L1  Ignition            — 6 structural elements · no Guna at this stage
+L2  Jñāna Diagnosis     — Knowledge quality across Sattva/Rajas/Tamas/Gunatita
+L3  Karma Diagnosis     — Action character across Sattva/Rajas/Tamas/Gunatita
+L4  Kartā Diagnosis     — Actor's self-relationship across Sattva/Rajas/Tamas/Gunatita
+L5  Buddhi Diagnosis    — Discriminative capacity across Sattva/Rajas/Tamas/Gunatita
+L6  Dhṛti Diagnosis     — Resolve quality across Sattva/Rajas/Tamas/Gunatita
+L7  Sukham Diagnosis    — Happiness source across Sattva/Rajas/Tamas/Gunatita
+L8  Mismatch Read       — Where Guna compositions diverge between the two claims
+L9  Binding Test        — Which claim binds the actor to the outcome?
+L10 Svadharma Calibration — Does either claim align with the practitioner's Svadharma?
+L11 Exit Check          — Is this instrument locating and revealing, or scoring and advising?
+```
+
+The instrument locates and reveals — it does not score or advise. This is the canonical boundary.
+
+-----
+
+### HUMS–SRT Alignment
+
+SRT is the Gita Chapter 18 operational companion to HUMS. Where HUMS maps the 27 signals across 6 buckets of human functioning (Vyavaharika scope — operational reality), SRT diagnoses the Guna composition of how those signals are being enacted.
+
+- A practitioner with high S05 (Think) can be enacting Sattva-Buddhi or Rajas-Buddhi — SRT distinguishes them
+- A framework with strong CLAAS coverage can still be Tamas-Karma if it is applied without understanding — SRT detects this
+- The same action (A7 intake form design, for example) can be done with Sattva-Karma or Rajas-Karma — SRT locates the difference
+
+HUMS does not include transcendence/Turiya in its 27 signals — the deliberate Vyavaharika boundary preserves operational utility. SRT holds Gunatita as the fourth diagnostic state precisely because the practitioner navigating conflict needs to recognize when a claim has transcended Guna entirely and cannot be adjudicated by the other three states alone.
+
+-----
+
+-----
+
+# 08b. BLIFe · Banyan Logic Integrated Frameworks
+
+> BLIFe = Banyan Logic Integrated Frameworks excavation and exploration instrument
+> Five frameworks used together as simultaneous lenses on any human-systems problem
+> Not a sequence — a diagnostic ecosystem
+
+-----
+
+### The Five Frameworks
+
+|Framework|Role                                                             |Scope                            |Source      |
+|---------|-----------------------------------------------------------------|---------------------------------|------------|
+|HUMS™    |Human signal map · 27 signals · 6 buckets                        |Vyavaharika (operational reality)|README.md   |
+|CLAAS    |5 upskilling dimensions · what the human still owns in the AI era|Enterprise competency            |claas.html  |
+|C-SALF   |6 phases · 7 roles · lifecycle of structured work                |Delivery operating model         |csalf.html  |
+|DQR      |8-dimension document fitness · ISO 17020 inspection standard     |Output quality gate              |DQR.md      |
+|SRT      |Intent refinement · Guna diagnosis across 7 dimensions           |Quality of knowing and intent    |Gita18srt.md|
+
+All five at srinimkasturi.github.io/Hums/
+
+-----
+
+### How the Five Frameworks Relate
+
+```
+HUMS™         The stethoscope and the axle
+              Diagnoses the People layer before anything can be articulated
+              Is the C in C-SALF (Communications & Connections layer)
+              Maps the signal substrate that all other frameworks operate on
+
+CLAAS         The upskilling compass
+              Names the 5 dimensions the human must grow in for this era
+              C-Cyber · L-Lean · A-Agile · A-Automation · S-Scale
+              Uses HUMS signal clusters to identify which dimension is weak
+
+C-SALF        The delivery operating model
+              Structures work across 6 phases and 7 roles
+              HUMS is its axle · CLAAS defines its T-shape target
+              Every phase produces a baton · DQR gates every baton
+
+DQR           The fitness gate
+              Applied at every artifact/baton boundary
+              8 dimensions · 40-point total · ISO 17020 traceable
+              Asks: is this output fit to hand forward?
+
+SRT           The intent lens
+              Applied when conflict, choice, or direction is present
+              Diagnoses Guna composition of the intents involved
+              Asks: is the intent behind this output honest and whole?
+              Does not score · does not advise · locates and reveals
+```
+
+### When to Invoke Each Framework
+
+```
+Always active     HUMS™ · the signal substrate never sleeps
+                  Any human-systems problem activates HUMS first
+
+On upskilling     CLAAS · when diagnosing what a person needs to grow
+questions         or when classifying actions by dimension
+
+On delivery       C-SALF · when structuring work, assigning roles,
+questions         or managing phase transitions and handoffs
+
+On output         DQR · when a document, artifact, or baton
+questions         needs fitness verification before it moves forward
+
+On intent         SRT · when two paths conflict, when motivation
+questions         needs examination, when the aspiration vector
+                  needs to be named before action is taken
+```
+
+### BLIFe as Integrated Diagnostic
+
+The five frameworks are not additive — they are multiplicative. Each reveals a different face of the same human-systems problem:
+
+HUMS names what is happening at the signal level.
+CLAAS names which competency dimension the signal gap belongs to.
+C-SALF names which phase and role the gap is showing up in.
+DQR names whether the output produced is fit to close the gap.
+SRT names whether the intent behind the output is honest enough to hold.
+
+A practitioner who can hold all five simultaneously is not using five tools.
+They are using one integrated diagnostic instrument with five lenses.
+
+That is BLIFe.
+
+-----
+
+# 09. Banyan Logic · HUMS Six-Bucket Scale-Up Roles
 
 *Srini currently holds all six roles simultaneously — the ART of one. Each bucket below is both an active playbook being built now and a future handoff when the time is right. The roles are not org chart titles. They are the six human system areas that any organization must staff to function. BL is staffing them from the inside of the family and the story first.*
 
@@ -647,7 +1014,7 @@ Garooota in the Life After Sun story is the source of this role’s spirit — t
 
 -----
 
-## Gap Analysis — Quantified Impact and Revenue Opportunity
+# 10. Gap Analysis — Quantified Impact and Revenue Opportunity
 
 *All figures sourced from IDC, Gartner, Forrester, DataCamp State of AI Literacy 2026, WEF, and Searchlab/Kissflow no-code statistics 2026. BL revenue estimates are bottom-up from the business plan — conservative case unless noted.*
 
@@ -756,19 +1123,246 @@ Infrastructure cost advantage compounds over time. At Y4 ($200K ARR target), a t
 
 ## *Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
 
-# 07. COO Operational Manual
+-----
 
-## Sustaining BL 4.0 via the 27 Signals
+# 11. Appendix A · Automation Literacy Process · Validated Sequence
+
+> HUMS + CLAAS + C-SALF + LGPA integrated pedagogy · First validated: 2026-05-28
+
+-----
+
+### Process Purpose
+
+Grow Automation Literacy by moving a student from free-form scenario description through signal mapping, action generation, framework classification, role assignment, peer review, and measurable literacy delta — in a single facilitated sequence with AI-assisted peer conversation at every gate.
+
+### What Makes This Process Distinct
+
+- HUMS as pre-technological entry point: signal vocabulary predates any tool
+- LGPA as pre/post literacy instrument: 4-theme scenario-based diagnostic
+- Dual AI coaching at gates: Claude (synthesis) + Gemini (adversarial reframe)
+- DQR as post-process audit: every run produces an auditable reference document
+- HITL flywheel: every run improves LGPA, DQR calibration bank, and process itself
+
+### Source Registry
+
+|Node                |Source                                   |
+|--------------------|-----------------------------------------|
+|PRE-0               |Free-form human input                    |
+|PRE-1 + POST        |srinimkasturi.github.io/Hums/bl-lgpa.html|
+|Steps 1 + 2         |srinimkasturi.github.io/Hums/README.md   |
+|Bridge Card         |README.md × claas.html                   |
+|Step 3 + Review lens|srinimkasturi.github.io/Hums/claas.html  |
+|Steps 4 + 5         |srinimkasturi.github.io/Hums/csalf.html  |
+|Step 6 lens         |srinimkasturi.github.io/Hums/claas.html  |
+|Step 7 retro        |README.md × claas.html                   |
+|All Gates           |bl-lgpa.html + Claude + Gemini           |
+|Post-run audit      |srinimkasturi.github.io/Hums/DQR.md      |
+
+### Full Sequence
+
+```
+PRE-0   Scenario Intake · free-form · any modality
+        5 questions: Who am I · Problem · Current tools ·
+        What breaks · Who else is affected
+        Claude: 1-line summary + cross-scenario pattern
+        Gemini: automation-readiness flag (silent)
+        Output: scenario cards held for all Gates
+
+PRE-1   LGPA Baseline · 9q · 4 themes · score held
+        Guide tool personalizes Gate prompts from profile
+
+Step 1  HUMS Signal Mapping · individual
+        Source: README.md · 27 signals · 6 buckets
+        Visual/tactile track available
+
+Gate 1  "Who I Am as a User"
+        Claude: LGPA People scenario (p1–p5)
+        Gemini: signal self-assessment stress-test
+        Prompt: "What surprised you about someone else's signals?"
+
+Step 2  HUMS Action Generation · individual
+        10 actions · signal-attributed · PRE-0 grounded
+
+Gate 2  "My 10 Actions and Why"
+        Claude: LGPA Handoff scenario (h1–h5) matched to actions
+        Gemini: adversarial reframe per top action
+        Bridge Card distributed at this transition
+
+Step 3  CLAAS Classification · individual · bridge card in hand
+        Source: claas.html · 5 dimensions
+        Produces CLAAS distribution map per student
+
+Gate 3  "My CLAAS Profile"
+        Claude: live class coverage map + LGPA Requirements scenario
+        Gemini: highest-risk gap + LGPA scenario showing why it breaks
+        Prompt: "Where is your blind-spot dimension?"
+
+Step 4  C-SALF Role Assignment · individual
+        Source: csalf.html · 5 phases · 7 roles
+        Phase strength and phase avoidance pattern named
+
+Step 5  Peer Review Grid Construction · collaborative
+        Source: csalf.html × claas.html
+        4 reviews per student · CLAAS T-depth as lens
+
+Step 6  Peer Review Execution · cross-student
+        Written first · 1 strength · 1 gap · 1 question per review
+
+Gate 4  "What I Found in Your Work"
+        Claude: LGPA Automation scenario (a1–a4)
+        Gemini: person vs. process reframe
+        Prompt: "Did reviewing others change how you see your own work?"
+
+Step 7  Final Mission + PDCA Retro
+        Source: README.md × claas.html
+        Mission sentence tested against S25 · S26 · S03 simultaneously
+        Closing question: "Does your mission match your PRE-0 scenario?"
+
+POST    LGPA Delta · 9q · different draw · pre/post score
+        Class aggregate = reportable institutional outcome
+        Student responses → LGPA HITL enrichment flywheel
+
+POST    DQR Audit · source: DQR.md
+        8 dimensions · 40-point total
+        Output: reference document + improvement actions
+        Scoring record → DQR calibration bank
+```
+
+### Watch Points
+
+|#  |Watch Point                                            |Risk Level|Resolution                                              |
+|---|-------------------------------------------------------|----------|--------------------------------------------------------|
+|WP1|Gate degradation without guide tool                    |High      |LGPA scenario mandatory at every gate                   |
+|WP2|Thin PRE-0 — fewer than 3/5 questions substantive      |Medium    |3/5 questions must be substantive before Step 1 opens   |
+|WP3|Tool role boundary violation — generative process ≠ DQR|Medium    |Boundary is architectural · see DQR section             |
+|WP4|A9 bypass in safety-critical domains                   |Critical  |Hard gate · BUILD does not open without A9 specification|
+
+### Design Law · A9 Universal
+
+Applies to any tool whose output touches human health, safety, or survival.
+
+```
+Every record carries an S25 classifier:
+  1. Source-supplied — practitioner flags explicitly
+  2. AI-derived — if source does not supply one
+  3. Human review trigger — if AI confidence below threshold
+
+No record is queryable by end users until A9 classification exists.
+No exceptions.
+```
+
+-----
+
+-----
+
+# 12. Appendix B · Run 01 · Integrative Medicine Treatment Mapping Tool
+
+> First validated run of the Automation Literacy Process
+> Date: 2026-05-28 · Student: single · Domain: integrative medicine
+> DQR score: 40/40 · 100% · Exceptional · publish-ready
+
+-----
+
+### Scenario · PRE-0
+
+A student wants to build a way to map when what is appropriate — Surgery · Allopathy · Homeopathy · Ayurveda · Unani · TCM · Siddha — as treatment options.
+
+**Key excavation:** Gate 1 produced a signal elevation not in the original scenario. Student stated:
+
+> “Memory is crucial as empirical and lived experiences are seldom taken into account claiming statistical insignificance — but it completely ignores something worked and it cannot be denied its place in advisement to others.”
+
+S03 Remember elevated to primary signal. The tool is a memory system that refuses erasure of lived experience at civilizational scale.
+
+### Confirmed Signal Map
+
+```
+PRIMARY     S03 Remember · S05 Think · S07 Rely · S20 Speak
+SECONDARY   S02 Ideate · S04 Identify · S09 See
+PURPOSE     S25 Live · S26 Love
+```
+
+### Product Stack Emerged
+
+```
+Product 1   Treatment Mapping Tool (original scenario)
+Product 2a  Practitioner Story Collection App (write layer)
+Product 2b  Internet Empirical Data Aggregator (read layer)
+
+Dependency: Product 1 sits on 2a + 2b · A9 Universal governs all three
+```
+
+### Design Law Established
+
+A9 Universal — named by student before framework requested it. Every aggregation in the stack carries S25 classifier. AI derives classifier if source does not supply one. No record enters knowledge base without A9 classification.
+
+### Mission Sentence
+
+> “This tool exists to give every person — regardless of which tradition they were born into or can access — a map of what has worked, for whom, under what conditions, and when it becomes urgent.”
+
+Signal test: S26 Love ✓ · S25 Live ✓ · S03 Remember ✓
+
+### LGPA Delta
+
+|Theme        |Baseline Description             |Base Score|Post Description                    |Post Score|Delta |
+|-------------|---------------------------------|----------|------------------------------------|----------|------|
+|People       |Structural thinker               |4/5       |Structural + accountable builder    |5/5       |+1    |
+|Requirements |Hierarchy with empirical standing|4/5       |Administrability gap → architecture |5/5       |+1    |
+|Automation   |Trust dynamic systems            |3/5       |Specify AI behavior at S25 threshold|5/5       |+2    |
+|**Composite**|                                 |**11/15** |                                    |**15/15** |**+4**|
+
+*Baseline: 3-question compressed run · directionally valid · full 9-question run recommended for cohort reporting*
+
+### DQR Audit Record
+
+*This audit was conducted during the session that produced this document — a live demonstration of DQR applied to a real BL artifact in the same context that created it. The scoring is not self-congratulatory. It is methodological: every BL session that produces an artifact ends with DQR. This is the first such record.*
+
+|Dimension                |Score    |Primary Finding                                                                  |
+|-------------------------|---------|---------------------------------------------------------------------------------|
+|D01 Truthfulness         |5/5      |LGPA delta table updated with numeric base and post scores per theme · gap closed|
+|D02 Usefulness           |5/5      |Reference-grade utility · transforms reader capability                           |
+|D03 Receivability        |4/5      |Claude/Gemini role separation needs one-sentence rationale                       |
+|D04 Context Relevance    |5/5      |Scope boundary held throughout · exemplary                                       |
+|D05 Timely Need          |5/5      |Arrived at exact moment needed · anticipates BUILD                               |
+|D06 Clarity & Conciseness|4/5      |A9 code block needs legend · LGPA delta language imprecise                       |
+|D07 Comprehensive Width  |4/5      |Watch Points section missing                                                     |
+|D08 Completeness in Depth|5/5      |A3 gap consequence traced · LGPA numeric scores added · gap closed               |
+|**Total**                |**40/40**|**100% · Exceptional · publish-ready**                                           |
+
+### HITL Enrichment Finding
+
+The S25 Life Safety signal appeared across People, Requirements, and Automation question clusters without a dedicated LGPA theme. Recommendation: add S25 Life Safety as a fifth LGPA theme cluster. Submitted for HITL review.
+
+### DQR Certification Insight
+
+DQR recognized as BL certification layer during this run — not invented as one, recognized in practice. Honest positioning: the same moat as CLAAS and C-SALF. The instrument was already being applied. The run named what it was.
+
+### Process Validity · What the Process Surfaced That Was Not in PRE-0
+
+- A prerequisite product layer (2a + 2b) the original scenario did not contain
+- A design law (A9 Universal) governing the entire stack
+- An epistemological gap: no existing AI tool gives lived experience primary evidence standing
+- A new LGPA theme candidate (S25 Life Safety cluster)
+- DQR as BL certification layer
+
+-----
+
+*Banyan Logic, LLC · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
+*srinimkasturi.github.io/Hums · Frameworks excavated from perennial wisdom*
+
+-----
+
+# 13. Appendix C · COO Operational Manual · Sustaining BL 4.0 via the 27 Signals
+
+> Shreyas (The Lasting, Evolutionary Good) over Preyas (The Short-Term, Pleasurable/Expedient)
+> Doctrinal Alignments: Vedantic Work Ethic (Karma Yoga) & Papal Mandate (Magnifica Humanitas)
 
 **Document ID:** BL-COO-4.0-2026
-**Core Mandate:** *Shreyas* (The Lasting, Evolutionary Good) over *Preyas* (The Short-Term, Pleasurable/Expedient)
-**Doctrinal Alignments:** Vedantic Work Ethic (*Karma Yoga*) & Papal Mandate (*Magnifica Humanitas*)
 
 > *This manual was developed by bridging the Vedantic view of Work World with the operational demands of the AI era, and operationalizes Pope Leo XIV’s* Magnifica Humanitas *(May 2026) as the ethical architecture of BL 4.0.*
 
 -----
 
-## I. Executive Directive: The Philosophy of the COO Office
+### I. Executive Directive: The Philosophy of the COO Office
 
 This manual establishes the operational governance framework for Banyan Logic (BL 4.0). Our organizational health is no longer evaluated through the short-term lenses of algorithmic optimization, rapid labor liquidation, or maximum quarterly margins (*Preyas*). Instead, the Chief Operating Officer evaluates and steers the enterprise by monitoring the harmony of the **27 Signals of Human Nature**.
 
@@ -776,11 +1370,11 @@ By managing these 27 signals across three interconnected domains — **The Marke
 
 -----
 
-## II. The 27-Signal Operational Health Architecture
+### II. The 27-Signal Operational Health Architecture
 
 The COO office tracks health across four distinct layers of the human composition. Any operational decision that degrades a signal for short-term gain (*Preyas*) is an architectural failure.
 
-### Layer 1: Identity & Governance Triad (The Core Steering Mechanisms)
+#### Layer 1: Identity & Governance Triad (The Core Steering Mechanisms)
 
 These three signals dictate the intentionality, culture, and ethical boundaries of our organization.
 
@@ -802,7 +1396,7 @@ These three signals dictate the intentionality, culture, and ethical boundaries 
 - *Definition:* The capacity for authentic relationship, compassion, and psychological trust.
 - *Operational Mandate:* **Anti-Simulated Care.** Conversations, performance reviews, and mentorship within BL Staff must be executed via human-to-human interaction. We prohibit the use of faked empathy or synthetic AI companions to manage employee morale or vendor relationships.
 
-### Layer 2: Vital Flows (Prana / Energetic Sustenance)
+#### Layer 2: Vital Flows (Prana / Energetic Sustenance)
 
 These five signals manage the life force, metabolic balance, and energetic output of the organization.
 
@@ -816,7 +1410,7 @@ These five signals manage the life force, metabolic balance, and energetic outpu
 
 **8. Upward Flow (Growth, Effort & Voice):** The structural space for staff and vendors to pitch creative ideas, exercise whistleblowing, and drive upward mobility without fear of corporate retaliation.
 
-### Layer 3: Organs of Action (Karma Indriyas / Operational Output)
+#### Layer 3: Organs of Action (Karma Indriyas / Operational Output)
 
 These five signals represent how BL physically executes its mandate in the physical and digital world.
 
@@ -830,7 +1424,7 @@ These five signals represent how BL physically executes its mandate in the physi
 
 **13. Procreate (Innovation & Capital Generation):** The launching of new product lines, ventures, and architectures. Every new spin-off must inherit the 27-signal DNA natively.
 
-### Layer 4: Senses of Perception (Jnana Indriyas / Market & Internal Feedback)
+#### Layer 4: Senses of Perception (Jnana Indriyas / Market & Internal Feedback)
 
 These five systems are the data collection portals through which the COO monitors real-world alignment.
 
@@ -843,7 +1437,7 @@ These five systems are the data collection portals through which the COO monitor
 
 -----
 
-## III. The Marketplace Health Matrix: *Shreyas* vs. *Preyas*
+### III. The Marketplace Health Matrix: *Shreyas* vs. *Preyas*
 
 The COO office reviews Marketplace Engagement quarterly using this binary alignment rubric:
 
@@ -855,21 +1449,21 @@ The COO office reviews Marketplace Engagement quarterly using this binary alignm
 
 -----
 
-## IV. Staff Engagement Protocol: Guarding the 27 Signals
+### IV. Staff Engagement Protocol: Guarding the 27 Signals
 
-### 1. The “Dignity by Design” Work Environment
+#### 1. The “Dignity by Design” Work Environment
 
 - **Sensory and Vital Flow Protection:** Continuous screen and cognitive interaction are capped at a maximum of 90-minute blocks, punctuated by mandatory somatic intervals to preserve *Prana* (Breathing and Circulation).
 - **The Anti-Atrophy Mandate:** No employee may have their operational function completely hollowed out by automation. If a workflow becomes 100% automated, that staff member must be actively upskilled to manage the system’s edge cases, transitioning their primary activity from repetitive physical execution (*Karma Indriyas*) to structural evaluation (*Buddhi*).
 
-### 2. Behavioral Health Auditing
+#### 2. Behavioral Health Auditing
 
 - The COO will not measure staff health by keystrokes, activity heatmaps, or predictive productivity indexes (*Preyas* tokens).
 - Instead, quarterly health indices are compiled through qualitative peer-reviews tracking the vitality of the **Upward Flow** (Is voice being heard?) and **Emotions** (Is psychological safety present?).
 
 -----
 
-## V. Vendor & Partner Governance Code
+### V. Vendor & Partner Governance Code
 
 We treat our supply chain and compute providers not as external operational expenses, but as extended organs of our own collective action (*Hold* and *Walk/Run*).
 
@@ -879,7 +1473,7 @@ We treat our supply chain and compute providers not as external operational expe
 
 -----
 
-## VI. COO Verification Checklist for Weekly Review
+### VI. COO Verification Checklist for Weekly Review
 
 Before executing any major capital allocation, product launch, or organizational realignment, the COO must check off these three criteria:
 
@@ -889,7 +1483,7 @@ Before executing any major capital allocation, product launch, or organizational
 
 -----
 
-## VII. Doctrinal Cross-Reference: HUMS 27 Signals ↔ *Magnifica Humanitas* Alignment
+### VII. Doctrinal Cross-Reference: HUMS 27 Signals ↔ *Magnifica Humanitas* Alignment
 
 The five cautions of *Magnifica Humanitas* (MH) map directly onto the 27-signal framework, confirming that BL 4.0’s operational architecture is independently convergent with the Vatican’s ethical mandate:
 
@@ -910,133 +1504,8 @@ The five cautions of *Magnifica Humanitas* (MH) map directly onto the 27-signal 
 
 *By Order of the Office of the Chief Operating Officer — Banyan Logic 4.0 Architecture*
 
-*Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
-
 -----
 
-# 08. Value Measurement & Feedback
-
-> Full-loop signal health and market intelligence · Feeds back to all seven prior stages
-
------
-
-## The Governing Principle
-
-BL does not close its books at delivery. Value Measurement is the stage where the Business Value Lifecycle becomes a living system rather than a linear plan. This section defines what BL measures, how it measures it, and — critically — which measurement feeds back to which upstream stage. Running this loop *is* the proof of concept. An AI and Automation Literacy company that cannot trace its own value delivery has no standing to teach others to do it.
-
-Two measurement streams run in parallel: **27-Signal Health** (the human system) and **Market & Revenue Signals** (the business system). Neither is sufficient alone. A business hitting revenue targets while degrading human signals is the *Preyas* outcome this entire framework exists to prevent. A business with healthy signals but no revenue cannot sustain its mission. The loop closes when both streams are read together and fed back upstream.
-
------
-
-## Stream 1: 27-Signal Health Measurement
-
-### What is measured
-
-The 27 Signals (HUMS™) are the diagnostic vocabulary for how the human system is functioning across BL’s three stakeholder groups: **learners**, **staff/collaborators**, and **partners/vendors**. Value Measurement uses signals as leading indicators — they fire *before* revenue or retention metrics show stress.
-
-|Signal Layer            |Key Signals Tracked                           |Measurement Method                                           |Cadence   |
-|------------------------|----------------------------------------------|-------------------------------------------------------------|----------|
-|Identity & Governance   |S1 Self · S2 Intelligence · S3 Emotions       |Qualitative peer review · COO weekly check                   |Weekly    |
-|Vital Flows             |S4 Breathing · S6 Circulation · S8 Upward Flow|Community session tone audit · session dropout pattern       |Bi-weekly |
-|Organs of Action        |S9 Speech · S11 Walk/Run · S13 Procreate      |Content integrity review · deployment velocity check         |Monthly   |
-|Senses / Market Feedback|S14–S18 Seeing/Hearing/Touching               |Brand perception monitoring · learner distress signals       |Continuous|
-|Purposes                |S25 Live · S26 Love · S27 Connect             |Renewal rate · workaround rate · community connection density|Quarterly |
-
-### Signal health → feedback destinations
-
-|Signal Alert                                        |Root Cause Stage              |Feedback Action                                                                   |
-|----------------------------------------------------|------------------------------|----------------------------------------------------------------------------------|
-|S2 Intelligence degrading (passive dependency on AI)|**01 Identity**               |Revisit honest-moat statement; reinforce human-in-the-loop design in all artifacts|
-|S3 Emotions degrading (simulated care rising)       |**07 Operating**              |Trigger Anti-Simulated Care review; restore human-to-human touchpoints            |
-|S6 Circulation blocked (resource or info asymmetry) |**03 Financials**             |Audit capital allocation; check Universal Destination Compliance                  |
-|S8 Upward Flow suppressed (voice not heard)         |**04 Execution**              |PI retrospective; open escalation channel; review session facilitation design     |
-|S9 Speech eroding (message drift toward *Preyas*)   |**05 Marketing**              |Content integrity review; realign messaging to *Shreyas* frame                    |
-|S11 Walk/Run unconstrained (speed over dignity)     |**06 Product**                |Dignity-by-Design audit of latest artifact; slow deployment if needed             |
-|S25–S27 Purposes weakening (meaning loss)           |**01 Identity + 04 Execution**|Mission integrity review at next Y-gate; Code Therapist engagement                |
-
------
-
-## Stream 2: Market & Revenue Signal Measurement
-
-### What is measured
-
-Revenue signals are the business system’s equivalent of the vital flows. They confirm that value is being delivered to the market at a rate sufficient to sustain the mission. The $200K ARR Y4 gate is not an aspiration — it is the decision trigger that determines whether BL continues as a solo-founder model or activates the next phase of the 15-year income plan.
-
-|Signal                  |Metric                                            |Threshold               |Cadence         |
-|------------------------|--------------------------------------------------|------------------------|----------------|
-|**Enrollment velocity** |New T-Class enrollees / quarter                   |15–20/Q by Y2           |Quarterly       |
-|**Renewal rate**        |$59/yr renewal at M12                             |≥ 65%                   |Annual cohort   |
-|**Workaround rate**     |% learners using BL artifacts outside the course  |≥ 30% (healthy adoption)|Quarterly survey|
-|**Org license pipeline**|Enterprise / institutional license conversations  |5 active by end Y1      |Monthly         |
-|**Community density**   |CLAAS Conversations attendance · OnRamp attendance|50+ by Q4 Y0            |Monthly         |
-|**ARR progress**        |Cumulative annual recurring revenue               |$200K by Y4             |Quarterly       |
-|**Content compounding** |Evergreen asset reuse rate (views / new sessions) |Rising ratio over time  |Quarterly       |
-
-### Revenue signals → feedback destinations
-
-|Revenue Signal                     |Root Cause Stage               |Feedback Action                                                                  |
-|-----------------------------------|-------------------------------|---------------------------------------------------------------------------------|
-|Enrollment velocity below target   |**05 Marketing**               |Review CLAAS Conversations conversion path; test OnRamp zero-friction entry      |
-|Renewal rate below 65%             |**01 Identity + 06 Product**   |Deepen HUMS layer in curriculum; audit whether the renewal *feels* like belonging|
-|Org license pipeline stalled       |**02 Strategy**                |Revisit Canvas HITL flywheel; check enterprise data sovereignty positioning      |
-|Community density flat             |**04 Execution**               |Adjust session cadence or format; Code Therapist segment activation              |
-|ARR growth below Y-gate trajectory |**03 Financials**              |Rerun financial model; evaluate Tier pricing elasticity; assess Y-gate timing    |
-|Content compounding ratio declining|**04 Execution + 05 Marketing**|Audit content calendar; prioritize evergreen over ephemeral output               |
-
------
-
-## The Feedback Architecture — Full Loop
-
-Every measurement in both streams resolves to an upstream stage. Nothing in this document is a dead-end. The loop is the point.
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   BL BUSINESS VALUE LIFECYCLE                   │
-│                                                                  │
-│  01 Identity ──→ 02 Strategy ──→ 03 Financials ──→ 04 Execution │
-│      ↑                                                    │      │
-│      │                                                    ↓      │
-│  08 Value  ←── 07 Operating ←── 06 Product ←── 05 Marketing     │
-│  Measurement                                                     │
-│      │                                                           │
-│      └── 27-Signal Health feedback ──→ all seven stages          │
-│      └── Market & Revenue feedback ──→ all seven stages          │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### Quarterly Review Protocol
-
-The COO (Section 07) runs the Value Measurement review quarterly using a two-track scorecard:
-
-**Track A — Signal Health Index**
-
-- Pull bi-weekly signal observations from sessions, content audits, and peer reviews
-- Map any degraded signals to their root cause stage
-- Initiate targeted feedback action before the next PI boundary
-
-**Track B — Revenue Momentum Index**
-
-- Pull enrollment, renewal, pipeline, community, and ARR figures
-- Compare against Y-gate trajectory
-- Map any gap to its root cause stage
-- Distinguish *structural* gaps (strategy or product) from *execution* gaps (marketing or cadence)
-
-**Integration check — the *Shreyas* test:**
-Before any corrective action is triggered, the COO asks: *is the gap a signal that we are moving too fast toward Preyas, or too slow toward Shreyas?* A revenue gap caused by refusing to use engagement-maximizing dark patterns is not a failure. It is the framework working as designed. A signal health gap caused by chasing revenue is the failure this entire architecture exists to prevent.
-
------
-
-## Value Measurement as the Living Proof of Concept
-
-BL teaches the Business Value Lifecycle (C-SALF · ISO 17020 · HUMS) as the foundation of AI and Automation Literacy. Section 08 is where BL *runs* that lifecycle on itself. Every CLAAS Conversations session is a Phase 5 + Phase 6 exercise. Every cohort renewal is an S26 Love signal measurement. Every enterprise license conversation is a Phase 3 Plan artifact being stress-tested in the real market.
-
-The framework improves through the humans who use it. The humans who use it first are inside BL. Value Measurement is the mechanism that makes BL the first and most rigorous test case of everything it teaches.
-
-> *“The relay is the instrument. The content adapts to the domain.”* — BL Course Architecture
-> 
-> The relay here is the Business Value Lifecycle. The domain is BL itself.
-
------
-
-*Banyan Logic · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
-*“Framing the problem is half the Transformation” — Banyan Logic, 2026*
+*Banyan Logic, LLC · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
+*srinimkasturi.github.io/Hums · Frameworks excavated from perennial wisdom*
+*BL4refdoc · Last updated: 2026-05-28 · 13 sections: 01–06 core + DQR + SRT + HUMS Roles + Gap Analysis + Appendix A + Appendix B + Appendix C*
