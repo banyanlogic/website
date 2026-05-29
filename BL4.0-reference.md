@@ -64,6 +64,57 @@ A practitioner holding all five simultaneously is not using five tools.
 They are using one integrated diagnostic instrument with five lenses.
 That is BLIFe.
 
+### BLIFe · Structural Diagram
+
+```mermaid
+graph TD
+    %% ── Outer problem shell ──────────────────────────────────────
+    PROBLEM(["⬡  Human-Systems Problem\n─────────────────────────\nAny breakdown in a person,\na team, a product, or a system"])
+
+    %% ── HUMS — the axle ─────────────────────────────────────────
+    HUMS["🔵  HUMS™  ·  The Axle\n────────────────────────────────\n27 Signals  ·  6 Buckets\nSignal substrate of every human system\nExcavated from perennial wisdom\nNever exits  ·  Always present"]
+
+    %% ── Four outer lenses ────────────────────────────────────────
+    CLAAS["🟡  CLAAS\n────────────────────────\nGrowth Lens\n─\nWhat must the human\ndevelop for this era?\n─\nC·Cyber  L·Lean  A·Agile\nA·Automation  S·Scale"]
+
+    CSALF["🟡  C-SALF\n────────────────────────\nDelivery Lens\n─\nHow is structured work\nactually moving?\n─\n6 phases  ·  7 roles\nBVS→BVDev→BVO relay\nHUMS is the axle"]
+
+    DQR["🟡  DQR\n────────────────────────\nOutput Fitness Lens\n─\nIs the artifact fit\nto hand forward?\n─\n8 dimensions  ·  40 pts\nISO 17020  ·  CC BY 4.0\nEvery baton boundary"]
+
+    SRT["🟡  SRT\n────────────────────────\nIntent Lens\n─\nIs the intent behind\nthe output honest?\n─\nGuna diagnosis  ·  7 dims\n12 layers  ·  Locates & reveals\nDoes not score or advise"]
+
+    %% ── BLIFe binding ring ───────────────────────────────────────
+    BLIFE(["✦  BLIFe\nBanyan Logic Integrated Frameworks\n─────────────────────────────\nOne instrument  ·  Five lenses\nNot sequential — multiplicative"])
+
+    %% ── Flows ────────────────────────────────────────────────────
+    PROBLEM -->|"presents as"| HUMS
+
+    HUMS -->|"What must grow?"| CLAAS
+    HUMS -->|"How is it delivered?"| CSALF
+    HUMS -->|"Is output fit?"| DQR
+    HUMS -->|"Is intent honest?"| SRT
+
+    CLAAS -->|"signal back to axle"| HUMS
+    CSALF -->|"signal back to axle"| HUMS
+    DQR   -->|"signal back to axle"| HUMS
+    SRT   -->|"signal back to axle"| HUMS
+
+    HUMS  -->|"integrated reading"| BLIFE
+
+    %% ── Styling ──────────────────────────────────────────────────
+    classDef problem  fill:#1a1a2e,stroke:#4a4a8a,color:#c8c8ff,rx:12
+    classDef axle     fill:#1b3a6b,stroke:#3a7bd5,color:#e8f0ff,font-weight:bold,rx:8
+    classDef lens     fill:#3a2a00,stroke:#F5A623,color:#ffe8a0,rx:6
+    classDef blife    fill:#0d2d1a,stroke:#2ecc71,color:#a8ffcc,font-weight:bold,rx:12
+
+    class PROBLEM problem
+    class HUMS axle
+    class CLAAS,CSALF,DQR,SRT lens
+    class BLIFE blife
+```
+
+> **Reading the diagram:** The problem always enters through HUMS — the signal substrate that never exits. From the axle, each of the four lenses applies its own diagnostic cut. Each lens reads HUMS signals and feeds its finding back to the axle. HUMS synthesizes all four readings into a single integrated diagnostic. BLIFe is the name for holding all five simultaneously. The arrows are bidirectional — the lenses are not downstream filters; they are live feedback channels to the axle. Blue = HUMS axle (Purushartha · free will signal layer). Yellow = four outer lenses (Prarabdha · the given conditions each lens examines). Green = BLIFe (the integrated instrument that holds both).
+
 ### The Fully Realized Vision
 
 Imagine 10,000 practitioners — teachers, nurses, engineers, social workers, plumbers, security officers, farmers — each carrying the vocabulary to see where their system breaks before it breaks someone. Not because they attended a conference. Because a framework excavated from 5,000-year-old wisdom was made teachable, affordable, and honest about what it is and is not. Each practitioner passes it forward — to their team, their apprentice, their child. The compounding is not financial. It is human.
@@ -76,7 +127,7 @@ BLIFe is the public-facing name for the integrated instrument. Individual framew
 
 All five source files: srinimkasturi.github.io/Hums/
 
-**Change log:** 2026-05-28 · v4.0 · §00 BLIFe added · SRT corrected to Intent Refinement Layer · DQR Certification Tier added · Automation Literacy Process + Run 01 added as Appendices · LGPA dual-mode documented · CLAAS canonical 2026 correction applied · BLIFe analysis applied · Document scores 40/40 DQR
+**Change log:** 2026-05-28 · v4.1 · §00 BLIFe structural Mermaid diagram added (HUMS-axle / four-lens bicycle-wheel topology · Blue/Yellow/Green colour semantics · bidirectional signal-return arrows · diagram legend) · v4.0 · §00 BLIFe added · SRT corrected to Intent Refinement Layer · DQR Certification Tier added · Automation Literacy Process + Run 01 added as Appendices · LGPA dual-mode documented · CLAAS canonical 2026 correction applied · BLIFe analysis applied · Document scores 40/40 DQR
 
 -----
 
