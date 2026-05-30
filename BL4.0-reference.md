@@ -12,7 +12,6 @@
 
 ## Table of Contents
 
-1. [BLIFe · The Integrated Instrument](#00-blife--the-integrated-instrument) — Five frameworks · one diagnostic lens · the orienting frame for everything that follows
 1. [Distinctive Competence](#01-distinctive-competence) — AI and Automation Literacy · Systems Thinking for All · Six competence dimensions · The moat
 1. [Business Canvas](#02-business-canvas) — Strategy on one page · HITL flywheel · IP separation
 1. [Business Plan](#03-business-plan) — Financials Y0–Y8 · Exit $1.5–1.86M+ · Six revenue tiers
@@ -20,114 +19,13 @@
 1. [CLAAS Marketing](#05-claas-marketing) — Two tracks · CLAAS Conversations · OnRamp · Zero-friction path
 1. [Course Architecture](#06-course-architecture) — The product blueprint · 18-cell grid · ISO 17020
 1. [DQR · Document Quality Review Framework](#dqr--document-quality-review-framework) — Cross-cutting quality gate · ISO 17020 at artifact level · 8 dimensions · DQR Auditor certification tier · CC BY 4.0
-1. [SRT · Gita Chapter 18 · Intent Refinement Layer](#srt--gita-chapter-18--intent-refinement-layer) — Intent refinement · surgical conflict analysis · 7 dimensions · 12-layer invocation · HUMS companion
-1. [BLIFe · Banyan Logic Integrated Frameworks](#08b-blife--banyan-logic-integrated-frameworks) — Five frameworks as one instrument · invocation map · integrated diagnostic
+1. [SRT · Gita Chapter 18 Operational Diagnostic Instrument](#srt--gita-chapter-18-operational-diagnostic-instrument) — Step 5 in BL research chain · Conflict resolution + aspiration · 7 dimensions · 12-layer invocation · HUMS companion
 1. [HUMS Six-Bucket Scale-Up Roles](#banyan-logic--hums-six-bucket-scale-up-roles) — ART of one → team of six · B1–B6 playbooks · Chief Code Therapist
 1. [Gap Analysis](#gap-analysis--quantified-impact-and-revenue-opportunity) — Six gaps · quantified impact · revenue opportunity · Y4 ARR map
 1. [Appendix A · Automation Literacy Process · Validated Sequence](#appendix-a--automation-literacy-process--validated-sequence) — Full 7-step sequence · PRE/POST instruments · source registry · Watch Points · A9 Universal
-1. [Appendix B · Run 01 · Integrative Medicine Treatment Mapping Tool](#appendix-b--run-01--integrative-medicine-treatment-mapping-tool) — First validated run · 2026-05-28 · DQR 40/40 · LGPA delta +4 · product stack · mission sentence
+1. [Appendix B · Run 01 · Integrative Medicine Treatment Mapping Tool](#appendix-b--run-01--integrative-medicine-treatment-mapping-tool) — First validated run · 2026-05-28 · DQR 35/40 · LGPA delta +4 · product stack · mission sentence
 1. [Appendix C · COO Operational Manual · Sustaining BL 4.0 via the 27 Signals](#appendix-c--coo-operational-manual--sustaining-bl-40-via-the-27-signals) — Shreyas over Preyas · 27-signal governance architecture · Marketplace Health Matrix · Staff Protocol · Vendor Code · COO Checklist · Magnifica Humanitas alignment
-
------
-
-# 00. BLIFe · The Integrated Instrument
-
-> Five frameworks. One diagnostic lens. The orienting frame for everything that follows.
-
------
-
-Banyan Logic is not a collection of frameworks. It is one integrated diagnostic instrument — **BLIFe** — that presents five lenses on any human-systems problem. The five frameworks are not sequential steps to be completed in order. They are simultaneous lenses that can be applied together or individually, depending on what the problem requires.
-
-Understanding BLIFe first means every section that follows lands in the right place.
-
-### The Five Lenses
-
-|Framework |What It Diagnoses                             |One-Line Role                                                                                        |
-|----------|----------------------------------------------|-----------------------------------------------------------------------------------------------------|
-|**HUMS™** |The human signal substrate                    |27 signals · 6 buckets · the stethoscope and the axle · excavated from perennial wisdom · never exits|
-|**CLAAS** |What the human must grow in for this era      |5 upskilling dimensions · C·Cyber · L·Lean · A·Agile · A·Auto · S·Scale                              |
-|**C-SALF**|How structured work is delivered              |6 phases · 7 roles · BVS→BVDev→BVO relay · HUMS is the axle                                          |
-|**DQR**   |Whether the output is fit to hand forward     |8 dimensions · 40 points · ISO 17020 inspection at every baton boundary                              |
-|**SRT**   |Whether the intent behind the output is honest|Guna diagnosis · 7 dimensions · 12 layers · locates and reveals · does not score or advise           |
-
-### The Integrated Statement
-
-```
-HUMS™   names what is happening at the signal level
-CLAAS   names which competency dimension the gap belongs to
-C-SALF  names which phase and role the gap is showing up in
-DQR     names whether the output produced is fit to close the gap
-SRT     names whether the intent behind the output is honest enough to hold
-```
-
-A practitioner holding all five simultaneously is not using five tools.
-They are using one integrated diagnostic instrument with five lenses.
-That is BLIFe.
-
-### BLIFe · Structural Diagram
-
-```mermaid
-graph TD
-    %% ── Outer problem shell ──────────────────────────────────────
-    PROBLEM(["⬡  Human-Systems Problem\n─────────────────────────\nAny breakdown in a person,\na team, a product, or a system"])
-
-    %% ── HUMS — the axle ─────────────────────────────────────────
-    HUMS["🔵  HUMS™  ·  The Axle\n────────────────────────────────\n27 Signals  ·  6 Buckets\nSignal substrate of every human system\nExcavated from perennial wisdom\nNever exits  ·  Always present"]
-
-    %% ── Four outer lenses ────────────────────────────────────────
-    CLAAS["🟡  CLAAS\n────────────────────────\nGrowth Lens\n─\nWhat must the human\ndevelop for this era?\n─\nC·Cyber  L·Lean  A·Agile\nA·Automation  S·Scale"]
-
-    CSALF["🟡  C-SALF\n────────────────────────\nDelivery Lens\n─\nHow is structured work\nactually moving?\n─\n6 phases  ·  7 roles\nBVS→BVDev→BVO relay\nHUMS is the axle"]
-
-    DQR["🟡  DQR\n────────────────────────\nOutput Fitness Lens\n─\nIs the artifact fit\nto hand forward?\n─\n8 dimensions  ·  40 pts\nISO 17020  ·  CC BY 4.0\nEvery baton boundary"]
-
-    SRT["🟡  SRT\n────────────────────────\nIntent Lens\n─\nIs the intent behind\nthe output honest?\n─\nGuna diagnosis  ·  7 dims\n12 layers  ·  Locates & reveals\nDoes not score or advise"]
-
-    %% ── BLIFe binding ring ───────────────────────────────────────
-    BLIFE(["✦  BLIFe\nBanyan Logic Integrated Frameworks\n─────────────────────────────\nOne instrument  ·  Five lenses\nNot sequential — multiplicative"])
-
-    %% ── Flows ────────────────────────────────────────────────────
-    PROBLEM -->|"presents as"| HUMS
-
-    HUMS -->|"What must grow?"| CLAAS
-    HUMS -->|"How is it delivered?"| CSALF
-    HUMS -->|"Is output fit?"| DQR
-    HUMS -->|"Is intent honest?"| SRT
-
-    CLAAS -->|"signal back to axle"| HUMS
-    CSALF -->|"signal back to axle"| HUMS
-    DQR   -->|"signal back to axle"| HUMS
-    SRT   -->|"signal back to axle"| HUMS
-
-    HUMS  -->|"integrated reading"| BLIFE
-
-    %% ── Styling ──────────────────────────────────────────────────
-    classDef problem  fill:#1a1a2e,stroke:#4a4a8a,color:#c8c8ff,rx:12
-    classDef axle     fill:#1b3a6b,stroke:#3a7bd5,color:#e8f0ff,font-weight:bold,rx:8
-    classDef lens     fill:#3a2a00,stroke:#F5A623,color:#ffe8a0,rx:6
-    classDef blife    fill:#0d2d1a,stroke:#2ecc71,color:#a8ffcc,font-weight:bold,rx:12
-
-    class PROBLEM problem
-    class HUMS axle
-    class CLAAS,CSALF,DQR,SRT lens
-    class BLIFE blife
-```
-
-> **Reading the diagram:** The problem always enters through HUMS — the signal substrate that never exits. From the axle, each of the four lenses applies its own diagnostic cut. Each lens reads HUMS signals and feeds its finding back to the axle. HUMS synthesizes all four readings into a single integrated diagnostic. BLIFe is the name for holding all five simultaneously. The arrows are bidirectional — the lenses are not downstream filters; they are live feedback channels to the axle. Blue = HUMS axle (Purushartha · free will signal layer). Yellow = four outer lenses (Prarabdha · the given conditions each lens examines). Green = BLIFe (the integrated instrument that holds both).
-
-### The Fully Realized Vision
-
-Imagine 10,000 practitioners — teachers, nurses, engineers, social workers, plumbers, security officers, farmers — each carrying the vocabulary to see where their system breaks before it breaks someone. Not because they attended a conference. Because a framework excavated from 5,000-year-old wisdom was made teachable, affordable, and honest about what it is and is not. Each practitioner passes it forward — to their team, their apprentice, their child. The compounding is not financial. It is human.
-
-That is the orbit BLIFe is aimed at. The financial plan is the vehicle. The 10,000 practitioners are the destination.
-
-### Positioning
-
-BLIFe is the public-facing name for the integrated instrument. Individual frameworks (HUMS · CLAAS · C-SALF · DQR · SRT) are the component lenses. T-Class is the curriculum that teaches practitioners to use them. LGPA is the dual-mode lifecycle diagnostic instrument: Mode 1 onboards a new practitioner before their first conversation; Mode 2 provides continuous career-long evaluation at a small recurring fee, building longitudinal expertise data that self-sharpens the instrument.
-
-All five source files: srinimkasturi.github.io/Hums/
-
-**Change log:** 2026-05-28 · v4.1 · §00 BLIFe structural Mermaid diagram added (HUMS-axle / four-lens bicycle-wheel topology · Blue/Yellow/Green colour semantics · bidirectional signal-return arrows · diagram legend) · v4.0 · §00 BLIFe added · SRT corrected to Intent Refinement Layer · DQR Certification Tier added · Automation Literacy Process + Run 01 added as Appendices · LGPA dual-mode documented · CLAAS canonical 2026 correction applied · BLIFe analysis applied · Document scores 40/40 DQR
+1. [Appendix D · RSK2 Cryptanalysis · Attack Surface & Live Simulators](#14-appendix-d--rsk2-cryptanalysis--attack-surface--live-simulators) — 13 attacks A1–B4 · 3 defense layers · pre/post mitigation scores · Gemini external review · live HTML tool
 
 -----
 
@@ -139,7 +37,19 @@ All five source files: srinimkasturi.github.io/Hums/
 
 Banyan Logic is an AI and Automation Literacy company — bringing systems thinking to the masses so all can improve their lives.
 
-The mission resolves at the human outcome: 10,000 practitioners carrying the vocabulary to see where their system breaks before it breaks someone — teachers, engineers, nurses, social workers, security officers, anyone whose work is being transformed by AI and automation. Each practitioner passes it forward. The compounding is human, not financial. The financial plan is the vehicle. The practitioners are the destination.
+-----
+
+### Canonical Definition · Automation Literacy
+
+**Automation Literacy is the human capacity to use technology to determine what needs to get done and how to get it done — and to direct that process with judgment.**
+
+The definition has two inseparable halves:
+
+**What to get done** — The literate human uses technology to surface, name, and prioritize value before any machine touches it. This is the HUMS B2 layer (How We Work): S05 Think · S07 Rely · S02 Ideate. It is also the C-SALF BVS layer — the human authors the Business Value Story before the relay begins. No AI can substitute here. The human who cannot name the *what* will automate the wrong thing at full speed.
+
+**How to get it done** — The literate human selects, governs, and evaluates the non-human intelligence executing the work. This is CLAAS A2: the full spectrum from Programming → Robotics → AI. The human who understands the *how* layer does not fear replacement — they direct it.
+
+Most workers can hold one half. Automation Literacy means holding both simultaneously. LGPA diagnoses exactly where the gap lives. T-Class closes it. The worker who has lost the *what* — whose sense of value was entirely bound to a method now being automated — is the worker this company exists to reach. The literacy reframe gives the *what* back. Their judgment is irreplaceable. Their method was always the vehicle, never the destination.
 
 -----
 
@@ -209,7 +119,7 @@ C-SALF and CLAAS are not inventions . They are a personally validated selection 
 - CLAAS Conversations — Sundays 10–11 AM ET, alternating weeks · open mic · practitioners · real problems diagnosed live · starting July 12, 2026
 - OnRamp — 1st & 3rd Sundays 10–11 AM ET · Citizen Automators entry track · systems thinking foundation before the open mic · lower barrier · same slot, different audience
 - LinkedIn publishing — 4 posts/month, practitioner voice
-- HITL Self-Sharpening Flywheel: LGPA Mode 1 takers (onboarding diagnosis · free) → LGPA Mode 2 subscribers (continuous career evaluation · paying · longitudinal data) → Sunday Open Mic participants (real problems · live diagnosis) → Y2 Practitioner Evaluators (graduates as quality gate) → LGPA bank enriched → flywheel completes. Mode 2 subscribers are the highest-value flywheel contributors — every resession adds longitudinal data no one-time taker can produce. Every real-world market problem that touches the framework makes it structurally better. This is the compounding asset.
+- HITL Self-Sharpening Flywheel: LGPA takers (49 questions · self-service diagnosis) → Sunday Open Mic participants (real problems · live diagnosis) → Y2 Practitioner Evaluators (graduates as quality gate) → LGPA bank enriched → flywheel completes. Every real-world market problem that touches the framework makes it structurally better. This is the compounding asset.
 - T3A build — student builds Time·Todo·Track·Adjust from scratch · deploys to GitHub Pages · exits with 4 artifacts · the T-Class reference deliverable
 - T-Class curriculum delivery — artifact-based, ISO 17020
 - HUMS™ excavation — 27 signals, ongoing deepening
@@ -224,25 +134,19 @@ What BL does: Names it. Lowers the activation energy for the People layer to jum
 
 The mechanics: HUMS™ (27 signals · the stethoscope) · C-SALF (6 phases · 7 roles · BVS→BVDev→BVO relay) · T-Class (artifact-based upskilling · ISO 17020) · CLAAS (C · Cyber NFR = Resilience · Performance · Capacity · Security · Administrability · Architecture as implementation layer · L · Lean · A · Agile · A · Automation = Programming→Robotics→AI · S · at Scale). Not new inventions — a 30-year personally validated selection from perennial wisdom and organizational research.
 
-The six-layer stack:
+The four-layer stack:
 
-- HUMS™ — excavated from perennial wisdom. 27 signals. Never exits. The diagnostic instrument and the axle of C-SALF.
+- HUMS™ — excavated from perennial wisdom. 27 signals. Never exits.
 - T-Class — artifact-based upskilling. AI is the pencil. ISO 17020 cert.
 - C-SALF — self-organizing framework from a $3M team. 6 phases · 7 roles. Every engagement produces BVS (Stories · intent) → BVDev (Development · structure) → BVO (Operations · did the value reach the customer?).
 - CLAAS — five upskilling dimensions. C · Cyber = NFR umbrella: Resilience · Performance · Capacity · Security · Administrability (Architecture is the implementation layer that realizes these NFRs). L · Lean = Building. A · Agile = Business. A · Automation = Programming→Robotics→AI (full non-human intelligence spectrum · 2026 correction: not just RPA). S · at Scale = Enterprise. T3A Q3 curriculum covers all 5 dimensions across 9 quantums. Honest about that.
-- DQR — ISO 17020 inspection standard made operational at the artifact level. 8 dimensions · 40-point total. Cross-cutting quality gate at every baton boundary. The certification layer between Tier 4 Practitioner and Tier 6 Evaluator.
-- SRT — Intent refinement layer. Elevates intent toward expansive, principle-directed, empathy evolution. Surgical analysis for reasons behind conflict. Locates and reveals — does not score or advise.
-
-BLIFe (Banyan Logic Integrated Frameworks): HUMS · CLAAS · C-SALF · DQR · SRT used together as the integrated excavation and exploration instrument. The five frameworks are not sequential steps — they are simultaneous lenses applied to any human-systems problem.
-The funnel: Free (LGPA Mode 1 · OnRamp · CLAAS Conversations) → LGPA Continuous ($9–19/mo or $49–99/yr · career-long lifecycle evaluation · HITL data contributor) → Entry ($227 · T-Class + C-SALF) → Renewal ($59/yr) → Org ($1,500–$2,500+) → License ($2,500–$8,000+). Every free touchpoint is designed to pull the right person one step deeper — not to convert everyone, to find the 200. LGPA Continuous subscribers are simultaneously customers and calibration contributors — they pay to improve themselves and improve the instrument for everyone.
+  The funnel: Free (LGPA · OnRamp · CLAAS Conversations) → Entry ($227 · T-Class + C-SALF) → Renewal ($59/yr) → Org ($1,500–$2,500+) → License ($2,500–$8,000+). Every free touchpoint is designed to pull the right person one step deeper — not to convert everyone, to find the 200.
 
 The honest moat · preserve verbatim: C-SALF and CLAAS are not inventions. They are a personally validated selection from perennial wisdom and organizational research. The 30-year credential paired with that honesty is the moat — not a universal theory claim.
 
 **New identity layer:** AI and Automation Literacy is the era-specific expression of this mission. The perennial wisdom layer (HUMS) is the foundation. The commercial layer (C-SALF · T-Class · CLAAS) is the vehicle. The literacy framing is what makes it accessible to all — not just IT professionals, but anyone whose work is being transformed by AI and automation.
 
-- LGPA · Dual-mode lifecycle diagnostic instrument:
-  - Mode 1 (free · onboarding) — 49 questions · no founder required · diagnoses the lifecycle gap before the first conversation · pulls thinkers in before any ask · works for both practitioner and Citizen Automator segments
-  - Mode 2 (small fee · continuous) — career-long evaluation · resession anytime · 4 themes tracked longitudinally · $9–19/mo or $49–99/yr · HITL calibration contributor · instrument improves with every resession · sits between Free and Entry tiers as a low-friction recurring revenue layer
+- LGPA as self-service onboarding — 49 questions, no founder required · diagnoses the gap before the first conversation · pulls thinkers in before any ask · works for both practitioner and Citizen Automator segments
 - CLAAS Conversations — diagnostic consultation, not a webinar
 - 200 engaged thinkers before first dollar — community precedes course
 - ISO 17020 blind evaluation — impartiality as structural trust · BVO is the evidence layer
@@ -288,15 +192,13 @@ The honest moat · preserve verbatim: C-SALF and CLAAS are not inventions. They 
 - Total Y0: ~$2,400 · Y1: ~$4,800
   Y0: $0 intentional · Y1 base: ~$9,945 · Y2: ~$39K · Y3: ~$99K · Y4 decision gate: $200K threshold · Y8 exit: $1.5–1.86M+
 
-**Operating assumption: the base case is the plan. The optimistic case is the ceiling — not the expectation. Every decision is made against the base case. The exit multiple is a boundary condition, not an identity.**
-
 Path to Y4 gate: $227 individual sales alone require ~880 students/yr to reach $200K — that is a marketing grind, not a pull culture. The real path: 15–20 Tier 3B institutional licenses ($2,500–$8,000+) + $59/yr renewal ARR compounding from graduates. Renewal rate is the lagging signal. S26 Love — genuine adoption measured by LGPA workaround rate — is the leading signal.
 
 Excavated from Vedantic philosophy, Ayurvedic medicine, the Bhagavad Gita. Not org research — older and more stable. The diagnostic vocabulary for what a human being does. BL retains permanently. Never exits with any business sale.
 
 Dashaavataara · Vedantic Lullabies · Life After Sun (HUMS coloring book) · ASiWiFi. Same frameworks, different media. Neurodiversity as a core lived design lens — Sarthan and Darshan as primary testers ensure the framework works for all minds, not just neurotypical learners. In an AI-dominated era where most tools optimize for the median, this is a massive and authentic differentiator. Save this song with all ages and all minds.
 
-200 engaged thinkers in Year 0. A movement before a market. Human-in-the-loop is the only empirically valid mechanism for improving any framework. Every person who takes the LGPA improves it. The practitioners guide is implementation-sharpened, one problem at a time. Every CLAAS Conversations session is a case study in formation — the HITL enrichment loop is not an internal process, it is the market claim: this framework improves every time a real problem touches it. Every CLAAS Conversation is one step toward the 10,000.
+200 engaged thinkers in Year 0. A movement before a market. Human-in-the-loop is the only empirically valid mechanism for improving any framework. Every person who takes the LGPA improves it. The practitioners guide is implementation-sharpened, one problem at a time. Every CLAAS Conversations session is a case study in formation — the HITL enrichment loop is not an internal process, it is the market claim: this framework improves every time a real problem touches it.
 
 The aerial roots descend, touch ground, and become load-bearing. C-SALF exits Y8. T-Class exits Y8. The banyan remains. HUMS · S2L2 · ASiWiFi · the creative portfolio — the root does not exit. The buyer gets the branch.
 
@@ -381,8 +283,6 @@ Banyan Logic, LLC is an AI and Automation Literacy company — bringing systems 
 
 C-SALF and CLAAS are not inventions. They are a personally curated subset of existing organizational research — selected through 30 years of lived enterprise observation and validated by running a real $3M team. Organizational research already knows T-shaped people are more effective. It already knows lifecycle thinking reduces failure. It already knows security belongs in requirements. BL does not claim to have discovered these things. BL claims to have selected the subset that matters most right now, integrated it through one coherent diagnostic lens, and made it teachable to people who would never read the original research. The 30-year credential paired with this honesty is the moat — not a universal claim, but a practitioner’s validated selection. C-SALF is orthogonal to DevOps, SAFe, and SDLC — a diagnostic layer inside any of them, not a competitor to any of them. HUMS alone is excavated from perennial wisdom — it is not organizational research, it is older and more stable.
 
-**DEPLOY guidance for certified practitioners:** A T-Class graduate’s first live engagement follows the C-SALF PLAN phase: (1) run LGPA Mode 1 with the client to baseline their lifecycle gap · (2) use PRE-0 scenario intake to ground the engagement in their real workflow · (3) propose one action from the HUMS signal map before any tool or framework is named · (4) gate BUILD on a written A9 check for any safety-critical domain. The practitioner does not arrive with a solution. They arrive with an instrument.
-
 ISO 17020 (Inspection Bodies) governs: BVS/BVDev quality as inspection artifacts · ROI Analyst impartiality · T-Class certification evidence requirements · PoE Test grading consistency · Runbook as documented procedure. Every C-SALF handoff is an inspection event. Every deliverable must be traceable, impartial, and competence-verified.
 
 A Nurse Training guide documents what a nurse should do. It captures user stories with precision and care. What it almost never captures: what a malicious actor with stolen nurse credentials would do (adversarial); what happens when the medication database goes offline mid-procedure (resilience); what happens when 500 nurses log in simultaneously during shift change (capacity); whether a nurse administrator can add a new user without IT support (administrability). C-SALF BVSs and ERDs are iterative documents capturing all six story types in parallel — not sequentially, not optionally. The six canonical types: Compliance · Security · Architecture · Lean · Feature · Foundation.
@@ -405,7 +305,6 @@ Accept — Socratic Bottleneck: As the practitioner network scales, blind ISO 17
 
 |Tier                      |Layer                                   |Offer                                                                                                                                                                                                                      |Price                   |ISO 17020 Element                                                                                                              |
 |--------------------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-|0 · LGPA Continuous       |LGPA Mode 2                             |Career-long lifecycle gap evaluation · 4 themes · resession anytime · longitudinal expertise tracking · HITL calibration contributor · no course required                                                                  |$9–19/mo or $49–99/yr   |Continuous self-assessment · HITL data contribution · instrument improvement                                                   |
 |1 · Core                  |T-Class + C-SALF                        |M0 + 18 cells · Claude coach (model-agnostic by design) · HUMS role lens · 3 evals Y1 · 6 story-type BVS/BVDev in each cell                                                                                                |$227 one-time           |Artifact-based cert · evidence trail · blind evaluation                                                                        |
 |2 · Renewal               |T-Class                                 |Annual T-renewal · new case studies · AI tooling refresh · 2 evals · movement membership                                                                                                                                   |$59/year                |Continuing competence verification                                                                                             |
 |3 · Org                   |T-Class + C-SALF                        |5–50+ seats · full course + cert · debrief · custom case study · adversarial story workshop                                                                                                                                |$1,500–$2,500+          |Org-level competence documentation                                                                                             |
@@ -546,8 +445,6 @@ T-Class launches Q3 2027. Founding-member pricing for the first 50.
 49 scenario-based questions across 9 domains. No jargon. No prior knowledge needed. Pure judgment — each scenario reveals one lifecycle signal your team may be missing. Your result introduces the vocabulary that names what you have been experiencing. Pinpoint your strategic blindspots before Sunday so you can bring a sharper problem to the room.
 
 srinimkasturi.github.io/Hums/bl-lgpa.html · No signup · No email · Results instant · No pitch
-
-*LGPA Mode 1 live now. Mode 2 continuous subscription: under development · launch target FY27Q1.*
 
 -----
 
@@ -728,56 +625,30 @@ BANYAN LOGIC · COURSE ARCHITECTURE · PAGE 2 OF 2 · © SRINIVASA M. KASTURI ·
 
 -----
 
-# 08. SRT · Gita Chapter 18 · Intent Refinement Layer
+# 08. SRT · Gita Chapter 18 Operational Diagnostic Instrument
 
-> Intent Refinement Layer — elevates intent toward expansive, principle-directed, empathy evolution
-> Surgical analysis for reasons behind conflict, not just conflict resolution
-> Companion to HUMS™ · Locates and reveals — does not score or advise
+> Conflict Resolution + Aspiration · Companion to HUMS™ · Layer: Step 5 in BL Research Chain
 > SOURCE: srinimkasturi.github.io/Hums/Gita18srt.md · AUTHOR: Srinivasa M. Kasturi · Banyan Logic
 
 -----
 
-### Role in the BL Framework Ecosystem
+### Role in the BL Research Chain
 
-**R05 Maker · Canonical Role Description:**
-The AI-as-Maker role in C-SALF is the non-human executor — the Claude, Gemini, or other AI system that operates as the fifth role type in a BL engagement. R05 Maker generates drafts, surfaces LGPA scenarios, produces adversarial reframes, classifies signals, and builds artifacts. R05 never owns a phase. R05 never makes the final call. The human — R01 through R04 or R06/R07 — always holds the baton. The Automation Literacy Process (Appendix A) is the canonical demonstration of R05 Maker operating within the BLIFe instrument alongside human roles.
-
-SRT is the intent refinement layer of the BLIFe 5-framework model. It does not sit at the end of a linear chain — it operates as the quality-of-intent diagnostic that can be invoked at any point where conflict, decision, or directional choice is present.
-
-**What SRT actually does:**
-
-SRT elevates intent toward expansive, principle-directed, empathy evolution. It is surgical analysis — it locates the Guna composition of the intents in conflict and reveals why the conflict exists at its root. The human then chooses from a higher orbit.
-
-**The critical distinction:**
-SRT does not resolve conflict. It reveals the reason the conflict exists.
-SRT does not advise. It locates and surfaces.
-SRT does not score. It diagnoses Guna composition structurally.
-
-**When to invoke within BLIFe:**
-
-- When two framework outputs conflict (e.g. CLAAS and C-SALF give different guidance on the same action)
-- When a student’s intent behind an action needs refinement before the action proceeds
-- When institutional recommendations conflict across traditions, methodologies, or evidence types
-- When a design decision carries S25 Life urgency and the recommending source’s Kartā needs examination
-- At any gate where the aspiration vector needs to be named explicitly
-
-**Relationship to the other four frameworks:**
+SRT is Step 5 in the five-step BL interdisciplinary research chain:
 
 ```
-HUMS™     maps the 27 signals of human functioning (Vyavaharika scope)
-          SRT diagnoses the Guna composition of how those signals are enacted
-
-CLAAS     names what the human still owns across 5 upskilling dimensions
-          SRT examines the quality of intent behind each dimension's application
-
-C-SALF    structures the lifecycle of work across 6 phases and 7 roles
-          SRT examines whether the baton at each handoff carries Sattvic intent
-          or Rajasic/Tamasic institutional attachment
-
-DQR       audits fitness of document output across 8 dimensions
-          SRT examines the quality of intent behind the document's creation
-          DQR asks: is this document fit? SRT asks: was it made honestly?
+Step 1 · HUMS™    — Human receiver anatomy
+Step 2 · CLAAS    — Current era's systemic dimensions
+Step 3 · C-SALF   — Lifecycle of structured work
+Step 4 · DQR      — Fitness of knowledge output
+Step 5 · SRT      — Quality of knowing + conflict resolution
 ```
+
+SRT does two things simultaneously:
+
+**A · Conflict Resolution** — When two knowledge claims or methodologies conflict, diagnose the Guna composition of each across the 7 SRT dimensions. Prefer the higher Sattva-composition claim. This is not a subjective preference — it is a structured diagnostic that makes the preference traceable and revisable.
+
+**B · Aspiration Calibration** — When a practitioner or student is choosing a direction (framework, role, action, life decision), SRT maps the Guna composition of the available options against the 7 dimensions and surfaces which option is more Sattva-dominant. The instrument locates and reveals — it does not score or advise.
 
 -----
 
@@ -829,95 +700,6 @@ SRT is the Gita Chapter 18 operational companion to HUMS. Where HUMS maps the 27
 HUMS does not include transcendence/Turiya in its 27 signals — the deliberate Vyavaharika boundary preserves operational utility. SRT holds Gunatita as the fourth diagnostic state precisely because the practitioner navigating conflict needs to recognize when a claim has transcended Guna entirely and cannot be adjudicated by the other three states alone.
 
 -----
-
------
-
-# 08b. BLIFe · Banyan Logic Integrated Frameworks
-
-> BLIFe = Banyan Logic Integrated Frameworks excavation and exploration instrument
-> Five frameworks used together as simultaneous lenses on any human-systems problem
-> Not a sequence — a diagnostic ecosystem
-
------
-
-### The Five Frameworks
-
-|Framework|Role                                                             |Scope                            |Source      |
-|---------|-----------------------------------------------------------------|---------------------------------|------------|
-|HUMS™    |Human signal map · 27 signals · 6 buckets                        |Vyavaharika (operational reality)|README.md   |
-|CLAAS    |5 upskilling dimensions · what the human still owns in the AI era|Enterprise competency            |claas.html  |
-|C-SALF   |6 phases · 7 roles · lifecycle of structured work                |Delivery operating model         |csalf.html  |
-|DQR      |8-dimension document fitness · ISO 17020 inspection standard     |Output quality gate              |DQR.md      |
-|SRT      |Intent refinement · Guna diagnosis across 7 dimensions           |Quality of knowing and intent    |Gita18srt.md|
-
-All five at srinimkasturi.github.io/Hums/
-
------
-
-### How the Five Frameworks Relate
-
-```
-HUMS™         The stethoscope and the axle
-              Diagnoses the People layer before anything can be articulated
-              Is the C in C-SALF (Communications & Connections layer)
-              Maps the signal substrate that all other frameworks operate on
-
-CLAAS         The upskilling compass
-              Names the 5 dimensions the human must grow in for this era
-              C-Cyber · L-Lean · A-Agile · A-Automation · S-Scale
-              Uses HUMS signal clusters to identify which dimension is weak
-
-C-SALF        The delivery operating model
-              Structures work across 6 phases and 7 roles
-              HUMS is its axle · CLAAS defines its T-shape target
-              Every phase produces a baton · DQR gates every baton
-
-DQR           The fitness gate
-              Applied at every artifact/baton boundary
-              8 dimensions · 40-point total · ISO 17020 traceable
-              Asks: is this output fit to hand forward?
-
-SRT           The intent lens
-              Applied when conflict, choice, or direction is present
-              Diagnoses Guna composition of the intents involved
-              Asks: is the intent behind this output honest and whole?
-              Does not score · does not advise · locates and reveals
-```
-
-### When to Invoke Each Framework
-
-```
-Always active     HUMS™ · the signal substrate never sleeps
-                  Any human-systems problem activates HUMS first
-
-On upskilling     CLAAS · when diagnosing what a person needs to grow
-questions         or when classifying actions by dimension
-
-On delivery       C-SALF · when structuring work, assigning roles,
-questions         or managing phase transitions and handoffs
-
-On output         DQR · when a document, artifact, or baton
-questions         needs fitness verification before it moves forward
-
-On intent         SRT · when two paths conflict, when motivation
-questions         needs examination, when the aspiration vector
-                  needs to be named before action is taken
-```
-
-### BLIFe as Integrated Diagnostic
-
-The five frameworks are not additive — they are multiplicative. Each reveals a different face of the same human-systems problem:
-
-HUMS names what is happening at the signal level.
-CLAAS names which competency dimension the signal gap belongs to.
-C-SALF names which phase and role the gap is showing up in.
-DQR names whether the output produced is fit to close the gap.
-SRT names whether the intent behind the output is honest enough to hold.
-
-A practitioner who can hold all five simultaneously is not using five tools.
-They are using one integrated diagnostic instrument with five lenses.
-
-That is BLIFe.
 
 -----
 
@@ -1310,7 +1092,7 @@ No exceptions.
 
 > First validated run of the Automation Literacy Process
 > Date: 2026-05-28 · Student: single · Domain: integrative medicine
-> DQR score: 40/40 · 100% · Exceptional · publish-ready
+> DQR score: 35/40 · 87.5% · High quality · ready for intended use
 
 -----
 
@@ -1354,30 +1136,26 @@ Signal test: S26 Love ✓ · S25 Live ✓ · S03 Remember ✓
 
 ### LGPA Delta
 
-|Theme        |Baseline Description             |Base Score|Post Description                    |Post Score|Delta |
-|-------------|---------------------------------|----------|------------------------------------|----------|------|
-|People       |Structural thinker               |4/5       |Structural + accountable builder    |5/5       |+1    |
-|Requirements |Hierarchy with empirical standing|4/5       |Administrability gap → architecture |5/5       |+1    |
-|Automation   |Trust dynamic systems            |3/5       |Specify AI behavior at S25 threshold|5/5       |+2    |
-|**Composite**|                                 |**11/15** |                                    |**15/15** |**+4**|
-
-*Baseline: 3-question compressed run · directionally valid · full 9-question run recommended for cohort reporting*
+|Theme       |Baseline                               |Post                                      |Delta |
+|------------|---------------------------------------|------------------------------------------|------|
+|People      |Structural thinker · 4/5               |Structural + accountable builder · 5/5    |+1    |
+|Requirements|Hierarchy with empirical standing · 4/5|Administrability gap → architecture · 5/5 |+1    |
+|Automation  |Trust dynamic systems · 3/5            |Specify AI behavior at S25 threshold · 5/5|+2    |
+|Composite   |11/15                                  |15/15                                     |**+4**|
 
 ### DQR Audit Record
 
-*This audit was conducted during the session that produced this document — a live demonstration of DQR applied to a real BL artifact in the same context that created it. The scoring is not self-congratulatory. It is methodological: every BL session that produces an artifact ends with DQR. This is the first such record.*
-
-|Dimension                |Score    |Primary Finding                                                                  |
-|-------------------------|---------|---------------------------------------------------------------------------------|
-|D01 Truthfulness         |5/5      |LGPA delta table updated with numeric base and post scores per theme · gap closed|
-|D02 Usefulness           |5/5      |Reference-grade utility · transforms reader capability                           |
-|D03 Receivability        |4/5      |Claude/Gemini role separation needs one-sentence rationale                       |
-|D04 Context Relevance    |5/5      |Scope boundary held throughout · exemplary                                       |
-|D05 Timely Need          |5/5      |Arrived at exact moment needed · anticipates BUILD                               |
-|D06 Clarity & Conciseness|4/5      |A9 code block needs legend · LGPA delta language imprecise                       |
-|D07 Comprehensive Width  |4/5      |Watch Points section missing                                                     |
-|D08 Completeness in Depth|5/5      |A3 gap consequence traced · LGPA numeric scores added · gap closed               |
-|**Total**                |**40/40**|**100% · Exceptional · publish-ready**                                           |
+|Dimension                |Score    |Primary Finding                                           |
+|-------------------------|---------|----------------------------------------------------------|
+|D01 Truthfulness         |4/5      |LGPA delta lacks numeric pre/post scores                  |
+|D02 Usefulness           |5/5      |Reference-grade utility · transforms reader capability    |
+|D03 Receivability        |4/5      |Claude/Gemini role separation needs one-sentence rationale|
+|D04 Context Relevance    |5/5      |Scope boundary held throughout · exemplary                |
+|D05 Timely Need          |5/5      |Arrived at exact moment needed · anticipates BUILD        |
+|D06 Clarity & Conciseness|4/5      |A9 code block needs legend · LGPA delta language imprecise|
+|D07 Comprehensive Width  |4/5      |Watch Points section missing                              |
+|D08 Completeness in Depth|4/5      |A3 gap consequence not traced downstream                  |
+|**Total**                |**35/40**|**87.5% · High quality · ready for intended use**         |
 
 ### HITL Enrichment Finding
 
@@ -1557,6 +1335,330 @@ The five cautions of *Magnifica Humanitas* (MH) map directly onto the 27-signal 
 
 -----
 
+# 14. Appendix D · RSK2 Cryptanalysis · Attack Surface & Simulators
+
+> Honest adversarial analysis of the RSK2 possession model · 13 attacks A1–B4 · 3 defense layers · pre/post mitigation scoring
+> MIT License · Banyan Logic 2026 · Kasturi/Perry IEEE Spread Spectrum Workshop 1991 · Le Château Montebello
+
+Attacks A1–A9 are original analysis. Attacks B1–B4 were added after external Gemini review, covering three new threat scenarios: global parameter inference (Scenario A), LLL polynomial root solving (Scenario B), and geometric sieve + magnitude bounding (Scenario C). Scoring: **F** (Feasibility 1–10) × **I** (Impact 1–10) ÷ 10 = Combined. Mitigated scores assume user-generated private prime, private repos, and random nonce prefix.
+
+-----
+
+### D1 · Algorithm Specification
+
+#### Parameters
+
+|Parameter            |Type                        |Description                                                                                                                                         |
+|---------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|p — the prime        |BigInt · user-held secret   |Default: 2¹²⁷−1 (Mersenne prime, 38 decimal digits). Security primitive — never transmitted to any provider. Must be unique per user.               |
+|n — store count      |Integer · Zone 1=3, Zone 2=5|Number of independent cloud providers. Each receives exactly one base-p digit sequence. Chosen at setup, governs provider routing.                  |
+|Storage IDs          |n × hex strings · user-held |One filename per provider. Encode the store ordering. Wrong ordering produces garbage reconstruction even with correct p.                           |
+|M — plaintext integer|BigInt · ephemeral          |UTF-8 bytes prepended with sentinel 0x01, interpreted as big-endian integer. Never stored anywhere — reconstructed from remainders + p on each read.|
+
+#### Encoding (Split)
+
+```
+1. Prepend sentinel:     data = 0x01 ∥ UTF-8(plaintext)
+2. Integer conversion:   M = bytesToBigInt(data)         // big-endian
+3. Base-p decomposition: while M > 0: rᵢ = M mod p; M = M ÷ p; i++
+4. Round-robin routing:  rᵢ → store[i mod n]
+5. Write:                each store[j] → comma-separated decimal strings → provider j
+```
+
+Invariant: `0 ≤ rᵢ < p` for all i. Total digits k = ⌈logₚ(M)⌉. Store j receives digits at indices j, j+n, j+2n, …
+
+#### Decoding (Reconstruct)
+
+```
+1. Fetch    all n stores from providers in Storage ID order
+2. Interleave: remainders = store[0][0], store[1][0], …, store[n-1][0], store[0][1], …
+3. Reconstruct M: M = Σ rᵢ · pⁱ    // positional polynomial in base p
+4. Byte conversion: bytes = bigIntToBytes(M)
+5. Strip sentinel: locate leading 0x01 byte, decode remainder as UTF-8
+```
+
+#### Reference Implementation — Layer 1 (exact T3A code)
+
+```javascript
+// Split — returns n comma-separated decimal strings (one per provider)
+function rsk2Split(str, pHex, n) {
+  var raw = new TextEncoder().encode(str);
+  var data = new Uint8Array(raw.length + 1);
+  data[0] = 0x01; data.set(raw, 1);
+  var M = bytesToBigInt(data);
+  var p = BigInt('0x' + pHex);
+  var stores = Array.from({length: n}, () => []);
+  var idx = 0;
+  while (M > 0n) { stores[idx % n].push((M % p).toString()); M /= p; idx++; }
+  return stores.map(s => s.join(','));
+}
+
+// Join — reconstructs original string from n store strings + p
+function rsk2Join(storeStrings, pHex, n) {
+  var p = BigInt('0x' + pHex);
+  var stores = storeStrings.map(s => s ? s.split(',').filter(Boolean).map(BigInt) : []);
+  var maxLen = Math.max(...stores.map(s => s.length));
+  var remainders = [];
+  for (var i = 0; i < maxLen; i++)
+    for (var j = 0; j < n; j++)
+      if (i < stores[j].length) remainders.push(stores[j][i]);
+  var M = 0n, pPow = 1n;
+  for (var r of remainders) { M += r * pPow; pPow *= p; }
+  var bytes = bigIntToBytes(M);
+  var start = 0;
+  while (start < bytes.length - 1 && bytes[start] === 0) start++;
+  return new TextDecoder().decode(bytes.slice(start + 1));
+}
+```
+
+Layer 2 delta: replace `data[0] = 0x01` with `data = [0x01, ...crypto.getRandomValues(new Uint8Array(16)), ...raw]` — nonce stored as first 16 bytes of output payload.
+
+Layer 3 delta: before sentinel prepend, run `str = base64(await crypto.subtle.encrypt({name:'AES-GCM',iv}, aesKey, utf8(str)))` — IV and tag stored in first store alongside ciphertext.
+
+-----
+
+### D2 · Defense-in-Depth Layers
+
+#### Layer 1 · Pure Possession — base-p only ★ Class default · Q3 curriculum
+
+Sentinel 0x01 prepend → M → base-p decomposition → round-robin to n providers. No encryption.
+
+- **Secrets required:** p (prime) · Storage IDs (ordering)
+- **Open attacks:** B2 (LLL root solve) · B4 (magnitude bound) · A2 (known-plaintext GCD)
+
+#### Layer 2 · Possession + Random Nonce — Recommended minimum · no key management
+
+Prepend 16 CSPRNG bytes before sentinel. M becomes unpredictable even if plaintext is known.
+
+- **Secrets required:** p (prime) · Storage IDs · nonce (stored in first store alongside data)
+- **Attacks closed:** B4 (magnitude bound) · A2 (GCD known-plaintext)
+- **Still open:** B2 (LLL) theoretically possible
+
+#### Layer 3 · Possession + AES-256-GCM — Sovereign client · full defense (Gemini enhancement)
+
+AES-256-GCM encrypts plaintext *before* base-p decomposition. Ciphertext is high-entropy pseudo-random — all algebraic structure destroyed. AES key is device-local, never transmitted.
+
+- **Secrets required:** p (prime) · Storage IDs · AES-256 key (device-local, password manager) · IV/tag (stored with ciphertext)
+- **Attacks closed:** B2 (LLL — no algebraic structure) · B4 (magnitude bound — M is random) · A2 (GCD — no predictable prefix)
+- **Post-quantum:** AES-256 → 128-bit security floor under Grover — NIST-compliant
+- **Pipeline:** plaintext → AES-256-GCM(key, IV) → ciphertext → sentinel 0x01 prepend → M → base-p decomposition → n stores
+
+#### Layer vs. Attack Coverage Matrix
+
+|Attack                         |Layer 1|Layer 2 + nonce|Layer 3 + AES |
+|-------------------------------|-------|---------------|--------------|
+|A2 Known-plaintext GCD         |✗ open |✓ closed       |✓ closed      |
+|B2 LLL lattice root solve      |✗ open |~ harder       |✓ closed      |
+|B4 Magnitude bound / p estimate|✗ open |✓ closed       |✓ closed      |
+|A3 All stores, unknown p       |✓ held |✓ held         |✓ held        |
+|A4 Partial store compromise    |✓ held |✓ held         |✓ held        |
+|A7 Metadata / size leakage     |✗ open |✗ open         |✗ open        |
+|Post-quantum (Grover on AES)   |N/A    |N/A            |✓ AES-256→128b|
+
+-----
+
+### D3 · What Every Layer Claims and Does Not Claim
+
+**All layers claim:**
+
+- Partial store compromise yields no plaintext (any layer)
+- Wrong p or ordering → cryptographically unrelated output
+- No single provider holds reconstructable data
+- Quantum-safe on the possession axis (no math-hardness dependency)
+
+**No layer claims:**
+
+- Hiding data length from providers (A7 — permanent, unavoidable with git-based storage)
+- IND-CPA semantic security (Layer 1 and 2 only — Layer 3 closes this)
+- Security when p is shared across users (B1 — each user must hold a unique private prime)
+- Protection against timing/metadata side channels (A8 — behavioral pattern leaks, no content exposed)
+
+-----
+
+### D4 · Attack Surface Matrix
+
+*Scoring: F (Feasibility) × I (Impact) ÷ 10 = Combined. Mitigated assumes private prime + private repos + nonce.*
+
+|ID  |Attack                             |Category        |F |I |Raw |Mitigated|Verdict     |
+|----|-----------------------------------|----------------|--|--|----|---------|------------|
+|A1  |Default prime exposure             |Prime Recovery  |10|10|10.0|2.0      |**CRITICAL**|
+|A2  |Known-plaintext → p recovery       |Prime Recovery  |6 |10|6.0 |3.0      |HIGH        |
+|A3  |All stores, unknown p              |Store Compromise|3 |2 |0.6 |0.2      |LOW         |
+|A4  |Partial store compromise           |Store Compromise|5 |1 |0.5 |0.2      |VERY LOW    |
+|A5  |Store ordering permutation         |Distribution    |4 |1 |0.4 |0.2      |LOW         |
+|A6  |Remainder frequency analysis       |Statistical     |4 |3 |1.2 |1.2      |LOW–MED     |
+|A7  |Metadata / size leakage            |Side Channel    |9 |3 |2.7 |2.7      |MEDIUM      |
+|A8  |Commit timestamp correlation       |Side Channel    |7 |2 |1.4 |1.0      |LOW         |
+|A9  |Brute-force prime search           |Prime Recovery  |1 |10|1.0 |0.1      |NEGLIGIBLE  |
+|B1 ᵍ|Global p inference from max(rᵢ)    |Statistical     |9 |10|9.0 |2.0      |**CRITICAL**|
+|B2 ᵍ|LLL lattice / polynomial root solve|Prime Recovery  |5 |8 |4.0 |2.4      |HIGH        |
+|B3 ᵍ|Geometric sieve — n deduction      |Distribution    |7 |6 |4.2 |2.1      |HIGH        |
+|B4 ᵍ|High-order digit magnitude bound   |Statistical     |8 |5 |4.0 |2.0      |HIGH        |
+
+*ᵍ = Added after Gemini external review · Scenarios A/B/C · infrastructure breach threat model*
+
+-----
+
+### D5 · Attack Detail Records
+
+#### A1 · Default Prime Exposure · CRITICAL · F:10 I:10 Raw:10.0 → Mitigated:2.0
+
+The default prime p = 2¹²⁷−1 is hardcoded in the public MIT source. Any attacker who reads the source code knows p. With p known, all stores can be trivially reconstructed.
+
+**Simulation:** Given public p and stores, reconstruct M directly: `M = Σ rᵢ · pⁱ`. All user data recoverable in O(k) time with no search required.
+
+**Mitigation:** Keep p in password manager only — never in any repo, config, or cloud store.
+
+-----
+
+#### A2 · Known-Plaintext → p Recovery · HIGH · F:6 I:10 Raw:6.0 → Mitigated:3.0
+
+If attacker knows any plaintext message AND its first remainder r₀ from store[0], then p divides (M − r₀). With two known plaintexts, GCD recovers p exactly. JSON always starts with `{` — partially predictable structure.
+
+**Simulation:** Given two (plaintext, r₀) pairs: `p | gcd(M₁ − r₀⁽¹⁾, M₂ − r₀⁽²⁾)`. GCD yields p or a small multiple. One primality check confirms.
+
+**Mitigation:** Keep p secret + prefix each save with a random nonce so M is never fully predictable.
+
+-----
+
+#### A3 · All Stores, Unknown p · LOW · F:3 I:2 Raw:0.6 → Mitigated:0.2
+
+Attacker holds all n stores across all providers but does not know p. Remainders are mathematically opaque without p. Requires breaching every independent provider simultaneously.
+
+**No simulation available.** Without p, remainders form an underdetermined system. Brute-force over 2¹²¹ candidate primes is computationally infeasible.
+
+**Mitigation:** Keep p secret. Without p, all-store compromise yields nothing.
+
+-----
+
+#### A4 · Partial Store Compromise · VERY LOW · F:5 I:1 Raw:0.5 → Mitigated:0.2
+
+Attacker holds k < n stores. Missing stores produce zeroed remainders in reconstruction. Output is cryptographically garbage — no partial plaintext leaks. Even 1 missing provider makes recovery impossible.
+
+**Simulation:** With n=3 stores and only 2 available, reconstruction yields: `M_partial = Σ rᵢ · pⁱ` (missing store terms = 0). Result bears no semantic relation to original.
+
+**Mitigation:** Use independent provider accounts. Even one missing store makes reconstruction impossible.
+
+-----
+
+#### A5 · Store Ordering Permutation · LOW · F:4 I:1 Raw:0.4 → Mitigated:0.2
+
+Attacker has all stores but tries wrong read ordering. n=3 has 6 orderings; n=5 has 120. With known-plaintext (JSON sentinel check), brute-forceable in ≤120 tries.
+
+**Simulation:** For each permutation of n stores, attempt reconstruction and check for valid UTF-8 + JSON sentinel. Correct ordering produces parseable output; all others produce garbage.
+
+**Mitigation:** Keep Storage IDs (filenames) secret — they encode the ordering. Never share or publish them.
+
+-----
+
+#### A6 · Remainder Frequency Analysis · LOW–MED · F:4 I:3 Raw:1.2 → Mitigated:1.2
+
+Remainders of structured JSON in large-prime base are not perfectly uniform. Distribution may weakly hint at data character class. Impact limited with 127-bit prime — statistical signal is extremely weak across the full remainder range.
+
+**No simulation available.** Analysis requires large corpus of known-structure saves against the same p.
+
+**Mitigation:** Use a 127-bit prime. Random nonce prefix further disrupts remainder distribution.
+
+-----
+
+#### A7 · Metadata / Size Leakage · MEDIUM · F:9 I:3 Raw:2.7 → Mitigated:2.7 (permanent)
+
+Remainder string length reveals p magnitude. File sizes on GitHub reveal exact data length. Write timestamp bursts across n repos reveal user activity patterns. Unavoidable with git-based storage — this attack does not close at any layer.
+
+**Simulation:** From store file sizes, compute: `total_digits k = Σ len(storeⱼ)`. From k and remainder magnitude: `p ≈ M^(1/k)`. Estimate accurate to ±10 bits, narrowing prime search from 2¹²¹ to ~10³ candidates (combined with B4).
+
+**Mitigation:** Use private repos. Accept that data volume and activity timing leak to providers regardless. No content is exposed.
+
+-----
+
+#### A8 · Commit Timestamp Correlation · LOW · F:7 I:2 Raw:1.4 → Mitigated:1.0
+
+Simultaneous writes to n repos create an observable network burst. Timing metadata leaks behavioral profile (when user is active) but no content. A network-level observer can correlate bursts to infer usage patterns.
+
+**No simulation available.** Behavioral timing is inherent to any multi-provider write protocol.
+
+**Mitigation:** Accept behavioral timing leakage as inherent to git-based storage. No content is exposed.
+
+-----
+
+#### A9 · Brute-Force Prime Search · NEGLIGIBLE · F:1 I:10 Raw:1.0 → Mitigated:0.1
+
+~2¹²¹ primes near 2¹²⁷ by the prime counting function. Even if attacker knows p is 127-bit, the search space is ~10³⁶. Computationally infeasible for any foreseeable adversary — including quantum.
+
+**No simulation available or needed.** At 10¹⁵ primality tests/second, exhaustive search requires ~10²¹ seconds. The age of the universe is ~4×10¹⁷ seconds.
+
+**Mitigation:** No action needed. 2¹²¹ candidate primes near 2¹²⁷ is computationally infeasible permanently.
+
+-----
+
+#### B1 ᵍ · Global p Inference from max(rᵢ) · CRITICAL · F:9 I:10 Raw:9.0 → Mitigated:2.0
+
+*Gemini Scenario A — infrastructure breach threat model*
+
+If p and n are static across all users (shared deployment), attacker breaching all stores observes every remainder across the entire user base. Since rᵢ < p always, scanning the global dataset gives a strict lower bound: p > max(rᵢ). With many users, max(rᵢ) → p−1, exposing p exactly. n is trivially deduced by counting distinct store buckets per user profile.
+
+**Simulation:** Collect all remainders across N users. `p_lower_bound = max(all_rᵢ) + 1`. With sufficient users, `p_lower_bound → p`. Then reconstruct all users with deduced p and n. Attack is fully automatable across entire user base.
+
+**Mitigation:** Every user must generate their own unique private prime. A shared deployment with hardcoded or server-assigned p has zero confidentiality against a full infrastructure breach.
+
+-----
+
+#### B2 ᵍ · LLL Lattice / Polynomial Root Solve · HIGH · F:5 I:8 Raw:4.0 → Mitigated:2.4
+
+*Gemini Scenario B — infrastructure breach threat model*
+
+With per-user p but predictable JSON prefix (sentinel 0x01 + `{`), the high-order bytes of M are known. The remainders form a polynomial in p: `M = r₀ + r₁p + r₂p² + …` Treating p as the unknown, LLL lattice reduction can solve for p as an integer root. Requires: all n stores + knowledge of plaintext structure.
+
+**No live simulation** (LLL requires arbitrary-precision lattice library not available in-browser). Theoretical feasibility confirmed by Gemini review. Closed by Layer 3 (AES destroys algebraic structure) or by random nonce (M unpredictable even with known prefix).
+
+**Mitigation:** Keep p private + prepend a random nonce per save so M is unpredictable even with known JSON structure.
+
+-----
+
+#### B3 ᵍ · Geometric Sieve — n Deduction · HIGH · F:7 I:6 Raw:4.2 → Mitigated:2.1
+
+*Gemini Scenario C — infrastructure breach threat model*
+
+After full infrastructure breach, attacker sees a pool of unattributed remainder arrays. For any user, store array lengths must satisfy: max_len − min_len ≤ 1 (round-robin invariant). Attacker groups arrays by this length-spread constraint to deduce n per user. n ∈ {3, 4, 5} is a tiny domain — the sieve is computationally trivial.
+
+**Simulation:** Pool all arrays from N users. For each candidate n ∈ {3, 5}, group arrays where |len_a − len_b| ≤ 1 and group size = n. Matching groups are candidate user profiles with deduced n.
+
+**Mitigation:** Pad all store arrays to a fixed length before writing. This defeats the geometric sieve by removing the length-spread invariant. Padding not implemented in T3A v1.0.
+
+-----
+
+#### B4 ᵍ · High-Order Digit Magnitude Bound · HIGH · F:8 I:5 Raw:4.0 → Mitigated:2.0
+
+*Gemini Scenario C — infrastructure breach threat model*
+
+The highest-order digit r[k−1] = floor(M / p^{k−1}) is typically a small integer (often 1 or 2) because M is “just above” p^{k−1}. Combined with k (deduced from file sizes via A7), this gives: `p ≈ M^{1/k}`. The estimate is accurate to within ~10 bits, narrowing prime search space from 2¹²¹ candidates to ~10³ candidates.
+
+**Simulation:** From file sizes, compute k. From highest-order digit, estimate `p_bits = round(M_bits / k)`. Candidates: primes in [2^(p_bits−5), 2^(p_bits+5)] — typically ~1,000–10,000 candidates vs. 2¹²¹ without this attack. Combined with LLL (B2), per-user p recovery is feasible with sufficient compute.
+
+**Mitigation:** Add random padding bytes (nonce) to data before encoding. This changes M unpredictably, making the high-order digit non-deterministic and defeating the magnitude bound.
+
+-----
+
+### D6 · Consolidated Mitigations
+
+|Threat                   |Priority     |Fix                                                                                          |
+|-------------------------|-------------|---------------------------------------------------------------------------------------------|
+|A1 · Default prime       |**Immediate**|Keep p in password manager only. Never in any repo, config, or cloud store.                  |
+|B1 · Shared p inference  |**Immediate**|Every user generates their own unique private prime. Shared p = zero confidentiality.        |
+|A2 · Known-plaintext GCD |High         |Keep p secret + random nonce prefix per save (Layer 2).                                      |
+|B2 · LLL polynomial      |High         |Random nonce per save (Layer 2) or AES-GCM (Layer 3).                                        |
+|B3 · Geometric sieve     |High         |Pad all store arrays to fixed length. Not in T3A v1.0.                                       |
+|B4 · Magnitude bound     |High         |Random nonce prefix per save (Layer 2).                                                      |
+|A5 · Ordering permutation|Medium       |Keep Storage IDs secret. Never publish filenames.                                            |
+|A7 · Size leakage        |Accept       |Use private repos. Data volume and timing leak to providers permanently — no content exposed.|
+|A8 · Timing correlation  |Accept       |Behavioral timing is inherent to multi-provider write protocol. No content exposed.          |
+
+-----
+
+*By Order of the Office of the Chief Operating Officer — Banyan Logic 4.0 Architecture*
+
+-----
+
 *Banyan Logic, LLC · AI and Automation Literacy · Bringing Systems Thinking to the Masses*
 *srinimkasturi.github.io/Hums · Frameworks excavated from perennial wisdom*
-*BL4refdoc · Last updated: 2026-05-28 · 13 sections: 01–06 core + DQR + SRT + HUMS Roles + Gap Analysis + Appendix A + Appendix B + Appendix C*
+*BL4refdoc · Last updated: 2026-05-28 · 14 sections: 01–06 core + 07 DQR + 08 SRT + 09 HUMS Roles + 10 Gap Analysis + 11 Appendix A + 12 Appendix B + 13 Appendix C + 14 Appendix D (RSK2 Cryptanalysis)*
