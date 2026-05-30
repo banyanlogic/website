@@ -1355,6 +1355,29 @@ Attacks A1–A9 are original analysis. Attacks B1–B4 were added after external
 |Storage IDs          |n × hex strings · user-held |One filename per provider. Encode the store ordering. Wrong ordering produces garbage reconstruction even with correct p.                           |
 |M — plaintext integer|BigInt · ephemeral          |UTF-8 bytes prepended with sentinel 0x01, interpreted as big-endian integer. Never stored anywhere — reconstructed from remainders + p on each read.|
 
+**p must be prime.** The algorithm does not fail with a composite p — split and reconstruct remain mathematically correct — but security degrades meaningfully across three attacks:
+
+|p type                           |Effective bits lost|Attack amplified                                 |
+|---------------------------------|-------------------|-------------------------------------------------|
+|Mersenne / random 127-bit prime  |0 (baseline)       |—                                                |
+|Semiprime (two ~64-bit primes)   |~30–40 bits        |B2 (LLL), A2 (GCD)                               |
+|Composite with small factor ≤ 2³²|~60–80 bits        |A6 (frequency), A2 cascade                       |
+|Power of 2                       |~110 bits          |A6 trivial — binary base, zero algebraic strength|
+|Small integer                    |Total collapse     |All attacks trivial                              |
+
+The prime property is load-bearing for three reasons: (1) remainders are uniformly distributed mod a prime — composites expose CRT sub-structure that A6 can exploit factor by factor; (2) GCD attack A2 on a composite p recovers not just p but its factors, amplifying the breach; (3) LLL lattice reduction (B2) is strictly easier over composite moduli because the polynomial ring Z/pZ decomposes over Z/aZ × Z/bZ. A large semiprime is not safe — use a verified prime only.
+
+**Implementation caveat · Prime provisioning at install time:**
+
+Client-side Miller-Rabin generation of a 127-bit prime requires ~88 candidate iterations × 20 modular exponentiation rounds each — approximately 300–600ms on a modern browser or server. For standard deployments (web, desktop, mobile) this is acceptable as a one-time onboarding cost with a progress indicator. The prime is generated once, stored in a password manager, and never recomputed.
+
+|Deployment                       |Prime generation method |Rationale                                                                                                                                                                                  |
+|---------------------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Web / desktop / mobile           |Client-side Miller-Rabin|300–600ms one-time · no network dependency · p never leaves device                                                                                                                         |
+|IoT / IIoT / constrained hardware|Stateless registry fetch|Insufficient CPU for BigInt modular exponentiation at 127-bit scale · registry issues prime on request · logs nothing · client verifies with single Miller-Rabin pass (~5ms) before storing|
+
+For IoT/IIoT: the registry is install-time only. Post-install the device holds p locally and the registry is permanently out of the trust chain. The registry must be stateless — no issued prime is logged or recoverable. An attacker who breaches the registry after install gains nothing. The fallback for any deployment with no network at install time is always client-side generation regardless of hardware class.
+
 #### Encoding (Split)
 
 ```
