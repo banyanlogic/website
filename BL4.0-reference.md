@@ -1365,7 +1365,11 @@ Attacks A1–A9 are original analysis. Attacks B1–B4 were added after external
 5. Write:                each store[j] → comma-separated decimal strings → provider j
 ```
 
+**Only remainders are stored.** The quotient at each step is never written anywhere — it becomes the updated M for the next iteration, consumed in-loop. This is standard base-p positional decomposition: M is fully recoverable from remainders alone via `M = Σ rᵢ · pⁱ`. If quotients were also stored, the security model would collapse — each provider would hold enough information to reconstruct M independently. The round-robin of remainders only is what enforces the possession split.
+
 Invariant: `0 ≤ rᵢ < p` for all i. Total digits k = ⌈logₚ(M)⌉. Store j receives digits at indices j, j+n, j+2n, …
+
+**Critical: data block size must not be artificially constrained.** If M is chosen such that `p ≤ M < p²` (payload just one digit larger than p), the decomposition degenerates: r₀ = M mod p, then M ÷ p = 1 exactly, giving r₁ = 1 always. Reconstruction becomes `r₀ + p` — a single subtraction. The base-p structure collapses entirely, all algebraic strength is lost, and attack B4 (magnitude bound) becomes trivial since every high-order digit is 1. **M must grow naturally from the payload.** A 200-byte JSON payload produces M ≈ 1600 bits → k ≈ 13 digits in base-2¹²⁷, giving a genuine quotient chain across all iterations. Never pre-truncate or pad-down a payload to force it into the p-to-p² range.
 
 #### Decoding (Reconstruct)
 
