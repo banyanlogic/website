@@ -1,0 +1,3 @@
+Security isn’t just a technology problem — it’s an ongoing process, a form of mini-IT management, and a continuous business decision, all at once. That complexity is exactly what this session is built to help navigate: something coaches and small businesses need but rarely have the staff to handle the way larger organizations can. We will be using a reference app I developed specifically for this session to teach this process.
+
+Link to the tool [Coach Cyber Hygiene Aid](https://banyanlogic.com/CoachCyberHygiene.html).
