@@ -156,6 +156,31 @@
   }
   .section-sub { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 18px; }
 
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--yellow);
+    background: rgba(245,197,24,0.1);
+    border: 1px solid rgba(245,197,24,0.28);
+    border-radius: 20px;
+    padding: 4px 12px 4px 8px;
+    margin-bottom: 14px;
+  }
+  .step-badge .step-badge-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--bg);
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+
   /* ── SCORE BANNER ── */
   .score-banner {
     background: var(--surface);
@@ -797,9 +822,9 @@
 <nav>
   <button class="tab active" onclick="showPage('theprocess')">🗺 The Process</button>
   <button class="tab" onclick="showPage('session')">🧑‍🏫 Session Mode</button>
-  <button class="tab" onclick="showPage('commitment')">🕯 My Commitment</button>
   <button class="tab" onclick="showPage('inventory')">🗂 Systems Inventory</button>
   <button class="tab" onclick="showPage('datainventory')">🔐 Data Inventory</button>
+  <button class="tab" onclick="showPage('commitment')">🕯 My Commitment</button>
   <button class="tab" onclick="showPage('check')">✓ Self-Check</button>
   <button class="tab" onclick="showPage('trends')">↗ Trends</button>
   <button class="tab" onclick="showPage('history')">⊟ History</button>
@@ -811,6 +836,7 @@
 
 <!-- CHECK PAGE -->
 <div id="page-check" class="page">
+  <div class="step-badge"><span class="step-badge-num">4</span>Step 4 of 5 — Check Yourself</div>
   <div class="score-banner">
     <div>
       <div class="score-num" id="score-num">–</div>
@@ -833,6 +859,7 @@
 <!-- SESSION MODE PAGE -->
 <div id="page-commitment" class="page">
   <div class="section-title">My Commitment</div>
+  <div class="step-badge"><span class="step-badge-num">3</span>Step 3 of 5 — Commit to Action</div>
   <div class="section-sub">Set your intention before you dive in. Come back and update this anytime — it's saved locally, per checklist, only for you.</div>
 
   <div class="commit-panel" style="margin-top:0">
@@ -884,12 +911,13 @@
   </div>
 
   <div class="facilitator-note-box" style="margin-top:20px;max-width:520px;margin-left:auto;margin-right:auto">
-    <strong>Keep this in mind as we go:</strong> every tab that follows — Session Mode, My Commitment, the Inventories, Self-Check, Trends — is just one of these five steps in practice. You'll see this same image again at the end, as a recap.
+    <strong>Keep this in mind as we go:</strong> every tab that follows — Session Mode, the Inventories, My Commitment, Self-Check, Trends — is just one of these five steps in practice. You'll see this same image again at the end, as a recap.
   </div>
 </div>
 
 <div id="page-session" class="page">
   <div class="section-title">Session Mode — Facilitator-Led Walkthrough</div>
+  <div class="step-badge"><span class="step-badge-num">1</span>Step 1 of 5 — See the Pattern</div>
   <div class="section-sub">Reveal Claim → Instance → Abstraction one stage at a time. Built for group sessions and classroom pacing.</div>
 
   <div class="session-control">
@@ -928,6 +956,7 @@
 <!-- SYSTEMS INVENTORY PAGE -->
 <div id="page-inventory" class="page">
   <div class="section-title">Systems Inventory</div>
+  <div class="step-badge"><span class="step-badge-num">2</span>Step 2 of 5 — Know Your Exposure</div>
   <div class="section-sub">
     One note per system your coaching business actually uses. Not a security audit — just a working list so you
     know what you're running, what it touches, and what to keep an eye on. Saved locally, just like everything else.
@@ -950,6 +979,7 @@
 <!-- DATA INVENTORY PAGE -->
 <div id="page-datainventory" class="page">
   <div class="section-title">Data Inventory</div>
+  <div class="step-badge"><span class="step-badge-num">2</span>Step 2 of 5 — Know Your Exposure</div>
   <div class="section-sub">
     Not your tools — the actual sensitive data itself. What do you hold, and where does it live? This is the question
     Systems Inventory doesn't ask, and it's the one that matters most if something ever goes wrong.
@@ -972,6 +1002,7 @@
 <!-- TRENDS PAGE -->
 <div id="page-trends" class="page">
   <div class="section-title" id="trend-title">Score Over Time</div>
+  <div class="step-badge"><span class="step-badge-num">5</span>Step 5 of 5 — Keep Watching</div>
   <div class="section-sub">Each saved snapshot adds a data point for the currently selected checklist.</div>
   <div class="trend-wrap">
     <h3>Overall Score</h3>
@@ -988,6 +1019,7 @@
 <!-- HISTORY PAGE -->
 <div id="page-history" class="page">
   <div class="section-title">Snapshot History</div>
+  <div class="step-badge"><span class="step-badge-num">5</span>Step 5 of 5 — Keep Watching</div>
   <div class="section-sub">History shown is for the currently selected checklist.</div>
   <div id="history-wrap"><div class="no-data"><span>📋</span>No snapshots yet.</div></div>
 </div>
@@ -995,6 +1027,7 @@
 <!-- IO PAGE -->
 <div id="page-io" class="page">
   <div class="section-title">Import &amp; Export</div>
+  <div class="step-badge"><span class="step-badge-num">5</span>Step 5 of 5 — Keep Watching</div>
   <div class="section-sub">Five things you can do here. Tap a section to expand it — only one open at a time keeps this screen readable.</div>
 
   <div class="accordion-section">
