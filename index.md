@@ -18,6 +18,6 @@ So let’s get started! A good framework gives you the structural stability and 
 
 ### Coordinates
 L: http://www.linkedin.com/in/skasturi
-E: srinikasturi@banyanlogic.com
+<p>E: srinikasturi@banyanlogic.com
 <p>P: (571)449-6012
 <p>L: Oakton, VA, USA
