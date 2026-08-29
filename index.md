@@ -9,10 +9,12 @@ summary: "We support your growth"
 ---
 
 ## Banyan Logic, LLC
-### A working frameworks company
-Doors and windows evidence importance of framing any work, Enterprise Transformatioms to ones own health, physical to mental to intellectual health. This is what we hope to enable our site visitors snd clients.
-Banyan Logic is based out of Oakton, VA, USA. We pivoted to knowledge sharing as our main focus, instead of classes or consulting services. Please enjoy our insights section as and when your time permits. In past, we developed and provided Automation Lifecycle specialist (C) training. Upon request, we also provided Cyber Security training, process automation training, and auditing training, for securing business solutions.
+### A Working Frameworks Company
+Banyan Logic is based in Oakton, VA. We’ve pivoted away from classes and implementation consulting to focus on helping you frame your problem first — then frame the solution, including people changes, process changes, and technology suite selection.
 
+Explore our Insights section to see a few frameworks in action. By the way, a framework isn’t static — it’s stable, yet it evolves alongside your problem and your solution.
+
+So let’s get started! A good framework gives you the structural stability and strength to scale — just look at a Banyan tree near you!
 ## Automation Lifecycle specialist (C) training
 The nocode/lowcode movement creates positive and negative risks. On the positive side, agility to create solutions is much higher. On the negative side, agility to push out mistake, errors, and even vulnerabilities is much higher as well. We aim to help individuals learn both what to do and what not to do. Studnets build multi-lifecycle sample deliverables, such as a Business Requirements Document and an actual Microsoft PowerPlatform Canvas App, first in a Business Analyst's role and the next in a Functional Consultant role, but both delivered with a Security Analyst mind set. It is a career oriented training not specific to today's one job. It is a fun journey and a profitable one for our students, and us.
 
