@@ -21,30 +21,24 @@ Discover practical lessons from a real-world transformation journey that integra
 
 
 ## Security OnRamp One-day Boot Camp
-### You will first learn about:
-1. The NIST National Initiative for Cybersecurity Education (NICE) Framework and how to leverage it for your career planning.
+Security OnRamp — One-Day Boot Camp
 
-2. The NIST Cybersecurity Framework (CSF) and how it structures Enterprise Security.
+Learn → Apply → Assess
 
-3. The NIST Risk Management Framework and how it impacts systems and projects life cycles.
+Learn
 
-4. The NIST 800-53 controls standard and how it impacts actual security at a nut-and-bolts level.
+* NICE — Cybersecurity careers & skills
+* CSF — Enterprise security
+* RMF — Security across the lifecycle
+* 800-53 — Practical security controls
 
-#### You will then jump into labs where you
-1. Implement sampling areas of each of the above frameworks.
+Apply
 
-2. Leverage AWS (Infrastructure as a Service) to select, implement and assess a few of the 800-53 controls.
+Hands-on labs using:
 
-3. Leverage Microsoft Office 365 (Software as a Service) to select, implement and assess a few of the 800-53 controls.
+* AWS — Implement & assess controls
+* Microsoft 365 — Implement & assess controls
+* Python Flask app — Code, library & dynamic security testing
 
-4. Implement a reference multi-web layer python flask program with a simple database. Assess the security of the application via security code review, security third party library review, and a security dynamic scan.
-
-#### Registration and cost
-1. <a href="https://banyanlogic.ecwid.com/">Click on this link to go to the secure registration and payment system</a>
-
-2. Please register before midnight on April 9th.
-
-#### Economic Hardship
-Please email info@banyanlogic.com if you are interested but are unable to pay the full amount. The subject should mention 'Economic hardship and the security onramp class 04112020'.
-
+From cybersecurity frameworks to hands-on security.
 [Top Of The Page](#classes)
