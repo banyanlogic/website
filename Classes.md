@@ -17,6 +17,7 @@ Learn:
 
 
 ## Cyber@Lean+Agile@Scale@SAFe
+Discover practical lessons from a real-world transformation journey that integrated cybersecurity into Lean, Agile, and SAFe practices. Learn how shift-left security, automation, DevSecOps, and enabling teams can help organizations scale security while accelerating business value and delivery outcomes.
 
 
 ## Security OnRamp One-day Boot Camp
