@@ -7,6 +7,14 @@ order: 4
 ---
 # Classes
 
+## The Safe Space: Security Best Practices For Your Coaching Business
+Have you ever wondered about your back-end business technology tools and systems, and whether you might be a target for a breach or hack? Do you understand the ramifications of using artificial intelligence tools in your coaching practice? What steps should you take to protect your information...and your clients'? 
+Learn:
+- What the term "security hygiene" means
+- Actual tech breaches that drive the security measures coaches can and should take
+- A sample walkthrough with Google Workspace security
+- A short summary on Federal guidelines in the US that coaches should be aware of. And much more! 
+
 ## Security OnRamp One-day Boot Camp
 ### You will first learn about:
 1. The NIST National Initiative for Cybersecurity Education (NICE) Framework and how to leverage it for your career planning.
