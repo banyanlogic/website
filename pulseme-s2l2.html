@@ -13,10 +13,18 @@
     --pivot:#d9b65c;
     --desc-hi:#e8c15a; --desc-lo:#e0714a;
   }
+  :root[data-theme="light"]{
+    --bg:#f7f5ef; --panel:#ffffff; --panel-2:#eef0f7; --border:#d8dbe6;
+    --cream:#1b2440; --muted:#5a6180;
+    --ascent:#2f6fa8; --ascent-dim:#6f93b5;
+    --pivot:#a9791f;
+    --desc-hi:#b98a1e; --desc-lo:#b85428;
+  }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background:var(--bg); color:var(--cream); font-family:'Inter',sans-serif;
     min-height:100vh; padding:18px 14px 40px;
+    transition:background .2s, color .2s;
   }
   .wrap{max-width:640px; margin:0 auto;}
   header{text-align:center; margin-bottom:14px;}
@@ -25,6 +33,12 @@
     color:var(--desc-hi);
   }
   .tagline{color:var(--muted); font-size:0.85rem; margin-top:2px;}
+  .theme-toggle{
+    display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:6px 12px;
+    border-radius:20px; border:1px solid var(--border); background:var(--panel);
+    color:var(--muted); font-size:0.72rem; font-weight:600; cursor:pointer;
+    font-family:'Inter',sans-serif; letter-spacing:0.3px;
+  }
 
   nav.tabs{
     display:flex; gap:6px; margin:16px 0 18px; background:var(--panel);
@@ -201,6 +215,7 @@
   <header>
     <div class="kicker">S 2 L 2</div>
     <div class="tagline">Slippery Slopes &amp; Leaders Ladders</div>
+    <button type="button" class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀️ Try light background</button>
   </header>
 
   <nav class="tabs">
@@ -418,6 +433,26 @@ function saveEntries(entries){
 let memEntries = [];
 let entries = loadEntries();
 
+// ── THEME ──────────────────────────────────────────────────────────────
+const THEME_KEY = "s2l2_theme_v1";
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = theme === 'light' ? '🌙 Try dark background' : '☀️ Try light background';
+  render(); // chart axis colors are theme-aware, so re-render on switch
+}
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  applyTheme(next);
+  try{ localStorage.setItem(THEME_KEY, next); }catch(e){ /* ignore */ }
+}
+function initTheme(){
+  let saved = 'dark';
+  try{ saved = localStorage.getItem(THEME_KEY) || 'dark'; }catch(e){ /* ignore */ }
+  applyTheme(saved);
+}
+
 // ── TABS ───────────────────────────────────────────────────────────────
 function announce(msg){
   const el = document.getElementById('statusMsg');
@@ -538,6 +573,9 @@ function renderChart(){
   const innerW = w - padL - padR, innerH = h - padT - padB;
   const yFor = v => padT + innerH - ((v - RUNG_MIN)/RUNG_SPAN)*innerH;
   const xFor = i => padL + (sorted.length===1 ? innerW/2 : (i/(sorted.length-1))*innerW);
+  const rootStyle = getComputedStyle(document.documentElement);
+  const mutedColor = rootStyle.getPropertyValue('--muted').trim() || '#8a93b8';
+  const borderColor = rootStyle.getPropertyValue('--border').trim() || '#2a3f74';
 
   let segs = '';
   for(let i=0;i<sorted.length-1;i++){
@@ -553,14 +591,14 @@ function renderChart(){
 
   let labels = sorted.map((e,i)=>{
     if(sorted.length>10 && i%2!==0 && i!==sorted.length-1) return '';
-    return `<text x="${xFor(i)}" y="${h-4}" font-size="9" fill="#8a93b8" text-anchor="middle">${e.date.slice(5)}</text>`;
+    return `<text x="${xFor(i)}" y="${h-4}" font-size="9" fill="${mutedColor}" text-anchor="middle">${e.date.slice(5)}</text>`;
   }).join('');
 
   wrap.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
-    <line x1="${padL}" y1="${yFor(0)}" x2="${w-padR}" y2="${yFor(0)}" stroke="#2a3f74" stroke-width="1" stroke-dasharray="3,3"/>
-    <text x="${padL-4}" y="${yFor(RUNG_MAX)+3}" font-size="9" fill="#8a93b8" text-anchor="end">↑${RUNG_MAX}</text>
-    <text x="${padL-4}" y="${yFor(0)+3}" font-size="9" fill="#8a93b8" text-anchor="end">0</text>
-    <text x="${padL-4}" y="${yFor(RUNG_MIN)+3}" font-size="9" fill="#8a93b8" text-anchor="end">↓${Math.abs(RUNG_MIN)}</text>
+    <line x1="${padL}" y1="${yFor(0)}" x2="${w-padR}" y2="${yFor(0)}" stroke="${borderColor}" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="${padL-4}" y="${yFor(RUNG_MAX)+3}" font-size="9" fill="${mutedColor}" text-anchor="end">↑${RUNG_MAX}</text>
+    <text x="${padL-4}" y="${yFor(0)+3}" font-size="9" fill="${mutedColor}" text-anchor="end">0</text>
+    <text x="${padL-4}" y="${yFor(RUNG_MIN)+3}" font-size="9" fill="${mutedColor}" text-anchor="end">↓${Math.abs(RUNG_MIN)}</text>
     ${segs}${dots}${labels}
   </svg>`;
 }
@@ -629,8 +667,7 @@ document.getElementById('entryList').addEventListener('click', (event) => {
   if(btn) deleteEntry(btn.dataset.entryId);
 });
 onRungChange(0);
-render();
+initTheme();
 </script>
 </body>
 </html>
-
