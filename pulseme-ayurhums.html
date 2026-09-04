@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUMS™ × Ayurveda — Prakriti Self-Assessment v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:   #1A56A0; --blue-dk: #0D3B7A; --blue-lt: #EEF4FF;
+  --yellow: #E8B800; --yellow-lt: #FFFDE7; --yellow-dk: #B8860B;
+  --green:  #2E7D32; --orange: #D84315; --cyan: #0277BD;
+  --pink:   #AD1457; --teal:   #00695C; --red:  #B71C1C;
+  --vata:   #1565C0; --vata-lt: #E3F2FD; --vata-md: #90CAF9;
+  --pitta:  #BF360C; --pitta-lt:#FFF3E0; --pitta-md:#FFCC80;
+  --kapha:  #1B5E20; --kapha-lt:#E8F5E9; --kapha-md:#A5D6A7;
+  --bg: #F7F9FF; --surface: #fff; --text: #1A1A2E; --muted: #6B7280;
+  --grid: #E0E4EF; --radius: 10px;
+  --slot-bg:#FFFDE7; --slot-bd:#F9A825;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── SHELL ── */
+.shell{max-width:1080px;margin:0 auto;background:var(--surface);border:2px solid var(--grid);border-radius:14px;overflow:hidden;box-shadow:0 10px 48px rgba(26,86,160,.12);margin-top:16px;margin-bottom:32px}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0D3B7A 0%,var(--blue) 60%,#1A6DB5 100%);color:white;padding:22px 24px 18px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+.logo-badge{display:inline-block;background:var(--yellow);color:var(--blue);font-family:'Playfair Display',serif;font-weight:900;font-size:2rem;padding:4px 20px;border-radius:40px;letter-spacing:.15em}
+.header-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;line-height:1.3;margin-top:6px}
+.header-sub{font-size:.72rem;opacity:.7;margin-top:3px;letter-spacing:.04em}
+.header-center{text-align:center}
+.progress-ring-wrap{position:relative;width:80px;height:80px;margin:0 auto}
+.progress-ring-wrap svg{transform:rotate(-90deg)}
+.progress-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.progress-pct{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--yellow);line-height:1}
+.progress-txt{font-size:.55rem;opacity:.8;letter-spacing:.08em;text-transform:uppercase;margin-top:1px}
+.header-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.source-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:5px 10px;font-size:.65rem;opacity:.85;line-height:1.5}
+
+/* ── PHIL BAR ── */
+.philosophy-bar{display:grid;grid-template-columns:1fr 1fr;font-size:.72rem;border-bottom:1px solid var(--grid)}
+.phil-blue{background:var(--blue);color:white;padding:7px 16px;display:flex;align-items:center;gap:8px}
+.phil-yellow{background:var(--yellow);color:#3A2800;padding:7px 16px;display:flex;align-items:center;gap:8px}
+.phil-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* ── BUCKET NAV ── */
+.bucket-nav{display:flex;gap:0;border-bottom:2px solid var(--grid);overflow-x:auto;scrollbar-width:none}
+.bucket-nav::-webkit-scrollbar{display:none}
+.bnav-btn{flex-shrink:0;padding:10px 16px;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;background:transparent;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;color:var(--muted);display:flex;align-items:center;gap:6px}
+.bnav-btn:hover{color:var(--text);background:#F3F4F8}
+.bnav-btn.active{color:var(--blue);border-bottom-color:var(--blue);background:var(--blue-lt)}
+.bnav-btn .bcheck{width:14px;height:14px;border-radius:50%;background:var(--grid);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.55rem;transition:background .3s}
+.bnav-btn.done .bcheck{background:var(--yellow);color:#3A2800}
+
+/* ── ASSESSMENT PANE ── */
+.assess-pane{padding:20px 24px;min-height:400px}
+.bucket-section{display:none}
+.bucket-section.active{display:block}
+.bucket-heading{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.bh-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.bh-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+.bh-sub{font-size:.7rem;color:var(--muted);margin-bottom:5px;font-style:italic}
+.bucket-orient{
+  font-size:.71rem;color:#1A3A6A;background:var(--blue-lt);
+  border-left:3px solid var(--blue);padding:6px 10px;
+  border-radius:0 5px 5px 0;margin-bottom:8px;line-height:1.5;
+}
+.classical-ref{font-size:.63rem;color:var(--muted);border-left:3px solid var(--yellow);padding-left:8px;margin-top:4px;font-style:italic;line-height:1.5}
+
+/* collapsible toggles */
+details summary{cursor:pointer;user-select:none;list-style:none}
+details summary::-webkit-details-marker{display:none}
+.classical-ref-toggle{margin-bottom:10px}
+.classical-ref-toggle summary{font-size:.63rem;color:var(--muted);font-style:italic;display:inline-flex;align-items:center;gap:3px}
+.classical-ref-toggle summary::before{content:'▸ Source';font-style:normal;font-size:.62rem;color:var(--muted)}
+.classical-ref-toggle[open] summary::before{content:'▾ Source'}
+.classical-ref-toggle summary span{display:none}
+.cockpit-toggle{border-top:1px solid var(--grid)}
+.cockpit-toggle>summary{padding:9px 16px;font-size:.74rem;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:5px;background:var(--blue-lt);cursor:pointer}
+.cockpit-toggle>summary::before{content:'▸ '}
+.cockpit-toggle[open]>summary::before{content:'▾ '}
+.q-ref-toggle{margin-top:6px;padding-top:4px;border-top:1px dashed var(--grid)}
+.q-ref-toggle>summary{font-style:normal;font-weight:700;color:var(--blue);font-size:.6rem;background:var(--blue-lt);padding:1px 7px;border-radius:3px;display:inline-block;cursor:pointer;letter-spacing:.04em}
+.q-ref-text{font-size:.61rem;color:var(--muted);font-style:italic;margin-top:3px;line-height:1.5;padding-left:2px}
+
+/* phil chips */
+.header-phil{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap}
+.phil-chip{font-size:.58rem;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.05em}
+.blue-chip{background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.3)}
+.yellow-chip{background:var(--yellow);color:#3A2800}
+
+/* prakriti inline */
+.prakriti-inline{text-align:center;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--grid)}
+.prakriti-inline .pk-name{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--blue)}
+.prakriti-inline .pk-sub{font-size:.68rem;color:var(--muted);font-style:italic;margin-top:2px}
+
+/* ── QUESTION ── */
+.question-block{margin-bottom:22px;background:#F9FAFF;border:1px solid var(--grid);border-radius:8px;padding:14px 16px}
+.q-label{font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.q-num{font-size:.65rem;color:var(--muted);font-weight:400;flex-shrink:0;margin-top:1px}
+.q-source{font-size:.6rem;color:var(--muted);font-style:italic;margin-top:2px}
+.poles{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-top:8px}
+.pole-left,.pole-right{font-size:.7rem;line-height:1.3;padding:3px 0}
+.pole-left{text-align:right;color:var(--vata);font-weight:500}
+.pole-right{text-align:left;font-weight:500}
+.pole-right.p-pitta{color:var(--pitta)}
+.pole-right.p-kapha{color:var(--kapha)}
+.pole-right.p-pk{color:var(--kapha)}
+.pole-right.p-vp{color:var(--pitta)}
+.slider-wrap{position:relative;flex:1}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;outline:none;cursor:pointer;background:linear-gradient(90deg,var(--vata-md) 0%,#e0e0e0 50%,#e0e0e0 100%);transition:background .2s}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,.2);cursor:pointer;transition:transform .15s}
+input[type=range]::-webkit-slider-thumb:active{transform:scale(1.2)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue);border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,.2);cursor:pointer}
+.q-dosha-hint{display:flex;gap:4px;margin-top:6px;font-size:.6rem;justify-content:center}
+.dh{padding:1px 7px;border-radius:10px;font-weight:600;letter-spacing:.04em}
+.dh-v{background:var(--vata-lt);color:var(--vata)}
+.dh-p{background:var(--pitta-lt);color:var(--pitta)}
+.dh-k{background:var(--kapha-lt);color:var(--kapha)}
+
+/* ── BUCKET NAV FOOTER ── */
+.bucket-footer{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;border-top:1px solid var(--grid);background:#F9FAFF}
+.nav-btn{padding:8px 22px;border-radius:20px;border:none;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.nav-btn-prev{background:transparent;border:2px solid var(--grid);color:var(--muted)}
+.nav-btn-prev:hover{border-color:var(--blue);color:var(--blue)}
+.nav-btn-next{background:var(--blue);color:white}
+.nav-btn-next:hover{background:var(--blue-dk)}
+.nav-btn-submit{background:var(--yellow);color:#3A2800}
+.nav-btn-submit:hover{background:var(--yellow-dk);color:white}
+.bucket-progress{font-size:.7rem;color:var(--muted);text-align:center}
+.bucket-progress span{font-weight:700;color:var(--blue)}
+
+/* ── RESULTS (hidden until submit) ── */
+#results{display:none;padding:0}
+#results.visible{display:block}
+
+/* RESULTS HEADER */
+.results-header{background:linear-gradient(135deg,#0D3B7A,var(--blue));color:white;padding:20px 24px;text-align:center}
+.results-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--yellow)}
+.results-sub{font-size:.78rem;opacity:.8;margin-top:4px}
+
+/* DOSHA CHART */
+.dosha-chart-section{padding:20px 24px;border-bottom:1px solid var(--grid)}
+.dosha-chart-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:14px;text-align:center}
+.dosha-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:600px;margin:0 auto}
+.dosha-bar-wrap{text-align:center}
+.dosha-bar-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.dosha-bar-label.vl{color:var(--vata)}
+.dosha-bar-label.pl{color:var(--pitta)}
+.dosha-bar-label.kl{color:var(--kapha)}
+.dosha-bar-track{background:var(--grid);border-radius:6px;height:14px;overflow:hidden;margin-bottom:4px}
+.dosha-bar-fill{height:100%;border-radius:6px;transition:width 1s cubic-bezier(.4,0,.2,1);width:0}
+.dbv{background:linear-gradient(90deg,var(--vata-md),var(--vata))}
+.dbp{background:linear-gradient(90deg,var(--pitta-md),var(--pitta))}
+.dbk{background:linear-gradient(90deg,var(--kapha-md),var(--kapha))}
+.dosha-pct{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900}
+.dosha-pct.vl{color:var(--vata)}
+.dosha-pct.pl{color:var(--pitta)}
+.dosha-pct.kl{color:var(--kapha)}
+.dosha-dominant{text-align:center;margin-top:14px;font-size:.82rem;color:var(--muted)}
+.dosha-dominant strong{color:var(--text);font-size:.95rem}
+
+/* HUMS COCKPIT RESULTS */
+.cockpit-results{padding:16px;background:white}
+.cr-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:12px;padding:0 6px}
+.cockpit{display:grid;grid-template-columns:200px 1fr 200px;gap:0}
+.top-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.bottom-row{grid-column:1/-1;margin-top:10px}
+.left-col{grid-column:1;grid-row:2;padding-right:8px}
+.center-col{grid-column:2;grid-row:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px}
+.right-col{grid-column:3;grid-row:2;display:flex;flex-direction:column;gap:10px;padding-left:8px}
+
+/* BUCKET RESULT CARDS */
+.bucket-r{border-radius:10px;overflow:hidden;border:2px solid transparent}
+.bucket-r-header{padding:7px 12px 5px;display:flex;align-items:center;justify-content:space-between}
+.bucket-r-title{font-family:'Playfair Display',serif;font-weight:700;font-size:.88rem;text-transform:uppercase;letter-spacing:.05em}
+.bucket-r-dosha{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px}
+.bucket-r-body{padding:8px 10px 10px;display:flex;flex-direction:column;gap:4px}
+.signal-result-row{display:flex;align-items:center;gap:6px;font-size:.75rem}
+.sr-name{min-width:90px;font-weight:600;flex-shrink:0;color:var(--text)}
+.sr-bar-track{flex:1;background:var(--grid);border-radius:4px;height:6px;overflow:hidden}
+.sr-bar-fill{height:100%;border-radius:4px;transition:width 1.2s ease}
+.sr-dosha-label{font-size:.6rem;font-weight:700;width:38px;text-align:right;flex-shrink:0}
+
+/* bucket color themes */
+.br-who{border-color:var(--green)} .br-who .bucket-r-header{background:#E8F5E9} .br-who .bucket-r-title{color:var(--green)} .br-who .bucket-r-body{background:#F6FFF6}
+.br-how{border-color:var(--orange)} .br-how .bucket-r-header{background:#FBE9E7} .br-how .bucket-r-title{color:var(--orange)} .br-how .bucket-r-body{background:#FFFAF9}
+.br-sense{border-color:var(--cyan)} .br-sense .bucket-r-header{background:#E1F5FE} .br-sense .bucket-r-title{color:var(--cyan)} .br-sense .bucket-r-body{background:#F5FCFF}
+.br-health{border-color:var(--red)} .br-health .bucket-r-header{background:#FFEBEE} .br-health .bucket-r-title{color:var(--red)} .br-health .bucket-r-body{background:#FFFAFA}
+.br-action{border-color:var(--pink)} .br-action .bucket-r-header{background:#FCE4EC} .br-action .bucket-r-title{color:var(--pink)} .br-action .bucket-r-body{background:#FFF5F8}
+.br-purp{border-color:var(--teal)} .br-purp .bucket-r-header{background:#E0F2F1} .br-purp .bucket-r-title{color:var(--teal)} .br-purp .bucket-r-body{background:#F4FFFD}
+
+/* HEALTH CARDS RESULT */
+.health-r-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:0 2px 8px}
+.health-r-card{border-radius:7px;overflow:hidden;border:2px solid var(--red);display:flex;flex-direction:column}
+.hrc-label{background:#FFEBEE;color:var(--red);font-size:.7rem;font-weight:700;padding:4px 6px;text-align:center;text-transform:uppercase;letter-spacing:.03em}
+.hrc-bar{height:6px;width:100%;transition:background 1s}
+.hrc-dosha{font-size:.62rem;font-weight:700;padding:3px;text-align:center}
+
+/* CENTER cockpit SVG */
+.center-tagline{font-family:'Playfair Display',serif;font-size:.78rem;color:var(--blue);text-align:center;font-style:italic;opacity:.75;margin-bottom:6px}
+
+/* NARRATIVE SECTION */
+.narrative-section{padding:20px 24px;border-top:1px solid var(--grid)}
+.narr-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:16px}
+.narr-bucket{margin-bottom:18px;background:#F9FAFF;border:1px solid var(--grid);border-radius:8px;padding:14px 16px}
+.nb-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.nb-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700}
+.nb-dosha-pill{font-size:.65rem;font-weight:700;padding:2px 9px;border-radius:20px}
+.nb-text{font-size:.78rem;color:var(--muted);line-height:1.65}
+.nb-text strong{color:var(--text)}
+
+/* PRAKRITI SUMMARY */
+.prakriti-box{background:linear-gradient(135deg,var(--yellow-lt),#FFF);border:2px solid var(--yellow);border-radius:10px;padding:18px 20px;margin:0 24px 20px;text-align:center}
+.pk-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--yellow-dk);margin-bottom:4px}
+.pk-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--blue)}
+.pk-sub{font-size:.75rem;color:var(--muted);margin-top:4px;font-style:italic}
+
+/* RETAKE BTN */
+.retake-wrap{text-align:center;padding:16px 24px 24px}
+.retake-btn{background:var(--blue);color:white;border:none;border-radius:20px;padding:10px 28px;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;letter-spacing:.04em;transition:background .2s}
+.retake-btn:hover{background:var(--blue-dk)}
+
+/* ── DISCLAIMER MODAL ── */
+.disc-overlay{
+  position:fixed;inset:0;background:rgba(10,15,30,.82);z-index:10000;
+  display:flex;align-items:center;justify-content:center;padding:10px;
+  backdrop-filter:blur(3px);
+}
+.disc-modal{
+  background:white;border-radius:12px;max-width:580px;width:100%;
+  max-height:92vh;overflow-y:auto;
+  box-shadow:0 24px 80px rgba(0,0,0,.4);
+  animation:discIn .3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes discIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.disc-header{
+  background:linear-gradient(135deg,#7B1C1C,#B71C1C);
+  color:white;padding:12px 16px 10px;
+  display:flex;align-items:center;gap:10px;
+  position:sticky;top:0;z-index:1;
+}
+.disc-header-icon{font-size:1.4rem;line-height:1;flex-shrink:0}
+.disc-header-text{}
+.disc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;letter-spacing:.02em}
+.disc-subtitle{font-size:.62rem;opacity:.8;margin-top:1px;letter-spacing:.04em}
+.disc-body{padding:12px 16px;font-size:.74rem;line-height:1.65;color:#1A1A2E}
+.disc-body p{margin-bottom:8px}
+.disc-body p:last-child{margin-bottom:0}
+.disc-body strong{color:#B71C1C}
+.disc-body .disc-section{
+  background:#FFF5F5;border-left:3px solid #B71C1C;
+  padding:8px 12px;border-radius:0 6px 6px 0;margin:8px 0;
+  font-size:.72rem;
+}
+.disc-body .disc-note{
+  background:#F0F4FF;border-left:3px solid var(--blue);
+  padding:8px 12px;border-radius:0 6px 6px 0;margin:8px 0;
+  font-size:.72rem;
+}
+.disc-footer{
+  padding:10px 16px 14px;border-top:1px solid var(--grid);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  background:#F9FAFF;position:sticky;bottom:0;z-index:1;
+}
+.disc-footer-note{font-size:.62rem;color:var(--muted);font-style:italic;flex:1;min-width:160px}
+.disc-accept-btn{
+  background:#B71C1C;color:white;border:none;border-radius:20px;
+  padding:9px 20px;font-family:'DM Sans',sans-serif;font-size:.76rem;
+  font-weight:700;cursor:pointer;letter-spacing:.04em;
+  transition:background .2s;white-space:nowrap;
+}
+.disc-accept-btn:hover{background:#7B1C1C}
+/* S2L2 / GUNA layer */
+.s2l2-bar{
+  background:linear-gradient(135deg,#FFFDE7,#FFF8E1);
+  border:1px solid var(--yellow-dk);border-radius:6px;
+  padding:8px 14px;margin:0 24px 16px;
+  font-size:.72rem;color:#3A2800;line-height:1.6;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.s2l2-icon{font-size:1rem;flex-shrink:0;margin-top:1px}
+.s2l2-text strong{color:#3A2800}
+.nb-guna{
+  margin-top:8px;padding:7px 10px;
+  background:#F9FAFF;border:1px solid var(--grid);border-radius:5px;
+  font-size:.71rem;line-height:1.6;color:var(--muted);
+}
+.nb-guna strong{color:var(--text);font-size:.72rem}
+.guna-sat{color:#827717;font-weight:700}
+.guna-raj{color:#BF360C;font-weight:700}
+.guna-tam{color:#37474F;font-weight:700}
+.results-disclaimer{
+  margin:0 24px 20px;padding:16px 18px;
+  background:#FFF5F5;border:2px solid #FFCDD2;border-radius:8px;
+  font-size:.74rem;line-height:1.7;color:#4A1A1A;
+}
+.results-disclaimer strong{color:#B71C1C;display:block;margin-bottom:6px;font-size:.8rem}
+.results-disclaimer p{margin-bottom:6px}
+.results-disclaimer p:last-child{margin-bottom:0}
+.ei-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:#F0F4FF;border-bottom:1px solid var(--grid);
+  padding:8px 18px;font-size:.72rem;
+}
+.ei-bar-label{font-weight:700;color:var(--blue);margin-right:2px;white-space:nowrap}
+.ei-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 14px;border-radius:20px;border:none;
+  font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;
+  cursor:pointer;letter-spacing:.04em;transition:all .2s;white-space:nowrap;
+}
+.ei-btn-save{background:var(--blue);color:white}
+.ei-btn-save:hover{background:var(--blue-dk)}
+.ei-btn-load{background:white;color:var(--blue);border:2px solid var(--blue)}
+.ei-btn-load:hover{background:var(--blue-lt)}
+.ei-btn-print{background:var(--yellow);color:#3A2800;border:2px solid var(--yellow-dk)}
+.ei-btn-print:hover{background:var(--yellow-dk);color:white}
+.ei-meta{font-size:.65rem;color:var(--muted);font-style:italic;margin-left:auto}
+#importFileInput{display:none}
+/* toast */
+.ei-toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:#1A1A2E;color:white;padding:9px 22px;border-radius:24px;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;
+  box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:9999;
+  transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s;opacity:0;pointer-events:none;
+}
+.ei-toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+/* print styles */
+@media print{
+  .ei-bar,.bucket-nav,.bucket-footer,.retake-wrap,#assessment{display:none!important}
+  #results{display:block!important}
+  .shell{box-shadow:none;border:none;border-radius:0;margin:0;max-width:100%}
+  body{background:white}
+}
+/* FOOTER */
+.footer{background:#F3F4F8;border-top:2px solid var(--grid);padding:9px 20px;display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:#666;flex-wrap:wrap;gap:6px}
+.footer-brand{color:var(--blue);font-weight:700}
+
+/* Responsive */
+@media(max-width:700px){
+  .cockpit{grid-template-columns:1fr}
+  .top-row{grid-template-columns:1fr}
+  .left-col,.center-col,.right-col{grid-column:1;grid-row:auto;padding:0;margin-bottom:10px}
+  .right-col{padding-left:0}
+  .health-r-grid{grid-template-columns:repeat(3,1fr)}
+  .header{grid-template-columns:1fr;text-align:center}
+  .header-right{display:none}
+  .dosha-bars{grid-template-columns:1fr;max-width:280px}
+}
+@media(max-width:500px){
+  .poles{grid-template-columns:1fr;gap:4px}
+  .pole-left{text-align:left}
+}
+</style>
+</head>
+<body>
+<!-- DISCLAIMER MODAL -->
+<div class="disc-overlay" id="discOverlay">
+  <div class="disc-modal">
+    <div class="disc-header">
+      <div class="disc-header-icon">⚕</div>
+      <div class="disc-header-text">
+        <div class="disc-title">Important — Please Read Before Starting</div>
+        <div class="disc-subtitle">HUMS™ × Ayurveda Prakriti Assessment · v1.0</div>
+      </div>
+    </div>
+    <div class="disc-body">
+
+      <div class="disc-section">
+        <strong>This tool is not a medical or clinical instrument.</strong>
+
+        It does not diagnose, treat, cure, or prevent any physical or mental health condition.
+
+        Results describe a framework-based interpretation of self-reported tendencies. They are not a substitute for examination or advice from a qualified healthcare professional.
+      </div>
+
+      <p>
+        <strong>Ayurvedic Prakriti assessment</strong> in this tool is derived from classical texts
+        (Charaka Samhita, Ashtanga Hridayam, Sushruta Samhita) and the HUMS framework developed by Banyan Logic LLC.
+        The mapping between HUMS signals and Ayurvedic concepts is an interpretive framework, not a clinical protocol.
+      </p>
+
+      <p>
+        <strong>Do not use these results</strong> to make decisions about medication, diet, treatment,
+        or management of any health condition without first consulting a licensed physician, registered
+        Ayurvedic practitioner, or other qualified healthcare provider.
+      </p>
+
+      <p>
+        If you are currently experiencing a physical or mental health condition, are pregnant,
+        or are under active medical care, <strong>consult your healthcare provider before interpreting
+        or acting on any results from this tool.</strong>
+      </p>
+
+      <div class="disc-note">
+        <strong>🔒 Local-only tool — like the LinkedIn Post Editor:</strong> Nothing in this tool touches a server, a cloud, or the internet (except loading fonts on first open).
+
+        Your answers live only in your device's memory for the duration of this session.
+
+        <strong>Close the tab without saving = answers are gone.</strong>
+
+        Use <em>Save Progress</em> to download your session as a JSON file to your device. That file stays on your device. It does not sync, it does not upload, it does not travel — unless you choose to share it.
+
+        If someone sends you this HTML file and you open it without saving it locally, the same rule applies: your answers exist only while the tab is open.
+
+        <strong>Purpose of this tool:</strong> Self-knowledge, framework literacy, and personal reflection.
+
+        It is intended to help you begin a conversation with yourself — and, if helpful, with a qualified Ayurvedic practitioner — about your constitutional tendencies as understood through the HUMS lens.
+      </div>
+
+    </div>
+    <div class="disc-footer">
+      <span class="disc-footer-note">By continuing, you confirm you have read and understood the above. © Srinivasa M. Kasturi · CC BY-NC 4.0</span>
+      <button class="disc-accept-btn" onclick="acceptDisclaimer()">I Understand — Begin Assessment</button>
+    </div>
+  </div>
+</div>
+<script>
+// Defined early so onclick on modal button resolves immediately
+function acceptDisclaimer() {
+  var overlay = document.getElementById('discOverlay');
+  overlay.style.transition = 'opacity .3s';
+  overlay.style.opacity = '0';
+  setTimeout(function(){ overlay.style.display = 'none'; }, 320);
+}
+</script>
+
+<div class="shell" id="appShell">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="logo-badge">HUMS&#8482;</div>
+      <div class="header-title">Prakriti Self-Assessment</div>
+      <div class="header-sub">Ayurveda × Human as Universal Modelling System · v1.0</div>
+      <div class="header-phil">
+        <span class="phil-chip blue-chip">Purushartha · free will</span>
+        <span class="phil-chip yellow-chip">Prarabdha · your given</span>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="progress-ring-wrap">
+        <svg width="72" height="72" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="7"/>
+          <circle id="progressCircle" cx="40" cy="40" r="34" fill="none" stroke="#E8B800" stroke-width="7" stroke-dasharray="213.6" stroke-dashoffset="213.6" stroke-linecap="round" style="transition:stroke-dashoffset .4s ease"/>
+        </svg>
+        <div class="progress-label">
+          <div class="progress-pct" id="progressPct">0%</div>
+          <div class="progress-txt">done</div>
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="source-badge">Charaka Samhita<br>Ashtanga Hridayam<br>Sushruta Samhita</div>
+    </div>
+  </div>
+
+  <!-- SESSION BAR -->
+  <div class="ei-bar" id="eiBar">
+    <button class="ei-btn ei-btn-save" onclick="exportSession()" title="Save Progress — download your answers as a JSON file">↓ Save</button>
+    <button class="ei-btn ei-btn-load" onclick="document.getElementById('importFileInput').click()" title="Load a previously saved session">↑ Load</button>
+    <input type="file" id="importFileInput" accept=".json" onchange="importSession(event)">
+    <button class="ei-btn ei-btn-print" id="btnPrint" onclick="printResults()" style="display:none" title="Export results as PDF">⎙ Export</button>
+    <span class="ei-meta" id="eiMeta">🔒 Local only — nothing leaves your device</span>
+  </div>
+
+  <!-- TOAST -->
+  <div class="ei-toast" id="eiToast"></div>
+
+  <!-- ASSESSMENT -->
+  <div id="assessment">
+    <!-- BUCKET NAV -->
+    <div class="bucket-nav" id="bucketNav"></div>
+
+    <!-- SECTIONS -->
+    <div class="assess-pane" id="assessPane"></div>
+
+    <!-- FOOTER NAV -->
+    <div class="bucket-footer">
+      <button class="nav-btn nav-btn-prev" id="btnPrev" onclick="navBucket(-1)">← Previous</button>
+      <div class="bucket-progress" id="bucketProgress"></div>
+      <button class="nav-btn nav-btn-next" id="btnNext" onclick="navBucket(1)">Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results">
+    <div class="results-header">
+      <div class="results-title" id="resultsPrakritiTitle">Your Prakriti</div>
+      <div class="results-sub">Based on your responses across all 6 HUMS buckets</div>
+    </div>
+
+    <!-- S2L2 VIVEKA NOTE -->
+    <div class="s2l2-bar">
+      <div class="s2l2-icon">🪔</div>
+      <div class="s2l2-text">
+        <strong>S2L2 · Viveka reminder:</strong> These results describe a <em>tendency</em> — not a verdict, not a fixed identity, and not a ceiling.
+        Shankara's first rung is Viveka (discrimination): the capacity to see clearly <em>without</em> becoming what you see.
+        Use this profile to begin inquiry, not to conclude it.
+        The descent begins when we dwell on a label as truth — <em>Dhyana → Prajna-Bhransha</em> (Gita 2.62–63).
+      </div>
+    </div>
+
+    <!-- DOSHA CHART + PRAKRITI -->
+    <div class="dosha-chart-section">
+      <div class="prakriti-inline">
+        <div class="pk-name" id="prakritiName">—</div>
+        <div class="pk-sub" id="prakritiSub">—</div>
+      </div>
+      <div class="dosha-bars">
+        <div class="dosha-bar-wrap">
+          <div class="dosha-bar-label vl">Vāta</div>
+          <div class="dosha-bar-track"><div class="dosha-bar-fill dbv" id="barV" style="width:0%"></div></div>
+          <div class="dosha-pct vl" id="pctV">0%</div>
+        </div>
+        <div class="dosha-bar-wrap">
+          <div class="dosha-bar-label pl">Pitta</div>
+          <div class="dosha-bar-track"><div class="dosha-bar-fill dbp" id="barP" style="width:0%"></div></div>
+          <div class="dosha-pct pl" id="pctP">0%</div>
+        </div>
+        <div class="dosha-bar-wrap">
+          <div class="dosha-bar-label kl">Kapha</div>
+          <div class="dosha-bar-track"><div class="dosha-bar-fill dbk" id="barK" style="width:0%"></div></div>
+          <div class="dosha-pct kl" id="pctK">0%</div>
+        </div>
+      </div>
+      <div class="dosha-dominant" id="doshaDominant"></div>
+    </div>
+
+    <!-- HUMS COCKPIT (collapsible) -->
+    <details class="cockpit-toggle">
+      <summary>HUMS Cockpit — bucket-level breakdown</summary>
+      <div class="cockpit-results">
+        <div class="cockpit" id="cockpitResults"></div>
+      </div>
+    </details>
+
+    <!-- NARRATIVE -->
+    <div class="narrative-section">
+      <div class="narr-title">Your Prakriti Narrative — Bucket by Bucket</div>
+      <div id="narrativeContent"></div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="results-disclaimer">
+      <strong>⚕ Important Reminder — This Is Not Medical Advice</strong>
+
+      <p>These results reflect your self-reported responses interpreted through the HUMS framework and classical Ayurvedic texts. They describe constitutional tendencies for the purpose of self-knowledge and reflection only.</p>
+
+      <p>This tool does not diagnose, treat, cure, or prevent any health condition. Do not make decisions about medication, diet, treatment, or management of any physical or mental health condition based on these results without consulting a licensed physician, registered Ayurvedic practitioner, or qualified healthcare provider.</p>
+
+      <p>If you are pregnant, under active medical care, or managing a health condition, seek professional guidance before acting on any information in this report.</p>
+    </div>
+
+    <div class="retake-wrap">
+      <button class="retake-btn" onclick="retake()">↺ Retake Assessment</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-brand">HUMS&#8482; × Ayurveda · Banyan Logic LLC</span>
+    <span style="font-style:italic">Putting working frameworks to work, together.</span>
+    <span>v1.0 · 2026-06-01 · © Srinivasa M. Kasturi · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color:var(--blue);text-decoration:none">CC BY-NC 4.0</a> · Not clinical advice</span>
+  </div>
+
+</div><!-- /shell -->
+
+<script>
+// ══════════════════════════════════════════════════════════════════
+//  QUESTION DATA  — 6 buckets × 6-8 questions
+//  Each question: { q, src, leftLabel, leftDosha, rightLabel, rightDosha }
+//  leftDosha / rightDosha: 'V' | 'P' | 'K'
+//  Slider 0 = full left, 100 = full right, 50 = neutral
+//  Score contribution: position maps to dosha weight
+// ══════════════════════════════════════════════════════════════════
+const BUCKETS = [
+  {
+    id:'who', label:'Who We Are', emoji:'🪔', cls:'br-who', color:'#2E7D32',
+    signals:['Feel','Ideate','Remember','Identify'],
+    orient:'Respond based on your lifelong patterns — not your current state or a recent difficult period. Think about how you have consistently been across most of your adult life.',
+    ref:'Charaka Samhita, Sharira Sthana 4 — Prakriti is determined at conception from the relative dominance of the Doshas in the parents\' Shukra and Artava.',
+    questions:[
+      { q:'My body frame and build is generally…', src:'Ch.Su.7', ref:'Charaka Samhita · Sutrasthana 7 · Dravyasangraha — physical constitution (Prakriti) defined by body structure',
+        leftLabel:'Light, thin, irregular — hard to gain weight', leftDosha:'V',
+        rightLabel:'Heavy, large, gains weight easily', rightDosha:'K' },
+      { q:'My skin texture and moisture tends to be…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Dosha qualities mapped to skin and tissue',
+        leftLabel:'Dry, rough, cracked, cool to touch', leftDosha:'V',
+        rightLabel:'Oily, smooth, moist, cool and pale', rightDosha:'K' },
+      { q:'My emotional baseline when under pressure…', src:'Ch.Su.8', ref:'Charaka Samhita · Sutrasthana 8 · Indriyadishana — mental qualities of each Dosha under stress',
+        leftLabel:'Anxiety, fear, overwhelm — I scatter', leftDosha:'V',
+        rightLabel:'Calm, stable — slow to disturb', rightDosha:'K' },
+      { q:'My sense of personal identity feels…', src:'AH.Su.3', ref:'Ashtanga Hridayam · Sutrasthana 3 · Ritucharya — psychic constitution (Manasika Prakriti)',
+        leftLabel:'Fluid, shifting — I reinvent myself often', leftDosha:'V',
+        rightLabel:'Fixed, grounded — who I am is stable', rightDosha:'K' },
+      { q:'How I process and express feelings…', src:'Su.Su.4', ref:'Sushruta Samhita · Sutrasthana 4 · Prakriti-Purusha — emotional expression and Dosha character',
+        leftLabel:'Quickly — feelings arise and pass like wind', leftDosha:'V',
+        rightLabel:'Intensely — I feel deeply and hold long', rightDosha:'P' },
+      { q:'My appetite and hunger pattern…', src:'Ch.Vi.6', ref:'Charaka Samhita · Vimanasthana 6 · Rogabhinana — digestive fire (Agni) and appetite as Prakriti markers',
+        leftLabel:'Irregular — sometimes ravenous, sometimes absent', leftDosha:'V',
+        rightLabel:'Sharp, intense — I must eat on time', rightDosha:'P' },
+      { q:'My memory and recall…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — memory (Smriti) as a Kapha-governed function',
+        leftLabel:'Quick to grasp but quick to forget', leftDosha:'V',
+        rightLabel:'Slow to learn but retains permanently', rightDosha:'K' },
+    ]
+  },
+  {
+    id:'how', label:'How We Work', emoji:'⚙️', cls:'br-how', color:'#D84315',
+    signals:['Think','Reflex','Rely','Dream'],
+    orient:'Focus on your natural operating mode — how you function when things are going normally, not under exceptional stress or during a peak performance period.',
+    ref:'Ashtanga Hridayam, Sutrasthana 1 — the qualities (Gunas) of each Dosha directly determine cognitive style, reflex speed, and the nature of dreaming.',
+    questions:[
+      { q:'My thinking and decision-making pace is…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — cognitive speed as a Dosha quality',
+        leftLabel:'Fast, darting, many ideas at once — hard to settle', leftDosha:'V',
+        rightLabel:'Deliberate, thorough, methodical', rightDosha:'K' },
+      { q:'When I have a goal or plan I typically…', src:'Ch.Su.8', ref:'Charaka Samhita · Sutrasthana 8 · Indriyadishana — will and follow-through by Prakriti',
+        leftLabel:'Start many things, lose momentum, restart', leftDosha:'V',
+        rightLabel:'Start slow but finish with great persistence', rightDosha:'K' },
+      { q:'My physical reflexes and reaction time…', src:'Su.Sh.4', ref:'Sushruta Samhita · Sharirasthana 4 · Garbhavyakarana — reflex arc and Vata-Pitta response speed',
+        leftLabel:'Very quick — I react before thinking', leftDosha:'V',
+        rightLabel:'Moderate — deliberate and measured', rightDosha:'P' },
+      { q:'My sleep — how I fall asleep and wake…', src:'AH.Su.7', ref:'Ashtanga Hridayam · Sutrasthana 7 · Dravyadi-vijnaniya — Nidra (sleep) as one of the three pillars of life',
+        leftLabel:'Light, interrupted — wake easily, hard to fall back', leftDosha:'V',
+        rightLabel:'Deep, long — hard to wake, feel heavy', rightDosha:'K' },
+      { q:'The nature of my dreams…', src:'Ch.Su.30', ref:'Charaka Samhita · Sutrasthana 30 · Arthedashmahamuliya — dream quality (Svapna) as a Dosha diagnostic',
+        leftLabel:'Flying, running, unstable landscapes — vivid chaos', leftDosha:'V',
+        rightLabel:'Watery, oceanic, slow, sometimes no dreams recalled', rightDosha:'K' },
+      { q:'How I rely on routine and structure…', src:'AH.Su.3', ref:'Ashtanga Hridayam · Sutrasthana 3 · Ritucharya — Dosha and relationship to regularity (Dinacharya)',
+        leftLabel:'Crave variety — routine feels like a cage', leftDosha:'V',
+        rightLabel:'Thrive on routine — disruption unsettles me', rightDosha:'K' },
+      { q:'Under stress my primary instinct is…', src:'Ch.Vi.8', ref:'Charaka Samhita · Vimanasthana 8 · Rogabhinana — stress response and Manas Dosha (Rajas/Tamas)',
+        leftLabel:'Worry, move, change something — restless', leftDosha:'V',
+        rightLabel:'Analyze, control, perfect — critical of self', rightDosha:'P' },
+    ]
+  },
+  {
+    id:'sense', label:'Senses', emoji:'👁️', cls:'br-sense', color:'#0277BD',
+    signals:['See','Hear','Smell','Taste','Touch'],
+    orient:'Answer based on your sensory experience when you are healthy and rested — not during illness, high stress, or fatigue, which temporarily alter all sensory patterns.',
+    ref:'Charaka Samhita, Sutrasthana 8 — each sense organ is governed by a corresponding element and Dosha; imbalance first appears as distortion in the senses.',
+    questions:[
+      { q:'My eyes and vision…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — eye characteristics (Chakshu) as Prakriti markers',
+        leftLabel:'Small, dark, dart quickly — light sensitive', leftDosha:'V',
+        rightLabel:'Large, liquid, slow-moving, reddish or light-coloured', rightDosha:'K' },
+      { q:'My sensitivity to bright light or heat…', src:'Ch.Su.8', ref:'Charaka Samhita · Sutrasthana 8 · Indriyadishana — Pitta governs photosensitivity and heat tolerance',
+        leftLabel:'Not especially — I tolerate both well', leftDosha:'V',
+        rightLabel:'High sensitivity — bright light and heat bother me', rightDosha:'P' },
+      { q:'My hearing and acoustic sensitivity…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Shrota Indriya (hearing organ) and Vata-Akasha relationship',
+        leftLabel:'Acute, easily distracted by sound — thin or crackling voice', leftDosha:'V',
+        rightLabel:'Moderate — grounded, clear and resonant voice', rightDosha:'K' },
+      { q:'My sense of smell and taste acuity…', src:'Su.Su.35', ref:'Sushruta Samhita · Sutrasthana 35 · Ksatakshiniya — olfactory and gustatory sense organ quality by Dosha',
+        leftLabel:'Variable — can be very acute or entirely absent', leftDosha:'V',
+        rightLabel:'Consistently strong — scent and taste linger long', rightDosha:'K' },
+      { q:'My taste preferences…', src:'Ch.Su.26', ref:'Charaka Samhita · Sutrasthana 26 · Atreya-Bhadrakapiya — six tastes (Shadrasa) and their Dosha effects',
+        leftLabel:'Sweet, sour, salty — warming tastes comfort me', leftDosha:'V',
+        rightLabel:'Sweet, bitter, astringent — cooling tastes I prefer', rightDosha:'P' },
+      { q:'My skin and touch sensitivity…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Tvak (skin) as seat of Sparsha Indriya (touch)',
+        leftLabel:'Dry, rough, cool — prone to cracking', leftDosha:'V',
+        rightLabel:'Oily, smooth, soft, cool — prone to congestion', rightDosha:'K' },
+      { q:'My internal body sense (gut feelings, energy levels)…', src:'Ch.Vi.1', ref:'Charaka Samhita · Vimanasthana 1 · Rasa-Vimana — interoceptive clarity as Agni and Vata function',
+        leftLabel:'Irregular — hard to read my own signals', leftDosha:'V',
+        rightLabel:'Clear and steady — I know my state well', rightDosha:'K' },
+      { q:'Temperature comfort — I tend to feel…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — thermal preference as primary Dosha diagnostic',
+        leftLabel:'Cold — I always want warmth, layers, heat', leftDosha:'V',
+        rightLabel:'Hot — I run warm, prefer cool environments', rightDosha:'P' },
+    ]
+  },
+  {
+    id:'health', label:'Health', emoji:'🌿', cls:'br-health', color:'#B71C1C',
+    signals:['Breathe','Digest','Circulate','Down & Out','Up & Up & Out','Age'],
+    orient:'These questions address your body\'s baseline physiology across your life — not a current illness or temporary condition. If you have a chronic condition, answer as your body tends to behave even when it is managed.',
+    ref:'Ashtanga Hridayam, Nidanasthana 1 — all disease arises from Dosha imbalance acting on the seven Dhatus via the channels (Srotas); health is Doshas in their natural seats.',
+    questions:[
+      { q:'My breathing pattern is generally…', src:'AH.Su.12', ref:'Ashtanga Hridayam · Sutrasthana 12 · Doshadi-vijnaniya — Prana Vayu and Udana Vayu govern respiratory rhythm',
+        leftLabel:'Shallow, irregular, fast — I often forget to breathe deeply', leftDosha:'V',
+        rightLabel:'Slow, steady, deep — calm respiratory rhythm', rightDosha:'K' },
+      { q:'My digestion and gut behaviour…', src:'Ch.Ch.15', ref:'Charaka Samhita · Chikitsasthana 15 · Grahani-chikitsa — digestive fire (Agni) types and bowel character by Dosha',
+        leftLabel:'Irregular — alternates constipation and loose stools', leftDosha:'V',
+        rightLabel:'Slow — heavy after meals, tends toward sluggishness', rightDosha:'K' },
+      { q:'My circulation and hands/feet temperature…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Vyana Vayu governs peripheral circulation and warmth',
+        leftLabel:'Poor circulation — cold hands and feet often', leftDosha:'V',
+        rightLabel:'Warm, good circulation — hands and feet stay warm', rightDosha:'P' },
+      { q:'Elimination (bowel regularity)…', src:'Ch.Vi.3', ref:'Charaka Samhita · Vimanasthana 3 · Janapadodhvamsa — Apana Vayu and Mala (waste) elimination patterns',
+        leftLabel:'Irregular, dry, hard, tending to constipation', leftDosha:'V',
+        rightLabel:'Loose, frequent — sensitive gut', rightDosha:'P' },
+      { q:'My voice and respiratory expression…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Udana Vayu governs voice quality and projection',
+        leftLabel:'Variable, thin, sometimes hoarse or cracking', leftDosha:'V',
+        rightLabel:'Loud, sharp, penetrating', rightDosha:'P' },
+      { q:'How I age — my visible ageing pattern…', src:'AH.Sha.3', ref:'Ashtanga Hridayam · Sharirasthana 3 · Angavibhaga — Vata accumulates with age (Jara); tissue quality by Prakriti',
+        leftLabel:'Lean, dry, wrinkle early — light and wiry in older age', leftDosha:'V',
+        rightLabel:'Slow to wrinkle but prone to weight gain and congestion', rightDosha:'K' },
+      { q:'My energy levels across a day…', src:'Ch.Su.7', ref:'Charaka Samhita · Sutrasthana 7 · Dravyasangraha — Bala (strength) and Ojas as daily energy reserve by Prakriti',
+        leftLabel:'Bursts and crashes — unpredictable, needs rest often', leftDosha:'V',
+        rightLabel:'Steady and sustained — slow to start but long endurance', rightDosha:'K' },
+      { q:'My immunity and susceptibility to illness…', src:'AH.Su.11', ref:'Ashtanga Hridayam · Sutrasthana 11 · Doshadivijnaniya — Bala and Ojas determine immune resilience by constitution',
+        leftLabel:'Variable — catch things easily, recover quickly', leftDosha:'V',
+        rightLabel:'Sturdy — rarely ill but slow to recover when sick', rightDosha:'K' },
+    ]
+  },
+  {
+    id:'action', label:'Actions', emoji:'⚡', cls:'br-action', color:'#AD1457',
+    signals:['Speak','Manipulate','Move','Pee & Poo','Progeny'],
+    orient:'Answer based on your natural style when you are free to work and move as you choose — not what your job or current circumstances require of you.',
+    ref:'Charaka Samhita, Sutrasthana 12 — the five Karma-Indriyas (action organs) express Dosha through speech, hands, locomotion, elimination, and procreation.',
+    questions:[
+      { q:'My speech style and talking pace…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Vak (speech) as expression of Udana Vayu; speed and clarity by Dosha',
+        leftLabel:'Fast, talkative, jumping topics — sometimes incoherent', leftDosha:'V',
+        rightLabel:'Slow, deliberate, measured — few words, considered', rightDosha:'K' },
+      { q:'My hand movements and manual dexterity…', src:'Ch.Su.8', ref:'Charaka Samhita · Sutrasthana 8 · Indriyadishana — Hasta Karma (hand action) governed by Vata motor function',
+        leftLabel:'Quick, agile, fidgety — hands always moving', leftDosha:'V',
+        rightLabel:'Steady, slow, strong — deliberate and reliable', rightDosha:'K' },
+      { q:'My walking pace and movement style…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Pada Karma (locomotion) and gait as Prakriti indicator',
+        leftLabel:'Fast, irregular gait — light on feet', leftDosha:'V',
+        rightLabel:'Slow, steady, graceful — grounded stride', rightDosha:'K' },
+      { q:'My physical energy expression…', src:'Su.Su.15', ref:'Sushruta Samhita · Sutrasthana 15 · Shonitavarnaniya — Bala (physical strength) and stamina patterns by constitution',
+        leftLabel:'Bursts — sprint energy, hard to sustain', leftDosha:'V',
+        rightLabel:'Marathon energy — slow start, very long endurance', rightDosha:'K' },
+      { q:'My drive and motivation style…', src:'Ch.Su.8', ref:'Charaka Samhita · Sutrasthana 8 · Indriyadishana — Pitta Vikrama (heroic drive) vs Vata enthusiasm; goal orientation',
+        leftLabel:'Enthusiastic starter — many projects, scattered follow-through', leftDosha:'V',
+        rightLabel:'Goal-driven, intense — competitive, purposeful, decisive', rightDosha:'P' },
+      { q:'My social presence and influence…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Ojas as social radiance; Kapha Sneha as relational magnetism',
+        leftLabel:'Charming, enthusiastic, mercurial — inspires bursts', leftDosha:'V',
+        rightLabel:'Calm, magnetic, steady — inspires loyalty over time', rightDosha:'K' },
+      { q:'My work and productivity rhythm…', src:'Ch.Vi.8', ref:'Charaka Samhita · Vimanasthana 8 · Rogabhinana — Karma (action) patterns and Prakriti; Vata as ideator, Kapha as builder',
+        leftLabel:'Creative sprints — ideation is my strength, execution hard', leftDosha:'V',
+        rightLabel:'Process-oriented — execution is my strength, ideation slower', rightDosha:'K' },
+    ]
+  },
+  {
+    id:'purp', label:'Purposes', emoji:'✨', cls:'br-purp', color:'#00695C',
+    signals:['Live','Love','Connect'],
+    orient:'These questions explore your deepest motivational patterns. There are no right answers. Answer what is true for you — not what you aspire to, or what you think Ayurveda would say is best.',
+    ref:'Charaka Samhita, Sutrasthana 1 — the four Purusharthas (Dharma, Artha, Kama, Moksha) are the telos of human life; Prakriti determines the natural path toward each.',
+    questions:[
+      { q:'What motivates me most fundamentally…', src:'Ch.Su.1', ref:'Charaka Samhita · Sutrasthana 1 · Dirghanjivitiya — the four Purusharthas (Dharma, Artha, Kama, Moksha) as life goals by constitution',
+        leftLabel:'Freedom, novelty, creativity — I must keep moving and creating', leftDosha:'V',
+        rightLabel:'Security, depth, connection — I need belonging and stability', rightDosha:'K' },
+      { q:'My relationship to love and attachment…', src:'AH.Su.1', ref:'Ashtanga Hridayam · Sutrasthana 1 · Ayushkamiya — Kapha Sneha (love quality) and Vata mobility in relational bonds',
+        leftLabel:'Quick to attach, quick to move on — I love many lightly', leftDosha:'V',
+        rightLabel:'Slow to attach but deeply loyal — I love few, intensely', rightDosha:'K' },
+      { q:'How I express care for others…', src:'Su.Su.4', ref:'Sushruta Samhita · Sutrasthana 4 · Prakriti-Purusha — outward expression of Dosha as modes of service and care',
+        leftLabel:'Through ideas, words, imagination — I inspire and enthuse', leftDosha:'V',
+        rightLabel:'Through acts and steady presence — I feed, hold, persist', rightDosha:'K' },
+      { q:'My relationship with spiritual practice…', src:'Ch.Su.30', ref:'Charaka Samhita · Sutrasthana 30 · Arthedashmahamuliya — Sattva, Rajas, Tamas determine the form of spiritual inclination',
+        leftLabel:'Drawn to ecstatic, movement, devotional forms', leftDosha:'V',
+        rightLabel:'Drawn to structured, ritual, meditational forms', rightDosha:'K' },
+      { q:'How I sense meaning and purpose…', src:'AH.Su.3', ref:'Ashtanga Hridayam · Sutrasthana 3 · Ritucharya — Pitta as the Dosha of purpose, transformation, and righteous action',
+        leftLabel:'Purpose through transformation — I must grow or I wither', leftDosha:'V',
+        rightLabel:'Purpose through legacy — I build things that outlast me', rightDosha:'P' },
+      { q:'My response to loss and endings…', src:'Ch.Vi.6', ref:'Charaka Samhita · Vimanasthana 6 · Rogabhinana — grief and loss as Kapha (Shoka) and anxiety as Vata (Bhaya)',
+        leftLabel:'Anxiety and grief — hard to let go, ruminate', leftDosha:'V',
+        rightLabel:'Slow sadness — heavy grief, but resilient over time', rightDosha:'K' },
+      { q:'My vision of a good life…', src:'Ch.Su.1', ref:'Charaka Samhita · Sutrasthana 1 · Dirghanjivitiya — Ayurveda defines the good life as Hitayu (beneficial life) and Sukhayu (happy life)',
+        leftLabel:'Exploration, adventure, learning — always becoming', leftDosha:'V',
+        rightLabel:'Depth, mastery, rootedness — fully inhabiting what I am', rightDosha:'K' },
+    ]
+  },
+];
+
+// Dosha left/right pole assignment for scoring
+// Slider 0 = leftDosha gets full points, 100 = rightDosha gets full points
+// 50 = neutral (split evenly)
+// Score = position/100 toward right, (100-position)/100 toward left
+
+// ══════════════════════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════════════════════
+let currentBucket = 0;
+const TOTAL_Q = BUCKETS.reduce((a,b) => a+b.questions.length, 0);
+let answers = {}; // key: "bucketId_qIdx" → slider value 0-100
+
+// ══════════════════════════════════════════════════════════════════
+//  BUILD UI
+// ══════════════════════════════════════════════════════════════════
+function buildNav() {
+  const nav = document.getElementById('bucketNav');
+  nav.innerHTML = '';
+  BUCKETS.forEach((b, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'bnav-btn' + (i===0?' active':'');
+    btn.id = `bnav${i}`;
+    btn.onclick = () => goBucket(i);
+    btn.innerHTML = `${b.emoji} ${b.label} <span class="bcheck" id="bcheck${i}">✓</span>`;
+    nav.appendChild(btn);
+  });
+}
+
+function buildSections() {
+  const pane = document.getElementById('assessPane');
+  pane.innerHTML = '';
+  BUCKETS.forEach((b, bi) => {
+    const sec = document.createElement('div');
+    sec.className = 'bucket-section' + (bi===0?' active':'');
+    sec.id = `section${bi}`;
+    sec.innerHTML = `
+      <div class="bucket-heading">
+        <div class="bh-icon" style="background:${b.color}22;border:2px solid ${b.color}44">${b.emoji}</div>
+        <div class="bh-name" style="color:${b.color}">${b.label}</div>
+      </div>
+      <div class="bh-sub">Signals: ${b.signals.join(' · ')}</div>
+      ${b.orient ? `<div class="bucket-orient">${b.orient}</div>` : ''}
+      <details class="classical-ref-toggle">
+        <summary>Classical source</summary>
+        <div class="classical-ref">${b.ref}</div>
+      </details>
+      <div id="questions${bi}"></div>
+    `;
+    const qContainer = sec.querySelector(`#questions${bi}`);
+    b.questions.forEach((q, qi) => {
+      const key = `${b.id}_${qi}`;
+      const val = answers[key] !== undefined ? answers[key] : 50;
+      const rightColorClass = q.rightDosha === 'P' ? 'p-pitta' : q.rightDosha === 'K' ? 'p-kapha' : 'p-vata';
+      const block = document.createElement('div');
+      block.className = 'question-block';
+      block.innerHTML = `
+        <div class="q-label">
+          <span>${q.q}</span>
+          <span class="q-num">Q${bi*10+qi+1}</span>
+        </div>
+        <div class="poles">
+          <div class="pole-left">${q.leftLabel}</div>
+          <input type="range" min="0" max="100" value="${val}"
+            data-key="${key}" data-ldosha="${q.leftDosha}" data-rdosha="${q.rightDosha}"
+            oninput="onSlider(this)" onchange="onSlider(this)"
+            style="min-width:120px">
+          <div class="pole-right ${rightColorClass}">${q.rightLabel}</div>
+        </div>
+        <div class="q-dosha-hint">
+          <span class="dh dh-v" style="opacity:${q.leftDosha==='V'||q.rightDosha==='V'?1:.3}">Vāta: ${q.leftDosha==='V'?'←':''} ${q.rightDosha==='V'?'→':''}</span>
+          <span class="dh dh-p" style="opacity:${q.leftDosha==='P'||q.rightDosha==='P'?1:.3}">Pitta: ${q.leftDosha==='P'?'←':''} ${q.rightDosha==='P'?'→':''}</span>
+          <span class="dh dh-k" style="opacity:${q.leftDosha==='K'||q.rightDosha==='K'?1:.3}">Kapha: ${q.leftDosha==='K'?'←':''} ${q.rightDosha==='K'?'→':''}</span>
+        </div>
+        <details class="q-ref-toggle">
+          <summary class="q-ref-code">${q.src}</summary>
+          <div class="q-ref-text">${q.ref}</div>
+        </details>
+      `;
+      qContainer.appendChild(block);
+    });
+    pane.appendChild(sec);
+  });
+}
+
+function onSlider(el) {
+  const key = el.dataset.key;
+  answers[key] = parseInt(el.value);
+  const pct = parseInt(el.value)/100;
+  // update thumb color based on dominant side
+  const lc = el.dataset.ldosha, rc = el.dataset.rdosha;
+  const doshaColors = {V:'#1565C0', P:'#BF360C', K:'#1B5E20'};
+  const dominant = pct < 0.4 ? lc : pct > 0.6 ? rc : 'MIX';
+  el.style.setProperty('--thumb-color', dominant==='MIX'?'#888':doshaColors[dominant]);
+  // gradient update
+  const vmd = '#90CAF9', pmd='#FFCC80', kmd='#A5D6A7';
+  const leftColor = {V:vmd, P:pmd, K:kmd}[lc];
+  const rightColor = {V:vmd, P:pmd, K:kmd}[rc];
+  el.style.background = `linear-gradient(90deg, ${leftColor} 0%, #e0e0e0 ${el.value}%, #e0e0e0 ${el.value}%, ${rightColor} 100%)`;
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = Object.keys(answers).length;
+  const pct = Math.round((answered/TOTAL_Q)*100);
+  document.getElementById('progressPct').textContent = pct+'%';
+  const circumference = 213.6;
+  const offset = circumference * (1 - pct/100);
+  document.getElementById('progressCircle').style.strokeDashoffset = offset;
+  updateBucketDoneState();
+}
+
+function updateBucketDoneState() {
+  BUCKETS.forEach((b, bi) => {
+    const allAnswered = b.questions.every((_,qi) => answers[`${b.id}_${qi}`] !== undefined);
+    const btn = document.getElementById(`bnav${bi}`);
+    if (btn) btn.classList.toggle('done', allAnswered);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════════════════════════════════
+function goBucket(i) {
+  document.querySelectorAll('.bucket-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`section${i}`).classList.add('active');
+  document.getElementById(`bnav${i}`).classList.add('active');
+  currentBucket = i;
+  updateFooter();
+  document.getElementById('assessPane').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function navBucket(dir) {
+  const next = currentBucket + dir;
+  if (next < 0) return;
+  if (next >= BUCKETS.length) { showResults(); return; }
+  goBucket(next);
+}
+
+function updateFooter() {
+  const prev = document.getElementById('btnPrev');
+  const next = document.getElementById('btnNext');
+  const prog = document.getElementById('bucketProgress');
+  prev.style.visibility = currentBucket === 0 ? 'hidden' : 'visible';
+  const isLast = currentBucket === BUCKETS.length - 1;
+  next.textContent = isLast ? 'Submit →' : 'Next →';
+  next.className = 'nav-btn ' + (isLast ? 'nav-btn-submit' : 'nav-btn-next');
+  prog.innerHTML = `Bucket <span>${currentBucket+1}</span> of ${BUCKETS.length} — ${BUCKETS[currentBucket].label}`;
+}
+
+// ══════════════════════════════════════════════════════════════════
+//  SCORING
+// ══════════════════════════════════════════════════════════════════
+function scoreAll() {
+  let totV=0, totP=0, totK=0;
+  const bucketScores = {};
+  BUCKETS.forEach(b => {
+    let bV=0,bP=0,bK=0;
+    b.questions.forEach((q,qi) => {
+      const key = `${b.id}_${qi}`;
+      const val = answers[key] !== undefined ? answers[key] : 50;
+      const pct = val/100;
+      const leftScore = 1-pct, rightScore = pct;
+      const inc = (dosha, score) => {
+        if (dosha==='V') bV+=score;
+        else if (dosha==='P') bP+=score;
+        else bK+=score;
+      };
+      inc(q.leftDosha, leftScore);
+      inc(q.rightDosha, rightScore);
+    });
+    const bTotal = bV+bP+bK || 1;
+    bucketScores[b.id] = {
+      V: bV/bTotal*100, P: bP/bTotal*100, K: bK/bTotal*100,
+      rawV:bV, rawP:bP, rawK:bK
+    };
+    totV+=bV; totP+=bP; totK+=bK;
+  });
+  const total = totV+totP+totK || 1;
+  return {
+    V: totV/total*100, P: totP/total*100, K: totK/total*100,
+    buckets: bucketScores
+  };
+}
+
+function prakritiName(V,P,K) {
+  const sorted = [{d:'Vāta',v:V},{d:'Pitta',v:P},{d:'Kapha',v:K}].sort((a,b)=>b.v-a.v);
+  const [first,second,third] = sorted;
+  if (first.v > 50) return { name: first.d, sub: `Pure ${first.d} constitution — one dominant Dosha` };
+  if (first.v - second.v < 12) {
+    if (third.v > 22) return { name: `Sama (Tridoshic)`, sub: 'All three Doshas in balance — rare and resilient' };
+    return { name: `${first.d}-${second.d}`, sub: `Dual constitution — ${first.d} leads, ${second.d} supports` };
+  }
+  return { name: first.d, sub: `${first.d}-dominant constitution with ${second.d} secondary influence` };
+}
+
+function doshaColor(d) {
+  if (d==='V') return {bg:'var(--vata-lt)',color:'var(--vata)',label:'Vāta'};
+  if (d==='P') return {bg:'var(--pitta-lt)',color:'var(--pitta)',label:'Pitta'};
+  return {bg:'var(--kapha-lt)',color:'var(--kapha)',label:'Kapha'};
+}
+
+function dominantDosha(scores) {
+  if (scores.V>=scores.P && scores.V>=scores.K) return 'V';
+  if (scores.P>=scores.V && scores.P>=scores.K) return 'P';
+  return 'K';
+}
+
+// ══════════════════════════════════════════════════════════════════
+//  RESULTS
+// ══════════════════════════════════════════════════════════════════
+function showResults() {
+  const scores = scoreAll();
+  const V=scores.V, P=scores.P, K=scores.K;
+  const pk = prakritiName(V,P,K);
+
+  document.getElementById('assessment').style.display = 'none';
+  const res = document.getElementById('results');
+  res.style.display = 'block';
+  res.classList.add('visible');
+
+  // Animate bars
+  setTimeout(() => {
+    document.getElementById('barV').style.width = V.toFixed(1)+'%';
+    document.getElementById('barP').style.width = P.toFixed(1)+'%';
+    document.getElementById('barK').style.width = K.toFixed(1)+'%';
+    document.getElementById('pctV').textContent = Math.round(V)+'%';
+    document.getElementById('pctP').textContent = Math.round(P)+'%';
+    document.getElementById('pctK').textContent = Math.round(K)+'%';
+  }, 100);
+
+  const dom = dominantDosha({V,P,K});
+  const dc = doshaColor(dom);
+  document.getElementById('doshaDominant').innerHTML =
+    `Dominant Dosha: <strong style="color:${dc.color}">${dc.label}</strong> &nbsp;·&nbsp; V ${Math.round(V)}% · P ${Math.round(P)}% · K ${Math.round(K)}%`;
+
+  document.getElementById('resultsPrakritiTitle').textContent = `Your Prakriti: ${pk.name}`;
+  document.getElementById('prakritiName').textContent = pk.name;
+  document.getElementById('prakritiSub').textContent = pk.sub;
+
+  buildCockpitResults(scores);
+  buildNarrative(scores, pk);
+
+  showPrintBtn();
+  updateEiMeta(`Assessment complete · ${Object.keys(answers).length} of ${TOTAL_Q} answered`);
+  res.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── COCKPIT RESULTS ──
+function buildCockpitResults(scores) {
+  const el = document.getElementById('cockpitResults');
+  // layout mirrors hums-baseline: top-row (who + how), left (senses), center (SVG), right (actions + purposes), bottom (health)
+  el.innerHTML = `
+    <div class="top-row">
+      ${bucketResultCard('who',scores)}
+      ${bucketResultCard('how',scores)}
+    </div>
+    <div class="left-col">${bucketResultCard('sense',scores,true)}</div>
+    <div class="center-col">
+      <div class="center-tagline">The pilot. The children. The journey.</div>
+      <div style="text-align:center;padding:16px 8px">
+        ${doshaTriangle(scores.V.toFixed(0), scores.P.toFixed(0), scores.K.toFixed(0))}
+      </div>
+    </div>
+    <div class="right-col">
+      ${bucketResultCard('action',scores)}
+      ${bucketResultCard('purp',scores)}
+    </div>
+    <div class="bottom-row">${bucketResultCardHealth(scores)}</div>
+  `;
+  // animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.sr-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+    document.querySelectorAll('.hrc-bar').forEach(bar => {
+      bar.style.background = bar.dataset.color;
+    });
+  }, 200);
+}
+
+function bucketResultCard(bid, scores, fullHeight=false) {
+  const b = BUCKETS.find(x=>x.id===bid);
+  const bs = scores.buckets[bid];
+  const dom = dominantDosha(bs);
+  const dc = doshaColor(dom);
+  const style = fullHeight ? 'height:100%' : '';
+  let rows = b.signals.map(sig => {
+    const barColor = dom==='V'?'var(--vata)':dom==='P'?'var(--pitta)':'var(--kapha)';
+    const barWidth = bs[dom].toFixed(0);
+    return `<div class="signal-result-row">
+      <span class="sr-name">${sig}</span>
+      <div class="sr-bar-track"><div class="sr-bar-fill" data-w="${barWidth}" style="width:0;background:${barColor}"></div></div>
+      <span class="sr-dosha-label" style="color:${dc.color}">${dc.label}</span>
+    </div>`;
+  }).join('');
+  return `<div class="bucket-r ${b.cls}" style="${style}">
+    <div class="bucket-r-header">
+      <span class="bucket-r-title">${b.label}</span>
+      <span class="bucket-r-dosha" style="background:${dc.bg};color:${dc.color}">${dc.label}</span>
+    </div>
+    <div class="bucket-r-body">${rows}</div>
+  </div>`;
+}
+
+function bucketResultCardHealth(scores) {
+  const bs = scores.buckets['health'];
+  const signals = ['Breathe','Digest','Circulate','Down & Out','Up & Up & Out','Age'];
+  const cards = signals.map((sig,i) => {
+    const dom = dominantDosha(bs);
+    const dc = doshaColor(dom);
+    const barColor = dom==='V'?'var(--vata)':dom==='P'?'var(--pitta)':'var(--kapha)';
+    return `<div class="health-r-card">
+      <div class="hrc-label">${sig}</div>
+      <div class="hrc-bar" data-color="${barColor}" style="background:var(--grid)"></div>
+      <div class="hrc-dosha" style="color:${dc.color}">${dc.label}</div>
+    </div>`;
+  }).join('');
+  return `<div class="bucket-r br-health" style="border-radius:10px;overflow:hidden">
+    <div class="bucket-r-header">
+      <span class="bucket-r-title">Health</span>
+      <span class="bucket-r-dosha" style="background:var(--vata-lt);color:var(--vata)">${doshaColor(dominantDosha(bs)).label}</span>
+    </div>
+    <div class="health-r-grid">${cards}</div>
+  </div>`;
+}
+
+function doshaTriangle(v,p,k) {
+  // Simple SVG dosha wheel
+  const vp = parseFloat(v)/100, pp = parseFloat(p)/100, kp = parseFloat(k)/100;
+  const r = 80;
+  const cx=100, cy=105;
+  const vx = cx, vy = cy-r;
+  const px = cx+r*Math.sin(2*Math.PI/3), py = cy-r*Math.cos(2*Math.PI/3);
+  const kx = cx+r*Math.sin(4*Math.PI/3), ky = cy-r*Math.cos(4*Math.PI/3);
+  // centroid weighted by scores
+  const wx = vx*vp + px*pp + kx*kp;
+  const wy = vy*vp + py*pp + ky*kp;
+  return `<svg width="200" height="190" viewBox="0 0 200 190" style="overflow:visible">
+    <polygon points="${vx},${vy} ${px},${py} ${kx},${ky}" fill="none" stroke="#E0E4EF" stroke-width="1.5"/>
+    <line x1="${cx}" y1="${cy}" x2="${vx}" y2="${vy}" stroke="#E0E4EF" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="${cx}" y1="${cy}" x2="${px}" y2="${py}" stroke="#E0E4EF" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="${cx}" y1="${cy}" x2="${kx}" y2="${ky}" stroke="#E0E4EF" stroke-width="1" stroke-dasharray="3,3"/>
+    <circle cx="${vx}" cy="${vy}" r="24" fill="var(--vata-lt)" stroke="var(--vata)" stroke-width="2"/>
+    <text x="${vx}" y="${vy}" text-anchor="middle" dominant-baseline="middle" fill="var(--vata)" font-family="Playfair Display,serif" font-size="9" font-weight="700">Vāta</text>
+    <text x="${vx}" y="${vy+12}" text-anchor="middle" fill="var(--vata)" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">${v}%</text>
+    <circle cx="${px}" cy="${py}" r="24" fill="var(--pitta-lt)" stroke="var(--pitta)" stroke-width="2"/>
+    <text x="${px}" y="${py-4}" text-anchor="middle" fill="var(--pitta)" font-family="Playfair Display,serif" font-size="9" font-weight="700">Pitta</text>
+    <text x="${px}" y="${py+8}" text-anchor="middle" fill="var(--pitta)" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">${p}%</text>
+    <circle cx="${kx}" cy="${ky}" r="24" fill="var(--kapha-lt)" stroke="var(--kapha)" stroke-width="2"/>
+    <text x="${kx}" y="${ky-4}" text-anchor="middle" fill="var(--kapha)" font-family="Playfair Display,serif" font-size="9" font-weight="700">Kapha</text>
+    <text x="${kx}" y="${ky+8}" text-anchor="middle" fill="var(--kapha)" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">${k}%</text>
+    <circle cx="${wx}" cy="${wy}" r="10" fill="var(--yellow)" stroke="var(--yellow-dk)" stroke-width="2" opacity=".9"/>
+    <text x="${wx}" y="${wy}" text-anchor="middle" dominant-baseline="middle" font-family="DM Sans,sans-serif" font-size="7" font-weight="700" fill="#3A2800">YOU</text>
+  </svg>`;
+}
+
+// ── NARRATIVE ──
+const NARRATIVES = {
+  who: {
+    V: { heading:'Identity rooted in movement',
+         text:'Your sense of self is fluid, creative, and constantly evolving. <strong>Prakriti — your constitutional nature</strong> has a strong Vāta signature: you think quickly, feel quickly, and tend to reinvent identity across life stages. Your strength is adaptability; your watch-point is anxiety when identity feels unmoored. Ayurveda recommends grounding practices (Abhyanga, warm oil, routine) to give Vāta a stable container.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic Vāta</span> identity = fluid yet anchored in Viveka — the inquiring self. <span class="guna-raj">Rajasic</span> = restless reinvention driven by dissatisfaction. <span class="guna-tam">Tamasic</span> = identity confusion, inability to know oneself. The S2L2 ascent question here: <em>Is your fluidity Vairagya (non-attachment) or avoidance?</em>' },
+    P: { heading:'Identity anchored in purpose',
+         text:'Pitta defines your identity through achievement, precision, and principle. You know who you are through what you do and how well you do it. <strong>Mānasika Prakriti</strong> (psycho-constitution) here is Pitta-dominant: sharp intellect, strong will, and a tendency toward self-criticism. Watch for perfectionism eroding self-acceptance. Sattvic Pitta = the wise leader who acts without attachment to outcome.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic Pitta</span> identity = principled, clear, acts from Svadharma. <span class="guna-raj">Rajasic</span> = identity fused to achievement — self-worth rises and falls with outcomes. <span class="guna-tam">Tamasic</span> = rigidity, judgment, identity defended by force. The S2L2 ascent question: <em>Does your precision serve others or protect your self-image?</em>' },
+    K: { heading:'Identity grounded in being',
+         text:'Kapha gives you a stable, rooted sense of self that changes slowly. You are loyal, consistent, and your identity is tied to relationships and place. <strong>Smriti</strong> (memory) is a Kapha-governed function — you remember well and hold long. Your strength is steadiness; your watch-point is resistance to necessary change. Ayurveda recommends stimulation, spice, and movement to keep Kapha identity from calcifying.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic Kapha</span> identity = stable, nurturing, present — the still point others orient around. <span class="guna-raj">Rajasic</span> = identity through possession and belonging — fear of loss drives behaviour. <span class="guna-tam">Tamasic</span> = inertia, the self frozen in place. The S2L2 ascent question: <em>Is your groundedness Shat-Sampat (inner wealth) or attachment to the familiar?</em>' }
+  },
+  how: {
+    V: { heading:'Cognition that flies — needs landing strips',
+         text:'Your mental process is classic Vāta: fast, associative, creative, and hard to sustain. <strong>Buddhi</strong> (intellect) works at high speed in a Vāta mind, but Manas (the receiving mind) gets overwhelmed. Dreams are vivid and chaotic. Reflex is lightning-quick. Ayurvedic medicine for Vāta cognition: <em>Medhya Rasayana</em> (Brahmi, Shankhapushpi), oil on the head (Shiro Abhyanga), and pranayama to slow Prāna Vāyu.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic Vāta</span> cognition = inspired, discriminating, moves fast but lands cleanly — Viveka in action. <span class="guna-raj">Rajasic</span> = thinking for its own sake, ideation without integration. <span class="guna-tam">Tamasic</span> = scattered, confused, Prajna-Bhransha (loss of clarity, Gita 2.63). The S2L2 ascent question: <em>Does your speed serve clarity or scatter it?</em>' },
+    P: { heading:'Cognition that cuts and decides',
+         text:'Pitta governs analysis, planning, and decisive action. Your <strong>Buddhi</strong> is your strongest asset — sharp discrimination, clear goals, excellent follow-through. The risk is <em>Prajnaparadha</em> (crime against wisdom) — knowing the right thing and overriding it with ambition. Dreams are vivid and often problem-solving in nature. Cooling herbs (Shatavari, Amalaki) and evening walks protect Pitta cognition.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic Pitta</span> cognition = discriminating Buddhi aligned with Dharma — the Gita\'s ideal Kshatriya mind. <span class="guna-raj">Rajasic</span> = analysis in service of winning, not truth. <span class="guna-tam">Tamasic</span> = Prajnaparadha — knowing and overriding. The S2L2 ascent question: <em>Is your decisiveness Svadharma or Ahamkara (ego)?</em>' },
+    K: { heading:'Cognition that persists and retains',
+         text:'Kapha cognition is slow, deep, and extraordinarily retentive. <strong>Smriti</strong> in a Kapha mind is like stone — once learned, never forgotten. Sleep is deep (Tarpaka Kapha in full expression). Reflex is measured. The risk is inertia — starting is hard. Ayurveda prescribes stimulating spices (ginger, black pepper), vigorous exercise, and early rising to activate Kapha cognition.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic Kapha</span> cognition = deep retention, patient wisdom, long Dhyana without distraction. <span class="guna-raj">Rajasic</span> = clinging to known frameworks, learning as accumulation not transformation. <span class="guna-tam">Tamasic</span> = Smriti-Bhransha through over-sleep and under-stimulation. The S2L2 ascent question: <em>Is your retention Jnana (wisdom) or storage?</em>' }
+  },
+  sense: {
+    V: { heading:'Senses that live at the edge',
+         text:'Vāta senses are acute, variable, and easily overwhelmed. <strong>Shrota Indriya</strong> (hearing) and touch are your sharpest senses — you are highly responsive to sound and tactile input. Visual and olfactory sensitivity fluctuates. This is the Ākāsha (space) and Vāyu (air) quality at work in the sensory system. Ground your senses with warm food, oil massage, and reducing screen overstimulation at night.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = senses as instruments of Viveka — sharp, clean, not grasping. <span class="guna-raj">Rajasic</span> = senses chasing stimulation — the Gita\'s Indriya-chanchalam (restless senses, 2.67). <span class="guna-tam">Tamasic</span> = sensory numbness or overwhelm. The S2L2 descent guard: <em>Dhyana (dwelling on sensory input) is the first step toward Kama (craving) — Gita 2.62.</em>' },
+    P: { heading:'Senses calibrated for precision',
+         text:'Pitta senses are sharp and discriminating. <strong>Ālochaka Pitta</strong> governs vision — your eyes are your primary information organ, and you are photosensitive. Temperature sensitivity is high (you run warm). Taste is precise and critical. The risk: sensory overload leading to inflammation or irritability. Cooling eye washes (Triphala), avoiding direct midday sun, and bitter-astringent tastes protect Pitta senses.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = vision as discernment, taste as refinement — senses in service of Dharma. <span class="guna-raj">Rajasic</span> = senses as judges — critical, comparative, never satisfied. <span class="guna-tam">Tamasic</span> = inflammatory reactivity, seeing only threat or flaw. The S2L2 ascent question: <em>Are your sharp senses tools of Viveka or weapons of Krodha (anger)?</em>' },
+    K: { heading:'Senses that are rich and enduring',
+         text:'Kapha senses are deep, stable, and long-lasting. <strong>Rasanā Indriya</strong> (taste) and smell are strongest — you are a sensory connoisseur with excellent recall of scent and flavour. Touch is nurturing and steady. The risk: Kapha Āma (congestion) dulling the senses over time. Dry brushing, nasal rinse (Neti), and pungent/bitter tastes keep Kapha senses clear and alive.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = rich sensory life as gratitude and presence — Rasa as Bhakti. <span class="guna-raj">Rajasic</span> = sensory indulgence as comfort-seeking — taste and touch as emotional regulation. <span class="guna-tam">Tamasic</span> = Āma-dulled senses, disconnection from the body. The S2L2 ascent question: <em>Does your sensory richness ground you in the present or bind you to comfort?</em>' }
+  },
+  health: {
+    V: { heading:'A body that needs anchoring',
+         text:'Vāta physiology is light, dry, and irregular. <strong>Prāna Vāyu</strong> governs breath (often shallow and fast), <strong>Apāna Vāyu</strong> governs elimination (irregular or dry). Circulation can be poor — cold extremities, low body fat. <strong>Ojas</strong> depletes quickly under stress, travel, or poor sleep. The Ayurvedic prescription: warm, oily, nourishing food (ghee, sesame, root vegetables), Abhyanga daily, and consistent sleep timing as the single highest-leverage intervention.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = body as a vehicle cared for without attachment — Dhrti (steadiness) applied to self-care. <span class="guna-raj">Rajasic</span> = body driven past its signals — ignoring Prāna feedback in pursuit of output. <span class="guna-tam">Tamasic</span> = neglect, irregular sleep, Ojas depletion through inertia. The S2L2 ascent question: <em>Do you care for the body as Prarabdha (the given instrument) or resist it as a constraint?</em>' },
+    P: { heading:'A body that burns bright',
+         text:'Pitta physiology is warm, sharp, and metabolically efficient. <strong>Jāthara Agni</strong> (digestive fire) burns hot — you digest quickly and hunger intensely. Circulation is excellent; skin is warm and prone to redness or inflammation. The risk: overheating, inflammatory conditions, and burnout from driving too hard. Ayurvedic prescription: cooling foods (coconut, pomegranate, cucumber), avoiding alcohol and spicy food, and protecting the midday break as recovery.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = Agni as Tejas — transformative clarity, digesting both food and experience cleanly. <span class="guna-raj">Rajasic</span> = Agni as ambition fuel — burning the body to meet goals. <span class="guna-tam">Tamasic</span> = inflammation turned inward — Pitta without direction becomes corrosive. The S2L2 ascent question: <em>Is your fire illuminating or consuming?</em>' },
+    K: { heading:'A body built for endurance',
+         text:'Kapha physiology is heavy, stable, and slow. <strong>Ojas</strong> (vital essence) is your greatest asset — you have deep reserves and strong immunity. The risk is accumulation: weight gain, congestion, sluggish digestion, and slow elimination. <strong>Āma</strong> (metabolic residue) accumulates easily in Kapha. Ayurvedic prescription: dry, light, pungent food; vigorous exercise; early rising; and periodic fasting or light eating days to keep the metabolic channels clear.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = Ojas as Soma — calm radiance, deep immunity, the body as a gift freely offered. <span class="guna-raj">Rajasic</span> = Ojas hoarded — strength used for self-protection, not service. <span class="guna-tam">Tamasic</span> = Āma accumulation — the body heavy and slow, Tamas as the default. The S2L2 ascent question: <em>Is your endurance Dhrti (Gita 18.33) or inertia dressed as stability?</em>' }
+  },
+  action: {
+    V: { heading:'Actions that spark — building the landing gear',
+         text:'Vāta actions are creative, fast, and inspirational. <strong>Udāna Vāyu</strong> gives you the gift of speech — you communicate ideas with enthusiasm and speed. Manual dexterity is quick. The challenge is sustained output: Vāta energy comes in bursts. Ayurveda\'s wisdom here: channel Vāta\'s creative brilliance into structured frameworks (exactly what HUMS provides) — the framework is the landing gear that gives Vāta flight a runway.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = action as Nishkama Karma — Vāta\'s creative spark offered freely, without grasping the outcome. <span class="guna-raj">Rajasic</span> = frantic doing, action as anxiety management — Krodha (frustration) when results don\'t follow quickly. <span class="guna-tam">Tamasic</span> = unfinished projects, abandoned momentum. The S2L2 ascent question: <em>Are you acting from Purushartha (free will) or from the restlessness of Prarabdha unexamined?</em>' },
+    P: { heading:'Actions that drive and transform',
+         text:'Pitta actions are purposeful, competitive, and transformative. <strong>Pitta Vikrama</strong> (heroic capacity) makes you a natural leader and executor. You finish what you start, and you start with intent. The risk: overwork without recovery depletes Ojas. Ayurveda recommends building rest as deliberately as you build output — the rest <em>is</em> part of the performance, not its interruption.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = action from Svadharma — the Gita\'s Kshatriya acts because it is right, not because it will win. <span class="guna-raj">Rajasic</span> = action from desire for results — Karta (doer) inflated by Ahamkara. <span class="guna-tam">Tamasic</span> = action from compulsion — driven, not choosing. The S2L2 ascent question: <em>When the outcome is uncertain, do you act from Dharma or from fear of not winning?</em>' },
+    K: { heading:'Actions that build and sustain',
+         text:'Kapha actions are methodical, persistent, and structural. <strong>Māmsa Dhātu</strong> (muscle tissue) is strong; endurance is extraordinary. You build things that last. The risk: starting is hard, and momentum requires a long warm-up. Ayurveda recommends early morning vigorous exercise and warming spices to fire up the Kapha engine. Once in motion, nothing stops you.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = building as Seva — the Kapha builder as a servant of the work, not its owner. <span class="guna-raj">Rajasic</span> = building for legacy, attachment to the structure outlasting the self. <span class="guna-tam">Tamasic</span> = refusing to begin, or refusing to release what is built. The S2L2 ascent question: <em>Can you build with the same steadiness whether anyone notices or not?</em>' }
+  },
+  purp: {
+    V: { heading:'Purpose as becoming',
+         text:'Vāta\'s Purushārtha is <strong>Kāma</strong> (creative desire and freedom) expressed as perpetual becoming. You find meaning in exploration, learning, and transformation. Connection through ideas and inspiration. The spiritual path that calls to Vāta is bhakti (devotion through enthusiasm) or jnana (knowledge through inquiry). The challenge: Vāta can confuse restlessness for purpose. The HUMS Purposes bucket asks: which signals — Live, Love, Connect — are being powered by Prarabdha (your given nature) vs. Purushartha (your free will)?',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = Mumukshutva — the Vāta seeker yearning for liberation, not just novelty. <span class="guna-raj">Rajasic</span> = Kāma as restlessness — purpose confused with stimulation, the Gita\'s Dhyana → Kama arc. <span class="guna-tam">Tamasic</span> = purposelessness, meaning-vacuum. The S2L2 ascent question: <em>Is your search for meaning Viveka rising — or the descent beginning?</em>' },
+    P: { heading:'Purpose as mastery and impact',
+         text:'Pitta\'s Purushārtha is <strong>Artha</strong> (achievement and righteous authority) expressed as mastery. You find meaning in building things of excellence and influencing others toward a better standard. The risk is confusing achievement with purpose — the Gita\'s antidote is Nishkama Karma (action without attachment to fruit). Your spiritual path is karma yoga through precision and leadership. Watch for Pitta\'s <em>Prajnaparadha</em>: the moment you override your own wisdom in service of an agenda.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = Artha in service of Dharma — achievement as a means, not an end. <span class="guna-raj">Rajasic</span> = Artha as the end itself — Krodha when recognition is withheld (Gita 2.62–63 descent). <span class="guna-tam">Tamasic</span> = purpose collapsed into power or cynicism. The S2L2 ascent question: <em>If mastery were invisible to others, would you still pursue it?</em>' },
+    K: { heading:'Purpose as legacy and love',
+         text:'Kapha\'s Purushārtha is <strong>Dharma</strong> (duty and right relationship) expressed as legacy. You find meaning in building something that outlasts you — family, community, institution. Love is your deepest purpose signal: <strong>Kapha Sneha</strong> (the oily quality — the literal root of the Sanskrit word for love) is what glues the world together. Your spiritual path is seva (selfless service) and the practice of letting go of what you have built. The Gita\'s lesson for Kapha: attachment to legacy can be as binding as attachment to outcome.',
+         guna:'<strong>S2L2 · Guna tendency in this bucket:</strong> <span class="guna-sat">Sattvic</span> = Tyaga (the first rung of SRT L0) — the Kapha who builds and releases, offering the fruit without owning the harvest. <span class="guna-raj">Rajasic</span> = Sneha as binding — love as possession, legacy as monument to self. <span class="guna-tam">Tamasic</span> = grief-frozen attachment, inability to let what was built evolve beyond you. The S2L2 ascent question: <em>Is your Dharma a gift or a contract?</em>' }
+  }
+};
+
+function buildNarrative(scores, pk) {
+  const el = document.getElementById('narrativeContent');
+  el.innerHTML = '';
+  BUCKETS.forEach(b => {
+    const bs = scores.buckets[b.id];
+    const dom = dominantDosha(bs);
+    const dc = doshaColor(dom);
+    const narr = NARRATIVES[b.id][dom];
+    const div = document.createElement('div');
+    div.className = 'narr-bucket';
+    div.innerHTML = `
+      <div class="nb-heading">
+        <div class="nb-name" style="color:${b.color}">${b.emoji} ${b.label}</div>
+        <span class="nb-dosha-pill" style="background:${dc.bg};color:${dc.color}">${dc.label} dominant · ${Math.round(bs[dom])}%</span>
+      </div>
+      <div class="nb-text"><strong>${narr.heading}.</strong> ${narr.text}</div>
+      <div class="nb-guna">${narr.guna}</div>
+    `;
+    el.appendChild(div);
+  });
+  // S2L2 Viveka closing note
+  const closing = document.createElement('div');
+  closing.style.cssText = 'background:var(--yellow-lt);border:1px solid var(--yellow-dk);border-radius:8px;padding:14px 16px;margin-top:4px;font-size:.74rem;line-height:1.7;color:#3A2800';
+  closing.innerHTML = `<strong>🪔 S2L2 closing reminder — this result is a starting point for Viveka, not a fixed label.</strong><br>
+    Shankara's ladder rises through discrimination, non-attachment, the six inner wealths, and the yearning for liberation.
+    None of those rungs are your Dosha.
+    Your Prakriti is the Prarabdha (the given) — the instrument you were handed.
+    What you do with it is Purushartha (the free).
+    The assessment ends here. The inquiry does not.`;
+  el.appendChild(closing);
+}
+
+function retake() {
+  answers = {};
+  currentBucket = 0;
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('assessment').style.display = 'block';
+  document.getElementById('btnPrint').style.display = 'none';
+  updateEiMeta('No session saved · answers held in memory only');
+  buildSections();
+  goBucket(0);
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════════════════════════════
+//  EXPORT / IMPORT
+// ══════════════════════════════════════════════════════════════════
+
+function sessionPayload() {
+  return {
+    version: '1.0',
+    tool: 'HUMS × Ayurveda Prakriti Assessment',
+    brand: 'Banyan Logic LLC',
+    savedAt: new Date().toISOString(),
+    currentBucket,
+    answers,
+    totalQuestions: TOTAL_Q,
+    answered: Object.keys(answers).length,
+  };
+}
+
+function exportSession() {
+  const payload = sessionPayload();
+  const json = JSON.stringify(payload, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const ts = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = `hums-prakriti-${ts}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  updateEiMeta(`Saved ${Object.keys(answers).length} of ${TOTAL_Q} answers · ${ts}`);
+  toast('✓ Session saved — check your downloads');
+}
+
+function importSession(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!data.answers || typeof data.answers !== 'object') throw new Error('Invalid file');
+      // Validate keys match expected bucket/question pattern
+      const validKeys = new Set(
+        BUCKETS.flatMap(b => b.questions.map((_,qi) => `${b.id}_${qi}`))
+      );
+      const imported = {};
+      let count = 0;
+      Object.entries(data.answers).forEach(([k, v]) => {
+        if (validKeys.has(k) && typeof v === 'number' && v >= 0 && v <= 100) {
+          imported[k] = v;
+          count++;
+        }
+      });
+      answers = imported;
+      // Restore bucket position
+      const savedBucket = typeof data.currentBucket === 'number'
+        ? Math.min(data.currentBucket, BUCKETS.length - 1) : 0;
+      currentBucket = savedBucket;
+      // Rebuild UI with restored values
+      buildSections();
+      goBucket(currentBucket);
+      updateProgress();
+      // If all answered, offer to go straight to results
+      if (count === TOTAL_Q) {
+        updateEiMeta(`All ${TOTAL_Q} answers restored · saved ${(data.savedAt||'').slice(0,10)}`);
+        toast(`✓ ${count} answers loaded — scroll to submit or continue editing`);
+      } else {
+        updateEiMeta(`${count} of ${TOTAL_Q} answers restored · saved ${(data.savedAt||'').slice(0,10)}`);
+        toast(`✓ ${count} of ${TOTAL_Q} answers restored`);
+      }
+    } catch(err) {
+      toast('✗ Could not read file — make sure it is a valid HUMS session file');
+    }
+    // Reset file input so same file can be re-imported
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function printResults() {
+  // Make sure results are visible before print
+  if (document.getElementById('results').style.display === 'none') {
+    toast('Complete the assessment first to export results');
+    return;
+  }
+  window.print();
+}
+
+function updateEiMeta(msg) {
+  document.getElementById('eiMeta').textContent = msg;
+}
+
+function showPrintBtn() {
+  document.getElementById('btnPrint').style.display = 'inline-flex';
+}
+
+function toast(msg, duration=3000) {
+  const el = document.getElementById('eiToast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => el.classList.remove('show'), duration);
+}
+
+// ══════════════════════════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════════════════════════
+buildNav();
+buildSections();
+updateFooter();
+updateProgress();
+
+// Init slider gradients
+document.querySelectorAll('input[type=range]').forEach(el => {
+  const lc = el.dataset.ldosha, rc = el.dataset.rdosha;
+  const vmd='#90CAF9',pmd='#FFCC80',kmd='#A5D6A7';
+  const leftColor = {V:vmd,P:pmd,K:kmd}[lc];
+  const rightColor = {V:vmd,P:pmd,K:kmd}[rc];
+  el.style.background = `linear-gradient(90deg,${leftColor} 0%,#e0e0e0 50%,#e0e0e0 50%,${rightColor} 100%)`;
+});
+</script>
+</body>
+</html>
