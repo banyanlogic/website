@@ -318,6 +318,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .ei-btn-load:hover{background:var(--blue-lt)}
 .ei-btn-print{background:var(--yellow);color:#3A2800;border:2px solid var(--yellow-dk)}
 .ei-btn-print:hover{background:var(--yellow-dk);color:white}
+.ei-btn-disc{background:transparent;color:#B71C1C;border:2px solid #FFCDD2}
+.ei-btn-disc:hover{background:#FFF5F5;border-color:#B71C1C}
 .ei-meta{font-size:.65rem;color:var(--muted);font-style:italic;margin-left:auto}
 #importFileInput{display:none}
 /* toast */
@@ -465,6 +467,7 @@ function acceptDisclaimer() {
     <button class="ei-btn ei-btn-load" onclick="document.getElementById('importFileInput').click()" title="Load a previously saved session">↑ Load</button>
     <input type="file" id="importFileInput" accept=".json" onchange="importSession(event)">
     <button class="ei-btn ei-btn-print" id="btnPrint" onclick="printResults()" style="display:none" title="Export results as PDF">⎙ Export</button>
+    <button class="ei-btn ei-btn-disc" onclick="showDisclaimer()" title="Read the full disclaimer and privacy note">⚕ Disclaimer</button>
     <span class="ei-meta" id="eiMeta">🔒 Local only — nothing leaves your device</span>
   </div>
 
