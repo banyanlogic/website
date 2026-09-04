@@ -417,7 +417,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
     </div>
     <div class="disc-footer">
       <span class="disc-footer-note">By continuing, you confirm you have read and understood the above. © Srinivasa M. Kasturi · CC BY-NC 4.0</span>
-      <button class="disc-accept-btn" onclick="acceptDisclaimer()">I Understand — Begin Assessment</button>
+      <button class="disc-accept-btn" onclick="acceptDisclaimer()">Go to Assessment →</button>
     </div>
   </div>
 </div>
@@ -428,6 +428,17 @@ function acceptDisclaimer() {
   overlay.style.transition = 'opacity .3s';
   overlay.style.opacity = '0';
   setTimeout(function(){ overlay.style.display = 'none'; }, 320);
+}
+function showDisclaimer() {
+  var overlay = document.getElementById('discOverlay');
+  overlay.style.opacity = '0';
+  overlay.style.display = 'flex';
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      overlay.style.transition = 'opacity .3s';
+      overlay.style.opacity = '1';
+    });
+  });
 }
 </script>
 
