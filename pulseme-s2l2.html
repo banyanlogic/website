@@ -111,7 +111,7 @@
   }
   input[type=range]{
     -webkit-appearance:none; appearance:none; width:100%; height:4px; border-radius:2px;
-    background:linear-gradient(90deg, var(--desc-lo), var(--pivot), var(--ascent));
+    background:linear-gradient(90deg, var(--desc-lo) 0%, var(--pivot) 61.5%, var(--ascent) 100%);
     outline:none; margin:8px 0;
   }
   input[type=range]::-webkit-slider-thumb{
@@ -256,24 +256,45 @@
       </div>
       <div class="rung descent" data-rung="-3">
         <span class="dot">↓</span>
-        <div class="title">The Defiance</div>
-        <div class="sub">Craving turns to anger</div>
-        <div class="skt">कामात्क्रोधो</div>
-        <div class="translit">Kāmāt krodho</div>
+        <div class="title">The Craving</div>
+        <div class="sub">Desire takes hold</div>
+        <div class="skt">कामः</div>
+        <div class="translit">Kāmaḥ</div>
       </div>
       <div class="rung descent" data-rung="-4">
         <span class="dot">↓</span>
-        <div class="title">The Fog</div>
-        <div class="sub">Memory of data lost</div>
-        <div class="skt">स्मृतिभ्रंशः</div>
-        <div class="translit">Smṛtibhraṁśaḥ</div>
+        <div class="title">The Defiance</div>
+        <div class="sub">Desire hardens to anger</div>
+        <div class="skt">क्रोधः</div>
+        <div class="translit">Krodhaḥ</div>
       </div>
       <div class="rung descent" data-rung="-5">
         <span class="dot">↓</span>
+        <div class="title">The Delusion</div>
+        <div class="sub">Judgment clouds</div>
+        <div class="skt">सम्मोहः</div>
+        <div class="translit">Sammohaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-6">
+        <span class="dot">↓</span>
+        <div class="title">The Fog</div>
+        <div class="sub">Memory unsettled</div>
+        <div class="skt">स्मृतिविभ्रमः</div>
+        <div class="translit">Smṛtivibhramaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-7">
+        <span class="dot">↓</span>
+        <div class="title">The Unraveling</div>
+        <div class="sub">Discernment destroyed</div>
+        <div class="skt">बुद्धिनाशः</div>
+        <div class="translit">Buddhi-nāśaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-8">
+        <span class="dot">↓</span>
         <div class="title">The Fall</div>
-        <div class="sub">Intellect destroyed</div>
-        <div class="skt">बुद्धिनाशात्प्रणश्यति</div>
-        <div class="translit">Buddhi-nāśāt praṇaśyati</div>
+        <div class="sub">Total ruin</div>
+        <div class="skt">प्रणश्यति</div>
+        <div class="translit">Praṇaśyati</div>
       </div>
     </div>
     <div class="verse-note">↓ Gita's Advisement · Bhagavad Gita 2.62–63</div>
@@ -303,7 +324,7 @@
       <label>Rung</label>
       <div class="rung-slider">
         <div class="rung-current" id="rungCurrent">Same rung</div>
-        <input type="range" id="rungRange" min="-5" max="5" step="1" value="0" oninput="onRungChange(this.value)"/>
+        <input type="range" id="rungRange" min="-8" max="5" step="1" value="0" oninput="onRungChange(this.value)"/>
         <div class="rung-scale-labels"><span>↓ The Fall</span><span>Liberation ↑</span></div>
       </div>
       <label for="entryNote">Note (optional)</label>
@@ -348,18 +369,22 @@
 
 <script>
 // ── RUNGS ──────────────────────────────────────────────────────────────
+const RUNG_MIN = -8, RUNG_MAX = 5, RUNG_SPAN = RUNG_MAX - RUNG_MIN;
 const RUNGS = [
-  { v: 5,  name:"Liberation",  color:"#7ec4f0" },
-  { v: 4,  name:"The Clear",   color:"#7ec4f0" },
-  { v: 3,  name:"The Steady",  color:"#7ec4f0" },
-  { v: 2,  name:"The Detach",  color:"#7ec4f0" },
-  { v: 1,  name:"The Attach",  color:"#7ec4f0" },
-  { v: 0,  name:"Same rung",   color:"#d9b65c" },
-  { v:-1,  name:"The Glance",  color:"#e8c15a" },
-  { v:-2,  name:"The Reach",   color:"#e8c15a" },
-  { v:-3,  name:"The Defiance",color:"#e0714a" },
-  { v:-4,  name:"The Fog",     color:"#e0714a" },
-  { v:-5,  name:"The Fall",    color:"#e0714a" }
+  { v: 5,  name:"Liberation",    color:"#7ec4f0" },
+  { v: 4,  name:"The Clear",     color:"#7ec4f0" },
+  { v: 3,  name:"The Steady",    color:"#7ec4f0" },
+  { v: 2,  name:"The Detach",    color:"#7ec4f0" },
+  { v: 1,  name:"The Attach",    color:"#7ec4f0" },
+  { v: 0,  name:"Same rung",     color:"#d9b65c" },
+  { v:-1,  name:"The Glance",    color:"#e8c15a" },
+  { v:-2,  name:"The Reach",     color:"#e7b658" },
+  { v:-3,  name:"The Craving",   color:"#e6aa55" },
+  { v:-4,  name:"The Defiance",  color:"#e59f53" },
+  { v:-5,  name:"The Delusion",  color:"#e39351" },
+  { v:-6,  name:"The Fog",       color:"#e2884f" },
+  { v:-7,  name:"The Unraveling",color:"#e17c4c" },
+  { v:-8,  name:"The Fall",      color:"#e0714a" }
 ];
 function rungByVal(v){ return RUNGS.find(r=>r.v===v); }
 
@@ -476,7 +501,7 @@ function renderChart(){
   const h = 180;
   const padL = 30, padR = 12, padT = 12, padB = 22;
   const innerW = w - padL - padR, innerH = h - padT - padB;
-  const yFor = v => padT + innerH - ((v+5)/10)*innerH;
+  const yFor = v => padT + innerH - ((v - RUNG_MIN)/RUNG_SPAN)*innerH;
   const xFor = i => padL + (sorted.length===1 ? innerW/2 : (i/(sorted.length-1))*innerW);
 
   let pts = sorted.map((e,i)=> `${xFor(i)},${yFor(e.rung)}`).join(' ');
@@ -500,9 +525,9 @@ function renderChart(){
 
   wrap.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
     <line x1="${padL}" y1="${yFor(0)}" x2="${w-padR}" y2="${yFor(0)}" stroke="#2a3f74" stroke-width="1" stroke-dasharray="3,3"/>
-    <text x="${padL-4}" y="${yFor(5)+3}" font-size="9" fill="#8a93b8" text-anchor="end">↑5</text>
+    <text x="${padL-4}" y="${yFor(RUNG_MAX)+3}" font-size="9" fill="#8a93b8" text-anchor="end">↑${RUNG_MAX}</text>
     <text x="${padL-4}" y="${yFor(0)+3}" font-size="9" fill="#8a93b8" text-anchor="end">0</text>
-    <text x="${padL-4}" y="${yFor(-5)+3}" font-size="9" fill="#8a93b8" text-anchor="end">↓5</text>
+    <text x="${padL-4}" y="${yFor(RUNG_MIN)+3}" font-size="9" fill="#8a93b8" text-anchor="end">↓${Math.abs(RUNG_MIN)}</text>
     ${segs}${dots}${labels}
   </svg>`;
 }
