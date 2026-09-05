@@ -159,6 +159,7 @@
     <button id="tabCyberBtn" onclick="showTab('cyber')">Cyber Unit</button>
     <button id="tabFatherBtn" onclick="showTab('father')">Father</button>
     <button id="tabHusbandBtn" onclick="showTab('husband')">Husband</button>
+    <button id="tabSourcesBtn" onclick="showTab('sources')">Sources</button>
   </nav>
 
   <!-- ══ DASHBOARD ══ -->
@@ -243,6 +244,15 @@
     <div id="husbandPresetList"></div>
   </section>
 
+  <!-- ══ SOURCES ══ -->
+  <section id="sourcesView">
+    <div class="card">
+      <h3>Sources</h3>
+      <div class="desc">Where the concepts behind this dashboard come from, if you want to go deeper.</div>
+    </div>
+    <div id="sourceList"></div>
+  </section>
+
   <footer>
     CC BY 4.0 — Srinivasa M. Kasturi (<a href="https://linkedin.com/in/skasturi">linkedin.com/in/skasturi</a>)
   </footer>
@@ -272,11 +282,13 @@ function showTab(name){
   document.getElementById('cyberView').classList.toggle('active', name==='cyber');
   document.getElementById('fatherView').classList.toggle('active', name==='father');
   document.getElementById('husbandView').classList.toggle('active', name==='husband');
+  document.getElementById('sourcesView').classList.toggle('active', name==='sources');
   document.getElementById('tabDashBtn').classList.toggle('active', name==='dash');
   document.getElementById('tabManageBtn').classList.toggle('active', name==='manage');
   document.getElementById('tabCyberBtn').classList.toggle('active', name==='cyber');
   document.getElementById('tabFatherBtn').classList.toggle('active', name==='father');
   document.getElementById('tabHusbandBtn').classList.toggle('active', name==='husband');
+  document.getElementById('tabSourcesBtn').classList.toggle('active', name==='sources');
 }
 
 function todayStr(){
@@ -399,6 +411,28 @@ function renderPresetGroup(containerId){
 }
 function renderPresets(){
   Object.keys(PRESET_GROUPS).forEach(renderPresetGroup);
+}
+
+// ── SOURCES ────────────────────────────────────────────────────────
+const SOURCES = [
+  { name:"SAFe — Scaled Agile Framework", url:"https://scaledagileframework.com/metrics/",
+    desc:"Business and DevOps metrics guidance — where the KPI/leading-vs-lagging split in this app is rooted." },
+  { name:"Measure What Matters (John Doerr)", url:"https://www.whatmatters.com/",
+    desc:"The OKR book — the source of the Output/Outcome distinction used across every tab." },
+  { name:"Kaplan & Norton — Balanced Scorecard", url:"https://hbr.org/2005/07/the-balanced-scorecard-measures-that-drive-performance",
+    desc:"The original leading-vs-lagging indicator framing behind the windshield/mirror metaphor." },
+  { name:"DORA — DevOps Research & Assessment", url:"https://dora.dev/",
+    desc:"Throughput and stability metrics behind measures like test coverage and remediation time." },
+  { name:"ISACA / COBIT — Risk Indicators", url:"https://www.isaca.org/resources/cobit",
+    desc:"Where the KRI (Key Risk Indicator) concept used in the Cyber Unit tab comes from." }
+];
+function renderSources(){
+  const list = document.getElementById('sourceList');
+  list.innerHTML = SOURCES.map(s=>`<div class="card">
+    <h3>${escapeHtml(s.name)}</h3>
+    <div class="desc">${escapeHtml(s.desc)}</div>
+    <a href="${s.url}" target="_blank" rel="noopener" class="save-btn" style="display:block; text-align:center; text-decoration:none;">Learn More</a>
+  </div>`).join('');
 }
 
 // ── STATUS / GAUGE MATH ─────────────────────────────────────────────
@@ -571,6 +605,7 @@ function clearAll(){
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────
+renderSources();
 render();
 </script>
 </body>
