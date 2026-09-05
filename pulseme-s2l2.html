@@ -44,6 +44,15 @@
     display:flex; gap:6px; margin:16px 0 18px; background:var(--panel);
     border-radius:12px; padding:4px; border:1px solid var(--border);
   }
+
+  .epigraph{
+    text-align:center; margin-top:16px; padding:16px 10px; border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .epigraph .skt-line{font-size:1rem; color:var(--cream); line-height:1.6;}
+  .epigraph .translit-line{font-size:0.78rem; font-style:italic; color:var(--muted); margin-top:6px; line-height:1.5;}
+  .epigraph .translation{font-size:0.85rem; color:var(--cream); font-style:italic; margin-top:10px; line-height:1.5;}
+  .epigraph .citation{font-size:0.68rem; color:var(--muted); letter-spacing:0.4px; margin-top:6px;}
   nav.tabs button{
     flex:1; padding:10px 8px; border:none; border-radius:9px; background:transparent;
     color:var(--muted); font-family:'Inter',sans-serif; font-weight:600; font-size:0.85rem;
@@ -217,6 +226,14 @@
     <div class="tagline">Slippery Slopes &amp; Leaders Ladders</div>
     <button type="button" class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀️ Try light background</button>
   </header>
+
+  <div class="epigraph">
+    <div class="skt-line">उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।</div>
+    <div class="skt-line">आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥ ६.५ ॥</div>
+    <div class="translit-line">uddhared ātmanātmānaṁ nātmānam avasādayet |<br/>ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ ‖ 6.5 ‖</div>
+    <div class="translation">&ldquo;Let one raise oneself by one's own self — let one not lower oneself. The self alone is one's friend; the self alone, one's enemy.&rdquo;</div>
+    <div class="citation">— BHAGAVAD GITA 6.5</div>
+  </div>
 
   <nav class="tabs">
     <button type="button" id="tabLadderBtn" class="active" onclick="showTab('ladder')">The Ladder</button>
