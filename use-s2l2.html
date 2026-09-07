@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>S2L2 — Stay On, Climb On</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0d1b3d; --panel:#152a54; --panel-2:#1b3363; --border:#2a3f74;
+    --cream:#f5f0e6; --muted:#8a93b8;
+    --ascent:#7ec4f0; --ascent-dim:#4f7fb0;
+    --pivot:#d9b65c;
+    --desc-hi:#e8c15a; --desc-lo:#e0714a;
+  }
+  :root[data-theme="light"]{
+    --bg:#f7f5ef; --panel:#ffffff; --panel-2:#eef0f7; --border:#d8dbe6;
+    --cream:#1b2440; --muted:#5a6180;
+    --ascent:#2f6fa8; --ascent-dim:#6f93b5;
+    --pivot:#a9791f;
+    --desc-hi:#b98a1e; --desc-lo:#b85428;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--cream); font-family:'Inter',sans-serif;
+    min-height:100vh; padding:18px 14px 40px;
+    transition:background .2s, color .2s;
+  }
+  .wrap{max-width:640px; margin:0 auto;}
+  header{text-align:center; margin-bottom:14px;}
+  .kicker{
+    font-family:'Fredoka One',cursive; letter-spacing:3px; font-size:1.5rem;
+    color:var(--desc-hi);
+  }
+  .tagline{color:var(--muted); font-size:0.85rem; margin-top:2px;}
+  .theme-toggle{
+    display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:6px 12px;
+    border-radius:20px; border:1px solid var(--border); background:var(--panel);
+    color:var(--muted); font-size:0.72rem; font-weight:600; cursor:pointer;
+    font-family:'Inter',sans-serif; letter-spacing:0.3px;
+  }
+
+  nav.tabs{
+    display:flex; gap:6px; margin:16px 0 18px; background:var(--panel);
+    border-radius:12px; padding:4px; border:1px solid var(--border);
+  }
+
+  .epigraph{
+    text-align:center; margin-top:16px; padding:16px 10px; border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .epigraph .skt-line{font-size:1rem; color:var(--cream); line-height:1.6;}
+  .epigraph .translit-line{font-size:0.78rem; font-style:italic; color:var(--muted); margin-top:6px; line-height:1.5;}
+  .epigraph .translation{font-size:0.85rem; color:var(--cream); font-style:italic; margin-top:10px; line-height:1.5;}
+  .epigraph .citation{font-size:0.68rem; color:var(--muted); letter-spacing:0.4px; margin-top:6px;}
+  nav.tabs button{
+    flex:1; padding:10px 8px; border:none; border-radius:9px; background:transparent;
+    color:var(--muted); font-family:'Inter',sans-serif; font-weight:600; font-size:0.85rem;
+    cursor:pointer; transition:background .15s, color .15s;
+  }
+  nav.tabs button.active{background:var(--panel-2); color:var(--cream);}
+
+  section{display:none;}
+  section.active{display:block;}
+
+  /* ── LADDER VIEW ── */
+  .verse-note{
+    text-align:center; font-size:0.72rem; letter-spacing:0.4px; color:var(--muted);
+    margin:14px 0 6px;
+  }
+  .ladder{position:relative; padding:6px 0;}
+  .spine{
+    position:absolute; left:16px; top:0; bottom:0; width:2px; background:var(--border);
+  }
+  .rung{position:relative; padding:10px 0 10px 42px; min-height:56px;}
+  .rung .dot{
+    position:absolute; left:9px; top:14px; width:16px; height:16px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:0.6rem;
+    background:var(--bg); border:2px solid var(--ascent-dim); color:var(--ascent-dim);
+  }
+  .rung.descent .dot{border-color:var(--desc-lo); color:var(--desc-lo);}
+  .rung .title{font-family:'Fredoka One',cursive; font-size:1.05rem; color:var(--ascent);}
+  .rung.descent .title{color:var(--desc-hi);}
+  .rung .sub{color:var(--muted); font-size:0.78rem; font-style:italic; margin-top:1px;}
+  .rung .skt{color:var(--cream); font-size:0.95rem; margin-top:4px;}
+  .rung .translit{color:var(--muted); font-size:0.75rem; font-style:italic;}
+  .pivot{
+    text-align:center; padding:12px 0; color:var(--pivot); font-size:0.72rem;
+    letter-spacing:1px; text-transform:none;
+  }
+  .pivot .icon{font-size:1.2rem; display:block; margin-bottom:2px;}
+
+  .quote-card{
+    margin-top:16px; background:var(--panel); border:1px solid var(--border);
+    border-radius:14px; padding:18px; text-align:center;
+    transition:border-color .15s;
+  }
+  .quote-card:focus-within{border-color:var(--ascent-dim);}
+  .quote-toggle{
+    display:block; width:100%; background:none; border:none; padding:0; margin:0;
+    text-align:center; cursor:pointer; font-family:'Inter',sans-serif; color:inherit;
+  }
+  .quote-toggle:hover .q, .quote-toggle:focus-visible .q{color:var(--ascent);}
+  .quote-card .q{font-size:1.15rem; font-style:italic; color:var(--cream); line-height:1.5;}
+  .quote-card .hint{font-size:0.7rem; color:var(--muted); margin-top:8px; letter-spacing:0.3px;}
+  .reveal{
+    display:none; margin-top:12px; padding-top:12px; border-top:1px solid var(--border);
+    text-align:left;
+  }
+  .reveal.open{display:block;}
+  .reveal h4{font-size:0.8rem; color:var(--desc-hi); margin-bottom:8px; font-weight:600;}
+  .reveal ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .reveal li{font-size:0.88rem; color:var(--cream); line-height:1.4; padding-left:14px; position:relative;}
+  .reveal li::before{content:"—"; position:absolute; left:0; color:var(--muted);}
+  .reveal .cta{
+    display:inline-block; margin-top:12px; background:var(--desc-hi); color:var(--bg);
+    border:none; border-radius:8px; padding:9px 16px; font-weight:700; font-size:0.82rem;
+    cursor:pointer; font-family:'Inter',sans-serif;
+  }
+
+  /* ── TRACKER VIEW ── */
+  .card{
+    background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    padding:16px; margin-bottom:14px;
+  }
+  .card h3{font-family:'Fredoka One',cursive; font-size:1rem; color:var(--ascent); margin-bottom:4px;}
+  .card .desc{color:var(--muted); font-size:0.8rem; margin-bottom:12px;}
+  .note-flag{
+    font-size:0.72rem; font-style:italic; color:var(--muted); border-left:2px solid var(--border);
+    padding-left:9px; margin-bottom:14px; line-height:1.4;
+  }
+  label{display:block; font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:5px;}
+  input[type=date], textarea{
+    width:100%; background:var(--bg); border:1px solid var(--border); border-radius:8px;
+    color:var(--cream); padding:9px 10px; font-family:'Inter',sans-serif; font-size:0.88rem;
+    margin-bottom:12px;
+  }
+  textarea{resize:vertical; min-height:56px;}
+  .rung-slider{margin-bottom:12px;}
+  .rung-current{
+    text-align:center; font-family:'Fredoka One',cursive; font-size:1.05rem; margin-bottom:6px;
+    transition:color .1s;
+  }
+  input[type=range]{
+    -webkit-appearance:none; appearance:none; width:100%; height:4px; border-radius:2px;
+    background:linear-gradient(90deg, var(--desc-lo) 0%, var(--pivot) 61.5%, var(--ascent) 100%);
+    outline:none; margin:8px 0;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:50%;
+    background:var(--cream); border:2px solid var(--bg); box-shadow:0 0 0 1px var(--border);
+    cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:20px; height:20px; border-radius:50%; background:var(--cream);
+    border:2px solid var(--bg); box-shadow:0 0 0 1px var(--border); cursor:pointer;
+  }
+  .rung-scale-labels{
+    display:flex; justify-content:space-between; font-size:0.66rem; color:var(--muted);
+    letter-spacing:0.3px;
+  }
+  .save-btn{
+    width:100%; padding:11px; border:none; border-radius:9px; background:var(--desc-hi);
+    color:var(--bg); font-weight:700; font-size:0.9rem; cursor:pointer; font-family:'Inter',sans-serif;
+  }
+  .save-btn:disabled{opacity:0.4; cursor:not-allowed;}
+
+  .chart-wrap{overflow-x:auto;}
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  svg{display:block;}
+
+  .entry-list{display:flex; flex-direction:column; gap:8px;}
+  .entry{
+    display:flex; align-items:flex-start; gap:10px; background:var(--bg);
+    border:1px solid var(--border); border-radius:10px; padding:10px 12px;
+  }
+  .entry .badge{
+    flex-shrink:0; font-size:0.68rem; font-weight:700; padding:3px 8px; border-radius:20px;
+    color:var(--bg); white-space:nowrap;
+  }
+  .entry .meta{flex:1; min-width:0;}
+  .entry .date{font-size:0.72rem; color:var(--muted);}
+  .entry .note{font-size:0.85rem; color:var(--cream); margin-top:2px; word-break:break-word;}
+  .entry .del{
+    flex-shrink:0; background:none; border:none; color:var(--muted); cursor:pointer; font-size:1rem;
+    line-height:1; padding:2px 4px;
+  }
+  .entry .del:hover{color:var(--desc-lo);}
+  .empty{color:var(--muted); font-size:0.85rem; text-align:center; padding:14px 0;}
+
+  .utility-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .util-btn{
+    flex:1; padding:9px; border-radius:8px; border:1px solid var(--border); background:var(--bg);
+    color:var(--cream); font-size:0.78rem; cursor:pointer; font-family:'Inter',sans-serif;
+  }
+  .util-btn.danger{color:var(--desc-lo);}
+  #importFile{display:none;}
+
+  footer{
+    text-align:center; margin-top:24px; color:var(--muted); font-size:0.68rem; line-height:1.6;
+  }
+  footer a{color:var(--muted);}
+
+  /* ── FRONT GATE DISCLAIMER ── */
+  .gate-overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,0.72); z-index:1000;
+    display:flex; align-items:center; justify-content:center; padding:16px;
+  }
+  .gate-overlay.hidden{display:none;}
+  .gate-card{
+    background:var(--panel); border-radius:16px; max-width:480px; width:100%;
+    max-height:88vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .gate-header{
+    background:linear-gradient(135deg, var(--desc-lo), var(--desc-hi));
+    padding:20px 20px 18px; border-radius:16px 16px 0 0;
+    display:flex; align-items:center; gap:12px;
+  }
+  .gate-header .icon{font-size:1.8rem;}
+  .gate-title{font-family:'Fredoka One',cursive; font-size:1.15rem; color:#1b1030; line-height:1.3;}
+  .gate-subtitle{font-size:0.75rem; color:#3a2a10; opacity:0.85; margin-top:2px;}
+  .gate-body{padding:18px 20px; color:var(--cream);}
+  .gate-body p{font-size:0.85rem; line-height:1.55; margin-bottom:12px; color:var(--cream);}
+  .gate-highlight{
+    background:rgba(224,113,74,0.12); border-left:3px solid var(--desc-lo); border-radius:6px;
+    padding:12px 14px; margin-bottom:14px; font-size:0.85rem; line-height:1.55;
+  }
+  .gate-highlight strong{color:var(--desc-hi);}
+  .gate-crisis{
+    background:rgba(224,113,74,0.16); border:1px solid var(--desc-lo); border-radius:8px;
+    padding:12px 14px; margin-bottom:14px; font-size:0.83rem; line-height:1.55;
+  }
+  .gate-crisis strong{color:var(--desc-lo);}
+  .gate-crisis ul{list-style:none; margin-top:8px; display:flex; flex-direction:column; gap:5px;}
+  .gate-crisis li{padding-left:0;}
+  .gate-local{
+    background:rgba(126,196,240,0.12); border:1px solid var(--ascent-dim); border-radius:8px;
+    padding:12px 14px; font-size:0.83rem; line-height:1.55;
+  }
+  .gate-footer{
+    padding:16px 20px 20px; border-top:1px solid var(--border);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .gate-fineprint{font-size:0.72rem; color:var(--muted); font-style:italic; line-height:1.5;}
+  .gate-btn{
+    width:100%; padding:13px; border:none; border-radius:10px; background:var(--desc-hi);
+    color:var(--bg); font-weight:700; font-size:0.95rem; cursor:pointer; font-family:'Inter',sans-serif;
+  }
+  .info-btn{
+    position:fixed; top:14px; right:14px; z-index:900; width:36px; height:36px; border-radius:50%;
+    border:1px solid var(--border); background:var(--panel); color:var(--muted);
+    font-size:1rem; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+  }
+  .info-btn:hover{color:var(--cream); border-color:var(--ascent-dim);}
+</style>
+</head>
+<body>
+
+<button type="button" class="info-btn" onclick="showGate()" aria-label="Read important notes">ⓘ</button>
+
+<div class="gate-overlay" id="gateOverlay">
+  <div class="gate-card">
+    <div class="gate-header">
+      <div class="icon">🪜</div>
+      <div>
+        <div class="gate-title">Important — Please Read Before Using</div>
+        <div class="gate-subtitle">S2L2 · Stay On, Climb On · v1.0</div>
+      </div>
+    </div>
+    <div class="gate-body">
+      <div class="gate-highlight">
+        <strong>This tool is not a mental health screening, diagnostic, or therapeutic instrument.</strong>
+        It does not assess, diagnose, or treat anxiety, depression, trauma, or any other mental health condition.
+        It's a personal worksheet — a reflective vocabulary drawn from Vedantic philosophy, Adi Shankara's
+        <em>Bhaja Govindam</em> and the Bhagavad Gita — not a clinical or psychological instrument.
+      </div>
+      <p>
+        Some of what this ladder names — craving, anger, delusion, memory loss, ruin — can resemble language
+        used to describe emotional or mental health struggles. That resemblance comes from the source texts
+        themselves, not from any claim that this tool can identify, measure, or address those struggles.
+      </p>
+      <p>
+        <strong>Do not use this tool</strong> to make decisions about your mental health care, to self-diagnose,
+        or as a substitute for speaking with a licensed therapist, counselor, or physician.
+      </p>
+      <div class="gate-crisis">
+        <strong>If you are in crisis, or having thoughts of suicide or self-harm</strong>, please stop and reach
+        out for support right now:
+        <ul>
+          <li>US: call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline), or text <strong>HOME</strong> to <strong>741741</strong> (Crisis Text Line)</li>
+          <li>Outside the US: contact your local emergency number, or visit <strong>findahelpline.com</strong></li>
+        </ul>
+      </div>
+      <div class="gate-local">
+        🔒 <strong>Local-only tool.</strong> Nothing you log here is sent anywhere — entries stay in this
+        browser's local storage on this device. Open your browser's developer tools (F12) and watch the
+        Network tab if you'd like to confirm: no calls go out. Entries survive closing the browser and
+        coming back later; they're lost only if you clear this site's data, use a private/incognito window,
+        or switch browsers or devices. Export/Import lets you keep or move your data yourself.
+      </div>
+      <p style="margin-top:14px; margin-bottom:0;">
+        Provided as-is, for personal reflection only, with no guarantee of outcome and no liability
+        assumed for how it's used.
+      </p>
+    </div>
+    <div class="gate-footer">
+      <div class="gate-fineprint">
+        By continuing, you confirm you've read and understood the above.<br/>
+        © Srinivasa M. Kasturi (linkedin.com/in/skasturi) · CC BY 4.0
+      </div>
+      <button type="button" class="gate-btn" onclick="dismissGate()">Continue →</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">S 2 L 2</div>
+    <div class="tagline">Slippery Slopes &amp; Leaders Ladders</div>
+    <button type="button" class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀️ Try light background</button>
+  </header>
+
+  <nav class="tabs">
+    <button type="button" id="tabLadderBtn" onclick="showTab('ladder')">The Ladder</button>
+    <button type="button" id="tabTrackerBtn" class="active" onclick="showTab('tracker')">Stay On, Climb On</button>
+  </nav>
+
+  <!-- ══ LADDER VIEW ══ -->
+  <section id="ladderView">
+    <div class="epigraph">
+      <div class="skt-line">उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।</div>
+      <div class="skt-line">आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥ ६.५ ॥</div>
+      <div class="translit-line">uddhared ātmanātmānaṁ nātmānam avasādayet |<br/>ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ ‖ 6.5 ‖</div>
+      <div class="translation">&ldquo;Let one raise oneself by one's own self — let one not lower oneself. The self alone is one's friend; the self alone, one's enemy.&rdquo;</div>
+      <div class="citation">— BHAGAVAD GITA 6.5</div>
+    </div>
+    <div class="verse-note">↑ Shankara's Advisement · Bhaja Govindam</div>
+    <div class="ladder">
+      <div class="spine"></div>
+      <div class="rung" data-rung="5">
+        <span class="dot">↑</span>
+        <div class="title">Liberation</div>
+        <div class="sub">Freedom in this life</div>
+        <div class="skt">जीवन्मुक्तिः</div>
+        <div class="translit">Jīvanmuktiḥ</div>
+      </div>
+      <div class="rung" data-rung="4">
+        <span class="dot">↑</span>
+        <div class="title">The Clear</div>
+        <div class="sub">Free from delusion</div>
+        <div class="skt">निर्मोहत्व</div>
+        <div class="translit">Nirmohatva</div>
+      </div>
+      <div class="rung" data-rung="3">
+        <span class="dot">↑</span>
+        <div class="title">The Steady</div>
+        <div class="sub">Unmoved, unshaken</div>
+        <div class="skt">निश्चलतत्त्व</div>
+        <div class="translit">Niścalatattva</div>
+      </div>
+      <div class="rung" data-rung="2">
+        <span class="dot">↑</span>
+        <div class="title">The Detach</div>
+        <div class="sub">Free from clinging</div>
+        <div class="skt">निस्सङ्गत्व</div>
+        <div class="translit">Nissaṅgatva</div>
+      </div>
+      <div class="rung" data-rung="1">
+        <span class="dot">↑</span>
+        <div class="title">Goodness Attach</div>
+        <div class="sub">Good company first</div>
+        <div class="skt">सत्सङ्ग</div>
+        <div class="translit">Satsaṅga</div>
+      </div>
+      <div class="pivot"><span class="icon">🧍</span>Same rung · your choice</div>
+      <div class="rung descent" data-rung="-1">
+        <span class="dot">↓</span>
+        <div class="title">The Glance</div>
+        <div class="sub">Lingering on the object</div>
+        <div class="skt">ध्यायतो विषयान्</div>
+        <div class="translit">Dhyāyato viṣayān</div>
+      </div>
+      <div class="rung descent" data-rung="-2">
+        <span class="dot">↓</span>
+        <div class="title">The Reach</div>
+        <div class="sub">Attachment arises</div>
+        <div class="skt">सङ्गस्तेषूपजायते</div>
+        <div class="translit">Saṅgas teṣūpajāyate</div>
+      </div>
+      <div class="rung descent" data-rung="-3">
+        <span class="dot">↓</span>
+        <div class="title">The Craving</div>
+        <div class="sub">Desire takes hold</div>
+        <div class="skt">कामः</div>
+        <div class="translit">Kāmaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-4">
+        <span class="dot">↓</span>
+        <div class="title">The Defiance</div>
+        <div class="sub">Desire hardens to anger</div>
+        <div class="skt">क्रोधः</div>
+        <div class="translit">Krodhaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-5">
+        <span class="dot">↓</span>
+        <div class="title">The Delusion</div>
+        <div class="sub">Judgment clouds</div>
+        <div class="skt">सम्मोहः</div>
+        <div class="translit">Sammohaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-6">
+        <span class="dot">↓</span>
+        <div class="title">The Fog</div>
+        <div class="sub">Foggy memory</div>
+        <div class="skt">स्मृतिविभ्रमः</div>
+        <div class="translit">Smṛtivibhramaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-7">
+        <span class="dot">↓</span>
+        <div class="title">The Unraveling</div>
+        <div class="sub">Discernment destroyed</div>
+        <div class="skt">बुद्धिनाशः</div>
+        <div class="translit">Buddhi-nāśaḥ</div>
+      </div>
+      <div class="rung descent" data-rung="-8">
+        <span class="dot">↓</span>
+        <div class="title">The Fall</div>
+        <div class="sub">Total ruin</div>
+        <div class="skt">प्रणश्यति</div>
+        <div class="translit">Praṇaśyati</div>
+      </div>
+    </div>
+    <div class="verse-note">↓ Gita's Advisement · Bhagavad Gita 2.62–63</div>
+
+    <div class="quote-card" id="quoteCard">
+      <button type="button" class="quote-toggle" id="quoteToggle" aria-expanded="false" aria-controls="revealPanel" onclick="toggleReveal()">
+        <div class="q">&ldquo;Am I climbing — or sliding?&rdquo;</div>
+        <div class="hint" id="quoteHint">Tap for the self-check</div>
+      </button>
+      <div class="reveal" id="revealPanel">
+        <h4>Quick self-check</h4>
+        <ul>
+          <li>Where's your attention right now — on the object, or already past it?</li>
+          <li>Is a preference hardening into a craving?</li>
+          <li>Could you name, right now, what you were doing an hour ago?</li>
+        </ul>
+        <button type="button" class="cta" onclick="logNow()">Log where you are →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TRACKER VIEW ══ -->
+  <section id="trackerView" class="active">
+    <div class="card">
+      <h3>Log today's rung</h3>
+      <div class="desc">Where are you on the ladder right now — climbing, steady, or sliding?</div>
+      <div class="note-flag">A reflection aid, not a diagnosis, a score of worth, or a substitute for professional support.</div>
+      <label for="entryDate">Date</label>
+      <input type="date" id="entryDate"/>
+      <label>Rung</label>
+      <div class="rung-slider">
+        <div class="rung-current" id="rungCurrent">Same rung</div>
+        <input type="range" id="rungRange" min="-8" max="5" step="1" value="0" oninput="onRungChange(this.value)"/>
+        <div class="rung-scale-labels"><span>↓ The Fall</span><span>Liberation ↑</span></div>
+      </div>
+      <label for="entryNote">Note (optional)</label>
+      <textarea id="entryNote" maxlength="2000" placeholder="What's the pull right now?"></textarea>
+      <button type="button" class="save-btn" id="saveBtn" onclick="saveEntry()" disabled>Save entry</button>
+    </div>
+
+    <div class="card">
+      <h3>Your Observed Direction</h3>
+      <div class="desc" id="trendDesc">A pattern to notice, not a metric to trust on its own.</div>
+      <div class="chart-wrap" id="chartWrap" role="img"></div>
+    </div>
+
+    <div class="card">
+      <h3>Log</h3>
+      <div class="entry-list" id="entryList"></div>
+    </div>
+
+    <div class="utility-row">
+      <button type="button" class="util-btn" onclick="exportData()">Export JSON</button>
+      <button type="button" class="util-btn" onclick="document.getElementById('importFile').click()">Import JSON</button>
+      <button type="button" class="util-btn danger" onclick="clearAll()">Clear all</button>
+    </div>
+    <input type="file" id="importFile" accept="application/json" onchange="importData(event)"/>
+  </section>
+
+  <div id="statusMsg" class="sr-only" role="status" aria-live="polite"></div>
+
+  <footer>
+    Srinivasa M. Kasturi<br/>
+    linkedin.com/in/skasturi · CC BY 4.0
+  </footer>
+</div>
+
+<script>
+// ── RUNGS ──────────────────────────────────────────────────────────────
+const RUNG_MIN = -8, RUNG_MAX = 5, RUNG_SPAN = RUNG_MAX - RUNG_MIN;
+const RUNGS = [
+  { v: 5,  name:"Liberation",    color:"#7ec4f0" },
+  { v: 4,  name:"The Clear",     color:"#7ec4f0" },
+  { v: 3,  name:"The Steady",    color:"#7ec4f0" },
+  { v: 2,  name:"The Detach",    color:"#7ec4f0" },
+  { v: 1,  name:"Goodness Attach", color:"#7ec4f0" },
+  { v: 0,  name:"Same rung",     color:"#d9b65c" },
+  { v:-1,  name:"The Glance",    color:"#e8c15a" },
+  { v:-2,  name:"The Reach",     color:"#e7b658" },
+  { v:-3,  name:"The Craving",   color:"#e6aa55" },
+  { v:-4,  name:"The Defiance",  color:"#e59f53" },
+  { v:-5,  name:"The Delusion",  color:"#e39351" },
+  { v:-6,  name:"The Fog",       color:"#e2884f" },
+  { v:-7,  name:"The Unraveling",color:"#e17c4c" },
+  { v:-8,  name:"The Fall",      color:"#e0714a" }
+];
+function rungByVal(v){ return RUNGS.find(r=>r.v===v); }
+
+// ── STORAGE ────────────────────────────────────────────────────────────
+const STORE_KEY = "s2l2_climb_log_v1";
+let storageOK = true;
+function loadEntries(){
+  try{
+    const raw = localStorage.getItem(STORE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  }catch(e){ storageOK = false; return memEntries; }
+}
+function saveEntries(entries){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify(entries));
+  }catch(e){ storageOK = false; memEntries = entries; }
+}
+let memEntries = [];
+let entries = loadEntries();
+
+// ── THEME ──────────────────────────────────────────────────────────────
+const THEME_KEY = "s2l2_theme_v1";
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = theme === 'light' ? '🌙 Try dark background' : '☀️ Try light background';
+  render(); // chart axis colors are theme-aware, so re-render on switch
+}
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  applyTheme(next);
+  try{ localStorage.setItem(THEME_KEY, next); }catch(e){ /* ignore */ }
+}
+function initTheme(){
+  let saved = 'dark';
+  try{ saved = localStorage.getItem(THEME_KEY) || 'dark'; }catch(e){ /* ignore */ }
+  applyTheme(saved);
+}
+
+// ── TABS ───────────────────────────────────────────────────────────────
+function announce(msg){
+  const el = document.getElementById('statusMsg');
+  if(el) el.textContent = msg;
+}
+function showTab(name){
+  document.getElementById('ladderView').classList.toggle('active', name==='ladder');
+  document.getElementById('trackerView').classList.toggle('active', name==='tracker');
+  document.getElementById('tabLadderBtn').classList.toggle('active', name==='ladder');
+  document.getElementById('tabTrackerBtn').classList.toggle('active', name==='tracker');
+}
+function logNow(){
+  showTab('tracker');
+  document.getElementById('entryDate').value = todayStr();
+}
+
+// ── SELF-CHECK REVEAL ─────────────────────────────────────────────────
+function toggleReveal(){
+  const panel = document.getElementById('revealPanel');
+  const hint  = document.getElementById('quoteHint');
+  const toggle = document.getElementById('quoteToggle');
+  const open = panel.classList.toggle('open');
+  hint.textContent = open ? "Tap to close" : "Tap for the self-check";
+  toggle.setAttribute('aria-expanded', String(open));
+}
+
+// ── RUNG SLIDER ────────────────────────────────────────────────────────
+let selectedRung = 0;
+function onRungChange(val){
+  selectedRung = parseInt(val, 10);
+  const r = rungByVal(selectedRung);
+  const label = document.getElementById('rungCurrent');
+  label.textContent = r.name;
+  label.style.color = r.color;
+  document.getElementById('saveBtn').disabled = false;
+}
+
+function todayStr(){
+  const d = new Date();
+  const off = d.getTimezoneOffset();
+  const local = new Date(d.getTime() - off*60000);
+  return local.toISOString().slice(0,10);
+}
+
+// ── SAVE / RENDER ──────────────────────────────────────────────────────
+function entryId(){
+  return (typeof crypto !== 'undefined' && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function saveEntry(){
+  const date = document.getElementById('entryDate').value || todayStr();
+  const note = document.getElementById('entryNote').value.trim().slice(0, 2000);
+  entries.push({ id: entryId(), date, rung: selectedRung, note });
+  entries.sort((a,b)=> a.date.localeCompare(b.date));
+  saveEntries(entries);
+  document.getElementById('entryNote').value = '';
+  document.getElementById('rungRange').value = 0;
+  onRungChange(0);
+  render();
+  announce('Entry saved.');
+}
+
+function deleteEntry(id){
+  entries = entries.filter(e=> String(e.id) !== String(id));
+  saveEntries(entries);
+  render();
+  announce('Entry deleted.');
+}
+
+function renderList(){
+  const list = document.getElementById('entryList');
+  if(entries.length===0){
+    list.innerHTML = '<div class="empty">No entries yet. Log where you are above.</div>';
+    return;
+  }
+  list.innerHTML = entries
+    .map((e, idx) => ({ ...e, idx }))
+    .sort((a,b)=> b.date.localeCompare(a.date) || b.idx - a.idx)
+    .map(e=>{
+    const r = rungByVal(e.rung);
+    return `<div class="entry">
+      <span class="badge" style="background:${r.color}">${r.name}</span>
+      <div class="meta">
+        <div class="date">${e.date}</div>
+        ${e.note ? `<div class="note">${escapeHtml(e.note)}</div>` : ''}
+      </div>
+      <button type="button" class="del" data-entry-id="${escapeHtml(String(e.id))}" aria-label="Delete entry">✕</button>
+    </div>`;
+  }).join('');
+}
+
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function renderChart(){
+  const wrap = document.getElementById('chartWrap');
+  const desc = document.getElementById('trendDesc');
+  if(entries.length < 2){
+    wrap.innerHTML = '<div class="empty">Log a couple of entries to see the trend.</div>';
+    desc.textContent = "Log a couple of entries to see a pattern.";
+    wrap.setAttribute('aria-label', 'Not enough entries yet to show a trend.');
+    return;
+  }
+  desc.textContent = `${entries.length} entries logged.`;
+  const sorted = [...entries].sort((a,b)=> a.date<b.date?-1:a.date>b.date?1:0);
+  wrap.setAttribute('aria-label',
+    `Trend chart of ${sorted.length} entries from ${sorted[0].date} to ${sorted[sorted.length-1].date}, ` +
+    `ranging from ${rungByVal(Math.min(...sorted.map(e=>e.rung))).name} to ${rungByVal(Math.max(...sorted.map(e=>e.rung))).name}.`
+  );
+  const w = Math.max(320, sorted.length*54);
+  const h = 180;
+  const padL = 30, padR = 12, padT = 12, padB = 22;
+  const innerW = w - padL - padR, innerH = h - padT - padB;
+  const yFor = v => padT + innerH - ((v - RUNG_MIN)/RUNG_SPAN)*innerH;
+  const xFor = i => padL + (sorted.length===1 ? innerW/2 : (i/(sorted.length-1))*innerW);
+  const rootStyle = getComputedStyle(document.documentElement);
+  const mutedColor = rootStyle.getPropertyValue('--muted').trim() || '#8a93b8';
+  const borderColor = rootStyle.getPropertyValue('--border').trim() || '#2a3f74';
+
+  let segs = '';
+  for(let i=0;i<sorted.length-1;i++){
+    const a = sorted[i], b = sorted[i+1];
+    const color = (a.rung>=0 && b.rung>=0) ? '#7ec4f0' : (a.rung<0 && b.rung<0) ? '#e0714a' : '#d9b65c';
+    segs += `<line x1="${xFor(i)}" y1="${yFor(a.rung)}" x2="${xFor(i+1)}" y2="${yFor(b.rung)}" stroke="${color}" stroke-width="2.5"/>`;
+  }
+
+  let dots = sorted.map((e,i)=>{
+    const r = rungByVal(e.rung);
+    return `<circle cx="${xFor(i)}" cy="${yFor(e.rung)}" r="4" fill="${r.color}"/>`;
+  }).join('');
+
+  let labels = sorted.map((e,i)=>{
+    if(sorted.length>10 && i%2!==0 && i!==sorted.length-1) return '';
+    return `<text x="${xFor(i)}" y="${h-4}" font-size="9" fill="${mutedColor}" text-anchor="middle">${e.date.slice(5)}</text>`;
+  }).join('');
+
+  wrap.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
+    <line x1="${padL}" y1="${yFor(0)}" x2="${w-padR}" y2="${yFor(0)}" stroke="${borderColor}" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="${padL-4}" y="${yFor(RUNG_MAX)+3}" font-size="9" fill="${mutedColor}" text-anchor="end">↑${RUNG_MAX}</text>
+    <text x="${padL-4}" y="${yFor(0)+3}" font-size="9" fill="${mutedColor}" text-anchor="end">0</text>
+    <text x="${padL-4}" y="${yFor(RUNG_MIN)+3}" font-size="9" fill="${mutedColor}" text-anchor="end">↓${Math.abs(RUNG_MIN)}</text>
+    ${segs}${dots}${labels}
+  </svg>`;
+}
+
+function render(){
+  renderList();
+  renderChart();
+}
+
+// ── IMPORT / EXPORT ──────────────────────────────────────────────────
+function exportData(){
+  const blob = new Blob([JSON.stringify(entries, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 's2l2-climb-log.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function normalizeEntries(data){
+  if(!Array.isArray(data)) throw new Error('Expected an array.');
+  return data
+    .filter(e =>
+      e &&
+      typeof e === 'object' &&
+      typeof e.date === 'string' &&
+      /^\d{4}-\d{2}-\d{2}$/.test(e.date) &&
+      Number.isInteger(e.rung) &&
+      e.rung >= RUNG_MIN &&
+      e.rung <= RUNG_MAX
+    )
+    .map(e => ({
+      id: (typeof e.id === 'string' && e.id.length>0) || Number.isSafeInteger(e.id) ? e.id : entryId(),
+      date: e.date,
+      rung: e.rung,
+      note: typeof e.note === 'string' ? e.note.slice(0, 2000) : ''
+    }))
+    .sort((a,b)=> a.date.localeCompare(b.date));
+}
+function importData(evt){
+  const file = evt.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try{
+      entries = normalizeEntries(JSON.parse(reader.result));
+      saveEntries(entries);
+      render();
+      announce(`Imported ${entries.length} entries.`);
+    }catch(e){ alert('Could not read a valid S2L2 log file.'); }
+  };
+  reader.readAsText(file);
+  evt.target.value = '';
+}
+function clearAll(){
+  if(!confirm('Clear all logged entries? This cannot be undone.')) return;
+  entries = [];
+  saveEntries(entries);
+  render();
+  announce('All entries cleared.');
+}
+
+// ── FRONT GATE ─────────────────────────────────────────────────────────
+const GATE_KEY = "s2l2_gate_ack_v1";
+function showGate(){
+  document.getElementById('gateOverlay').classList.remove('hidden');
+}
+function dismissGate(){
+  document.getElementById('gateOverlay').classList.add('hidden');
+  try{ localStorage.setItem(GATE_KEY, '1'); }catch(e){ /* ignore */ }
+}
+function initGate(){
+  let acked = false;
+  try{ acked = localStorage.getItem(GATE_KEY) === '1'; }catch(e){ /* ignore */ }
+  if(acked) document.getElementById('gateOverlay').classList.add('hidden');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+document.getElementById('entryDate').value = todayStr();
+document.getElementById('entryList').addEventListener('click', (event) => {
+  const btn = event.target.closest('.del');
+  if(btn) deleteEntry(btn.dataset.entryId);
+});
+onRungChange(0);
+initTheme();
+initGate();
+</script>
+</body>
+</html>
