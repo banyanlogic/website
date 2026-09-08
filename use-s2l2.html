@@ -300,7 +300,9 @@
         browser's local storage on this device. Open your browser's developer tools (F12) and watch the
         Network tab if you'd like to confirm: no calls go out. Entries survive closing the browser and
         coming back later; they're lost only if you clear this site's data, use a private/incognito window,
-        or switch browsers or devices. Export/Import lets you keep or move your data yourself.
+        or switch browsers or devices. Export/Import lets you keep or move your data yourself. If you'd
+        rather not depend on this page staying up or unchanged, save the HTML file to your device and
+        open it locally — it's the same tool either way.
       </div>
       <p style="margin-top:14px; margin-bottom:0;">
         Provided as-is, for personal reflection only, with no guarantee of outcome and no liability
@@ -694,9 +696,14 @@ function renderChart(){
     return `<circle cx="${xFor(i)}" cy="${yFor(e.rung)}" r="4" fill="${r.color}"/>`;
   }).join('');
 
+  const dateTotals = {};
+  sorted.forEach(e=> dateTotals[e.date] = (dateTotals[e.date]||0)+1);
+  const dateSeen = {};
   let labels = sorted.map((e,i)=>{
+    dateSeen[e.date] = (dateSeen[e.date]||0)+1;
+    const suffix = dateTotals[e.date] > 1 ? ` #${dateSeen[e.date]}` : '';
     if(sorted.length>10 && i%2!==0 && i!==sorted.length-1) return '';
-    return `<text x="${xFor(i)}" y="${h-4}" font-size="9" fill="${mutedColor}" text-anchor="middle">${e.date.slice(5)}</text>`;
+    return `<text x="${xFor(i)}" y="${h-4}" font-size="9" fill="${mutedColor}" text-anchor="middle">${e.date.slice(5)}${suffix}</text>`;
   }).join('');
 
   wrap.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
@@ -792,4 +799,3 @@ initGate();
 </script>
 </body>
 </html>
-
