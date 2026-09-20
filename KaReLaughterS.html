@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#FBF3E6">
+<title>Karumuri Reunion Laughter Spirited Log</title>
+<style>
+  :root{
+    --bg: #FBF3E6;
+    --panel: #FFFFFF;
+    --ink: #2B2420;
+    --ink-soft: #6B5E52;
+    --line: #E7DCC9;
+    --quiet: #4B7756;
+    --moderate: #D9A441;
+    --loud: #C6543B;
+    --shadow: 0 1px 0 rgba(43,36,32,0.06);
+  }
+  *{ box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+  }
+  .app{
+    width:100%;
+    max-width: 440px;
+    padding: 28px 20px 40px;
+  }
+  header{
+    text-align:center;
+    margin-bottom: 22px;
+  }
+  header h1{
+    font-family: Georgia, "Palatino Linotype", serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 1.25;
+    letter-spacing: 0.2px;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  header p{
+    margin:0;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .gauge-card{
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 26px 22px 22px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    text-align:center;
+    margin-bottom: 16px;
+  }
+  .reading{
+    font-family: Georgia, serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 68px;
+    line-height: 1;
+    margin: 0;
+    transition: color 0.4s ease;
+  }
+  .reading small{
+    font-family: -apple-system, sans-serif;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-left: 6px;
+  }
+  .status-line{
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    min-height: 18px;
+  }
+  .status-line .dot{
+    display:inline-block;
+    width:7px; height:7px;
+    border-radius:50%;
+    background: var(--ink-soft);
+    margin-right: 6px;
+    position: relative;
+    top: -1px;
+  }
+  .status-line.live .dot{ background: var(--loud); animation: pulse 1.6s infinite ease-in-out; }
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:0.35; }
+  }
+  .mood-line{
+    margin: 2px 0 0;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-soft);
+    min-height: 16px;
+  }
+
+  .bar-wrap{
+    margin-top: 20px;
+    position:relative;
+  }
+  .bar-track{
+    height: 14px;
+    border-radius: 8px;
+    background: linear-gradient(to right,
+      var(--quiet) 0%, var(--quiet) 40%,
+      var(--moderate) 40%, var(--moderate) 70%,
+      var(--loud) 70%, var(--loud) 100%);
+    opacity: 0.28;
+    position: relative;
+  }
+  .bar-fill-marker{
+    position:absolute;
+    top:-4px;
+    width: 4px;
+    height: 22px;
+    border-radius: 2px;
+    background: var(--ink);
+    transform: translateX(-2px);
+    transition: left 0.25s ease;
+  }
+  .bar-labels{
+    display:flex;
+    justify-content:space-between;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  .controls{
+    display:flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  button{
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .btn-primary{
+    flex: 1;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 14px;
+    border-radius: 13px;
+    font-weight: 600;
+  }
+  .btn-secondary{
+    flex: 1;
+    background: transparent;
+    color: var(--ink);
+    padding: 14px;
+    border-radius: 13px;
+    border: 1px solid var(--line);
+  }
+  .btn-primary:disabled, .btn-secondary:disabled{
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .error-banner{
+    display:none;
+    background: #FBEAE5;
+    border: 1px solid #E8B4A5;
+    color: #8A3A28;
+    font-size: 13px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .composer{
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+  .composer label{
+    display:block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .composer-row{
+    display:flex;
+    gap: 10px;
+    align-items:flex-end;
+  }
+  textarea{
+    flex:1;
+    resize:none;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--bg);
+    height: 44px;
+  }
+  textarea:focus{ outline: 2px solid var(--moderate); outline-offset: 1px; }
+  .composer-row button{
+    background: var(--moderate);
+    color: #3A2A0A;
+    border-radius: 12px;
+    padding: 0 16px;
+    height: 44px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .section-title{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 4px 2px 10px;
+    display:flex;
+    justify-content:space-between;
+  }
+
+  .entry{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display:flex;
+    gap: 12px;
+    align-items:flex-start;
+  }
+  .entry-db{
+    font-family: Georgia, serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 20px;
+    min-width: 54px;
+    text-align:right;
+    padding-top: 1px;
+  }
+  .entry-body{ flex:1; min-width:0; }
+  .entry-meta{
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 3px;
+  }
+  .entry-note{
+    font-size: 14px;
+    line-height: 1.4;
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-family: inherit;
+    color: var(--ink);
+    padding: 0;
+    resize: none;
+    overflow: hidden;
+  }
+  .entry-note::placeholder{ color: #B7A98F; }
+  .entry-note:focus{ outline: none; }
+  .entry-note.auto-note{ font-style: italic; color: var(--ink-soft); }
+  .entry-del{
+    background: none;
+    color: var(--ink-soft);
+    font-size: 18px;
+    padding: 0 2px;
+    line-height: 1;
+  }
+
+  .empty-state{
+    text-align:center;
+    color: var(--ink-soft);
+    font-size: 14px;
+    padding: 30px 10px;
+    border: 1px dashed var(--line);
+    border-radius: 14px;
+  }
+
+  footer{
+    margin-top: 26px;
+    display:flex;
+    gap: 10px;
+  }
+  footer button{
+    flex:1;
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 11px;
+    font-size: 13px;
+  }
+  .privacy-note{
+    text-align:center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+  #importFile{ display:none; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <h1>Karumuri Reunion<br>Laughter &amp; Spirited Log</h1>
+    <p>Track how loud the joy gets — no audio recorded, only the level.</p>
+  </header>
+
+  <div class="error-banner" id="errorBanner"></div>
+
+  <div class="gauge-card">
+    <p class="reading" id="readingText">— <small>dB</small></p>
+    <p class="status-line" id="statusLine"><span class="dot"></span>Not listening</p>
+    <p class="mood-line" id="moodLine"></p>
+
+    <div class="bar-wrap">
+      <div class="bar-track">
+        <div class="bar-fill-marker" id="barMarker" style="left:0%"></div>
+      </div>
+      <div class="bar-labels"><span>quiet</span><span>lively</span><span>loud</span></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn-primary" id="startBtn">Start Listening</button>
+      <button class="btn-secondary" id="pauseBtn" disabled>Pause</button>
+    </div>
+  </div>
+
+  <div class="composer">
+    <label for="noteInput">Log this moment</label>
+    <div class="composer-row">
+      <textarea id="noteInput" placeholder="Optional note — e.g. everyone singing happy birthday"></textarea>
+      <button id="logBtn">Log</button>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span id="entryCount">0 entries</span>
+    <span id="nextLogCountdown"></span>
+  </div>
+
+  <div id="entriesList"></div>
+  <div class="empty-state" id="emptyState">No entries yet. Start listening, or log a moment by hand.</div>
+
+  <footer>
+    <button id="exportBtn">Export</button>
+    <button id="importBtn">Import</button>
+    <button id="clearBtn">Clear all</button>
+  </footer>
+  <input type="file" id="importFile" accept="application/json">
+
+  <p class="privacy-note">Readings are an uncalibrated estimate from your phone's microphone, saved only on this device. Automatic logging samples every 5 minutes while listening; timing may pause if the screen locks or the app goes to the background. Suggested notes like "laughter" or "hum" are rough guesses from volume patterns only — no audio is ever analyzed for speech or identity — so edit any note freely.</p>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var STORAGE_KEY = "reunionSoundLog_entries_v1";
+  var AUTO_LOG_MS = 5 * 60 * 1000;
+  var DB_MIN = 30, DB_MAX = 120;
+  var DB_OFFSET = 90; // rough calibration so quiet rooms read ~35-45 and loud rooms ~80-100
+
+  var els = {
+    error: document.getElementById("errorBanner"),
+    reading: document.getElementById("readingText"),
+    status: document.getElementById("statusLine"),
+    mood: document.getElementById("moodLine"),
+    marker: document.getElementById("barMarker"),
+    startBtn: document.getElementById("startBtn"),
+    pauseBtn: document.getElementById("pauseBtn"),
+    noteInput: document.getElementById("noteInput"),
+    logBtn: document.getElementById("logBtn"),
+    entryCount: document.getElementById("entryCount"),
+    countdown: document.getElementById("nextLogCountdown"),
+    list: document.getElementById("entriesList"),
+    empty: document.getElementById("emptyState"),
+    exportBtn: document.getElementById("exportBtn"),
+    importBtn: document.getElementById("importBtn"),
+    importFile: document.getElementById("importFile"),
+    clearBtn: document.getElementById("clearBtn")
+  };
+
+  var state = {
+    entries: loadEntries(),
+    listening: false,
+    paused: false,
+    audioCtx: null,
+    analyser: null,
+    dataArray: null,
+    meterTimer: null,
+    countdownTimer: null,
+    nextLogAt: null,
+    pausedRemaining: null,
+    sampleBuffer: [],
+    rollingBuffer: [],
+    lastDb: null,
+    meterTicks: 0
+  };
+  var ROLLING_WINDOW = 90; // ~18s at 200ms ticks, used for "sounds like" + manual-log tagging
+
+  // ---------- persistence ----------
+  function loadEntries(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    }catch(e){ return []; }
+  }
+  function saveEntries(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state.entries)); }
+    catch(e){ showError("Could not save to this device's storage. Export often to be safe."); }
+  }
+
+  // ---------- utility ----------
+  function showError(msg){
+    els.error.textContent = msg;
+    els.error.style.display = "block";
+  }
+  function clearError(){ els.error.style.display = "none"; }
+
+  function fmtTime(ts){
+    var d = new Date(ts);
+    var h = d.getHours(), m = d.getMinutes();
+    var ampm = h >= 12 ? "PM" : "AM";
+    h = h % 12; if(h === 0) h = 12;
+    var mm = m < 10 ? "0"+m : m;
+    return h + ":" + mm + " " + ampm;
+  }
+  function fmtDate(ts){
+    var d = new Date(ts);
+    return d.toLocaleDateString(undefined, { month:"short", day:"numeric" });
+  }
+  function clampDb(v){ return Math.max(DB_MIN, Math.min(DB_MAX, v)); }
+  function dbToPercent(v){ return ((clampDb(v) - DB_MIN) / (DB_MAX - DB_MIN)) * 100; }
+  function colorForDb(v){
+    if(v < 60) return "#4B7756";
+    if(v < 85) return "#D9A441";
+    return "#C6543B";
+  }
+  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+  // ---------- volume-pattern auto tagging ----------
+  // Rough heuristics from amplitude only (level, variability, burst rate) —
+  // never from audio content, speech, or identity. Always editable/removable.
+  function mean(arr){ return arr.reduce(function(a,b){return a+b;},0) / arr.length; }
+  function stdDev(arr, m){
+    var v = arr.reduce(function(a,b){ return a + (b-m)*(b-m); }, 0) / arr.length;
+    return Math.sqrt(v);
+  }
+  function classifyBuffer(buf){
+    if(!buf || buf.length < 4) return null;
+    var avg = mean(buf);
+    var std = stdDev(buf, avg);
+    var burstThreshold = avg + Math.max(6, 1.4 * std);
+    var burstFrac = buf.filter(function(v){ return v > burstThreshold; }).length / buf.length;
+    var sustainedFrac = buf.filter(function(v){ return v > avg - 3; }).length / buf.length;
+
+    if(avg < 42) return "Quiet lull";
+    if(std >= 9 && burstFrac > 0.06) return "Laughter / bursts";
+    if(avg >= 60 && sustainedFrac > 0.75 && std < 11) return "Multiple conversations";
+    if(std >= 5.5) return "Spirited conversation";
+    if(avg < 55 && std < 4) return "Steady hum";
+    if(avg >= 45) return "Conversation";
+    return "Steady hum";
+  }
+
+  // ---------- audio ----------
+  function startListening(){
+    clearError();
+    if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+      showError("This browser doesn't support microphone access here. On iPhone, open this file in Safari (not the file preview) — mic access needs a proper web page context.");
+      return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(function(stream){
+        var Ctx = window.AudioContext || window.webkitAudioContext;
+        state.audioCtx = new Ctx();
+        var source = state.audioCtx.createMediaStreamSource(stream);
+        state.analyser = state.audioCtx.createAnalyser();
+        state.analyser.fftSize = 2048;
+        state.dataArray = new Uint8Array(state.analyser.fftSize);
+        source.connect(state.analyser);
+        state.stream = stream;
+        state.listening = true;
+        state.paused = false;
+        state.sampleBuffer = [];
+        scheduleNextLog(AUTO_LOG_MS);
+        startMeterLoop();
+        startCountdownLoop();
+        updateControls();
+      })
+      .catch(function(err){
+        if(err && err.name === "NotAllowedError"){
+          showError("Microphone access was denied. You can turn it on for this page in Settings, then tap Start again.");
+        } else {
+          showError("Couldn't start the microphone (" + (err && err.message ? err.message : "unknown error") + ").");
+        }
+      });
+  }
+
+  function stopListening(){
+    state.listening = false;
+    state.paused = false;
+    if(state.meterTimer) clearInterval(state.meterTimer);
+    if(state.countdownTimer) clearInterval(state.countdownTimer);
+    if(state.audioCtx){ try{ state.audioCtx.close(); }catch(e){} }
+    if(state.stream){ state.stream.getTracks().forEach(function(t){ t.stop(); }); }
+    state.audioCtx = null; state.analyser = null; state.stream = null;
+    state.nextLogAt = null; state.pausedRemaining = null;
+    els.reading.innerHTML = "— <small>dB</small>";
+    els.marker.style.left = "0%";
+    els.countdown.textContent = "";
+    els.mood.textContent = "";
+    state.rollingBuffer = [];
+    updateControls();
+  }
+
+  function pauseListening(){
+    state.paused = true;
+    if(state.audioCtx) state.audioCtx.suspend();
+    if(state.meterTimer) clearInterval(state.meterTimer);
+    if(state.countdownTimer) clearInterval(state.countdownTimer);
+    state.pausedRemaining = state.nextLogAt ? (state.nextLogAt - Date.now()) : AUTO_LOG_MS;
+    els.mood.textContent = "";
+    updateControls();
+  }
+
+  function resumeListening(){
+    state.paused = false;
+    if(state.audioCtx) state.audioCtx.resume();
+    scheduleNextLog(state.pausedRemaining || AUTO_LOG_MS);
+    startMeterLoop();
+    startCountdownLoop();
+    updateControls();
+  }
+
+  function scheduleNextLog(msFromNow){
+    state.nextLogAt = Date.now() + msFromNow;
+  }
+
+  function readDb(){
+    state.analyser.getByteTimeDomainData(state.dataArray);
+    var sumSquares = 0;
+    for(var i=0; i<state.dataArray.length; i++){
+      var norm = (state.dataArray[i] - 128) / 128;
+      sumSquares += norm * norm;
+    }
+    var rms = Math.sqrt(sumSquares / state.dataArray.length);
+    var db;
+    if(rms < 0.0001){ db = DB_MIN; }
+    else{ db = 20 * Math.log10(rms) + DB_OFFSET; }
+    return clampDb(db);
+  }
+
+  function startMeterLoop(){
+    if(state.meterTimer) clearInterval(state.meterTimer);
+    state.meterTimer = setInterval(function(){
+      if(!state.analyser) return;
+      var db = readDb();
+      state.lastDb = db;
+      state.sampleBuffer.push(db);
+      state.rollingBuffer.push(db);
+      if(state.rollingBuffer.length > ROLLING_WINDOW) state.rollingBuffer.shift();
+      els.reading.innerHTML = Math.round(db) + " <small>dB</small>";
+      els.reading.style.color = colorForDb(db);
+      els.marker.style.left = dbToPercent(db) + "%";
+
+      state.meterTicks++;
+      if(state.meterTicks % 10 === 0){ // roughly every 2s
+        var mood = classifyBuffer(state.rollingBuffer);
+        els.mood.textContent = mood ? ("sounds like: " + mood.toLowerCase()) : "";
+      }
+    }, 200);
+  }
+
+  function startCountdownLoop(){
+    if(state.countdownTimer) clearInterval(state.countdownTimer);
+    state.countdownTimer = setInterval(function(){
+      if(!state.nextLogAt) return;
+      var remaining = state.nextLogAt - Date.now();
+      if(remaining <= 0){
+        performAutoLog();
+        scheduleNextLog(AUTO_LOG_MS);
+        remaining = AUTO_LOG_MS;
+      }
+      var mins = Math.floor(remaining / 60000);
+      var secs = Math.floor((remaining % 60000) / 1000);
+      els.countdown.textContent = "next auto log in " + mins + ":" + (secs < 10 ? "0"+secs : secs);
+    }, 1000);
+  }
+
+  function performAutoLog(){
+    var buf = state.sampleBuffer;
+    state.sampleBuffer = [];
+    if(buf.length === 0){
+      if(state.lastDb == null) return;
+      buf = [state.lastDb];
+    }
+    var avg = buf.reduce(function(a,b){ return a+b; }, 0) / buf.length;
+    var peak = Math.max.apply(null, buf);
+    var tag = classifyBuffer(buf);
+    addEntry({ dbValue: avg, peak: peak, type: "auto", note: tag || "", autoTagged: !!tag });
+  }
+
+  // ---------- entries ----------
+  function addEntry(opts){
+    var entry = {
+      id: uid(),
+      timestamp: Date.now(),
+      dbValue: Math.round(opts.dbValue * 10) / 10,
+      peak: opts.peak != null ? Math.round(opts.peak * 10) / 10 : null,
+      type: opts.type,
+      note: opts.note || "",
+      autoTagged: !!opts.autoTagged
+    };
+    state.entries.unshift(entry);
+    saveEntries();
+    renderEntries();
+  }
+
+  function deleteEntry(id){
+    state.entries = state.entries.filter(function(e){ return e.id !== id; });
+    saveEntries();
+    renderEntries();
+  }
+
+  function updateNote(id, text, stillAutoTagged){
+    var e = state.entries.find(function(e){ return e.id === id; });
+    if(e){ e.note = text; e.autoTagged = !!stillAutoTagged; saveEntries(); }
+  }
+
+  function renderEntries(){
+    els.entryCount.textContent = state.entries.length + (state.entries.length === 1 ? " entry" : " entries");
+    els.list.innerHTML = "";
+    if(state.entries.length === 0){
+      els.empty.style.display = "block";
+      return;
+    }
+    els.empty.style.display = "none";
+    state.entries.forEach(function(entry){
+      var row = document.createElement("div");
+      row.className = "entry";
+
+      var dbCol = document.createElement("div");
+      dbCol.className = "entry-db";
+      dbCol.style.color = colorForDb(entry.dbValue);
+      dbCol.textContent = Math.round(entry.dbValue);
+
+      var body = document.createElement("div");
+      body.className = "entry-body";
+
+      var meta = document.createElement("div");
+      meta.className = "entry-meta";
+      var metaText = fmtDate(entry.timestamp) + " · " + fmtTime(entry.timestamp);
+      if(entry.type === "auto"){
+        metaText += " · auto" + (entry.peak != null ? (" · peak " + Math.round(entry.peak)) : "");
+      } else {
+        metaText += " · logged by hand";
+      }
+      meta.textContent = metaText;
+
+      var noteBox = document.createElement("textarea");
+      noteBox.className = "entry-note" + (entry.autoTagged ? " auto-note" : "");
+      noteBox.rows = 1;
+      noteBox.placeholder = "Add a note";
+      noteBox.value = entry.note;
+      autoGrow(noteBox);
+      noteBox.addEventListener("input", function(){
+        autoGrow(noteBox);
+        noteBox.classList.remove("auto-note"); // once edited, it's the person's own note
+      });
+      noteBox.addEventListener("blur", function(){
+        updateNote(entry.id, noteBox.value, noteBox.classList.contains("auto-note"));
+      });
+
+      body.appendChild(meta);
+      body.appendChild(noteBox);
+
+      var delBtn = document.createElement("button");
+      delBtn.className = "entry-del";
+      delBtn.setAttribute("aria-label", "Delete entry");
+      delBtn.textContent = "\u00D7";
+      delBtn.addEventListener("click", function(){ deleteEntry(entry.id); });
+
+      row.appendChild(dbCol);
+      row.appendChild(body);
+      row.appendChild(delBtn);
+      els.list.appendChild(row);
+    });
+  }
+
+  function autoGrow(el){
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  }
+
+  // ---------- manual log ----------
+  function logManual(){
+    var note = els.noteInput.value.trim();
+    var db = state.lastDb != null ? state.lastDb : (state.entries[0] ? state.entries[0].dbValue : 45);
+    var autoTagged = false;
+    if(!note){
+      var tag = classifyBuffer(state.rollingBuffer);
+      if(tag){ note = tag; autoTagged = true; }
+    }
+    addEntry({ dbValue: db, peak: null, type: "manual", note: note, autoTagged: autoTagged });
+    els.noteInput.value = "";
+  }
+
+  // ---------- export / import ----------
+  function exportData(){
+    var blob = new Blob([JSON.stringify(state.entries, null, 2)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    var stamp = new Date().toISOString().slice(0,10);
+    a.href = url;
+    a.download = "karumuri-reunion-log-" + stamp + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }
+
+  function importData(file){
+    var reader = new FileReader();
+    reader.onload = function(){
+      try{
+        var incoming = JSON.parse(reader.result);
+        if(!Array.isArray(incoming)) throw new Error("not a list");
+        var existingIds = {};
+        state.entries.forEach(function(e){ existingIds[e.id] = true; });
+        var added = 0;
+        incoming.forEach(function(e){
+          if(e && typeof e.dbValue === "number" && typeof e.timestamp === "number"){
+            if(!e.id || existingIds[e.id]) e.id = uid();
+            state.entries.push(e);
+            added++;
+          }
+        });
+        state.entries.sort(function(a,b){ return b.timestamp - a.timestamp; });
+        saveEntries();
+        renderEntries();
+        clearError();
+      }catch(e){
+        showError("That file doesn't look like a Karumuri Reunion Log export.");
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  // ---------- controls ----------
+  function updateControls(){
+    if(state.listening && !state.paused){
+      els.startBtn.textContent = "Stop";
+      els.pauseBtn.textContent = "Pause";
+      els.pauseBtn.disabled = false;
+      els.status.className = "status-line live";
+      els.status.innerHTML = '<span class="dot"></span>Listening — sampling every 5 min';
+    } else if(state.listening && state.paused){
+      els.startBtn.textContent = "Stop";
+      els.pauseBtn.textContent = "Resume";
+      els.pauseBtn.disabled = false;
+      els.status.className = "status-line";
+      els.status.innerHTML = '<span class="dot"></span>Paused';
+      els.countdown.textContent = "paused";
+    } else {
+      els.startBtn.textContent = "Start Listening";
+      els.pauseBtn.textContent = "Pause";
+      els.pauseBtn.disabled = true;
+      els.status.className = "status-line";
+      els.status.innerHTML = '<span class="dot"></span>Not listening';
+    }
+  }
+
+  // ---------- wire up ----------
+  els.startBtn.addEventListener("click", function(){
+    if(state.listening){ stopListening(); }
+    else { startListening(); }
+  });
+  els.pauseBtn.addEventListener("click", function(){
+    if(!state.listening) return;
+    if(state.paused){ resumeListening(); } else { pauseListening(); }
+  });
+  els.logBtn.addEventListener("click", logManual);
+  els.exportBtn.addEventListener("click", exportData);
+  els.importBtn.addEventListener("click", function(){ els.importFile.click(); });
+  els.importFile.addEventListener("change", function(e){
+    if(e.target.files && e.target.files[0]) importData(e.target.files[0]);
+    e.target.value = "";
+  });
+  els.clearBtn.addEventListener("click", function(){
+    if(state.entries.length === 0) return;
+    if(confirm("Delete all " + state.entries.length + " entries from this device? This can't be undone.")){
+      state.entries = [];
+      saveEntries();
+      renderEntries();
+    }
+  });
+
+  renderEntries();
+  updateControls();
+})();
+</script>
+</body>
+</html>
