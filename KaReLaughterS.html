@@ -310,9 +310,155 @@
     line-height: 1.5;
   }
   #importFile{ display:none; }
+
+  .help-btn{
+    position: fixed;
+    top: calc(env(safe-area-inset-top) + 18px);
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 15px;
+    font-weight: 600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 40;
+  }
+
+  .help-overlay{
+    display:none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 60;
+    overflow-y: auto;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+  }
+  .help-overlay.open{ display:block; }
+  .help-inner{
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 24px 20px 50px;
+  }
+  .help-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: 18px;
+  }
+  .help-top h2{
+    font-family: Georgia, "Palatino Linotype", serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+  }
+  .help-close{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .tabs{
+    display:flex;
+    gap: 8px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+  .tab{
+    flex:1;
+    text-align:center;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    cursor: pointer;
+    border:none;
+    background: transparent;
+    font-family: inherit;
+  }
+  .tab.active{ background: var(--ink); color: var(--bg); }
+
+  .help-panel{ display:none; }
+  .help-panel.active{ display:block; }
+
+  .help-step{
+    display:flex;
+    gap: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .help-step-num{
+    flex-shrink:0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--moderate);
+    color: #3A2A0A;
+    font-size: 13px;
+    font-weight: 700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .help-step-body h3{
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .help-step-body p{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .help-step-body code{
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1px 5px;
+    font-size: 13px;
+  }
+  .help-section-label{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 20px 2px 10px;
+  }
+  .help-note{
+    background: #FBEAE5;
+    border: 1px solid #E8B4A5;
+    color: #8A3A28;
+    font-size: 13px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+  .help-note strong{ display:block; margin-bottom: 3px; }
+  .help-note.green{
+    background: #EEF3EA;
+    border: 1px solid #C9DBC0;
+    color: #33502F;
+  }
 </style>
 </head>
 <body>
+<button class="help-btn" id="helpOpenBtn" aria-label="Setup instructions">?</button>
+
 <div class="app">
 
   <header>
@@ -365,6 +511,125 @@
 
   <p class="privacy-note">Readings are an uncalibrated estimate from your phone's microphone, saved only on this device. Automatic logging samples every 5 minutes while listening; timing may pause if the screen locks or the app goes to the background. Suggested notes like "laughter" or "hum" are rough guesses from volume patterns only — no audio is ever analyzed for speech or identity — so edit any note freely.</p>
 
+</div>
+
+<div class="help-overlay" id="helpOverlay">
+  <div class="help-inner">
+    <div class="help-top">
+      <h2>Getting Started</h2>
+      <button class="help-close" id="helpCloseBtn">Done</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" id="tabIos">iPhone</button>
+      <button class="tab" id="tabAndroid">Android</button>
+    </div>
+
+    <!-- IPHONE -->
+    <div class="help-panel active" id="panelIos">
+      <div class="help-section-label">Get it online (do this once)</div>
+
+      <div class="help-step">
+        <div class="help-step-num">1</div>
+        <div class="help-step-body">
+          <h3>Host the file</h3>
+          <p>On any computer (or your phone), go to <code>app.netlify.com/drop</code> and drag this app's HTML file onto the page. It gives you a live link like <code>https://something.netlify.app</code> right away — no account needed.</p>
+        </div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">2</div>
+        <div class="help-step-body">
+          <h3>Open the link in Safari</h3>
+          <p>Open that link in <strong>Safari</strong> (not Chrome — Add to Home Screen works best from Safari on iOS).</p>
+        </div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">3</div>
+        <div class="help-step-body">
+          <h3>Add to Home Screen</h3>
+          <p>Tap the <strong>Share</strong> icon, then <strong>Add to Home Screen</strong>. You'll get an app icon that opens full-screen and keeps your logged entries in place.</p>
+        </div>
+      </div>
+
+      <div class="help-section-label">Each time you use it</div>
+
+      <div class="help-step">
+        <div class="help-step-num">4</div>
+        <div class="help-step-body">
+          <h3>Allow the microphone</h3>
+          <p>Tap <strong>Start Listening</strong> — Safari will ask for microphone access. Tap <strong>Allow</strong>. If you don't see a prompt, go to <strong>Settings → Safari → Microphone</strong> and set it to Allow.</p>
+        </div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">5</div>
+        <div class="help-step-body">
+          <h3>Log the moment</h3>
+          <p>It auto-logs every 5 minutes on its own. Use <strong>Pause/Resume</strong> when you step away, and <strong>Log</strong> any time to capture something specific with a note.</p>
+        </div>
+      </div>
+
+      <div class="help-note">
+        <strong>Keep in mind</strong>
+        If the screen locks or you switch apps, iOS pauses background timers — auto-logging picks back up once you reopen the app.
+      </div>
+    </div>
+
+    <!-- ANDROID -->
+    <div class="help-panel" id="panelAndroid">
+      <div class="help-section-label">Get it online (do this once)</div>
+
+      <div class="help-step">
+        <div class="help-step-num">1</div>
+        <div class="help-step-body">
+          <h3>Host the file</h3>
+          <p>On any computer (or your phone), go to <code>app.netlify.com/drop</code> and drag this app's HTML file onto the page. It gives you a live link like <code>https://something.netlify.app</code> right away — no account needed.</p>
+        </div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">2</div>
+        <div class="help-step-body">
+          <h3>Open the link in Chrome</h3>
+          <p>Open that link in <strong>Chrome</strong> on the Android phone.</p>
+        </div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">3</div>
+        <div class="help-step-body">
+          <h3>Add to Home screen</h3>
+          <p>Tap the <strong>⋮</strong> menu and choose <strong>Add to Home screen</strong> (or <strong>Install app</strong> if offered). You'll get an app icon that opens full-screen and keeps your logged entries in place.</p>
+        </div>
+      </div>
+
+      <div class="help-section-label">Each time you use it</div>
+
+      <div class="help-step">
+        <div class="help-step-num">4</div>
+        <div class="help-step-body">
+          <h3>Allow the microphone</h3>
+          <p>Tap <strong>Start Listening</strong> — Chrome will ask for microphone access. Tap <strong>Allow</strong>. To fix it later: tap the lock icon in the address bar, or long-press the home screen icon → <strong>App info → Permissions → Microphone</strong> → Allow.</p>
+        </div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">5</div>
+        <div class="help-step-body">
+          <h3>Log the moment</h3>
+          <p>It auto-logs every 5 minutes on its own. Use <strong>Pause/Resume</strong> when you step away, and <strong>Log</strong> any time to capture something specific with a note.</p>
+        </div>
+      </div>
+
+      <div class="help-note">
+        <strong>Keep in mind</strong>
+        If the screen locks or you switch apps, Android may pause background timers depending on battery settings — auto-logging picks back up once you reopen the app.
+      </div>
+    </div>
+
+    <div class="help-step" style="margin-top: 8px;">
+      <div class="help-step-body">
+        <h3>Backing up your log</h3>
+        <p>Tap <strong>Export</strong> in the app any time to save a copy of all entries as a file — useful before clearing the log or switching phones. Use <strong>Import</strong> to bring entries back in.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -812,6 +1077,28 @@
       renderEntries();
     }
   });
+
+  // ---------- help overlay ----------
+  (function(){
+    var openBtn = document.getElementById("helpOpenBtn");
+    var closeBtn = document.getElementById("helpCloseBtn");
+    var overlay = document.getElementById("helpOverlay");
+    var tabIos = document.getElementById("tabIos");
+    var tabAndroid = document.getElementById("tabAndroid");
+    var panelIos = document.getElementById("panelIos");
+    var panelAndroid = document.getElementById("panelAndroid");
+
+    openBtn.addEventListener("click", function(){ overlay.classList.add("open"); });
+    closeBtn.addEventListener("click", function(){ overlay.classList.remove("open"); });
+    tabIos.addEventListener("click", function(){
+      tabIos.classList.add("active"); tabAndroid.classList.remove("active");
+      panelIos.classList.add("active"); panelAndroid.classList.remove("active");
+    });
+    tabAndroid.addEventListener("click", function(){
+      tabAndroid.classList.add("active"); tabIos.classList.remove("active");
+      panelAndroid.classList.add("active"); panelIos.classList.remove("active");
+    });
+  })();
 
   renderEntries();
   updateControls();
