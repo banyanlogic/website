@@ -1,0 +1,1771 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-RAkcyBkEe0/A2qTZV1qsnMJ1+JgaSTtmywNu/0TL99A='; style-src 'sha256-LXIsmlDG2RNfoGM00n9X9k1yOma8fbN3D/v0H1XhCj8='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Cab4Cap4</title>
+<style>:root{--p1:#1f5f4a;--p1fg:#fff;--p2:#3a4aa6;--p2fg:#fff;--p2soft:#eef0fb;--bg:#faf8f4;--fg:#1f2328;--mut:#555d65;--card:#fff;--line:#d3cdc0;--acc:#1f5f4a;--accfg:#fff;--soft:#eef3f0;--warn:#7a4300;--up:#1b6a40;--mid:#7a5c00;--dn:#a02f25}
+@media(prefers-color-scheme:dark){:root:not([data-t="l"]){--p1:#6fc4a1;--p1fg:#0d1a14;--p2:#9fb0ff;--p2fg:#10142b;--p2soft:#23284a;--bg:#14171a;--fg:#e8e6e1;--mut:#a7adb2;--card:#1c2024;--line:#363c42;--acc:#6fc4a1;--accfg:#0d1a14;--soft:#22302a;--warn:#e0a85a;--up:#6fd09a;--mid:#e0c060;--dn:#f09088}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.5 Georgia,'Times New Roman',serif}
+#app{max-width:44rem;margin:0 auto;padding:0 16px 40px}
+header.top{padding:20px 0 8px}
+header.top h1{margin:0;font-size:1.7rem}
+header.top p{margin:2px 0 0;color:var(--mut);font-style:italic}
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:9px 14px;border-radius:8px;min-height:44px}
+button.pri{background:var(--acc);color:var(--accfg);border-color:var(--acc);font-weight:bold}
+button.sm{min-height:36px;padding:5px 10px;font-size:.9rem}
+button[aria-pressed="true"],button.on{background:var(--acc);color:var(--accfg);border-color:var(--acc)}
+button.danger{border-color:var(--dn);color:var(--dn)}
+.tbar button{min-height:40px;padding:6px 12px}
+.tbar .row{flex-wrap:nowrap}
+ul.plain li span:first-child{overflow-wrap:anywhere}
+button.danger.arm{background:var(--dn);color:#fff}
+button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible,h2:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}
+.card h2,.card h3{margin:0 0 6px}
+h2{font-size:1.3rem}
+h2:focus{outline:none}
+.mut{color:var(--mut)}
+.note{background:var(--soft);border-left:4px solid var(--acc);padding:10px 12px;border-radius:6px;margin:0 0 14px}
+.warn{border-left-color:var(--warn)}
+.f{display:block;margin:0 0 14px}
+.lab{display:block;font-weight:bold}
+.hint{display:block;color:var(--mut);font-size:.92rem;margin:1px 0 4px}
+textarea,input[type=text],input[type=number]{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+textarea{resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.sp{justify-content:space-between}
+.grow{flex:1 1 12rem}
+.tbar{position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0 10px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.clock{font:bold 2.2rem/1 ui-monospace,Menlo,Consolas,monospace}
+.clock.low{color:var(--dn)}
+.prog{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:8px}
+.prog>div{height:100%;background:var(--acc);width:0}
+.vec button{display:block;width:100%;text-align:left;margin:0 0 8px}
+.vec small{display:block;font-weight:normal;opacity:.85}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;border:1px solid currentColor;font-size:.88rem;font-weight:bold;white-space:nowrap}
+.b-climbing{color:var(--up)}.b-plateau{color:var(--mid)}.b-sliding{color:var(--dn)}
+.strip{display:flex;gap:6px;flex-wrap:wrap}
+.strip span{border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:.9rem}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line)}
+ul.plain li:last-child{border-bottom:0}
+details{margin:0 0 10px}
+summary{cursor:pointer;font-weight:bold;padding:6px 0}
+dl.w dt{font-weight:bold;margin-top:10px}
+dl.w dd{margin:0 0 0 0;white-space:pre-wrap}
+.sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--line);color:var(--mut);font-size:.88rem}
+.cap{border:1px solid var(--line);border-radius:10px;padding:10px;margin:0 0 10px}
+.ln{display:block}
+.prac{margin:8px 0 14px}
+.prac .lab{display:inline;margin-right:6px}
+.f .lab+.hint{margin-top:2px}
+textarea[rows='2']{min-height:3.2rem}
+select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:44px}
+.eq{font:1rem/1.7 ui-monospace,Menlo,Consolas,monospace;background:var(--soft);border-radius:10px;padding:12px 14px;margin:0 0 12px;overflow-wrap:anywhere}
+p.pl{margin:4px 0}
+p.pass{color:var(--up);font-weight:bold}
+p.big{font-size:1.15rem;font-weight:bold}
+.fr-held{color:var(--up)}.fr-contested{color:var(--mid)}.fr-ceded{color:var(--dn)}
+.sig{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:8px}
+.sig fieldset{border:1px solid var(--line);border-radius:8px;margin:0;padding:6px 10px}
+.sig legend{font-weight:bold;font-size:.9rem}
+.sig label{display:block;font-size:.92rem;padding:2px 0}
+.cap details{margin-top:8px}
+header.top p.small{font-style:normal;font-size:.9rem}
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 8px}
+button.part{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:10px 12px;border-width:2px;border-radius:12px;min-height:96px;background:var(--card);color:var(--fg)}
+.part .pn{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:bold}
+.part .pt{font-size:1.12rem;font-weight:bold;line-height:1.2}
+.part .pw{font-size:.84rem;line-height:1.3;opacity:.9}
+button.part.p1{border-color:var(--p1)}button.part.p1 .pn{color:var(--p1)}
+button.part.p2{border-color:var(--p2)}button.part.p2 .pn{color:var(--p2)}
+button.part.p1[aria-pressed="true"]{background:var(--p1);color:var(--p1fg);border-color:var(--p1)}
+button.part.p2[aria-pressed="true"]{background:var(--p2);color:var(--p2fg);border-color:var(--p2)}
+button.part[aria-pressed="true"] .pn{color:inherit}
+nav.tabs.sub{margin:4px 0 16px;padding:8px 0 0;border-top:3px solid var(--line)}
+nav.tabs.sub.p1{border-top-color:var(--p1)}nav.tabs.sub.p2{border-top-color:var(--p2)}
+nav.tabs.sub .datab{margin-left:auto}
+main.in-p1>h2,main.in-p1 section>h2{border-left:5px solid var(--p1);padding-left:10px}
+main.in-p2>h2,main.in-p2 section>h2{border-left:5px solid var(--p2);padding-left:10px}
+main.in-p2 button.pri,main.in-p2 button[aria-pressed="true"]:not(.part){background:var(--p2);color:var(--p2fg);border-color:var(--p2)}
+main.in-p2 .eq{background:var(--p2soft)}
+.note.p2{border-left-color:var(--p2);background:var(--p2soft)}
+p.tag{margin:0 0 4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:bold;color:var(--p2)}
+p.tag.p1{color:var(--p1)}
+@media (max-width:360px){.parts{grid-template-columns:1fr}}
+:root{--p3:#8a5300;--p3fg:#fff;--p3soft:#fbf1e2;--p4:#6b3fa0;--p4fg:#fff;--p4soft:#f3ecfa}
+@media(prefers-color-scheme:dark){:root:not([data-t="l"]){--p3:#f0b45a;--p3fg:#1d1300;--p3soft:#2e2414;--p4:#c9a6f2;--p4fg:#1b1030;--p4soft:#2a2136}}
+.persona{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0 0}
+.persona .lab{font-size:.85rem;color:var(--mut);font-weight:normal}
+button.part.p3{border-color:var(--p3)}button.part.p3 .pn{color:var(--p3)}
+button.part.p4{border-color:var(--p4)}button.part.p4 .pn{color:var(--p4)}
+button.part.p3[aria-pressed="true"]{background:var(--p3);color:var(--p3fg);border-color:var(--p3)}
+button.part.p4[aria-pressed="true"]{background:var(--p4);color:var(--p4fg);border-color:var(--p4)}
+nav.tabs.sub.p3{border-top-color:var(--p3)}nav.tabs.sub.p4{border-top-color:var(--p4)}
+main.in-p3>h2,main.in-p3 section>h2{border-left:5px solid var(--p3);padding-left:10px}
+main.in-p4>h2,main.in-p4 section>h2{border-left:5px solid var(--p4);padding-left:10px}
+main.in-p3 button.pri,main.in-p3 button[aria-pressed="true"]:not(.part){background:var(--p3);color:var(--p3fg);border-color:var(--p3)}
+main.in-p4 button.pri,main.in-p4 button[aria-pressed="true"]:not(.part){background:var(--p4);color:var(--p4fg);border-color:var(--p4)}
+main.in-p3 section.card>h3{color:var(--p3)}main.in-p4 section.card>h3{color:var(--p4)}
+section.card.self{border:2px solid var(--p1)}
+.dist{display:flex;height:14px;border-radius:7px;overflow:hidden;background:var(--line);margin:6px 0 2px}
+.dist span{display:block;height:100%}
+.d-up{background:var(--up)}.d-mid{background:var(--mid)}.d-dn{background:var(--dn)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.95rem}
+button.part.p3[aria-pressed="true"] .pn,button.part.p4[aria-pressed="true"] .pn{color:inherit}
+label.tick{display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+label.tick input{margin-top:5px;flex:none;width:18px;height:18px}
+.preview{background:var(--soft);border-radius:10px;padding:10px 12px;margin:10px 0}
+.preview div{margin:2px 0}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+<noscript>Cab4Cap4 needs JavaScript to run. It makes no network calls.</noscript>
+<script>(function () {
+'use strict';
+/* Cab4Cap4 v0.6 - capability for capacity for capability (Cab = capability, Cap = capacity). One's Peace every Friday; the next capability every quarter.
+   Local only. No network. Text is rendered with textContent only. */
+var KEY = 'cab4cap4.v1', SCHEMA = 4, MAXBYTES = 1048576, MAXWEEKS = 520, MAXCAPS = 12, MAXROWS = 80, MAXTXT = 2000, VERSION = '0.6';
+var SEG = [
+  { id: 'vector', name: 'Vector Check', secs: 180 },
+  { id: 'windshield', name: 'Windshield', secs: 240 },
+  { id: 'pay', name: 'Pay/Profit', secs: 120 },
+  { id: 'proofing', name: 'Proofing', secs: 180 },
+  { id: 'prep', name: 'Prep', secs: 120 },
+  { id: 'play', name: 'Play', secs: 60 }
+];
+var SEGBY = {};
+SEG.forEach(function (s) { SEGBY[s.id] = s; });
+var VEC = { climbing: 'Climbing', plateau: 'Plateau illusion', sliding: 'Sliding' };
+var STATE = { done: 'Done', partial: 'Partial', notyet: 'Not Yet' };
+var SLOTS = ['', 'h', 'm1', 'm2', 'm3'];
+var ALT = { job: 'Job', market: 'Market', enterprise: 'Enterprise' };
+var THEMES = { security: 'Security hygiene', financial: 'Financial hygiene', career: 'Career hygiene', health: 'Health', learning: 'Learning', family: 'Family', other: 'Other' };
+var WSK = ['windshield', 'mirror', 'weather', 'engine', 'gps', 'signals'];
+
+var S = { settings: { timer: true, exported: 0, persona: 'self' }, caps: [], plan: emptyPlan(), lead: emptyLead(), saved: [], weeks: [] };
+var loadNote = '';
+var storageOK = true;
+var root = document.getElementById('app');
+var live = document.getElementById('live');
+function say(t) { if (live) live.textContent = t; }
+var view = 'home', B = null, ui = {}, tickH = null, pending = null, importMsg = '';
+
+/* ---------- validation (strict: exact keys, types, sizes) ---------- */
+function fail(m) { throw new Error(m); }
+function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+function isObj(o) { return o !== null && typeof o === 'object' && !Array.isArray(o); }
+function keysOk(o, keys) {
+  var k = Object.keys(o);
+  return k.length === keys.length && keys.every(function (x) { return has(o, x); });
+}
+function str(v, max) { return typeof v === 'string' && v.length <= (max || MAXTXT); }
+function num(v, lo, hi) { return typeof v === 'number' && isFinite(v) && v >= lo && v <= hi; }
+function validDate(s) {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  var p = s.split('-').map(Number), d = new Date(Date.UTC(p[0], p[1] - 1, p[2]));
+  return d.getUTCFullYear() === p[0] && d.getUTCMonth() === p[1] - 1 && d.getUTCDate() === p[2];
+}
+function cleanRow(r, P, v) {
+  var keys = v === 1 ? ['cap', 'state', 'moved'] : ['cid', 'cap', 'slot', 'practice', 'state', 'moved'];
+  if (!isObj(r) || !keysOk(r, keys) || !str(r.cap, 200) || typeof r.state !== 'string' || !has(STATE, r.state) || typeof r.moved !== 'boolean') fail(P + 'bad proofing row');
+  if (v === 1) return { cid: '', cap: r.cap, slot: '', practice: '', state: r.state, moved: r.moved };
+  if (typeof r.cid !== 'string' || !/^(c\d{1,6})?$/.test(r.cid) || SLOTS.indexOf(r.slot) < 0 || !str(r.practice, 300)) fail(P + 'bad proofing row');
+  return { cid: r.cid, cap: r.cap, slot: r.slot, practice: r.practice, state: r.state, moved: r.moved };
+}
+function cleanCap(c, i, v) {
+  var P = 'Capability ' + (i + 1) + ': ', ks = ['id', 'name', 'altitude', 'pattern', 'runon', 'scarce', 'moves', 'habit', 'created'];
+  if (!isObj(c) || !keysOk(c, v >= 4 ? ks.concat(['theme']) : ks)) fail(P + 'unexpected or missing fields');
+  if (v >= 4 && !(c.theme === '' || (typeof c.theme === 'string' && has(THEMES, c.theme)))) fail(P + 'bad theme');
+  if (typeof c.id !== 'string' || !/^c\d{1,6}$/.test(c.id)) fail(P + 'bad id');
+  if (!str(c.name, 200) || !c.name.trim()) fail(P + 'bad name');
+  if (typeof c.altitude !== 'string' || !has(ALT, c.altitude)) fail(P + 'bad altitude');
+  if (!str(c.pattern) || !str(c.runon) || !str(c.scarce) || !str(c.habit, 300)) fail(P + 'bad text');
+  if (!Array.isArray(c.moves) || c.moves.length !== 3 || !c.moves.every(function (x) { return str(x, 300); })) fail(P + 'bad moves');
+  if (!validDate(c.created)) fail(P + 'bad date');
+  return { id: c.id, name: c.name, altitude: c.altitude, pattern: c.pattern, runon: c.runon, scarce: c.scarce, moves: c.moves.slice(), habit: c.habit, created: c.created, theme: v >= 4 ? c.theme : '' };
+}
+function cleanWeek(w, i, v) {
+  var P = 'Week ' + (i + 1) + ': ';
+  if (!isObj(w) || !keysOk(w, ['date', 'mode', 'reads', 'vector', 'windshield', 'pay', 'proofing', 'prep', 'play', 'surfaced', 'seconds'])) fail(P + 'unexpected or missing fields');
+  if (!validDate(w.date)) fail(P + 'bad date');
+  if (w.mode !== 'full' && w.mode !== 'minimum') fail(P + 'bad mode');
+  if (!Array.isArray(w.reads) || w.reads.length !== 3 || !w.reads.every(function (x) { return str(x); })) fail(P + 'bad reads');
+  if (['', 'climbing', 'plateau', 'sliding'].indexOf(w.vector) < 0) fail(P + 'bad vector');
+  var ws = w.windshield;
+  if (!isObj(ws) || !keysOk(ws, WSK) || !WSK.every(function (k) { return str(ws[k]); })) fail(P + 'bad windshield');
+  if (!isObj(w.pay) || !keysOk(w.pay, ['text', 'reserve']) || !str(w.pay.text) || !num(w.pay.reserve, 0, 168)) fail(P + 'bad pay/profit');
+  if (!Array.isArray(w.proofing) || w.proofing.length > MAXROWS) fail(P + 'bad proofing');
+  var pf = w.proofing.map(function (r) { return cleanRow(r, P, v); });
+  if (!isObj(w.prep) || !keysOk(w.prep, ['cap', 'step', 'reserve']) || !str(w.prep.cap, 200) || !str(w.prep.step) || !num(w.prep.reserve, 0, 168)) fail(P + 'bad prep');
+  if (!str(w.play)) fail(P + 'bad play');
+  if (!Array.isArray(w.surfaced) || w.surfaced.length > 40 || !w.surfaced.every(function (x) { return str(x); })) fail(P + 'bad surfaced list');
+  var sc = w.seconds;
+  if (!isObj(sc) || !keysOk(sc, SEG.map(function (s) { return s.id; })) || !SEG.every(function (s) { return num(sc[s.id], 0, 3600) && Math.floor(sc[s.id]) === sc[s.id]; })) fail(P + 'bad seconds');
+  var secs = {};
+  SEG.forEach(function (s) { secs[s.id] = sc[s.id]; });
+  return {
+    date: w.date, mode: w.mode, reads: w.reads.slice(), vector: w.vector,
+    windshield: WSK.reduce(function (o, k) { o[k] = ws[k]; return o; }, {}),
+    pay: { text: w.pay.text, reserve: w.pay.reserve }, proofing: pf,
+    prep: { cap: w.prep.cap, step: w.prep.step, reserve: w.prep.reserve },
+    play: w.play, surfaced: w.surfaced.slice(), seconds: secs
+  };
+}
+function cleanData(o) {
+  if (!isObj(o)) fail('Not a Cab4Cap4 or One\u2019s Peace file.');
+  var v = o.schema;
+  if (v !== 1 && v !== 2 && v !== 3 && v !== 4) fail('Unsupported file version.');
+  var rk = ['app', 'schema', 'exported', 'settings'].concat(v >= 2 ? ['capabilities'] : [], v >= 3 ? ['plan'] : [], v >= 4 ? ['lead', 'saved'] : [], ['weeks']);
+  if (!keysOk(o, rk)) fail('Not a Cab4Cap4 or One\u2019s Peace file (unexpected or missing fields).');
+  if (v === 4 ? o.app !== 'cab4cap4' : v === 3 ? (o.app !== 'cab4cap4' && o.app !== 'cap4cap4') : o.app !== 'onespeace') fail('Not a Cab4Cap4 or One\u2019s Peace file.');
+  if (!str(o.exported, 40)) fail('Bad export stamp.');
+  var st = o.settings;
+  if (!isObj(st) || !keysOk(st, v >= 4 ? ['timer', 'exported', 'persona'] : ['timer', 'exported']) || (v >= 4 && !(typeof st.persona === 'string' && has(PERSONA, st.persona))) || typeof st.timer !== 'boolean' || !num(st.exported, 0, MAXWEEKS) || Math.floor(st.exported) !== st.exported) fail('Bad settings.');
+  var caps = [], cseen = {};
+  if (v >= 2) {
+    if (!Array.isArray(o.capabilities) || o.capabilities.length > MAXCAPS) fail('Bad capability list.');
+    caps = o.capabilities.map(function (c, i) {
+      var k = cleanCap(c, i, v);
+      if (has(cseen, k.id)) fail('Two capabilities share an id.');
+      cseen[k.id] = 1;
+      return k;
+    });
+  }
+  if (!Array.isArray(o.weeks) || o.weeks.length > MAXWEEKS) fail('Bad week list.');
+  var seen = {}, weeks = o.weeks.map(function (w, i) {
+    var c = cleanWeek(w, i, v === 1 ? 1 : 2);
+    if (has(seen, c.date)) fail('Two weeks share the date ' + c.date + '.');
+    seen[c.date] = 1;
+    return c;
+  });
+  weeks.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+  var plan = v >= 3 ? cleanPlan(o.plan) : emptyPlan();
+  var lead = v >= 4 ? cleanLead(o.lead) : emptyLead(), saved = [];
+  if (v >= 4) {
+    if (!Array.isArray(o.saved) || o.saved.length > 40) fail('Bad saved reads.');
+    var sn = {};
+    saved = o.saved.map(function (x) { var c = cleanAgg(x); if (has(sn, c.nonce)) fail('Two saved reads share an id.'); sn[c.nonce] = 1; return c; });
+  }
+  return { settings: { timer: st.timer, exported: Math.min(st.exported, weeks.length), persona: v >= 4 ? st.persona : 'self' }, caps: caps, plan: plan, lead: lead, saved: saved, weeks: weeks };
+}
+
+/* ---------- storage ---------- */
+function pack(stamp) {
+  return { app: 'cab4cap4', schema: SCHEMA, exported: stamp, settings: { timer: S.settings.timer, exported: S.settings.exported, persona: S.settings.persona }, capabilities: S.caps, plan: S.plan, lead: S.lead, saved: S.saved, weeks: S.weeks };
+}
+function persist() {
+  try { localStorage.setItem(KEY, JSON.stringify(pack(''))); return true; } catch (e) { storageOK = false; return false; }
+}
+function load() {
+  var raw = null;
+  try { raw = localStorage.getItem(KEY); } catch (e) { storageOK = false; loadNote = 'This browser is not keeping data between visits. Export a copy after each box.'; return; }
+  if (raw === null) return;
+  try {
+    if (raw.length > MAXBYTES) fail('too large');
+    S = cleanData(JSON.parse(raw));
+  } catch (e) {
+    loadNote = 'Saved data could not be read, so the app started empty. The stored copy is untouched until you save a week.';
+  }
+}
+
+/* ---------- helpers ---------- */
+function pad(n) { return (n < 10 ? '0' : '') + n; }
+function today() { var d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+function fmt(sec) { sec = Math.max(0, Math.ceil(sec)); return Math.floor(sec / 60) + ':' + pad(sec % 60); }
+function numOf(v) { var x = parseFloat(v); if (!isFinite(x) || x < 0) return 0; return Math.round(Math.min(168, x) * 10) / 10; }
+function lastWeek() { return S.weeks.length ? S.weeks[S.weeks.length - 1] : null; }
+function h(tag, a, k) {
+  var e = document.createElement(tag);
+  if (a) Object.keys(a).forEach(function (n) {
+    var v = a[n];
+    if (v === null || v === undefined || v === false) return;
+    if (n === 'class') e.className = v;
+    else if (n === 'text') e.textContent = v;
+    else if (n === 'value') e.value = v;
+    else if (n.slice(0, 2) === 'on') e.addEventListener(n.slice(2), v);
+    else e.setAttribute(n, v === true ? '' : v);
+  });
+  if (k) (Array.isArray(k) ? k : [k]).forEach(function (c) {
+    if (c === null || c === undefined || c === false) return;
+    e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+  });
+  return e;
+}
+function sent(t) { return t.split(/(?<=[.?!])\s+(?=[A-Z\u2018\u201C(])/); }
+function ps(t, cls) { return h('div', null, sent(t).map(function (x) { return p(x, cls); })); }
+function hintEl(t) { return h('span', { 'class': 'hint' }, sent(t).map(function (x) { return h('span', { 'class': 'ln', text: x }); })); }
+function p(t, cls) { return h('p', { text: t, 'class': cls || null }); }
+function lines(t) { /* one sentence per line, as the book does: a line break is a pause */
+  return h('div', null, t.split('\n').map(function (l) { return p(l); }));
+}
+function btn(label, fn, cls, extra) { var a = { type: 'button', onclick: fn, 'class': cls || null, text: label }; if (extra) Object.keys(extra).forEach(function (k) { a[k] = extra[k]; }); return h('button', a); }
+function confirmBtn(label, armLabel, key, action) {
+  var armed = !!ui[key];
+  return btn(armed ? armLabel : label, function () {
+    if (armed) { ui[key] = false; action(); } else { ui[key] = true; render(); }
+  }, 'danger' + (armed ? ' arm' : ''));
+}
+function field(label, hint, obj, key, rows) {
+  var ta = h('textarea', { rows: rows || 3, maxlength: MAXTXT, value: obj[key], oninput: function () { obj[key] = ta.value; } });
+  return h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: label }), hint ? hintEl(hint) : null, ta]);
+}
+function textIn(label, hint, obj, key, ph) {
+  var i = h('input', { type: 'text', maxlength: 200, value: obj[key], placeholder: ph || null, oninput: function () { obj[key] = i.value; } });
+  return h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: label }), hint ? hintEl(hint) : null, i]);
+}
+function numIn(label, hint, obj, key) {
+  var i = h('input', { type: 'number', min: '0', max: '168', step: '0.5', inputmode: 'decimal', value: obj[key], oninput: function () { obj[key] = i.value; } });
+  return h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: label }), hint ? hintEl(hint) : null, i]);
+}
+function badge(v) { return v ? h('span', { 'class': 'badge b-' + v, text: (v === 'climbing' ? '▲ ' : v === 'sliding' ? '▼ ' : '■ ') + VEC[v] }) : h('span', { 'class': 'mut', text: 'no vector set' }); }
+function totalSecs(w) { return SEG.reduce(function (n, s) { return n + w.seconds[s.id]; }, 0); }
+
+/* ---------- the sample week (Workbook 17.2, illustrative, not a real case) ---------- */
+var SAMPLE = cleanWeek({
+  date: '2026-01-02', mode: 'full',
+  reads: ['Attention on the release, not the reorg rumor.', 'Four of five decisions built rungs.', 'The omission: a conversation put off for two weeks. Named and booked.'],
+  vector: 'climbing',
+  windshield: { windshield: 'Two requests this month asked for API testing, not page scans.', mirror: '', weather: '', engine: '', gps: '', signals: '' },
+  pay: { text: 'A tool now drafts my weekly status report at my standard.', reserve: 2 },
+  proofing: [{ cid: '', cap: 'Security hygiene: backups', slot: '', practice: '', state: 'done', moved: false }, { cid: '', cap: 'Security hygiene: home-lab patching', slot: '', practice: '', state: 'partial', moved: true }, { cid: '', cap: 'Financial hygiene', slot: '', practice: '', state: 'notyet', moved: false }],
+  prep: { cap: 'API testing', step: 'Adjacent to the scanning I already know. One of the two freed hours goes to it on Tuesday.', reserve: 1 },
+  play: 'I named the omission in under thirty seconds. This week proved the harness would hold a hard conversation.',
+  surfaced: ['The booked conversation', 'Tuesday’s hour'],
+  seconds: { vector: 0, windshield: 0, pay: 0, proofing: 0, prep: 0, play: 0 }
+}, 0, 2);
+
+/* ---------- chrome ---------- */
+function header() {
+  return h('header', { 'class': 'top' }, [h('h1', { text: 'Cab4Cap4' }), p('Capability for capacity for capability\u2026'), p('The companion to the book The Climb or the Slide.', 'small')]);
+}
+function footer() {
+  return h('footer', null, [
+    p('A reflection aid, not a diagnosis, and not for judging anyone else. Do not use it for performance reviews, hiring, or any decision about another person’s livelihood.'),
+    p('If you are in crisis: call or text 988 (US), or see findahelpline.com.'),
+    p('Your notes stay on this device. Nothing is sent anywhere unless you export a file yourself.'),
+    p('v' + VERSION + ' © 2026 Srinivasa M. Kasturi (linkedin.com/in/skasturi). All rights reserved.')
+  ]);
+}
+var PART = { home: 1, history: 1, caps: 1, sample: 1, plan: 2, team: 3, lead: 4, data: 0 };
+function partNav() {
+  var cur = PART[view] || 0;
+  function partBtn(n, title, when, go) {
+    return h('button', { type: 'button', 'class': 'part p' + n, 'aria-pressed': cur === n ? 'true' : 'false', 'aria-label': 'Part ' + n + ': ' + title + ', ' + when, onclick: function () { nav(go); } }, [
+      h('span', { 'class': 'pn', text: 'Part ' + n }), h('span', { 'class': 'pt', text: title }), h('span', { 'class': 'pw', text: when })
+    ]);
+  }
+  var ps0 = S.settings.persona;
+  var parts = h('div', { 'class': 'parts', role: 'group', 'aria-label': 'The parts' }, [
+    partBtn(1, 'One\u2019s Peace', 'every Friday, 15 minutes: keep what you have', 'home'),
+    partBtn(2, 'Next capability', 'once a quarter, 15 minutes: build what is next', 'plan'),
+    ps0 !== 'self' ? partBtn(3, 'Team view', 'from what members choose to share', 'team') : null,
+    ps0 === 'leader' ? partBtn(4, 'Leadership view', 'you first, then your teams', 'lead') : null
+  ]);
+  var subs = cur === 1 ? [['home', 'This week'], ['history', 'History'], ['caps', 'Capabilities to keep'], ['sample', 'Sample week']] : [];
+  var sub = h('nav', { 'class': 'tabs sub' + (cur ? ' p' + cur : ''), 'aria-label': cur === 1 ? 'Part 1 sections' : 'Sections' }, subs.map(function (t) {
+    return btn(t[1], function () { nav(t[0]); }, 'sm', { 'aria-pressed': view === t[0] ? 'true' : 'false' });
+  }).concat([btn('Your data', function () { nav('data'); }, 'sm datab', { 'aria-pressed': view === 'data' ? 'true' : 'false' })]));
+  return [parts, sub];
+}
+function nav(v) {
+  if (view === 'team' && v !== 'team') { T.list = []; T.rej = {}; }
+  if (view === 'lead' && v !== 'lead') { LV.list = []; LV.rej = {}; }
+  if ((v === 'team' && S.settings.persona === 'self') || (v === 'lead' && S.settings.persona !== 'leader')) v = 'home';
+  view = v; ui = {}; importMsg = ''; render(true);
+}
+function notices() {
+  var out = [];
+  if (loadNote) out.push(h('div', { 'class': 'note warn', role: 'status', text: loadNote }));
+  if (!storageOK && !loadNote) out.push(h('div', { 'class': 'note warn', role: 'status', text: 'This browser would not save. Export a copy after each box or the week is lost.' }));
+  return out;
+}
+function render(focus) {
+  while (root.firstChild) root.removeChild(root.firstChild);
+  var cur = B ? 1 : (PART[view] || 0);
+  var main = h('main', { 'class': cur ? 'in-p' + cur : null }, null);
+  var kids;
+  if (B) kids = boxView();
+  else {
+    kids = [header(), personaBar()].concat(partNav(), notices());
+    kids = kids.concat(view === 'home' ? homeView() : view === 'history' ? historyView() : view === 'caps' ? capsView() : view === 'plan' ? planView() : view === 'team' ? teamView() : view === 'lead' ? leadView() : view === 'sample' ? sampleView() : dataView());
+  }
+  kids.forEach(function (k) { if (k) main.appendChild(k); });
+  root.appendChild(main);
+  root.appendChild(footer());
+  if (focus) { var hd = root.querySelector('h2'); if (hd) { hd.setAttribute('tabindex', '-1'); hd.focus(); } }
+}
+function exportReminder() {
+  var n = S.weeks.length - S.settings.exported;
+  return n >= 4 ? h('div', { 'class': 'note warn' }, [p(n + ' saved weeks are not in any export yet. Clearing this browser would lose them.'), btn('Export a copy now', doExport, 'sm')]) : null;
+}
+
+/* ---------- home ---------- */
+function rowLabel(r) { return r.cap + (r.practice ? ': ' + r.practice : ''); }
+function carryForward() {
+  var lw = lastWeek();
+  if (!lw) return [p('First box: nothing to carry forward yet. Your first Prep will be waiting here next Friday.', 'mut')];
+  var out = [];
+  if (lw.prep.step || lw.prep.cap) {
+    out.push(h('p', null, [h('strong', { text: 'Last Friday’s Prep (' + lw.date + '): ' }), (lw.prep.cap ? lw.prep.cap + '. ' : '') + lw.prep.step + (lw.prep.reserve ? ' (' + lw.prep.reserve + ' h of reserve)' : '')]));
+    out.push(p('Next week’s check tells you whether it moved you.', 'mut'));
+  } else out.push(p('Last box (' + lw.date + ') set no Prep.', 'mut'));
+  var open = lw.proofing.filter(function (r) { return r.state !== 'done'; });
+  if (open.length) {
+    out.push(h('p', null, [h('strong', { text: 'Sensing Loops not yet Done:' })]));
+    out.push(h('ul', { 'class': 'plain' }, open.map(function (r) { return h('li', null, [h('span', { text: rowLabel(r) }), h('span', { 'class': 'badge', text: STATE[r.state] })]); })));
+  }
+  var left = lw.surfaced.filter(function (t) { return t.indexOf('Prep:') !== 0 || !(lw.prep.step || lw.prep.cap); });
+  if (left.length) {
+    out.push(h('p', null, [h('strong', { text: 'Left over from the box:' })]));
+    out.push(h('ul', { 'class': 'plain' }, left.map(function (t) { return h('li', null, [h('span', { text: t })]); })));
+  }
+  return out;
+}
+function homeView() {
+  var done = S.weeks.some(function (w) { return w.date === today(); });
+  var out = [];
+  var er = exportReminder(); if (er) out.push(er);
+  out.push(h('section', { 'class': 'card' }, [h('h2', { text: 'This week \u00B7 Opening' })].concat(carryForward())));
+  var tn = targetNote(false);
+  if (tn) { tn.appendChild(btn('Open Part 2', function () { nav('plan'); }, 'sm')); out.push(tn); }
+  else out.push(h('div', { 'class': 'note p2' }, [h('p', { 'class': 'tag', text: 'From Part 2' }), ps('No next capability chosen yet. Pick one once a quarter, outside the box.'), btn('Find my next capability', function () { nav('plan'); }, 'sm')]));
+  if (!S.caps.length) out.push(h('div', { 'class': 'note' }, [ps('No capability is set up yet. Proofing works best when each thing you need to keep has a one-time setup.'), p('About fifteen minutes each, done outside the box.', 'mut'), btn('Set up a capability to keep', function () { nav('caps'); }, 'sm')]));
+  if (done) out.push(h('div', { 'class': 'note', text: 'A box is already saved for today. Running another and saving replaces it.' }));
+  out.push(h('section', { 'class': 'card' }, [
+    h('h2', { text: 'Run the box' }),
+    p('Vector Check 3 · Windshield 4 · Pay/Profit 2 · Proofing 3 · Prep 2 · Play 1. Anything that needs longer gets parked and worked after the box.'),
+    h('div', { 'class': 'row' }, [
+      btn('Start the full box (15 min)', function () { startBox('full'); }, 'pri'),
+      btn('Minimum: Vector Check only (3 min)', function () { startBox('minimum'); })
+    ]),
+    p('New here? Run the Vector Check alone for a month before adding the rest.', 'mut'),
+    h('label', { 'class': 'row' }, [
+      h('input', { type: 'checkbox', checked: S.settings.timer ? true : null, onchange: function (e) { S.settings.timer = e.target.checked; persist(); } }),
+      h('span', { text: 'Run the timer. When a segment’s time is up, move on and keep what I typed.' })
+    ])
+  ]));
+  return out;
+}
+
+/* ---------- the box ---------- */
+function practicesOf(c) {
+  var out = [];
+  if (c.habit.trim()) out.push({ slot: 'h', label: 'Habit', text: c.habit.trim() });
+  c.moves.forEach(function (m, i) { if (m.trim()) out.push({ slot: 'm' + (i + 1), label: 'Move ' + (i + 1), text: m.trim() }); });
+  return out;
+}
+function capById(id) { for (var i = 0; i < S.caps.length; i++) if (S.caps[i].id === id) return S.caps[i]; return null; }
+function newDraft() {
+  var lw = lastWeek(), rows = [], caps = [];
+  S.caps.forEach(function (c) {
+    caps.push({ cid: c.id, moved: false, rows: practicesOf(c).map(function (pr) {
+      var last = '';
+      if (lw) lw.proofing.forEach(function (r) { if (r.cid === c.id && r.slot === pr.slot) last = r.state; });
+      return { slot: pr.slot, label: pr.label, text: pr.text, state: last || 'notyet', last: last };
+    }) });
+  });
+  if (lw) lw.proofing.forEach(function (r) { if (r.cid === '') rows.push({ cap: r.cap, state: r.state, moved: false, last: r.state }); });
+  if (!rows.length && !caps.length) rows = [{ cap: '', state: 'notyet', moved: false, last: '' }, { cap: '', state: 'notyet', moved: false, last: '' }];
+  return {
+    reads: ['', '', ''], vector: '',
+    ws: { windshield: '', mirror: '', weather: '', engine: '', gps: '', signals: '' },
+    pay: { text: '', reserve: '' }, caps: caps, rows: rows, prep: { cap: '', step: '', reserve: '' }, play: '',
+    parked: [], park: { t: '' }, surf: null
+  };
+}
+function startBox(mode) {
+  stopTick();
+  B = { mode: mode, order: mode === 'full' ? ['opening'].concat(SEG.map(function (s) { return s.id; }), ['close']) : ['opening', 'vector', 'close'], i: 0, D: newDraft(), spent: {}, segStart: 0, paused: false, pausedAt: 0, flash: '', nodes: {} };
+  B.budget = B.order.reduce(function (n, id) { return n + (SEGBY[id] ? SEGBY[id].secs : 0); }, 0);
+  view = 'box'; ui = {};
+  render(true);
+}
+function cur() { return B.order[B.i]; }
+function curSeg() { return SEGBY[cur()] || null; }
+function elapsed() { var end = B.paused ? B.pausedAt : Date.now(); return Math.max(0, (end - B.segStart) / 1000); }
+function spentTotal() { return Object.keys(B.spent).reduce(function (n, k) { return n + B.spent[k]; }, 0); }
+function stopTick() { if (tickH) { clearInterval(tickH); tickH = null; } }
+function advance(auto) {
+  var s = curSeg();
+  var prevStart = B.segStart;
+  if (s) B.spent[s.id] = Math.min(s.secs, Math.round(elapsed()));
+  B.i = Math.min(B.i + 1, B.order.length - 1);
+  if (!auto) B.flash = '';
+  B.paused = false; B.a60 = false; B.a10 = false;
+  var ns = curSeg();
+  say(ns ? ns.name + ', ' + (ns.secs / 60) + ' minutes.' : 'Box closed.');
+  if (ns) B.segStart = auto ? prevStart + s.secs * 1000 : Date.now();
+  else stopTick();
+  if (cur() === 'close' && !B.D.surf) B.D.surf = buildSurfaced();
+  render(true);
+}
+function paint() {
+  var s = curSeg(); if (!s || !B.nodes.seg) return;
+  var el = elapsed(), t = S.settings.timer;
+  B.nodes.seg.textContent = t ? fmt(s.secs - el) : fmt(el);
+  B.nodes.seg.className = 'clock' + (t && s.secs - el <= 30 ? ' low' : '');
+  B.nodes.box.textContent = t ? 'Box: ' + fmt(B.budget - spentTotal() - el) + ' left of ' + fmt(B.budget) : 'Timer off. Box so far: ' + fmt(spentTotal() + el);
+  B.nodes.bar.style.width = Math.min(100, el / s.secs * 100) + '%';
+}
+function tick() {
+  if (!B) { stopTick(); return; }
+  var s = curSeg(); if (!s) return;
+  if (S.settings.timer && !B.paused) {
+    var left = s.secs - elapsed();
+    if (left <= 60 && !B.a60 && s.secs > 90) { B.a60 = true; say('One minute left.'); }
+    if (left <= 10 && !B.a10) { B.a10 = true; say('Ten seconds left.'); }
+  }
+  if (S.settings.timer && !B.paused && elapsed() >= s.secs) { B.flash = 'Time. Moving on. Everything you typed is kept.'; advance(true); return; }
+  paint();
+}
+function beginTimed() {
+  if (!tickH) tickH = setInterval(tick, 250);
+}
+function timerBar() {
+  var s = curSeg();
+  B.nodes.seg = h('div', { 'class': 'clock', 'aria-hidden': 'true', text: '' });
+  B.nodes.box = h('div', { 'class': 'mut', 'aria-hidden': 'true', text: '' });
+  B.nodes.bar = h('div', null, null);
+  var idx = B.order.filter(function (id) { return SEGBY[id]; }).indexOf(s.id) + 1, n = B.order.filter(function (id) { return SEGBY[id]; }).length;
+  var nextId = B.order[B.i + 1], nextName = SEGBY[nextId] ? SEGBY[nextId].name : 'Close the box';
+  paint();
+  var bar = h('div', { 'class': 'tbar' }, [
+    h('div', { 'class': 'row sp' }, [
+      h('div', null, [h('strong', { text: s.name }), h('span', { 'class': 'mut', text: ' · ' + (s.secs / 60) + ' min · ' + idx + ' of ' + n })]),
+      B.nodes.seg
+    ]),
+    B.nodes.box,
+    h('div', { 'class': 'prog' }, [B.nodes.bar]),
+    h('div', { 'class': 'row', style: null }, [
+      btn('Next: ' + nextName + ' →', function () { advance(false); }, 'pri'),
+      btn(B.paused ? 'Resume' : 'Pause', function () {
+        if (B.paused) { B.segStart += Date.now() - B.pausedAt; B.paused = false; } else { B.paused = true; B.pausedAt = Date.now(); }
+        render();
+      }, 'sm'),
+      confirmBtn('Leave', 'Really leave? Nothing is saved', 'leave', leaveBox)
+    ])
+  ]);
+  return bar;
+}
+function leaveBox() { stopTick(); B = null; view = 'home'; ui = {}; render(true); }
+function parkWidget() {
+  var D = B.D, box = h('div', { 'class': 'card' });
+  function draw() {
+    while (box.firstChild) box.removeChild(box.firstChild);
+    var i = h('input', { type: 'text', maxlength: 300, value: D.park.t, placeholder: 'Park it: needs longer than the box', oninput: function () { D.park.t = i.value; }, onkeydown: function (e) { if (e.key === 'Enter') add(); } });
+    function add() { var t = D.park.t.trim(); if (t && D.parked.length < 20) { D.parked.push(t.slice(0, 300)); D.park.t = ''; } draw(); }
+    box.appendChild(h('div', { 'class': 'row' }, [h('div', { 'class': 'grow' }, [h('label', null, [h('span', { 'class': 'sr', text: 'Park an item for after the box' }), i])]), btn('Park', add, 'sm')]));
+    if (D.parked.length) box.appendChild(h('ul', { 'class': 'plain' }, D.parked.map(function (t, k) {
+      return h('li', null, [h('span', { text: t }), btn('Remove', function () { D.parked.splice(k, 1); draw(); }, 'sm')]);
+    })));
+  }
+  draw();
+  return box;
+}
+function boxView() {
+  var id = cur(), D = B.D, out = [];
+  if (id === 'opening') {
+    out.push(header());
+    out.push(h('p', { 'class': 'tag p1', text: 'Part 1 \u00B7 One\u2019s Peace' }));
+    out.push(h('section', { 'class': 'card' }, [h('h2', { text: B.mode === 'full' ? 'Opening the full box' : 'Opening the minimum box' })].concat(carryForward())));
+    out.push(p(B.mode === 'full' ? 'When you press Start the timer begins: fifteen minutes in all.' : 'The timer runs three minutes: the Vector Check only.', 'mut'));
+    out.push(h('div', { 'class': 'row' }, [btn('Start', function () { advance(false); beginTimed(); }, 'pri'), btn('Back', leaveBox)]));
+    return out;
+  }
+  if (id === 'close') return closeView();
+  out.push(timerBar());
+  if (B.flash) out.push(h('div', { 'class': 'note', role: 'status', text: B.flash }));
+  var seg = SEGS[id](D);
+  out = out.concat(seg);
+  out.push(parkWidget());
+  return out;
+}
+function paintLater() { setTimeout(paint, 0); }
+function stateBtns(r, label, redraw) {
+  return h('div', { 'class': 'row', role: 'group', 'aria-label': label }, Object.keys(STATE).map(function (sk) {
+    return btn(STATE[sk], function () { r.state = sk; redraw(); }, 'sm', { 'aria-pressed': r.state === sk ? 'true' : 'false' });
+  }));
+}
+function setupBody(c) {
+  var items = [];
+  function add(k, v) { if (v && v.trim()) { items.push(h('dt', { text: k })); items.push(h('dd', { text: v })); } }
+  add('Step 1 \u00B7 the pattern', c.pattern); add('Step 2 \u00B7 what you run on', c.runon); add('Step 2 \u00B7 what is scarce', c.scarce);
+  add('Step 3 \u00B7 the habit', c.habit);
+  c.moves.forEach(function (m, i) { add('Step 3 \u00B7 move ' + (i + 1), m); });
+  return h('dl', { 'class': 'w' }, items);
+}
+function capProofCard(dc, c) {
+  var box = h('div', { 'class': 'cap' }), wrap = h('div', null, null);
+  function draw() {
+    while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
+    if (!dc.rows.length) wrap.appendChild(p('This capability has no habit or moves yet. Add them in the Capabilities tab after the box.', 'mut'));
+    dc.rows.forEach(function (r) {
+      wrap.appendChild(h('div', { 'class': 'prac' }, [
+        h('div', null, [h('span', { 'class': 'lab', text: r.label }), h('span', { text: r.text })]),
+        r.last ? p('Last box: ' + STATE[r.last], 'mut') : null,
+        stateBtns(r, r.label + ' state', draw)
+      ]));
+    });
+    wrap.appendChild(h('div', { 'class': 'row' }, [btn('Moved? ' + (dc.moved ? 'Yes: 15 min after the box' : 'No'), function () { dc.moved = !dc.moved; draw(); }, 'sm', { 'aria-pressed': dc.moved ? 'true' : 'false' })]));
+  }
+  draw();
+  box.appendChild(h('div', { 'class': 'row sp' }, [h('strong', { text: c.name }), h('span', { 'class': 'badge', text: ALT[c.altitude] })]));
+  box.appendChild(wrap);
+  box.appendChild(h('details', null, [h('summary', { text: 'Your setup, Steps 1 to 3' }), setupBody(c)]));
+  return box;
+}
+function flatRows(D) {
+  var wrap = h('div', null, null);
+  function draw() {
+    while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
+    D.rows.forEach(function (r, k) {
+      var nameIn = h('textarea', { rows: 2, maxlength: 200, value: r.cap, placeholder: 'e.g. security hygiene', oninput: function () { r.cap = nameIn.value; } });
+      wrap.appendChild(h('div', { 'class': 'cap' }, [
+        h('label', null, [h('span', { 'class': 'lab', text: 'Capability or practice' }), nameIn]),
+        r.last ? p('Last box: ' + STATE[r.last], 'mut') : null,
+        stateBtns(r, 'State', draw),
+        h('div', { 'class': 'row' }, [
+          btn('Moved? ' + (r.moved ? 'Yes: 15 min after the box' : 'No'), function () { r.moved = !r.moved; draw(); }, 'sm', { 'aria-pressed': r.moved ? 'true' : 'false' }),
+          btn('Remove', function () { D.rows.splice(k, 1); draw(); }, 'sm')
+        ])
+      ]));
+    });
+    if (D.rows.length < 30) wrap.appendChild(btn('Add something to keep', function () { D.rows.push({ cap: '', state: 'notyet', moved: false, last: '' }); draw(); }, 'sm'));
+  }
+  draw();
+  return wrap;
+}
+var SEGS = {
+  vector: function (D) {
+    return [
+      h('h2', { text: 'Personal · Vector Check' }),
+      ps('Do not ask ‘How are we doing?’ Ask: ‘Which way are we moving?’'),
+      field('Read 1: Direction of attention', 'Where did your attention go this week? Toward the work is a lift. Toward a rival, a grievance, a replayed slight is a slip.', D.reads, 0),
+      field('Read 2: Direction of energy', 'List the five most consequential decisions or actions. Did each build a rung (capability, clarity, candor) or shave one (protect ego, hoard credit, avoid truth)?', D.reads, 1, 4),
+      field('Read 3: The omission tell', 'Name the one thing you avoided. Cannot name it in thirty seconds? That blank is the tell.', D.reads, 2),
+      h('h3', { text: 'The vector' }),
+      h('div', { 'class': 'vec' }, [
+        vecBtn(D, 'climbing', 'Attention on work + rungs built + omission named.'),
+        vecBtn(D, 'plateau', 'Mixed + split + vaguely sensed.'),
+        vecBtn(D, 'sliding', 'Captured + shaving + unnamed. Intervene now.')
+      ]),
+      ps('Read the direction, not the day.', 'mut')
+    ];
+  },
+  windshield: function (D) {
+    return [
+      h('h2', { text: 'Personal · Windshield' }),
+      ps('At your own altitude, not the team’s or the org’s.', 'mut'),
+      field('Windshield', 'Name one thing visible ahead that has not arrived. If nothing is visible, you are not looking far enough down the road. That is the fog, and it is a finding, not a blank.', D.ws, 'windshield'),
+      h('details', null, [
+        h('summary', { text: 'Mirror, weather, check engine, GPS, early signals (each skippable)' }),
+        field('Mirror', 'What did the last ninety days actually produce? Not what you were busy with. What landed.', D.ws, 'mirror'),
+        field('Weather', 'What proportion of your week is work that a capable tool now does adequately? Say the number out loud.', D.ws, 'weather', 2),
+        field('Check engine', 'What is trending in the wrong direction that has not yet become a problem?', D.ws, 'engine', 2),
+        field('GPS', 'Can you state the destination in one sentence, and did this week’s effort converge on it?', D.ws, 'gps', 2),
+        field('Early signals', 'Who changed how they work with you, and did you notice at the time or only now?', D.ws, 'signals', 2)
+      ])
+    ];
+  },
+  pay: function (D) {
+    return [
+      h('h2', { text: 'Pay/Profit' }),
+      ps('People rarely go obsolete; their value proposition does. Check whether yours still holds.'),
+      field('What a tool now does at your standard', 'Name, honestly, what part of your value an AI-era tool now does in your 90-to-95 percentile range, on a specific, bounded task, not evenly and not everywhere.', D.pay, 'text', 4),
+      numIn('Hours you can hold in reserve', 'This is the capacity Prep will use.', D.pay, 'reserve')
+    ];
+  },
+  proofing: function (D) {
+    var out = [
+      h('h2', { text: 'Proofing' }),
+      ps('What are you doing, right now, to keep it ahead of what is closing in on it?'),
+      ps('For each capability you need to keep, glance at its Sensing Loop: did anything move, and is each practice still Done, Partial, or Not Yet? Flag what moved. It gets fifteen minutes after the box.', 'mut')
+    ];
+    if (!S.caps.length) out.push(h('div', { 'class': 'note' }, [ps('No capability is set up yet. Set one up outside the box, in the Capabilities tab.'), p('Until then, list what you need to keep below.', 'mut')]));
+    D.caps.forEach(function (dc) { var c = capById(dc.cid); if (c) out.push(capProofCard(dc, c)); });
+    out.push(h('h3', { text: S.caps.length ? 'Anything else you need to keep' : 'What you need to keep' }));
+    out.push(flatRows(D));
+    return out;
+  },
+  prep: function (D) {
+    return [
+      h('h2', { text: 'Prep' }),
+      ps('Name the next capability, adjacent to what you already do, and take the smallest real step this week.'),
+      targetNote(true, D),
+      textIn('The next capability', null, D.prep, 'cap'),
+      field('The smallest real step this week', null, D.prep, 'step'),
+      numIn('Hours of reserve it uses', D.pay.reserve ? 'Pay/Profit showed ' + numOf(D.pay.reserve) + ' h you can hold in reserve.' : 'Pay/Profit showed no hours in reserve.', D.prep, 'reserve')
+    ];
+  },
+  play: function (D) {
+    return [
+      h('h2', { text: 'Play' }),
+      ps('Close without grinding. A capability built from dread does not compound the way one built from curiosity does.'),
+      field('One self-high-five, one sentence', 'What did this week prove the harness would hold?', D, 'play', 2)
+    ];
+  }
+};
+function vecBtn(D, v, desc) {
+  var b = h('button', { type: 'button', 'aria-pressed': D.vector === v ? 'true' : 'false', onclick: function () {
+    D.vector = D.vector === v ? '' : v;
+    Array.prototype.forEach.call(b.parentNode.children, function (c) { c.setAttribute('aria-pressed', 'false'); });
+    if (D.vector) b.setAttribute('aria-pressed', 'true');
+  } }, [VEC[v], h('small', { text: desc })]);
+  return b;
+}
+function buildSurfaced() {
+  var D = B.D, out = [];
+  function add(t) { t = t.trim().slice(0, 300); if (t && out.indexOf(t) < 0 && out.length < 40) out.push(t); }
+  D.caps.forEach(function (dc) { var c = capById(dc.cid); if (c && dc.moved) add('Sensing Loop: ' + c.name + ' moved. Fifteen minutes on it, from Step 1.'); });
+  D.rows.forEach(function (r) { if (r.moved && r.cap.trim()) add('Sensing Loop: ' + r.cap.trim() + ' moved. Fifteen minutes on it.'); });
+  if (D.prep.step.trim()) add('Prep: ' + (D.prep.cap.trim() ? D.prep.cap.trim() + '. ' : '') + D.prep.step.trim() + (numOf(D.prep.reserve) ? ' (' + numOf(D.prep.reserve) + ' h of reserve)' : ''));
+  if (D.reads[2].trim()) add('The omission: ' + D.reads[2].trim().slice(0, 140));
+  D.parked.forEach(add);
+  return out;
+}
+function proofRows(D) {
+  var out = [];
+  D.caps.forEach(function (dc) {
+    var c = capById(dc.cid); if (!c) return;
+    dc.rows.forEach(function (r) { out.push({ cid: c.id, cap: c.name.slice(0, 200), slot: r.slot, practice: r.text.slice(0, 300), state: r.state, moved: !!dc.moved }); });
+  });
+  D.rows.filter(function (r) { return r.cap.trim(); }).slice(0, 30).forEach(function (r) { out.push({ cid: '', cap: r.cap.trim().slice(0, 200), slot: '', practice: '', state: r.state, moved: !!r.moved }); });
+  return out.slice(0, MAXROWS);
+}
+function buildWeek() {
+  var D = B.D, secs = {};
+  SEG.forEach(function (s) { secs[s.id] = Math.min(3600, Math.round(B.spent[s.id] || 0)); });
+  var w = {
+    date: today(), mode: B.mode,
+    reads: D.reads.map(function (x) { return x.trim().slice(0, MAXTXT); }), vector: D.vector,
+    windshield: WSK.reduce(function (o, k) { o[k] = D.ws[k].trim().slice(0, MAXTXT); return o; }, {}),
+    pay: { text: D.pay.text.trim().slice(0, MAXTXT), reserve: numOf(D.pay.reserve) },
+    proofing: proofRows(D),
+    prep: { cap: D.prep.cap.trim().slice(0, 200), step: D.prep.step.trim().slice(0, MAXTXT), reserve: numOf(D.prep.reserve) },
+    play: D.play.trim().slice(0, MAXTXT), surfaced: D.surf.slice(0, 40), seconds: secs
+  };
+  return cleanWeek(w, 0, 2);
+}
+function closeView() {
+  var D = B.D, used = spentTotal(), out = [];
+  out.push(h('div', { 'class': 'tbar' }, [h('strong', { text: 'Box closed' }), h('span', { 'class': 'mut', text: ' · ' + fmt(used) + ' used of ' + fmt(B.budget) })]));
+  if (B.flash) out.push(h('div', { 'class': 'note', role: 'status', text: B.flash }));
+  var sum = [h('h2', { text: 'Close' }), h('p', null, [h('strong', { text: 'Vector: ' }), badge(D.vector)])];
+  if (D.prep.step.trim()) sum.push(h('p', null, [h('strong', { text: 'Prep: ' }), (D.prep.cap.trim() ? D.prep.cap.trim() + '. ' : '') + D.prep.step.trim()]));
+  if (D.play.trim()) sum.push(h('p', null, [h('strong', { text: 'Play: ' }), D.play.trim()]));
+  out.push(h('section', { 'class': 'card' }, sum));
+  var list = h('section', { 'class': 'card' }, [h('h3', { text: 'What the box surfaced: work it after the box' })]);
+  if (D.surf.length) list.appendChild(h('ul', { 'class': 'plain' }, D.surf.map(function (t, k) {
+    return h('li', null, [h('span', { text: t }), btn('Remove', function () { D.surf.splice(k, 1); render(); }, 'sm')]);
+  })));
+  else list.appendChild(p('Nothing surfaced.', 'mut'));
+  out.push(list);
+  D.caps.forEach(function (dc) {
+    var c = capById(dc.cid);
+    if (c && dc.moved) out.push(h('details', { 'class': 'card' }, [h('summary', { text: c.name + ': your setup, to reopen at Step 1' }), setupBody(c)]));
+  });
+  var dup = S.weeks.some(function (w) { return w.date === today(); });
+  if (dup) out.push(h('div', { 'class': 'note', text: 'A box is already saved for today. Saving replaces it.' }));
+  out.push(h('div', { 'class': 'row' }, [
+    btn('Save this week', saveWeek, 'pri'),
+    confirmBtn('Discard', 'Really discard?', 'discard', leaveBox)
+  ]));
+  return out;
+}
+function saveWeek() {
+  var w = buildWeek();
+  S.weeks = S.weeks.filter(function (x) { return x.date !== w.date; }).concat([w]).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+  var ok = persist();
+  stopTick(); B = null; view = 'history'; ui = {};
+  render(true);
+  var m = h('div', { 'class': 'note' + (ok ? '' : ' warn'), role: 'status', text: ok ? 'Saved. Next Friday’s opening will show this Prep.' : 'Could not save in this browser. Export a copy now or this week is lost.' });
+  var main = root.querySelector('main'); main.insertBefore(m, main.children[2] || null);
+}
+
+/* ---------- history & sample ---------- */
+function weekDetail(w, sample) {
+  var items = [];
+  function add(k, v) { if (v) { items.push(h('dt', { text: k })); items.push(h('dd', { text: v })); } }
+  add('Read 1 · attention', w.reads[0]); add('Read 2 · energy', w.reads[1]); add('Read 3 · omission', w.reads[2]);
+  add('Windshield', w.windshield.windshield); add('Mirror', w.windshield.mirror); add('Weather', w.windshield.weather);
+  add('Check engine', w.windshield.engine); add('GPS', w.windshield.gps); add('Early signals', w.windshield.signals);
+  add('Pay/Profit', w.pay.text + (w.pay.reserve ? '\n' + w.pay.reserve + ' h in reserve' : ''));
+  if (w.proofing.length) add('Proofing', w.proofing.map(function (r) { return rowLabel(r) + ': ' + STATE[r.state] + (r.moved ? ' (moved)' : ''); }).join('\n'));
+  add('Prep', (w.prep.cap ? w.prep.cap + '. ' : '') + w.prep.step + (w.prep.reserve ? '\n' + w.prep.reserve + ' h of reserve' : ''));
+  add('Play', w.play);
+  if (w.surfaced.length) add('Surfaced', w.surfaced.join('\n'));
+  if (!sample) add('Time', fmt(totalSecs(w)) + ' of ' + (w.mode === 'full' ? '15:00' : '3:00'));
+  return h('dl', { 'class': 'w' }, items);
+}
+function historyView() {
+  var out = [h('h2', { text: 'History' })];
+  if (!S.weeks.length) { out.push(p('No saved weeks yet. Run a box and save it.', 'mut')); return out; }
+  var last8 = S.weeks.slice(-8);
+  out.push(h('section', { 'class': 'card' }, [h('h3', { text: 'The direction, oldest to newest' }), h('div', { 'class': 'strip' }, last8.map(function (w) { return h('span', null, [w.date.slice(5) + ' ', badge(w.vector)]); })), p('Read the direction, not the day.', 'mut')]));
+  S.weeks.slice().reverse().forEach(function (w) {
+    out.push(h('details', { 'class': 'card' }, [
+      h('summary', null, [w.date + ' · ' + (w.mode === 'full' ? 'full box' : 'minimum') + ' · ', badge(w.vector)]),
+      weekDetail(w, false),
+      confirmBtn('Delete this week', 'Really delete this week?', 'del' + w.date, function () {
+        S.weeks = S.weeks.filter(function (x) { return x.date !== w.date; });
+        S.settings.exported = Math.min(S.settings.exported, S.weeks.length);
+        persist(); render(true);
+      })
+    ]));
+  });
+  return out;
+}
+function sampleView() {
+  return [h('h2', { text: 'A sample week' }), p('Illustrative, not a real case. From Workbook 17.2 of The Climb or the Slide. Read-only.', 'mut'), h('section', { 'class': 'card' }, [h('p', null, [h('strong', { text: 'Vector: ' }), badge(SAMPLE.vector)]), weekDetail(SAMPLE, true)]), p('Five P’s, fifteen minutes, once a week.', 'mut')];
+}
+
+/* ---------- capabilities: the one-time Sensing Loop setup (Workbook 3.1, Steps 1 to 3) ---------- */
+var SAMPLECAP = cleanCap({
+  id: 'c1', name: 'Career hygiene', altitude: 'job',
+  pattern: 'Regression-test writing is now drafted by tools. The invariant: writing the checks is repriced; deciding what is worth checking is not.',
+  runon: 'Writing regression cases. Triaging flaky tests. The weekly status report. Exploratory sessions.',
+  scarce: 'Knowing which failures matter to the customer. The product owner’s trust. Pattern recognition on release risk.',
+  moves: ['Draft one feature’s regression cases with a tool, and review the diff.', 'Write down last quarter’s release-risk calls.', 'Ask a product owner what she wishes someone tested.'],
+  habit: 'One written risk call a week, with the reason.', created: '2026-01-02', theme: 'career'
+}, 0, 4);
+function nextCapId() { var m = 0; S.caps.forEach(function (c) { m = Math.max(m, parseInt(c.id.slice(1), 10)); }); return 'c' + (m + 1); }
+function capCard(c, example) {
+  var kids = [
+    h('div', { 'class': 'row sp' }, [h('h3', { text: c.name }), h('span', { 'class': 'badge', text: ALT[c.altitude] + ' altitude' + (c.theme ? ' · ' + THEMES[c.theme] : '') })]),
+    h('ul', { 'class': 'plain' }, practicesOf(c).map(function (pr) { return h('li', null, [h('span', null, [h('strong', { text: pr.label + ': ' }), pr.text])]); })),
+    h('details', null, [h('summary', { text: 'Setup, Steps 1 to 3' }), setupBody(c)])
+  ];
+  if (!example) kids.push(h('div', { 'class': 'row' }, [
+    btn('Edit', function () { ui.cf = { id: c.id, name: c.name, altitude: c.altitude, pattern: c.pattern, runon: c.runon, scarce: c.scarce, habit: c.habit, moves: c.moves.slice(), theme: c.theme }; ui.cfErr = ''; render(true); }, 'sm'),
+    confirmBtn('Delete', 'Really delete? History stays', 'delcap' + c.id, function () { S.caps = S.caps.filter(function (x) { return x.id !== c.id; }); persist(); render(true); })
+  ]));
+  return h('section', { 'class': 'card' }, kids);
+}
+function capsView() {
+  if (ui.cf) return capForm();
+  var out = [h('h2', { text: 'Capabilities to keep' })];
+  out.push(ps('A capability is something you need to keep: your security hygiene, your financial hygiene, your career.'));
+  out.push(ps('Set each one up once, outside the box. About fifteen minutes. Then Proofing takes one glance a week.', 'mut'));
+  out.push(h('div', { 'class': 'row' }, [
+    btn('Set up a capability', function () { ui.cf = { id: '', name: '', altitude: 'job', pattern: '', runon: '', scarce: '', habit: '', moves: ['', '', ''], theme: '' }; ui.cfErr = ''; render(true); }, 'pri'),
+    btn(ui.ex ? 'Hide the example' : 'See an example setup', function () { ui.ex = !ui.ex; render(); }, null, { 'aria-pressed': ui.ex ? 'true' : 'false' })
+  ]));
+  if (ui.ex) {
+    out.push(p('Illustrative, not a real case.', 'mut'));
+    out.push(capCard(SAMPLECAP, true));
+  }
+  if (!S.caps.length) out.push(p('Nothing set up yet.', 'mut'));
+  S.caps.forEach(function (c) { out.push(capCard(c, false)); });
+  return out;
+}
+function capForm() {
+  var f = ui.cf, out = [h('h2', { text: f.id ? 'Edit capability' : 'Set up a capability' })];
+  out.push(ps('This is Workbook 3.1, Steps 1 to 3. Step 4 happens each Friday in Proofing.', 'mut'));
+  out.push(textIn('Capability', 'Something you need to keep: your security hygiene, your financial hygiene, your career.', f, 'name'));
+  var alt = h('div', { 'class': 'row', role: 'group', 'aria-label': 'Altitude' }, Object.keys(ALT).map(function (k) {
+    var b = h('button', { type: 'button', 'class': 'sm', 'aria-pressed': f.altitude === k ? 'true' : 'false', onclick: function () {
+      f.altitude = k; Array.prototype.forEach.call(alt.children, function (c) { c.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true');
+    }, text: ALT[k] });
+    return b;
+  }));
+  out.push(h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Altitude' }), hintEl('Run each at the altitude you can actually touch: your job, your market, or your enterprise.'), alt]));
+  out.push(selIn('Theme (used only if you share with a team)', f, 'theme', THEMES, 'No theme: never shared', function () {}));
+  out.push(field('Step 1 · See the pattern', 'Take one real disruption: a role that got automated, a team that got restructured, a skill that stopped being asked for. Do not react to it. What was the invariant underneath, the thing that would have been true regardless of which company or which tool?', f, 'pattern', 4));
+  out.push(field('Step 2 · What you run on', 'The tasks, tools, and routines that make up your actual week. Be specific and unflattering.', f, 'runon', 3));
+  out.push(field('Step 2 · What is scarce', 'The judgment, context, relationships, and hard-won pattern recognition that would be genuinely difficult to reconstitute without you.', f, 'scarce', 3));
+  out.push(h('p', { 'class': 'mut', text: 'The gap between those two lists is your exposure.' }));
+  out.push(textIn('Step 3 · The one habit', 'A recurring habit you will still be doing in a year. It is the only part that compounds. Choose it first.', f, 'habit'));
+  [0, 1, 2].forEach(function (i) { out.push(textIn('Step 3 · Move ' + (i + 1), i === 0 ? 'Three immediate moves you can complete inside a month.' : null, f.moves, i)); });
+  if (ui.cfErr) out.push(h('div', { 'class': 'note warn', role: 'alert', text: ui.cfErr }));
+  out.push(h('div', { 'class': 'row' }, [btn('Save capability', saveCap, 'pri'), btn('Cancel', function () { ui.cf = null; render(true); })]));
+  return out;
+}
+function saveCap() {
+  var f = ui.cf, t = function (x, n) { return String(x).trim().slice(0, n); };
+  if (!t(f.name, 200)) { ui.cfErr = 'Give it a name first.'; render(); return; }
+  if (!f.id && S.caps.length >= MAXCAPS) { ui.cfErr = 'Twelve capabilities is the limit. Delete one first.'; render(); return; }
+  var old = f.id ? capById(f.id) : null;
+  var c = cleanCap({
+    id: f.id || nextCapId(), name: t(f.name, 200), altitude: f.altitude, pattern: t(f.pattern, MAXTXT), runon: t(f.runon, MAXTXT), scarce: t(f.scarce, MAXTXT),
+    moves: f.moves.map(function (m) { return t(m, 300); }), habit: t(f.habit, 300), created: old ? old.created : today(), theme: f.theme || ''
+  }, 0, 4);
+  S.caps = S.caps.filter(function (x) { return x.id !== c.id; }).concat([c]).sort(function (a, b) { return parseInt(a.id.slice(1), 10) - parseInt(b.id.slice(1), 10); });
+  var ok = persist();
+  ui.cf = null; render(true);
+  var main = root.querySelector('main');
+  main.insertBefore(h('div', { 'class': 'note' + (ok ? '' : ' warn'), role: 'status', text: ok ? 'Saved. It will appear in Proofing next Friday.' : 'Could not save in this browser. Export a copy now.' }), main.children[2] || null);
+}
+
+/* ---------- Cab4Cap4 Part 2 planner: capability for capacity ----------
+   Profession KSA - what machines now do (by evidence) + what machines create for people = opportunities.
+   The opportunity adjacent to you that passes the gates = your next capability. */
+var VECT = { ai: 'AI', agent: 'Agent', robotics: 'Robotics', sensing: 'Sensing', quantum: 'Quantum' };
+var GRADE = { lab: 'Lab or roadmap', advertised: 'Advertised', piloted: 'Piloted', deployed: 'Deployed' };
+var FRONT = { held: 'Held', contested: 'Contested', ceded: 'Ceded' };
+var HORIZ = { now: 'Now', near: 'Near', far: 'Far' };
+var ROLE = { teach: 'Teach', steer: 'Steer', tend: 'Tend', test: 'Test', translate: 'Translate', own: 'Own' };
+var ROLEHINT = { teach: 'show or correct the machine', steer: 'guide it when it is unsure', tend: 'install, maintain, repair', test: 'verify and red-team it', translate: 'fit it to a real customer', own: 'answer for the outcome' };
+var BUCKETS = [
+  ['B1 Physical', [['S01', 'Feel'], ['S02', 'Rest'], ['S03', 'Nourish'], ['S04', 'Move'], ['S05', 'Sense']]],
+  ['B2 Cognitive', [['S06', 'Learn'], ['S07', 'Remember'], ['S08', 'Imagine'], ['S09', 'Focus'], ['S10a', 'Think'], ['S10b', 'Discerning']]],
+  ['B3 Emotional-Social', [['S11', 'Regulating'], ['S12', 'Mirror'], ['S13', 'Belong'], ['S14', 'Express'], ['S15', 'Resolving']]],
+  ['B4 Motivational-Volitional', [['S16', 'Want'], ['S17', 'Orienting'], ['S18a', 'Rebounding'], ['S18b', 'Forbearing'], ['S18c', 'Perspective'], ['S19', 'Will'], ['S20', 'Agency']]],
+  ['B5 Identity-Meaning', [['S21', 'Become'], ['S22', 'Self-aligned'], ['S23', 'Matter'], ['S24', 'Narrate'], ['S25', 'Bequeath']]],
+  ['B6 Transcendence', [['S26', 'Nurture'], ['S27', 'Release'], ['S28', 'Flow'], ['S29', 'Revere']]]
+];
+var SIG = {};
+BUCKETS.forEach(function (b) { b[1].forEach(function (s) { SIG[s[0]] = s[1]; }); });
+var PROWK = ['id', 'ksa', 'task', 'machine', 'vector', 'grade', 'frontier', 'horizon', 'role', 'led', 'held', 'signals', 'mine'];
+var CANDK = ['row', 'path', 'adjacent', 'apply90', 'pull', 'reserve', 'durable', 'passon'];
+var TARGK = ['text', 'path', 'role', 'frontier', 'signals', 'from', 'machine', 'step', 'hours', 'chosen'];
+function emptyPlan() { return { profession: '', starter: '', asOf: '', rows: [], cands: [], target: null }; }
+function okEnum(v, map, blank) { return typeof v === 'string' && ((blank && v === '') || has(map, v)); }
+function okSigs(a) {
+  if (!Array.isArray(a) || a.length > 8) return false;
+  var seen = {};
+  return a.every(function (x) { var ok = typeof x === 'string' && has(SIG, x) && !has(seen, x); seen[x] = 1; return ok; });
+}
+function cleanPRow(r, i) {
+  var P = 'Planner row ' + (i + 1) + ': ';
+  if (!isObj(r) || !keysOk(r, PROWK)) fail(P + 'unexpected or missing fields');
+  if (typeof r.id !== 'string' || !/^r\d{1,6}$/.test(r.id)) fail(P + 'bad id');
+  if (['K', 'S', 'A'].indexOf(r.ksa) < 0) fail(P + 'bad KSA');
+  if (!str(r.task, 200) || !str(r.machine, 300) || !str(r.led, 300) || !str(r.held, 300)) fail(P + 'bad text');
+  if (!okEnum(r.vector, VECT, true) || !okEnum(r.grade, GRADE, true) || !okEnum(r.frontier, FRONT) || !okEnum(r.horizon, HORIZ) || !okEnum(r.role, ROLE, true)) fail(P + 'bad choice');
+  if (!okSigs(r.signals) || typeof r.mine !== 'boolean') fail(P + 'bad signals');
+  return { id: r.id, ksa: r.ksa, task: r.task, machine: r.machine, vector: r.vector, grade: r.grade, frontier: r.frontier, horizon: r.horizon, role: r.role, led: r.led, held: r.held, signals: r.signals.slice(), mine: r.mine };
+}
+function cleanPlan(pl) {
+  if (!isObj(pl) || !keysOk(pl, ['profession', 'starter', 'asOf', 'rows', 'cands', 'target'])) fail('Bad planner.');
+  if (!str(pl.profession, 200) || !str(pl.starter, 20) || (pl.starter !== '' && !STARTERS.some(function (s) { return s.id === pl.starter; }))) fail('Bad planner profession.');
+  if (!(pl.asOf === '' || validDate(pl.asOf))) fail('Bad planner date.');
+  if (!Array.isArray(pl.rows) || pl.rows.length > 40) fail('Bad planner rows.');
+  var ids = {}, rows = pl.rows.map(function (r, i) { var c = cleanPRow(r, i); if (has(ids, c.id)) fail('Two planner rows share an id.'); ids[c.id] = 1; return c; });
+  if (!Array.isArray(pl.cands) || pl.cands.length > 12) fail('Bad candidate list.');
+  var cseen = {}, cands = pl.cands.map(function (c) {
+    if (!isObj(c) || !keysOk(c, CANDK) || typeof c.row !== 'string' || !has(ids, c.row) || (c.path !== 'led' && c.path !== 'held')) fail('Bad candidate.');
+    if (!['adjacent', 'apply90', 'pull', 'reserve', 'durable', 'passon'].every(function (k) { return typeof c[k] === 'boolean'; })) fail('Bad candidate.');
+    if (has(cseen, c.row + c.path)) fail('Duplicate candidate.');
+    cseen[c.row + c.path] = 1;
+    return { row: c.row, path: c.path, adjacent: c.adjacent, apply90: c.apply90, pull: c.pull, reserve: c.reserve, durable: c.durable, passon: c.passon };
+  });
+  var t = null;
+  if (pl.target !== null) {
+    var g = pl.target;
+    if (!isObj(g) || !keysOk(g, TARGK) || !str(g.text, 300) || !g.text.trim() || (g.path !== 'led' && g.path !== 'held') || !okEnum(g.role, ROLE, true) || !okEnum(g.frontier, FRONT) || !okSigs(g.signals) || !str(g.from, 200) || !str(g.machine, 300) || !str(g.step, 300) || !num(g.hours, 0, 168) || !validDate(g.chosen)) fail('Bad next-capability card.');
+    t = { text: g.text, path: g.path, role: g.role, frontier: g.frontier, signals: g.signals.slice(), from: g.from, machine: g.machine, step: g.step, hours: g.hours, chosen: g.chosen };
+  }
+  return { profession: pl.profession, starter: pl.starter, asOf: pl.asOf, rows: rows, cands: cands, target: t };
+}
+
+/* Starter sheets: illustrative, from public builder claims and job ads, as of 2026-10-11. Not a verdict on any job. */
+var STARTER_ASOF = '2026-10-11';
+function R(ksa, task, machine, vector, grade, frontier, horizon, role, led, held, signals) {
+  return { ksa: ksa, task: task, machine: machine, vector: vector, grade: grade, frontier: frontier, horizon: horizon, role: role, led: led, held: held, signals: signals };
+}
+var STARTERS = [
+  { id: 'cyber', name: 'Cybersecurity analyst', rows: [
+    R('K', 'Threat intelligence and vulnerability knowledge', 'AI synthesizes threat feeds, CVEs and ATT&CK mappings.', 'ai', 'deployed', 'contested', 'now', 'test', 'Know how your AI agents fail, and where.', 'Your environment’s normal. Your business’s risk appetite.', ['S07', 'S10b', 'S18c']),
+    R('S', 'Alert triage', 'Agents triage tier-1 alerts. Surveyed teams still review verdicts; none grant full autonomy.', 'agent', 'piloted', 'contested', 'now', 'steer', 'Set autonomy per workflow, review verdicts, approve containment, and measure how often the agents agree with your analysts.', 'Incident command under pressure.', ['S20', 'S11', 'S10a']),
+    R('S', 'Finding and fixing vulnerabilities', 'AI systems find and patch bugs (DARPA AIxCC 2025; XBOW topped a HackerOne leaderboard with human review before submission).', 'agent', 'piloted', 'contested', 'now', 'test', 'Red-team the AI systems themselves, and validate their patches.', 'Imagining the attacker nobody has seen yet.', ['S08', 'S10a']),
+    R('A', 'Pattern recognition at scale', 'Pattern matching across huge volumes of telemetry.', 'ai', 'deployed', 'ceded', 'now', 'test', 'Judge the multi-stage campaigns the agents miss.', 'Ethical and legal boundary judgment.', ['S22', 'S19', 'S18b']),
+    R('K', 'Cryptography in use', 'Future quantum computers may break today’s public-key cryptography: harvest now, decrypt later.', 'quantum', 'lab', 'held', 'now', 'own', 'Lead the post-quantum migration: crypto inventory, priorities, and a plan to NIST’s proposed 2030 and 2035 dates.', 'Deciding which data must stay secret for decades.', ['S17', 'S10b', 'S25'])
+  ] },
+  { id: 'plumbing', name: 'Plumbing and HVAC technician', rows: [
+    R('K', 'Intake, booking, codes and estimates', 'AI agents answer calls 24/7 and book straight to the dispatch board.', 'agent', 'deployed', 'contested', 'now', 'steer', 'Read connected-equipment data and predictive alerts.', 'Heat pumps, low-GWP refrigerants and multi-trade work. How old buildings were really built.', ['S06', 'S07']),
+    R('S', 'Inspection and leak finding', 'Pipe and sewer crawlers; acoustic and pressure sensors.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Commission and diagnose connected systems, on site and remotely.', 'Confined-space repair, soldering, feeling the thread seat. No builder claims these.', ['S04', 'S05', 'S01']),
+    R('A', 'Emergencies and customer trust', 'AI routes “water leak” and “gas smell” calls to the on-call dispatcher.', 'agent', 'deployed', 'contested', 'now', 'own', 'Take the escalated emergency and own the outcome.', 'Being trusted inside a home. Calm in a flood.', ['S12', 'S11', 'S26', 'S29'])
+  ] },
+  { id: 'nursing', name: 'Nurse', rows: [
+    R('K', 'Documentation and charting', 'Ambient AI drafts flowsheet documentation for the nurse to review.', 'ai', 'piloted', 'contested', 'now', 'test', 'Catch what the summary missed before you sign.', 'Clinical judgment. Knowing this patient.', ['S10b', 'S07']),
+    R('S', 'Patient education and follow-up calls', 'Voice agents handle education, admission guidance and medication-adherence calls.', 'agent', 'piloted', 'contested', 'now', 'steer', 'Decide when to launch the AI call, and when to step in.', 'Teaching a frightened family face to face.', ['S14', 'S12']),
+    R('A', 'Bedside care', 'No builder in this research claims bedside care.', '', '', 'held', 'now', 'teach', 'Train clinical AI as a credentialed expert.', 'Touch, presence, reading a patient.', ['S01', 'S26', 'S11']),
+    R('K', 'New diagnostics', 'Quantum sensors in wearable brain scanners are being piloted; entanglement PET is a research roadmap.', 'quantum', 'piloted', 'held', 'near', 'translate', 'Explain new quantum diagnostics to patients and families.', 'Interpreting a result for this patient.', ['S05', 'S14'])
+  ] },
+  { id: 'farming', name: 'Farmer', rows: [
+    R('K', 'Field mapping, rates and yield data', 'AI turns field data into maps and application rates.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Set up fields and tool settings for autonomous runs.', 'The agronomy of this ground and this weather.', ['S05', 'S17']),
+    R('S', 'Tillage and spraying', 'Autonomous tillage (Midwest corn and soy fields); GPS-guided spray drones.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Fly certified spray drones (FAA Part 107); install and maintain autonomy kits.', 'Judging when not to run.', ['S04', 'S10b']),
+    R('A', 'Watching the field', 'Cameras and sensors watch the machine and the crop.', 'sensing', 'deployed', 'contested', 'now', 'steer', 'Monitor by phone and clear the exceptions.', 'Stewardship of the land.', ['S29', 'S25'])
+  ] },
+  { id: 'logistics', name: 'Logistics and warehouse', rows: [
+    R('K', 'Routing and dispatch', 'AI plans routes and dispatch.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Answer driverless vehicles that ask for guidance (fleet response).', 'Local knowledge: the dock, the gate, the customer.', ['S07', 'S10b']),
+    R('S', 'Driving and stowing', 'Driverless trucks on Texas routes; touch-sensing robots stowing most items at one warehouse.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Fuel, maintain and repair robot fleets (mechatronics).', 'The last-mile exception.', ['S04', 'S05']),
+    R('A', 'Continuous operation', 'Robots run up to 20 hours a day.', 'robotics', 'piloted', 'contested', 'now', 'teach', 'Teach robots by demonstration.', 'Safety judgment around people.', ['S11', 'S22'])
+  ] },
+  { id: 'software', name: 'Software and QA', rows: [
+    R('K', 'Code and test writing', 'Coding agents draft code and tests; developers report output that is “almost right, but not quite”.', 'agent', 'deployed', 'contested', 'now', 'test', 'Know where the tools are almost right, and catch it.', 'What the customer actually needs.', ['S10a', 'S12']),
+    R('S', 'Checks, patches and releases', 'Agents write checks and patch known bugs.', 'agent', 'piloted', 'contested', 'now', 'own', 'Decide what is worth checking. Own the release-risk call.', 'Architecture and its trade-offs.', ['S10b', 'S18c']),
+    R('A', 'Speed of output', 'Machines produce code faster than people.', 'agent', 'deployed', 'ceded', 'now', 'translate', 'Fit AI into a customer’s real systems (forward-deployed work).', 'Explaining a decision to the people who must live with it.', ['S14', 'S13'])
+  ] },
+  { id: 'service', name: 'Customer service', rows: [
+    R('K', 'Policy and account lookup', 'AI looks up policies and accounts.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Write the escalation rules.', 'Knowing when the policy is wrong.', ['S10b']),
+    R('S', 'Routine chats and calls', 'AI assistants handle routine chats; at least one large firm went back to hiring people for quality.', 'agent', 'deployed', 'contested', 'now', 'own', 'Take the escalated, complex case.', 'Repairing a broken relationship.', ['S12', 'S11']),
+    R('A', 'Round-the-clock volume', 'Machines answer at any hour, at any volume.', 'agent', 'deployed', 'ceded', 'now', 'test', 'Review the quality of AI conversations.', 'Care under pressure.', ['S26', 'S22'])
+  ] }
+];
+STARTERS.forEach(function (s) { s.rows.forEach(function (r, i) { var t = {}; Object.keys(r).forEach(function (k) { t[k] = r[k]; }); t.id = 'r' + (i + 1); t.mine = false; cleanPRow(t, i); }); });
+
+function blankRow(id) { return { id: id, ksa: 'K', task: '', machine: '', vector: '', grade: '', frontier: 'held', horizon: 'now', role: '', led: '', held: '', signals: [], mine: false }; }
+function nextRowId() { var m = 0; S.plan.rows.forEach(function (r) { m = Math.max(m, parseInt(r.id.slice(1), 10)); }); return 'r' + (m + 1); }
+function rowById(id) { for (var i = 0; i < S.plan.rows.length; i++) if (S.plan.rows[i].id === id) return S.plan.rows[i]; return null; }
+function loadStarter(st) {
+  S.plan.rows = st ? st.rows.map(function (r, i) { var t = {}; Object.keys(r).forEach(function (k) { t[k] = Array.isArray(r[k]) ? r[k].slice() : r[k]; }); t.id = 'r' + (i + 1); t.mine = false; return t; }) : [blankRow('r1')];
+  S.plan.profession = st ? st.name : '';
+  S.plan.starter = st ? st.id : '';
+  S.plan.asOf = st ? STARTER_ASOF : '';
+  S.plan.cands = [];
+  persist();
+}
+function sigNames(a) { return a.map(function (c) { return c + ' ' + SIG[c]; }).join(', '); }
+function candText(c) { var r = rowById(c.row); return r ? (c.path === 'led' ? r.led : r.held) : ''; }
+function candEval(c) {
+  var gates = c.adjacent && c.apply90, score = (c.pull ? 1 : 0) + (c.reserve ? 1 : 0) + (c.durable ? 1 : 0);
+  return { gates: gates, score: score };
+}
+function selIn(label, obj, key, map, blankLabel, onset) {
+  var s = h('select', { onchange: function () { obj[key] = s.value; onset(); } });
+  if (blankLabel) s.appendChild(h('option', { value: '', text: blankLabel }));
+  Object.keys(map).forEach(function (k) { s.appendChild(h('option', { value: k, text: map[k] })); });
+  s.value = obj[key];
+  return h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: label }), s]);
+}
+function planIn(label, obj, key, max, onset, area) {
+  var e = h(area ? 'textarea' : 'input', area ? { rows: 2, maxlength: max, value: obj[key] } : { type: 'text', maxlength: max, value: obj[key] });
+  e.addEventListener('input', function () { obj[key] = e.value; onset(false); });
+  e.addEventListener('change', function () { onset(true); });
+  return h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: label }), e]);
+}
+function fBadge(f) { return h('span', { 'class': 'badge fr-' + f, text: FRONT[f] }); }
+function rowCard(r, onCands) {
+  var refs = {};
+  function lineEl(label, key) { refs[key] = h('span', null, null); return h('p', { 'class': 'pl' }, [h('strong', { text: label + ' ' }), refs[key]]); }
+  var head = h('div', { 'class': 'row sp' }, [h('div', null, [refs.k = h('span', { 'class': 'badge' }), ' ', refs.task = h('strong')]), refs.fr = h('span')]);
+  var body = [lineEl('Machines now:', 'machine'), lineEl('Lead the machines:', 'led'), lineEl('Go deeper:', 'held'), lineEl('HUMS:', 'sig')];
+  function refresh() {
+    refs.k.textContent = r.ksa;
+    refs.task.textContent = r.task || '(name this task)';
+    while (refs.fr.firstChild) refs.fr.removeChild(refs.fr.firstChild);
+    refs.fr.appendChild(fBadge(r.frontier)); refs.fr.appendChild(document.createTextNode(' ' + HORIZ[r.horizon]));
+    refs.machine.textContent = (r.machine || '—') + (r.vector || r.grade ? ' (' + [r.vector ? VECT[r.vector] : '', r.grade ? GRADE[r.grade] : ''].filter(Boolean).join(' · ') + ')' : '');
+    refs.led.textContent = (r.led || '—') + (r.role ? ' (' + ROLE[r.role] + ': ' + ROLEHINT[r.role] + ')' : '');
+    refs.held.textContent = r.held || '—';
+    refs.sig.textContent = r.signals.length ? sigNames(r.signals) : '—';
+  }
+  function set(save) { refresh(); if (save) persist(); }
+  var mine = h('label', { 'class': 'row' }, [h('input', { type: 'checkbox', checked: r.mine ? true : null, onchange: function (e) { r.mine = e.target.checked; persist(); } }), h('span', { text: 'I do this now' })]);
+  var acts = h('div', { 'class': 'row' }, [
+    btn('Consider: lead the machines', function () { onCands(r, 'led'); }, 'sm'),
+    btn('Consider: go deeper', function () { onCands(r, 'held'); }, 'sm')
+  ]);
+  var ksaSel = h('div', { 'class': 'row', role: 'group', 'aria-label': 'Knowledge, skill or ability' }, ['K', 'S', 'A'].map(function (k) {
+    var b = btn(k, function () { r.ksa = k; Array.prototype.forEach.call(ksaSel.children, function (c) { c.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); set(true); }, 'sm', { 'aria-pressed': r.ksa === k ? 'true' : 'false' });
+    return b;
+  }));
+  var frSel = h('div', { 'class': 'row', role: 'group', 'aria-label': 'Frontier' }, Object.keys(FRONT).map(function (k) {
+    var b = btn(FRONT[k], function () { r.frontier = k; Array.prototype.forEach.call(frSel.children, function (c) { c.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); set(true); }, 'sm', { 'aria-pressed': r.frontier === k ? 'true' : 'false' });
+    return b;
+  }));
+  var sigBox = h('div', { 'class': 'sig' }, BUCKETS.map(function (bk) {
+    return h('fieldset', null, [h('legend', { text: bk[0] })].concat(bk[1].map(function (s) {
+      var cb = h('input', { type: 'checkbox', checked: r.signals.indexOf(s[0]) >= 0 ? true : null, onchange: function () {
+        var i = r.signals.indexOf(s[0]);
+        if (cb.checked && i < 0) { if (r.signals.length >= 8) { cb.checked = false; return; } r.signals.push(s[0]); }
+        if (!cb.checked && i >= 0) r.signals.splice(i, 1);
+        set(true);
+      } });
+      return h('label', null, [cb, ' ' + s[0] + ' ' + s[1]]);
+    })));
+  }));
+  var edit = h('details', null, [h('summary', { text: 'Edit this row' }),
+    h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Knowledge, skill or ability' }), ksaSel]),
+    planIn('Task', r, 'task', 200, set),
+    planIn('What machines now do', r, 'machine', 300, set, true),
+    selIn('Machine vector', r, 'vector', VECT, 'None', function () { set(true); }),
+    selIn('Evidence grade', r, 'grade', GRADE, 'No claim found', function () { set(true); }),
+    h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Frontier' }), hintEl('No credible claim, or lab only: usually Held. Advertised or piloted, with a person still in the loop: Contested. Deployed with no person in the loop: Ceded.'), frSel]),
+    selIn('Horizon', r, 'horizon', HORIZ, null, function () { set(true); }),
+    selIn('Human-led role', r, 'role', ROLE, 'None', function () { set(true); }),
+    planIn('Lead the machines: the opportunity', r, 'led', 300, set, true),
+    planIn('Go deeper: the human-held work', r, 'held', 300, set, true),
+    h('details', null, [h('summary', { text: 'HUMS v2 signals this exercises (up to 8)' }), sigBox]),
+    armBtn('Remove this row', 'Really remove this row?', function () {
+      S.plan.rows = S.plan.rows.filter(function (x) { return x.id !== r.id; });
+      S.plan.cands = S.plan.cands.filter(function (c) { return c.row !== r.id; });
+      persist(); render();
+    })
+  ]);
+  refresh();
+  return h('div', { 'class': 'cap' }, [head].concat(body, [mine, acts, edit]));
+}
+function planView() {
+  var pl = S.plan, out = [h('h2', { text: 'Next capability to build' })];
+  out.push(ps('Capacity for capability. The hours Pay/Profit frees need a capability to become.'));
+  out.push(h('div', { 'class': 'eq', 'aria-label': 'The equation' }, [
+    'Your profession’s KSA', h('br'),
+    '− what machines now do, by evidence', h('br'),
+    '+ what machines create for people to do', h('br'),
+    '= your opportunities', h('br'),
+    '→ the one next to you that passes the gates', h('br'),
+    '= your next capability'
+  ]));
+  out.push(ps('KSA means knowledge, skills and abilities. Do this once a quarter, outside the box. About fifteen minutes.', 'mut'));
+  out.push(h('div', { 'class': 'note' }, [ps('For planning your own next capability. Not for judging anyone else’s job, and not for hiring or performance decisions.')]));
+
+  var rowsWrap = h('section', { 'class': 'card' }), candWrap = h('section', { 'class': 'card' }), cardWrap = h('section', { 'class': 'card' });
+  function addCand(r, path) {
+    var txt = path === 'led' ? r.led : r.held;
+    if (!txt.trim()) { ui.planMsg = 'That row has no ' + (path === 'led' ? '“lead the machines”' : '“go deeper”') + ' text yet. Edit the row first.'; drawCands(); return; }
+    if (pl.cands.some(function (c) { return c.row === r.id && c.path === path; })) { ui.planMsg = 'Already on your list.'; drawCands(); return; }
+    if (pl.cands.length >= 12) { ui.planMsg = 'Twelve candidates is the limit. Remove one first.'; drawCands(); return; }
+    pl.cands.push({ row: r.id, path: path, adjacent: r.mine, apply90: false, pull: false, reserve: false, durable: false, passon: false });
+    ui.planMsg = 'Added to step 2.'; persist(); drawCands(); say('Added to your candidates.');
+  }
+  function drawRows() {
+    while (rowsWrap.firstChild) rowsWrap.removeChild(rowsWrap.firstChild);
+    rowsWrap.appendChild(h('h3', { text: '1 · Your profession sheet' }));
+    if (!pl.rows.length || ui.pickStarter) {
+      rowsWrap.appendChild(ps('Start from a profession close to yours, then make it yours: edit, add and remove rows until it matches your own week.'));
+      rowsWrap.appendChild(h('div', { 'class': 'row' }, STARTERS.map(function (st) {
+        return btn(st.name, function () { ui.pickStarter = false; loadStarter(st); render(); }, 'sm');
+      }).concat([btn('Start blank', function () { ui.pickStarter = false; loadStarter(null); render(); }, 'sm')])));
+      rowsWrap.appendChild(ps('Starter sheets are illustrative, from public claims by AI, robotics and automation builders and from their job ads, as of 11 October 2026. They are not a verdict on any job. Recheck them every quarter.', 'mut'));
+      if (pl.rows.length) rowsWrap.appendChild(btn('Keep my current sheet', function () { ui.pickStarter = false; drawRows(); }, 'sm'));
+      return;
+    }
+    rowsWrap.appendChild(planIn('Profession', pl, 'profession', 200, function (save) { if (save) persist(); }));
+    if (pl.asOf) rowsWrap.appendChild(p('Starter as of ' + pl.asOf + '. Illustrative. Recheck every quarter.', 'mut'));
+    pl.rows.forEach(function (r) { rowsWrap.appendChild(rowCard(r, addCand)); });
+    rowsWrap.appendChild(h('div', { 'class': 'row' }, [
+      pl.rows.length < 40 ? btn('Add a row', function () { pl.rows.push(blankRow(nextRowId())); persist(); drawRows(); }, 'sm') : null,
+      armBtn('Load a different starter', 'Replace this sheet and its candidates?', function () { ui.pickStarter = true; drawRows(); })
+    ]));
+  }
+  function gateBtn(c, key, label) {
+    return btn((c[key] ? '✓ ' : '') + label, function () { c[key] = !c[key]; persist(); drawCands(); }, 'sm', { 'aria-pressed': c[key] ? 'true' : 'false' });
+  }
+  function drawCands() {
+    while (candWrap.firstChild) candWrap.removeChild(candWrap.firstChild);
+    candWrap.appendChild(h('h3', { text: '2 · Weigh your candidates' }));
+    if (ui.planMsg) { candWrap.appendChild(h('div', { 'class': 'note', role: 'status', text: ui.planMsg })); ui.planMsg = ''; }
+    if (!pl.cands.length) { candWrap.appendChild(ps('Nothing yet. In step 1, press “Consider” on an opportunity that could be yours.', 'mut')); return; }
+    candWrap.appendChild(ps('Gates first: both must be yes. Then the score. Passing it on is a bonus, never required.', 'mut'));
+    var list = pl.cands.slice().sort(function (a, b) { var x = candEval(a), y = candEval(b); return (y.gates - x.gates) || (y.score - x.score); });
+    list.forEach(function (c) {
+      var r = rowById(c.row); if (!r) return;
+      var ev = candEval(c);
+      candWrap.appendChild(h('div', { 'class': 'cap' }, [
+        h('p', null, [h('strong', { text: candText(c) })]),
+        h('p', { 'class': 'mut', text: (c.path === 'led' ? 'Lead the machines' + (r.role ? ' · ' + ROLE[r.role] : '') : 'Go deeper') + ' · from: ' + (r.task || 'unnamed task') }),
+        h('p', null, [fBadge(r.frontier), ' ' + HORIZ[r.horizon] + (r.signals.length ? ' · ' + sigNames(r.signals) : '')]),
+        h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Gates' }), h('div', { 'class': 'row' }, [gateBtn(c, 'adjacent', 'Next to what I do now'), gateBtn(c, 'apply90', 'Real work to apply it within 90 days')])]),
+        h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Score' }), h('div', { 'class': 'row' }, [gateBtn(c, 'pull', 'Someone will pull it'), gateBtn(c, 'reserve', 'My reserve hours can fund it'), gateBtn(c, 'durable', 'Still matters in three years')])]),
+        h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Bonus' }), h('div', { 'class': 'row' }, [gateBtn(c, 'passon', 'I can pass it on')])]),
+        h('p', { 'class': ev.gates ? 'pass' : 'mut', text: ev.gates ? 'Passes the gates · score ' + ev.score + ' of 3' + (c.passon ? ' · plus pass-it-on' : '') : 'Not through the gates yet.' }),
+        h('div', { 'class': 'row' }, [
+          btn('Choose as my next capability', function () {
+            pl.target = { text: candText(c).slice(0, 300), path: c.path, role: c.path === 'led' ? r.role : '', frontier: r.frontier, signals: r.signals.slice(), from: r.task.slice(0, 200), machine: r.machine.slice(0, 300), step: '', hours: 0, chosen: today() };
+            persist(); drawCard(); say('Next capability chosen.');
+            if (cardWrap.scrollIntoView) cardWrap.scrollIntoView();
+          }, ev.gates ? 'pri sm' : 'sm'),
+          btn('Remove', function () { pl.cands = pl.cands.filter(function (x) { return x !== c; }); persist(); drawCands(); }, 'sm')
+        ])
+      ]));
+    });
+  }
+  function drawCard() {
+    while (cardWrap.firstChild) cardWrap.removeChild(cardWrap.firstChild);
+    cardWrap.appendChild(h('h3', { text: '3 · Your next-capability card' }));
+    var t = pl.target;
+    if (!t) { cardWrap.appendChild(ps('Choose one candidate in step 2. The card then waits for you in Prep every Friday.', 'mut')); return; }
+    cardWrap.appendChild(h('p', { 'class': 'big', text: t.text }));
+    var items = [];
+    function add(k, v) { if (v) { items.push(h('dt', { text: k })); items.push(h('dd', { text: v })); } }
+    add('Kind', t.path === 'led' ? 'Lead the machines' + (t.role ? ': ' + ROLE[t.role] + ' (' + ROLEHINT[t.role] + ')' : '') : 'Go deeper: human-held work');
+    add('From the task', t.from); add('What machines now do', t.machine); add('Frontier', FRONT[t.frontier]);
+    add('HUMS v2 signals', t.signals.length ? sigNames(t.signals) : ''); add('Chosen', t.chosen);
+    cardWrap.appendChild(h('dl', { 'class': 'w' }, items));
+    cardWrap.appendChild(planIn('The smallest real first step', t, 'step', 300, function (save) { if (save) persist(); }, true));
+    var hrs = h('input', { type: 'number', min: '0', max: '168', step: '0.5', inputmode: 'decimal', value: String(t.hours) });
+    hrs.addEventListener('change', function () { t.hours = numOf(hrs.value); persist(); });
+    cardWrap.appendChild(h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Reserve hours a week it gets' }), hrs]));
+    cardWrap.appendChild(ps('It appears in Prep each Friday. When it becomes real, give it a Sensing Loop so you keep it.', 'mut'));
+    cardWrap.appendChild(h('div', { 'class': 'row' }, [
+      btn('Set up its Sensing Loop', function () {
+        ui = { cf: { id: '', name: t.text.slice(0, 200), altitude: 'job', pattern: t.machine ? 'What machines now do: ' + t.machine : '', runon: '', scarce: '', habit: '', moves: [t.step.slice(0, 300), '', ''], theme: 'career' }, cfErr: '' };
+        view = 'caps'; render(true);
+      }, 'sm'),
+      armBtn('Clear the card', 'Really clear it?', function () { pl.target = null; persist(); drawCard(); })
+    ]));
+  }
+  drawRows(); drawCands(); drawCard();
+  out.push(rowsWrap, candWrap, cardWrap);
+  return out;
+}
+function armBtn(label, armLabel, action) {
+  /* two-step confirm that changes in place, so open sections stay open */
+  var armed = false, b = btn(label, function () {
+    if (armed) { action(); return; }
+    armed = true; b.textContent = armLabel; b.className = 'danger arm sm';
+  }, 'danger sm');
+  return b;
+}
+function targetNote(withUse, D) {
+  var t = S.plan.target; if (!t) return null;
+  var kids = [h('p', { 'class': 'tag', text: 'From Part 2' }), h('p', null, [h('strong', { text: 'Your next capability: ' }), t.text]), t.step ? p('First step: ' + t.step, 'mut') : null];
+  if (withUse) kids.push(btn('Use it for this week’s Prep', function () {
+    D.prep.cap = t.text.slice(0, 200);
+    if (!D.prep.step.trim() && t.step) D.prep.step = t.step;
+    if (!String(D.prep.reserve).trim() && t.hours) D.prep.reserve = String(t.hours);
+    render();
+  }, 'sm'));
+  return h('div', { 'class': 'note p2' }, kids);
+}
+
+/* ---------- Fractal views: one packet shape at every altitude ----------
+   Self share (a member's chosen directions) -> Team view (Part 3) -> Leadership view (Part 4).
+   Raw shares are read in memory only and are never stored. Nothing shows below five contributors per read. */
+var MINSHARE = 5;
+var PERSONA = { self: 'Individual', convener: 'Team convener', leader: 'Leader' };
+var NOTICE = 'Not for performance, hiring or pay decisions about anyone.';
+var SHAREK = ['kind', 'schema', 'level', 'team', 'period', 'expires', 'nonce', 'notice', 'vectors', 'caps', 'card', 'reserve'];
+var SHAREK2 = SHAREK.concat(['member', 'seq']);
+var AGGK = ['kind', 'schema', 'level', 'team', 'period', 'expires', 'nonce', 'notice', 'meets', 'vectors', 'themes', 'roles', 'signals', 'reserve'];
+var AGGK2 = AGGK.concat(['seq']);
+var CODE_RE = /^[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}$/;
+var CODE_ABC = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+var VKEYS = ['climbing', 'plateau', 'sliding'];
+var ROLEK = Object.keys(ROLE).concat(['none']);
+function rnd(n) { var a = new Uint8Array(n); crypto.getRandomValues(a); return a; }
+function newCode() { var b = rnd(8), s = ''; for (var i = 0; i < 8; i++) { s += CODE_ABC[b[i] % 32]; if (i === 3) s += '-'; } return s; }
+function newNonce() { return Array.prototype.map.call(rnd(16), function (x) { return (x < 16 ? '0' : '') + x.toString(16); }).join(''); }
+function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+function parseYmd(s) { var q = s.split('-').map(Number); return new Date(q[0], q[1] - 1, q[2], 12); }
+function addDays(s, n) { var d = parseYmd(s); d.setDate(d.getDate() + n); return ymd(d); }
+function periodFor(type) {
+  var d = parseYmd(today());
+  if (type === 'week') d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  else d = new Date(d.getFullYear(), Math.floor(d.getMonth() / 3) * 3, 1, 12);
+  return { type: type, start: ymd(d) };
+}
+function expiryFor(per) { return addDays(per.start, per.type === 'week' ? 21 : 120); }
+function periodLabel(per) { return (per.type === 'week' ? 'Week of ' : 'Quarter from ') + per.start; }
+function samePeriod(a, b) { return a && b && a.type === b.type && a.start === b.start; }
+function okPeriod(q) { return isObj(q) && keysOk(q, ['type', 'start']) && (q.type === 'week' || q.type === 'quarter') && validDate(q.start); }
+function cnt(v, hi) { return typeof v === 'number' && isFinite(v) && Math.floor(v) === v && v >= 0 && v <= (hi || 1000000); }
+function count(a, x) { return a.filter(function (y) { return y === x; }).length; }
+function commonMeta(q) {
+  if (typeof q.team !== 'string' || !CODE_RE.test(q.team)) fail('bad code');
+  if (!okPeriod(q.period)) fail('bad period');
+  if (!validDate(q.expires)) fail('bad expiry');
+  if (typeof q.nonce !== 'string' || !/^[0-9a-f]{32}$/.test(q.nonce)) fail('bad id');
+  if (q.notice !== NOTICE) fail('the not-for-judging notice is missing');
+}
+function cleanShare(q) {
+  if (!isObj(q) || !(keysOk(q, SHAREK) || keysOk(q, SHAREK2))) fail('not a share file (unexpected or missing fields)');
+  if (q.kind !== 'cab4cap4-share' || q.level !== 'self' || q.schema !== (has(q, 'seq') ? 2 : 1)) fail('not a member\u2019s share');
+  if (q.schema === 2 && (typeof q.member !== 'string' || !/^[0-9a-f]{32}$/.test(q.member) || !cnt(q.seq) || q.seq < 1)) fail('bad member id');
+  commonMeta(q);
+  if (!Array.isArray(q.vectors) || q.vectors.length > 14) fail('bad vectors');
+  var wk = {}, vectors = q.vectors.map(function (v) {
+    if (!isObj(v) || !keysOk(v, ['week', 'vector']) || !validDate(v.week) || VKEYS.indexOf(v.vector) < 0 || has(wk, v.week)) fail('bad vectors');
+    wk[v.week] = 1; return { week: v.week, vector: v.vector };
+  });
+  if (!Array.isArray(q.caps) || q.caps.length > MAXCAPS) fail('bad capabilities');
+  var caps = q.caps.map(function (c) {
+    if (!isObj(c) || !keysOk(c, ['theme', 'state']) || typeof c.theme !== 'string' || !has(THEMES, c.theme) || typeof c.state !== 'string' || !has(STATE, c.state)) fail('bad capabilities');
+    return { theme: c.theme, state: c.state };
+  });
+  var card = null;
+  if (q.card !== null) {
+    var c = q.card;
+    if (!isObj(c) || !keysOk(c, ['role', 'frontier', 'signals']) || !okEnum(c.role, ROLE, true) || !okEnum(c.frontier, FRONT) || !okSigs(c.signals)) fail('bad card');
+    card = { role: c.role, frontier: c.frontier, signals: c.signals.slice() };
+  }
+  if (!(q.reserve === null || num(q.reserve, 0, 168))) fail('bad reserve');
+  return { kind: q.kind, schema: 2, level: 'self', team: q.team, period: { type: q.period.type, start: q.period.start }, expires: q.expires, nonce: q.nonce, notice: NOTICE, vectors: vectors, caps: caps, card: card, reserve: q.reserve, member: q.schema === 2 ? q.member : q.nonce, seq: q.schema === 2 ? q.seq : 1 };
+}
+function cleanAgg(q) {
+  if (!isObj(q) || !(keysOk(q, AGGK) || keysOk(q, AGGK2))) fail('not a team or leadership file (unexpected or missing fields)');
+  if (q.kind !== 'cab4cap4-share' || q.schema !== (has(q, 'seq') ? 2 : 1) || (q.level !== 'team' && q.level !== 'leadership')) fail('not a team or leadership file');
+  if (q.schema === 2 && (!cnt(q.seq) || q.seq < 1)) fail('bad version');
+  commonMeta(q);
+  if (q.meets !== true) fail('below the minimum');
+  if (!(q.vectors === null || (isObj(q.vectors) && keysOk(q.vectors, VKEYS) && VKEYS.every(function (k) { return cnt(q.vectors[k]); }) && VKEYS.reduce(function (n, k) { return n + q.vectors[k]; }, 0) >= MINSHARE))) fail('bad vectors');
+  if (!Array.isArray(q.themes) || q.themes.length > 7) fail('bad themes');
+  var seen = {}, themes = q.themes.map(function (t) {
+    if (!isObj(t) || !keysOk(t, ['theme', 'done', 'partial', 'notyet']) || typeof t.theme !== 'string' || !has(THEMES, t.theme) || has(seen, t.theme) || !cnt(t.done) || !cnt(t.partial) || !cnt(t.notyet) || t.done + t.partial + t.notyet < MINSHARE) fail('bad themes');
+    seen[t.theme] = 1; return { theme: t.theme, done: t.done, partial: t.partial, notyet: t.notyet };
+  });
+  var roles = null;
+  if (q.roles !== null) {
+    if (!isObj(q.roles) || !keysOk(q.roles, ROLEK) || !ROLEK.every(function (k) { return cnt(q.roles[k]); }) || ROLEK.reduce(function (n, k) { return n + q.roles[k]; }, 0) < MINSHARE) fail('bad roles');
+    roles = {}; ROLEK.forEach(function (k) { roles[k] = q.roles[k]; });
+  }
+  var signals = null;
+  if (q.signals !== null) {
+    if (!isObj(q.signals) || Object.keys(q.signals).length > 32 || !Object.keys(q.signals).every(function (k) { return has(SIG, k) && cnt(q.signals[k]) && q.signals[k] > 0; })) fail('bad signals');
+    signals = {}; Object.keys(q.signals).sort().forEach(function (k) { signals[k] = q.signals[k]; });
+  }
+  if (!(q.reserve === null || num(q.reserve, 0, 1000000))) fail('bad reserve');
+  return { kind: q.kind, schema: 2, seq: q.schema === 2 ? q.seq : 1, level: q.level, team: q.team, period: { type: q.period.type, start: q.period.start }, expires: q.expires, nonce: q.nonce, notice: NOTICE, meets: true,
+    vectors: q.vectors ? { climbing: q.vectors.climbing, plateau: q.vectors.plateau, sliding: q.vectors.sliding } : null, themes: themes, roles: roles, signals: signals, reserve: q.reserve };
+}
+var SHAREKEY_RE = /^[STL]\|[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}\|(week|quarter)\|\d{4}-\d{2}-\d{2}$/;
+var ITEMS = ['vectors', 'caps', 'card', 'reserve', 'withdrawn'];
+function cleanLead(o) {
+  var nk = ['team', 'unit', 'kpi', 'objectives', 'secret', 'shares'];
+  if (!isObj(o) || !(keysOk(o, ['team', 'unit', 'kpi', 'objectives']) || keysOk(o, nk))) fail('Bad team and leader settings.');
+  var secret = has(o, 'secret') ? o.secret : '', shares = {};
+  if (!(secret === '' || (typeof secret === 'string' && /^[0-9a-f]{32}$/.test(secret)))) fail('Bad share secret.');
+  if (has(o, 'shares')) {
+    if (!isObj(o.shares) || Object.keys(o.shares).length > 30) fail('Bad share log.');
+    Object.keys(o.shares).forEach(function (k) {
+      var e = o.shares[k];
+      if (!SHAREKEY_RE.test(k) || !isObj(e) || !keysOk(e, ['seq', 'date', 'items']) || !cnt(e.seq) || e.seq < 1 || !validDate(e.date) || !Array.isArray(e.items) || e.items.length > 5 || !e.items.every(function (x) { return ITEMS.indexOf(x) >= 0; })) fail('Bad share log.');
+      shares[k] = { seq: e.seq, date: e.date, items: e.items.slice() };
+    });
+  }
+  if (!(o.team === '' || (typeof o.team === 'string' && CODE_RE.test(o.team))) || !(o.unit === '' || (typeof o.unit === 'string' && CODE_RE.test(o.unit)))) fail('Bad code.');
+  if (!str(o.kpi, 300) || !Array.isArray(o.objectives) || o.objectives.length !== 5 || !o.objectives.every(function (x) { return str(x, 300); })) fail('Bad leader context.');
+  return { team: o.team, unit: o.unit, kpi: o.kpi, objectives: o.objectives.slice(), secret: secret, shares: shares };
+}
+function emptyLead() { return { team: '', unit: '', kpi: '', objectives: ['', '', '', '', ''], secret: '', shares: {} }; }
+function sha256hex(x) {
+  if (!(window.crypto && crypto.subtle && window.TextEncoder)) return Promise.reject(new Error('This browser cannot make a share file here. Use an up-to-date browser, over https.'));
+  return crypto.subtle.digest('SHA-256', new TextEncoder().encode(x)).then(function (buf) { return Array.prototype.map.call(new Uint8Array(buf), function (y) { return (y < 16 ? '0' : '') + y.toString(16); }).join(''); });
+}
+function mySecret() { if (!S.lead.secret) { S.lead.secret = newNonce(); persist(); } return S.lead.secret; }
+function shareKey(kind, code, per) { return kind + '|' + code + '|' + per.type + '|' + per.start; }
+function nextSeq(key) { var e = S.lead.shares[key]; return e ? e.seq + 1 : 1; }
+function logShare(key, seq, items) {
+  S.lead.shares[key] = { seq: seq, date: today(), items: items };
+  var ks = Object.keys(S.lead.shares);
+  if (ks.length > 30) { ks.sort(function (a, b) { return S.lead.shares[a].date < S.lead.shares[b].date ? -1 : 1; }); ks.slice(0, ks.length - 30).forEach(function (k) { delete S.lead.shares[k]; }); }
+  persist();
+}
+function latestBy(list, key) {
+  var m = {};
+  list.forEach(function (q) { var c = m[q[key]]; if (!c || q.seq > c.seq || (q.seq === c.seq && q.nonce > c.nonce)) m[q[key]] = q; });
+  return Object.keys(m).sort().map(function (k) { return m[k]; });
+}
+function isEmptyShare(q) { return !q.vectors.length && !q.caps.length && !q.card && q.reserve === null; }
+function effectiveShares(list) { return latestBy(list, 'member').filter(function (q) { return !isEmptyShare(q); }); }
+function summarizeStates(a) { return a.every(function (s) { return s === 'done'; }) ? 'done' : a.every(function (s) { return s === 'notyet'; }) ? 'notyet' : 'partial'; }
+function aggShares(list) {
+  var out = { meets: list.length >= MINSHARE, vectors: null, themes: [], roles: null, signals: null, reserve: null };
+  if (!out.meets) return out;
+  var vs = list.filter(function (q) { return q.vectors.length; });
+  if (vs.length >= MINSHARE) {
+    out.vectors = { climbing: 0, plateau: 0, sliding: 0 };
+    vs.forEach(function (q) { var last = q.vectors.slice().sort(function (a, b) { return a.week < b.week ? -1 : 1; }).pop(); out.vectors[last.vector]++; });
+  }
+  Object.keys(THEMES).forEach(function (th) {
+    var st = [];
+    list.forEach(function (q) { var mine = q.caps.filter(function (c) { return c.theme === th; }).map(function (c) { return c.state; }); if (mine.length) st.push(summarizeStates(mine)); });
+    if (st.length >= MINSHARE) out.themes.push({ theme: th, done: count(st, 'done'), partial: count(st, 'partial'), notyet: count(st, 'notyet') });
+  });
+  var cards = list.filter(function (q) { return q.card; });
+  if (cards.length >= MINSHARE) {
+    out.roles = {}; ROLEK.forEach(function (k) { out.roles[k] = 0; });
+    var sg = {};
+    cards.forEach(function (q) { out.roles[q.card.role || 'none']++; q.card.signals.forEach(function (s) { sg[s] = (sg[s] || 0) + 1; }); });
+    out.signals = {}; Object.keys(sg).sort().forEach(function (k) { out.signals[k] = sg[k]; });
+  }
+  var rs = list.filter(function (q) { return q.reserve !== null; });
+  if (rs.length >= MINSHARE) out.reserve = Math.round(rs.reduce(function (n, q) { return n + q.reserve; }, 0) * 10) / 10;
+  return out;
+}
+function sumAggs(list) {
+  var out = { meets: list.length > 0, vectors: null, themes: [], roles: null, signals: null, reserve: null }, tm = {}, sg = {};
+  list.forEach(function (a) {
+    if (a.vectors) { if (!out.vectors) out.vectors = { climbing: 0, plateau: 0, sliding: 0 }; VKEYS.forEach(function (k) { out.vectors[k] += a.vectors[k]; }); }
+    a.themes.forEach(function (t) { var e = tm[t.theme] || (tm[t.theme] = { theme: t.theme, done: 0, partial: 0, notyet: 0 }); e.done += t.done; e.partial += t.partial; e.notyet += t.notyet; });
+    if (a.roles) { if (!out.roles) { out.roles = {}; ROLEK.forEach(function (k) { out.roles[k] = 0; }); } ROLEK.forEach(function (k) { out.roles[k] += a.roles[k]; }); }
+    if (a.signals) Object.keys(a.signals).forEach(function (k) { sg[k] = (sg[k] || 0) + a.signals[k]; });
+    if (a.reserve !== null) out.reserve = Math.round(((out.reserve || 0) + a.reserve) * 10) / 10;
+  });
+  out.themes = Object.keys(THEMES).filter(function (k) { return has(tm, k); }).map(function (k) { return tm[k]; });
+  if (Object.keys(sg).length) { out.signals = {}; Object.keys(sg).sort().forEach(function (k) { out.signals[k] = sg[k]; }); }
+  return out;
+}
+function fnv(s, seed) { var x = seed >>> 0; for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619) >>> 0; } return x; }
+function hex8(n) { var s = n.toString(16); while (s.length < 8) s = '0' + s; return s.toUpperCase(); }
+function fingerprint(list) {
+  var s = JSON.stringify(list.slice().sort(function (a, b) { return a.nonce < b.nonce ? -1 : a.nonce > b.nonce ? 1 : 0; }));
+  return hex8(fnv(s, 2166136261)) + '-' + hex8(fnv(s, 3735928559));
+}
+function aggPacket(level, code, per, c, seq) {
+  return cleanAgg({ kind: 'cab4cap4-share', schema: 2, seq: seq, level: level, team: code, period: { type: per.type, start: per.start }, expires: expiryFor(per), nonce: newNonce(), notice: NOTICE, meets: true,
+    vectors: c.vectors, themes: c.themes, roles: c.roles, signals: c.signals, reserve: c.reserve });
+}
+function download(name, obj) {
+  var url = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' }));
+  var a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+}
+function loadPackets(files, clean, onDone) {
+  var arr = Array.prototype.slice.call(files || [], 0, 60), res = [], left = arr.length;
+  if (!left) { onDone(res); return; }
+  function one(x) { res.push(x); if (--left === 0) onDone(res); }
+  arr.forEach(function (f) {
+    if (f.size > 65536) { one({ err: 'too large' }); return; }
+    var r = new FileReader();
+    r.onload = function () { try { one({ p: clean(JSON.parse(String(r.result))) }); } catch (e) { one({ err: e && e.message && e.message.length < 120 ? e.message : 'not a valid file' }); } };
+    r.onerror = function () { one({ err: 'could not be read' }); };
+    r.readAsText(f);
+  });
+}
+function notForJudging() { return h('div', { 'class': 'note warn' }, [ps('For seeing direction together. ' + NOTICE + ' No view here shows any one person.')]); }
+function dist(parts) {
+  var tot = parts.reduce(function (n, x) { return n + x.n; }, 0) || 1;
+  var bar = h('div', { 'class': 'dist', 'aria-hidden': 'true' }, parts.map(function (x) { var s = h('span', { 'class': x.cls }); s.style.width = (x.n / tot * 100) + '%'; return s; }));
+  return h('div', null, [bar, p(parts.map(function (x) { return x.label + ': ' + x.n; }).join(' · '), 'mut')]);
+}
+function vecDist(v) { return dist([{ label: '▲ Climbing', n: v.climbing, cls: 'd-up' }, { label: '■ Plateau', n: v.plateau, cls: 'd-mid' }, { label: '▼ Sliding', n: v.sliding, cls: 'd-dn' }]); }
+function themeDist(t) { return dist([{ label: 'Done', n: t.done, cls: 'd-up' }, { label: 'Partial', n: t.partial, cls: 'd-mid' }, { label: 'Not Yet', n: t.notyet, cls: 'd-dn' }]); }
+function readCard(title, kids) { return h('section', { 'class': 'card' }, [h('h3', { text: title })].concat(kids)); }
+function readsView(c, scope) {
+  var out = [];
+  out.push(readCard('The vector', c.vectors ? [p('The latest direction in each ' + scope + '. Read the direction, not the day.', 'mut'), vecDist(c.vectors)] : [p('Not enough shared directions for this read yet.', 'mut')]));
+  var th = c.themes.map(function (t) { var tot = t.done + t.partial + t.notyet; return { t: t, dis: 1 - Math.max(t.done, t.partial, t.notyet) / tot }; });
+  var steep = th.filter(function (x) { return x.dis > 0; }).sort(function (a, b) { return b.dis - a.dis || (a.t.theme < b.t.theme ? -1 : 1); })[0];
+  out.push(readCard('The steepest current', steep ? [h('p', null, [h('strong', { text: THEMES[steep.t.theme] })]), themeDist(steep.t), p('Disagreement about what is happening is the conversation to have.', 'mut')] : [p(th.length ? 'No disagreement in the shared capabilities.' : 'Not enough shared capabilities for this read yet.', 'mut')]));
+  var blind = th.filter(function (x) { return x.t.partial === 0 && x.t.notyet === 0; });
+  out.push(readCard('The blind spot', blind.length ? [p('Every share marks these Done: ' + blind.map(function (x) { return THEMES[x.t.theme]; }).join(', ') + '.'), p('Unanimous confidence is usually a shared assumption. Test it.', 'mut')] : [p(th.length ? 'No capability is marked Done by everyone.' : 'Not enough shared capabilities for this read yet.', 'mut')]));
+  if (c.roles) {
+    var rl = Object.keys(ROLE).map(function (k) { return { k: k, n: c.roles[k] }; }).filter(function (x) { return x.n > 0; }).sort(function (a, b) { return b.n - a.n || (a.k < b.k ? -1 : 1); });
+    var fb = rl[0] && rl[0].n >= 2 ? rl[0] : null;
+    var top = c.signals ? Object.keys(c.signals).sort(function (a, b) { return c.signals[b] - c.signals[a] || (a < b ? -1 : 1); }).slice(0, 5) : [];
+    out.push(readCard('Capability demand', [
+      p(rl.length ? rl.map(function (x) { return ROLE[x.k] + ': ' + x.n; }).join(' · ') : 'No roles named on the shared cards.'),
+      fb ? h('p', { 'class': 'pass', text: 'Firebreak candidate: ' + ROLE[fb.k] + ' (' + ROLEHINT[fb.k] + '). Four to six people, protected, setting the benchmark (Workbook 8.1).' }) : null,
+      top.length ? p('Most-named HUMS signals: ' + top.map(function (k) { return k + ' ' + SIG[k]; }).join(', '), 'mut') : null
+    ]));
+    var covered = c.signals ? Object.keys(c.signals) : [];
+    var missing = BUCKETS.filter(function (b) { return !b[1].some(function (s) { return covered.indexOf(s[0]) >= 0; }); }).map(function (b) { return b[0]; });
+    out.push(readCard('The human range', [p(covered.length + ' of 32 HUMS signals appear on the shared cards.'), missing.length ? p('No card reaches: ' + missing.join(', ') + '.', 'mut') : p('Every HUMS bucket is reached by at least one card.', 'mut')]));
+  } else out.push(readCard('Capability demand', [p('Not enough shared next-capability cards for this read yet.', 'mut')]));
+  out.push(readCard('Pooled reserve', [c.reserve !== null ? h('p', { 'class': 'big', text: c.reserve + ' hours a week' }) : p('Not enough shared reserve hours for this read yet.', 'mut'), p('Capacity is the budget for transformation (Chapter 15, Principle 2).', 'mut')]));
+  return out;
+}
+function codeBox(label, key, hint) {
+  var L0 = S.lead, inp = h('input', { type: 'text', maxlength: 9, value: L0[key], placeholder: 'XXXX-XXXX', 'aria-label': label });
+  var msg = h('span', { 'class': 'mut', text: '' });
+  inp.addEventListener('change', function () {
+    var v = inp.value.trim().toUpperCase();
+    if (v === '' || CODE_RE.test(v)) { L0[key] = v; inp.value = v; msg.textContent = ''; persist(); render(); } else msg.textContent = 'Codes look like ABCD-2345 (no 0, O, 1 or I).';
+  });
+  return h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: label }), hint ? hintEl(hint) : null, h('div', { 'class': 'row' }, [h('div', { 'class': 'grow' }, [inp]), btn('Create a new code', function () { L0[key] = newCode(); persist(); render(); }, 'sm')]), msg]);
+}
+function periodBtns(state) {
+  return h('div', { 'class': 'row', role: 'group', 'aria-label': 'Period' }, [['week', 'This week'], ['quarter', 'This quarter']].map(function (x) {
+    return btn(x[1], function () { state.per = periodFor(x[0]); state.list = []; state.rej = {}; render(); }, 'sm', { 'aria-pressed': state.per && state.per.type === x[0] ? 'true' : 'false' });
+  }));
+}
+function rejSummary(r) {
+  var k = Object.keys(r); if (!k.length) return null;
+  var n = k.reduce(function (s, x) { return s + r[x]; }, 0);
+  return h('div', { 'class': 'note warn', role: 'status', text: n + ' file' + (n === 1 ? '' : 's') + ' not used: ' + k.map(function (x) { return x + (r[x] > 1 ? ' (' + r[x] + ')' : ''); }).join('; ') + '.' });
+}
+function admit(state, results, codeOf, extra) {
+  results.forEach(function (x) {
+    var why = x.err || null, q = x.p;
+    if (!why && codeOf && q.team !== codeOf) why = 'a different team code';
+    if (!why && !samePeriod(q.period, state.per)) why = 'a different period';
+    if (!why && q.expires < today()) why = 'expired';
+    if (!why && state.list.some(function (y) { return y.nonce === q.nonce; })) why = 'a duplicate';
+    if (!why && extra) why = extra(q);
+    if (why) state.rej[why] = (state.rej[why] || 0) + 1; else state.list.push(q);
+  });
+}
+
+/* Part 3 · Team view (convener) */
+var T = { per: null, list: [], rej: {} };
+function teamView() {
+  if (!T.per) T.per = periodFor('week');
+  var out = [h('h2', { text: 'Team view' })];
+  out.push(ps('Built only from what members choose to share. Nothing shows until at least five have shared.'));
+  out.push(notForJudging());
+  out.push(h('section', { 'class': 'card' }, [
+    codeBox('Team code', 'team', 'Give this code to members. They enter it when they share from Your data.'),
+    h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Period' }), periodBtns(T), p(periodLabel(T.per), 'mut')])
+  ]));
+  var fi = h('input', { type: 'file', multiple: true, accept: '.json,application/json', onchange: function (e) {
+    if (!S.lead.team) { T.rej = { 'set a team code first': e.target.files.length }; render(); return; }
+    loadPackets(e.target.files, cleanShare, function (res) { admit(T, res, S.lead.team); say(effectiveShares(T.list).length >= MINSHARE ? 'Enough shares for the team read.' : 'Not enough shares yet.'); render(); });
+  } });
+  var eff = effectiveShares(T.list);
+  out.push(h('section', { 'class': 'card' }, [h('h3', { text: 'Add shares' }),
+    ps('Members share when they choose. Collect their files as they arrive, somewhere only you can open, and load them all here whenever you like. Each member\u2019s latest share counts, and a withdrawn share counts for nothing. Do not open members\u2019 files. Loaded shares stay in memory and are cleared when you leave this view.', 'mut'),
+    h('label', null, [h('span', { 'class': 'sr', text: 'Add member share files' }), fi]),
+    rejSummary(T.rej),
+    h('p', { 'class': eff.length >= MINSHARE ? 'pass' : 'mut', text: eff.length >= MINSHARE ? 'Enough shares for a team read.' : (T.list.length ? 'Not enough shares yet. At least five are needed before anything shows.' : 'No shares loaded yet.') }),
+    T.list.length ? confirmBtn('Clear loaded shares', 'Really clear them?', 'tclr', function () { T.list = []; T.rej = {}; render(); }) : null
+  ]));
+  if (eff.length >= MINSHARE) {
+    var c = aggShares(eff), fp = fingerprint(eff);
+    out = out.concat(readsView(c, 'share'));
+    out.push(readCard('Close the loop', [ps('Pick one: the steepest current, not the scariest. Name one ten-minute experiment against it from that step’s Close the Loop box.')]));
+    out.push(h('section', { 'class': 'card' }, [
+      h('p', null, [h('strong', { text: 'Fingerprint: ' }), h('code', { text: fp })]),
+      p('Everyone looking at this read should see the same fingerprint.', 'mut'),
+      h('div', { 'class': 'row' }, [
+        btn('Save this read', function () { var pk = aggPacket('team', S.lead.team, T.per, c, nextSeq(shareKey('T', S.lead.team, T.per))); S.saved = S.saved.filter(function (x) { return !(x.level === 'team' && x.team === pk.team && samePeriod(x.period, pk.period)); }).concat([pk]).slice(-40); persist(); ui.tmsg = 'Saved this read (the shares themselves are not saved).'; render(); }, 'pri'),
+        btn('Export team packet', function () { var key = shareKey('T', S.lead.team, T.per), pk = aggPacket('team', S.lead.team, T.per, c, nextSeq(key)); logShare(key, pk.seq, []); download('cab4cap4-team-' + pk.team + '-' + pk.period.start + '-v' + pk.seq + '.json', pk); ui.tmsg = 'Team packet exported (version ' + pk.seq + '). Send it to your leader with the team\u2019s agreement; a newer version replaces it.'; render(); }, 'sm')
+      ]),
+      ui.tmsg ? h('div', { 'class': 'note', role: 'status', text: ui.tmsg }) : null
+    ]));
+  }
+  out.push(savedList('team'));
+  return out;
+}
+function savedList(level) {
+  var mine = S.saved.filter(function (x) { return x.level === level; }).slice().reverse();
+  var sec = h('section', { 'class': 'card' }, [h('h3', { text: 'Saved reads' })]);
+  if (!mine.length) { sec.appendChild(p('None yet.', 'mut')); return sec; }
+  mine.forEach(function (x) {
+    sec.appendChild(h('details', null, [h('summary', { text: x.team + ' · ' + periodLabel(x.period) }), x.vectors ? vecDist(x.vectors) : p('No vector read in this one.', 'mut'),
+      h('div', { 'class': 'row' }, [btn('Export', function () { download('cab4cap4-' + x.level + '-' + x.team + '-' + x.period.start + '.json', x); }, 'sm'),
+        confirmBtn('Delete', 'Really delete this read?', 'dsv' + x.nonce, function () { S.saved = S.saved.filter(function (y) { return y.nonce !== x.nonce; }); persist(); render(); })])]));
+  });
+  return sec;
+}
+
+/* Part 4 · Leadership view: the self, then the team fractal */
+var LV = { per: null, list: [], rej: {} };
+function selfFirst() {
+  var lw = lastWeek(), t = S.plan.target, kids = [h('h3', { text: 'You, first' })];
+  if (!lw && !t) { kids.push(ps('Run your own box first. Lead yourself first.')); kids.push(btn('Go to Part 1', function () { nav('home'); }, 'sm')); }
+  if (lw) kids.push(h('p', null, [h('strong', { text: 'Your latest vector (' + lw.date + '): ' }), badge(lw.vector)]));
+  if (lw && (lw.prep.cap || lw.prep.step)) kids.push(h('p', null, [h('strong', { text: 'Your Prep: ' }), (lw.prep.cap ? lw.prep.cap + '. ' : '') + lw.prep.step]));
+  if (t) kids.push(h('p', null, [h('strong', { text: 'Your next capability: ' }), t.text]));
+  kids.push(p('Shown to you only. Never added into any team number.', 'mut'));
+  return h('section', { 'class': 'card self' }, kids);
+}
+function leadView() {
+  if (!LV.per) LV.per = periodFor('week');
+  var out = [h('h2', { text: 'Leadership view' })];
+  out.push(ps('A leader is the self plus the team fractal. You first, then your teams.'));
+  out.push(selfFirst());
+  out.push(notForJudging());
+  out.push(h('section', { 'class': 'card' }, [
+    codeBox('Your unit code', 'unit', 'Used if you pass a leadership packet one level up.'),
+    h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Period' }), periodBtns(LV), p(periodLabel(LV.per), 'mut')])
+  ]));
+  var fi = h('input', { type: 'file', multiple: true, accept: '.json,application/json', onchange: function (e) {
+    loadPackets(e.target.files, function (o) { if (isObj(o) && o.level === 'self') fail('a member’s share (this view takes team files only)'); return cleanAgg(o); }, function (res) {
+      admit(LV, res, null);
+      render();
+    });
+  } });
+  var teams = latestBy(LV.list, 'team');
+  out.push(h('section', { 'class': 'card' }, [h('h3', { text: 'Add team packets' }),
+    ps('Only team packets, each exported by its convener with the team\u2019s agreement, whenever they choose. Member shares are refused. Only the latest read from each team is used. Loaded packets are cleared when you leave this view.', 'mut'),
+    h('label', null, [h('span', { 'class': 'sr', text: 'Add team packet files' }), fi]),
+    rejSummary(LV.rej),
+    p(teams.length ? 'Teams loaded: ' + teams.map(function (x) { return x.team; }).join(', ') : 'No team packets loaded yet.', teams.length ? null : 'mut'),
+    teams.length ? confirmBtn('Clear loaded packets', 'Really clear them?', 'lclr', function () { LV.list = []; LV.rej = {}; render(); }) : null
+  ]));
+  if (!teams.length) return out;
+  var c = sumAggs(teams), fp = fingerprint(teams);
+  out = out.concat(readsView(c, 'team'));
+  if (teams.length >= 2) out.push(readCard('Side by side, never ranked', [p('Teams in code order. Workbook 5.1: write one joint number neither team can win alone.', 'mut')].concat(teams.map(function (x) {
+    return h('div', { 'class': 'cap' }, [h('strong', { text: x.team }), x.vectors ? vecDist(x.vectors) : p('No vector read.', 'mut')]);
+  }))));
+  out.push(lensesView(c, teams));
+  out.push(h('section', { 'class': 'card' }, [
+    h('p', null, [h('strong', { text: 'Fingerprint: ' }), h('code', { text: fp })]),
+    teams.length >= 2 ? h('div', { 'class': 'row' }, [
+      btn('Save this read', function () { var pk = leadPacket(c); if (!pk) return; S.saved = S.saved.concat([pk]).slice(-40); persist(); ui.lmsg = 'Saved this read.'; render(); }, 'pri'),
+      btn('Export leadership packet', function () { var pk = leadPacket(c); if (!pk) return; download('cab4cap4-leadership-' + pk.team + '-' + pk.period.start + '-v' + pk.seq + '.json', pk); ui.lmsg = 'Leadership packet exported, one level up.'; render(); }, 'sm')
+    ]) : p('A leadership packet needs at least two teams before it goes up a level.', 'mut'),
+    ui.lmsg ? h('div', { 'class': 'note', role: 'status', text: ui.lmsg }) : null
+  ]));
+  out.push(savedList('leadership'));
+  return out;
+}
+function leadPacket(c) {
+  if (!S.lead.unit) { ui.lmsg = 'Create your unit code first.'; render(); return null; }
+  var key = shareKey('L', S.lead.unit, LV.per), pk = aggPacket('leadership', S.lead.unit, LV.per, c, nextSeq(key));
+  logShare(key, pk.seq, []);
+  return pk;
+}
+function lensesView(c, teams) {
+  var L0 = S.lead, v = c.vectors, kids = [h('h3', { text: 'Leader workbook lenses' })];
+  function lens(t, body) { kids.push(h('div', { 'class': 'cap' }, [h('strong', { text: t })].concat(body))); }
+  var spread = v ? VKEYS.filter(function (k) { return v[k] > 0; }).length : 0;
+  lens('4.1 Communication Variance', [p(!v ? 'No vector read yet.' : spread === 3 ? 'Directions spread across climbing, plateau and sliding. Hold the open Q&A and name the most sensitive unspoken thing.' : spread === 2 ? 'Directions split two ways. Ask what the two groups are seeing differently.' : 'One direction across the teams. Check it is shared reality, not a shared assumption.')]);
+  lens('5.1 Tribalism and Delusion', [p(teams.length >= 2 ? 'See the teams side by side above. Write one joint number neither can win alone.' : 'Needs two teams.')]);
+  lens('6.1 Governance Collapse', [p('These reads arrived as each team saw them: the clean biopsy. Check each fingerprint with its convener.'), p(teams.map(function (x) { return x.team + ': ' + fingerprint([x]); }).join(' · '), 'mut')]);
+  var kpi = h('input', { type: 'text', maxlength: 300, value: L0.kpi, placeholder: 'Your single core foundational KPI' });
+  kpi.addEventListener('change', function () { L0.kpi = kpi.value; persist(); });
+  lens('7.1 Foundational Metric Alignment', [h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Core KPI' }), kpi]), p(c.reserve !== null ? 'Pooled reserve: ' + c.reserve + ' hours a week. Where do these hours go against the core?' : 'No pooled reserve read yet.')]);
+  var rl = c.roles ? Object.keys(ROLE).filter(function (k) { return c.roles[k] >= 2; }) : [];
+  lens('8.1 Center of Excellence', [p(rl.length ? 'Cards cluster on: ' + rl.map(function (k) { return ROLE[k] + ' (' + c.roles[k] + ')'; }).join(', ') + '. That is your firebreak candidate.' : 'No cluster of next-capability cards yet.')]);
+  var objs = L0.objectives.map(function (o, i) {
+    var e = h('input', { type: 'text', maxlength: 300, value: o, placeholder: 'Objective ' + (i + 1) });
+    e.addEventListener('change', function () { L0.objectives[i] = e.value; persist(); });
+    return h('label', { 'class': 'f' }, [h('span', { 'class': 'sr', text: 'Objective ' + (i + 1) }), e]);
+  });
+  lens('9.1 OKR / KPI Summit', [p('Trace each next-capability role to one objective. A role that traces to none is a broken rung.')].concat(objs));
+  return h('section', { 'class': 'card' }, kids);
+}
+
+/* Share with my team (every persona: everyone is an individual first) */
+function shareCard() {
+  var f = ui.share || (ui.share = { code: S.lead.team || '', type: 'week', vec: false, caps: false, card: false, res: false, msg: '', busy: false });
+  var per = periodFor(f.type), weeks = S.weeks.filter(function (w) { return w.date >= per.start; }), lw = weeks[weeks.length - 1];
+  var vecWeeks = weeks.filter(function (w) { return w.vector; });
+  var themed = S.caps.filter(function (c) { return c.theme; }), unthemed = S.caps.filter(function (c) { return !c.theme; });
+  var t = S.plan.target, exp = expiryFor(per);
+  var key = CODE_RE.test(f.code) ? shareKey('S', f.code, per) : null, last = key ? S.lead.shares[key] : null;
+  var code = h('input', { type: 'text', maxlength: 9, value: f.code, placeholder: 'XXXX-XXXX', oninput: function () { f.code = code.value.trim().toUpperCase(); } });
+  function tick(k, label, avail) {
+    return h('label', { 'class': 'tick' }, [h('input', { type: 'checkbox', checked: f[k] ? true : null, disabled: avail ? null : true, onchange: function (e) { f[k] = e.target.checked; render(); } }), h('span', { text: label })]);
+  }
+  function capStates() {
+    var caps = [];
+    if (lw) themed.forEach(function (c) { var st = lw.proofing.filter(function (r) { return r.cid === c.id; }).map(function (r) { return r.state; }); if (st.length) caps.push({ theme: c.theme, state: summarizeStates(st) }); });
+    return caps;
+  }
+  var prev = [];
+  prev.push('Team code ' + (f.code || '(none yet)') + ' · ' + periodLabel(per) + (last ? ' · this will be version ' + (last.seq + 1) + ' and replace version ' + last.seq : '') + '.');
+  prev.push(f.vec ? 'Your weekly vectors: ' + (vecWeeks.length ? vecWeeks.map(function (w) { return VEC[w.vector]; }).join(', ') : 'none in this period') + '.' : 'Vectors: not shared.');
+  prev.push(f.caps ? 'Capability states by theme: ' + (capStates().map(function (c) { return THEMES[c.theme] + ' ' + STATE[c.state]; }).join(', ') || 'none this period') + '.' : 'Capability states: not shared.');
+  prev.push(f.card ? (t ? 'Next-capability card: role ' + (t.role ? ROLE[t.role] : 'none') + ', ' + FRONT[t.frontier] + (t.signals.length ? ', ' + t.signals.join(' ') : '') + '. Its text is never shared.' : 'Next-capability card: none chosen.') : 'Next-capability card: not shared.');
+  prev.push(f.res ? 'Reserve hours: ' + (lw ? lw.pay.reserve : 'none this period') + '.' : 'Reserve hours: not shared.');
+  prev.push('Also in the file: a member id for this team and period only, so a newer share replaces this one. It cannot be linked to your other periods without this device.');
+  prev.push('Never shared: your name, the three reads, Windshield notes, Play, parked items, capability names, or any other text.');
+  function make(items, withdraw) {
+    if (f.busy) return;
+    if (!CODE_RE.test(f.code)) { f.msg = 'Enter the team code first (it looks like ABCD-2345).'; render(); return; }
+    if (!withdraw && !items.length) { f.msg = 'Tick at least one thing to share.'; render(); return; }
+    f.busy = true;
+    var k = shareKey('S', f.code, per), seq = nextSeq(k);
+    sha256hex(mySecret() + '|' + f.code + '|' + per.type + '|' + per.start).then(function (hx) {
+      var pk = cleanShare({ kind: 'cab4cap4-share', schema: 2, level: 'self', team: f.code, period: per, expires: exp, nonce: newNonce(), notice: NOTICE,
+        vectors: !withdraw && f.vec ? vecWeeks.slice(-14).map(function (w) { return { week: w.date, vector: w.vector }; }) : [],
+        caps: !withdraw && f.caps ? capStates() : [],
+        card: !withdraw && f.card && t ? { role: t.role, frontier: t.frontier, signals: t.signals.slice() } : null,
+        reserve: !withdraw && f.res && lw ? lw.pay.reserve : null, member: hx.slice(0, 32), seq: seq });
+      download('cab4cap4-share-' + pk.team + '-' + pk.period.start + '-v' + seq + '.json', pk);
+      logShare(k, seq, withdraw ? ['withdrawn'] : items);
+      f.busy = false;
+      f.msg = withdraw ? 'Withdrawal saved (version ' + seq + '). Send it to your convener: it replaces your earlier share with nothing.'
+        : 'Saved, version ' + seq + '. Send it to your convener whenever you choose. A newer share replaces it, and you can withdraw it any time before ' + exp + '. Anyone holding this file can open it.';
+      say(withdraw ? 'Withdrawal saved.' : 'Share saved.');
+      render();
+    }, function (e) { f.busy = false; f.msg = e.message; render(); });
+  }
+  var items = []; if (f.vec) items.push('vectors'); if (f.caps) items.push('caps'); if (f.card) items.push('card'); if (f.res) items.push('reserve');
+  var mine = Object.keys(S.lead.shares).filter(function (x) { return x.charAt(0) === 'S'; }).sort(function (a, b) { return S.lead.shares[b].date < S.lead.shares[a].date ? -1 : 1; }).slice(0, 10);
+  var NAMES = { vectors: 'vectors', caps: 'capability states', card: 'card', reserve: 'reserve hours', withdrawn: 'withdrawn' };
+  var kids = [h('h3', { text: 'Share with my team' }),
+    ps('Your share, your call. Share, update or withdraw it any time until it expires on ' + exp + '. Nothing is ticked until you tick it. A team view shows nothing until at least five people share.', 'mut'),
+    h('label', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Team code' }), hintEl('From your team’s convener.'), code]),
+    h('div', { 'class': 'f' }, [h('span', { 'class': 'lab', text: 'Period' }), h('div', { 'class': 'row', role: 'group', 'aria-label': 'Share period' }, [['week', 'This week'], ['quarter', 'This quarter']].map(function (x) {
+      return btn(x[1], function () { f.type = x[0]; render(); }, 'sm', { 'aria-pressed': f.type === x[0] ? 'true' : 'false' });
+    }))]),
+    tick('vec', 'My weekly vectors (' + vecWeeks.length + ' in this period)', vecWeeks.length > 0),
+    tick('caps', 'The state of each capability to keep, by theme (' + themed.length + ' with a theme)', themed.length > 0 && !!lw),
+    tick('card', 'My next-capability card: role, frontier, HUMS signals', !!t),
+    tick('res', 'My reserve hours', !!lw),
+    unthemed.length ? p('Capabilities without a theme are never shared: ' + unthemed.map(function (c) { return c.name; }).join(', ') + '. Give them a theme in Capabilities to keep.', 'mut') : null,
+    h('div', { 'class': 'preview', 'aria-live': 'polite' }, [h('strong', { text: 'Exactly what leaves this device' })].concat(prev.map(function (x) { return h('div', { text: x }); }))),
+    h('div', { 'class': 'row' }, [
+      btn(last && last.items[0] !== 'withdrawn' ? 'Save an updated share' : 'Save share file', function () { make(items, false); }, 'pri'),
+      last && last.items[0] !== 'withdrawn' ? armBtn('Withdraw my share', 'Really withdraw it?', function () { make([], true); }) : null
+    ]),
+    f.msg ? h('div', { 'class': 'note', role: 'status', text: f.msg }) : null
+  ];
+  if (mine.length) kids.push(h('details', null, [h('summary', { text: 'What I have shared (kept on this device only)' }), h('ul', { 'class': 'plain' }, mine.map(function (x) {
+    var e = S.lead.shares[x], parts = x.split('|');
+    return h('li', null, [h('span', { text: parts[1] + ' · ' + periodLabel({ type: parts[2], start: parts[3] }) + ' · version ' + e.seq + ' · ' + e.items.map(function (y) { return NAMES[y]; }).join(', ') + ' · ' + e.date })]);
+  }))]));
+  return h('section', { 'class': 'card' }, kids);
+}
+function personaBar() {
+  var cur = S.settings.persona;
+  return h('div', { 'class': 'persona' }, [h('span', { 'class': 'lab', text: 'Using it as' }), h('div', { 'class': 'row', role: 'group', 'aria-label': 'Persona' }, Object.keys(PERSONA).map(function (k) {
+    return btn(PERSONA[k], function () {
+      S.settings.persona = k; persist();
+      nav(k === 'convener' ? 'team' : k === 'leader' ? 'lead' : (PART[view] >= 3 ? 'home' : view));
+    }, 'sm', { 'aria-pressed': cur === k ? 'true' : 'false' });
+  }))]);
+}
+
+/* ---------- data: export, import, delete ---------- */
+function doExport() {
+  var json = JSON.stringify(pack(new Date().toISOString()), null, 2);
+  var url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+  var a = document.createElement('a');
+  a.href = url; a.download = 'cab4cap4-' + today() + '.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  S.settings.exported = S.weeks.length; persist();
+  if (view === 'data' || view === 'home') render();
+}
+function onFile(e) {
+  var f = e.target.files && e.target.files[0];
+  pending = null; importMsg = '';
+  if (!f) return;
+  if (f.size > MAXBYTES) { importMsg = 'That file is too large (limit 1 MB). Nothing was imported.'; render(); return; }
+  var r = new FileReader();
+  r.onload = function () {
+    try {
+      var d = cleanData(JSON.parse(String(r.result)));
+      pending = d;
+      importMsg = 'Valid file: ' + d.weeks.length + ' week' + (d.weeks.length === 1 ? '' : 's') + ' and ' + d.caps.length + ' capabilit' + (d.caps.length === 1 ? 'y' : 'ies') + ', and ' + d.plan.rows.length + ' planner row' + (d.plan.rows.length === 1 ? '' : 's') + (d.weeks.length ? ' (' + d.weeks[0].date + ' to ' + d.weeks[d.weeks.length - 1].date + ')' : '') + '. Nothing is changed until you replace.';
+    } catch (err) {
+      importMsg = 'Rejected: ' + (err && err.message && err.message.length < 160 ? err.message.replace(/\.$/, '') : 'not a valid file') + '. Nothing was imported.';
+    }
+    render();
+  };
+  r.onerror = function () { importMsg = 'The file could not be read.'; render(); };
+  r.readAsText(f);
+}
+function dataView() {
+  var out = [h('h2', { text: 'Your data' })];
+  var er = exportReminder(); if (er) out.push(er);
+  out.push(shareCard());
+  out.push(h('section', { 'class': 'card' }, [
+    h('h3', { text: 'Export a full backup' }),
+    p('A plain JSON file of every week, capability, planner row and saved team read. The notes inside are readable text, so keep the file somewhere you trust and remove anything personal before sharing it.'),
+    btn('Export (' + S.weeks.length + ' week' + (S.weeks.length === 1 ? '' : 's') + ')', doExport, 'pri')
+  ]));
+  var fi = h('input', { type: 'file', accept: '.json,application/json', onchange: onFile });
+  var imp = [h('h3', { text: 'Import a full backup' }), p('Replaces what is on this device with the file. Older One\u2019s Peace files import too. The file is checked field by field; anything unexpected is rejected.'), h('label', null, [h('span', { 'class': 'sr', text: 'Choose a Cab4Cap4 or One\u2019s Peace export file' }), fi])];
+  if (importMsg) imp.push(h('div', { 'class': 'note' + (pending ? '' : ' warn'), role: 'status', text: importMsg }));
+  if (pending) imp.push(confirmBtn('Replace my data with this file', 'Really replace everything here?', 'imp', function () {
+    S = pending; pending = null; importMsg = 'Imported.'; persist(); render(true);
+  }));
+  out.push(h('section', { 'class': 'card' }, imp));
+  out.push(h('section', { 'class': 'card' }, [
+    h('h3', { text: 'Delete everything' }),
+    p('Removes every saved week, capability, planner row and saved read from this browser. Export first if you want a copy.'),
+    confirmBtn('Delete everything', 'Really delete everything?', 'wipe', function () {
+      try { localStorage.removeItem(KEY); } catch (e) { /* nothing to remove */ }
+      S = { settings: { timer: true, exported: 0, persona: 'self' }, caps: [], plan: emptyPlan(), lead: emptyLead(), saved: [], weeks: [] }; T.list = []; LV.list = []; pending = null; importMsg = 'Everything was deleted from this browser.'; render(true);
+    })
+  ]));
+  return out;
+}
+
+load();
+render();
+}());
+</script>
+</body>
+</html>
