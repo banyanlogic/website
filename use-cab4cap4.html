@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-LWDZ8lYHMPoUeIELGH+oSA7cXKrN9H0Cnx3DCcvIJeQ='; style-src 'sha256-56VOkb+QZua++2AemHwDT9LnKStJfTLGv8ByBo19n7s='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-ZrfHoHot6DPjYOutfdSRULWNMjrTn6jhq23Alxyp7hY='; style-src 'sha256-Bve8UgzP4ulPJLTR5CVp5BOfqt/f6q5CyF6kH0/IhHw='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <link rel="icon" href="data:,">
 <title>Cab4Cap4</title>
@@ -129,6 +129,9 @@ p.ref{font-size:.86rem;color:var(--mut);margin:12px 0;padding-left:10px;border-l
 a{color:var(--acc)}
 a.ext{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;font-weight:bold;text-underline-offset:3px}
 a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+nav.tabs.sub a.tabx{min-height:36px;padding:5px 10px;font-size:.9rem;font-weight:normal;gap:5px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);text-decoration:none}
+nav.tabs.sub a.tabx:hover{text-decoration:underline}
+nav.tabs.sub a.tabx .arr{color:var(--p1);font-weight:bold}
 .note.s2{border-left-color:var(--p1)}
 .note.s2 p.tag{color:var(--p1)}
 .ln{display:block}
@@ -153,7 +156,7 @@ details.rowd>summary .badge{flex:none}
 'use strict';
 /* Cab4Cap4 v0.6 - capability for capacity for capability (Cab = capability, Cap = capacity). One's Peace every Friday; the next capability every quarter.
    Local only. No network. Text is rendered with textContent only. */
-var KEY = 'cab4cap4.v1', SCHEMA = 4, MAXBYTES = 1048576, MAXWEEKS = 520, MAXCAPS = 12, MAXROWS = 80, MAXTXT = 2000, VERSION = '0.10';
+var KEY = 'cab4cap4.v1', SCHEMA = 4, MAXBYTES = 1048576, MAXWEEKS = 520, MAXCAPS = 12, MAXROWS = 80, MAXTXT = 2000, VERSION = '0.11';
 var SEG = [
   { id: 'vector', name: 'Vector Check', secs: 180 },
   { id: 'windshield', name: 'Windshield', secs: 240 },
@@ -391,10 +394,10 @@ function s2l2Link() {
     'Open S2L2', h('span', { 'class': 'sr', text: ' (opens a new tab)' })
   ]);
 }
-function tourLine() {
-  return h('p', { 'class': 'row' }, [
-    h('a', { href: TOUR_URL, target: '_blank', rel: 'noopener noreferrer', referrerpolicy: 'no-referrer', 'class': 'ext' }, ['Watch the tour', h('span', { 'class': 'sr', text: ' (opens a new tab)' })]),
-    h('span', { 'class': 'mut', text: 'about two and a half minutes \u00B7 new tab' })
+/* v0.11: the tour sits in Part 1's tab row, first on its second line, just before Sample week. */
+function tourTab() {
+  return h('a', { href: TOUR_URL, target: '_blank', rel: 'noopener noreferrer', referrerpolicy: 'no-referrer', 'class': 'ext tabx' }, [
+    'Watch the tour', h('span', { 'class': 'arr', 'aria-hidden': 'true', text: '\u2197' }), h('span', { 'class': 'sr', text: ' (opens a new tab)' })
   ]);
 }
 function s2l2Line() { return h('p', { 'class': 'row' }, [s2l2Link(), h('span', { 'class': 'mut', text: 'banyanlogic.com/use-s2l2.html \u00B7 new tab' })]); }
@@ -451,9 +454,12 @@ function partNav() {
     ps0 === 'leader' ? partBtn(4, 'Leadership view', 'you first, then your teams', 'lead') : null
   ]);
   var subs = cur === 1 ? [['home', 'This week'], ['history', 'History'], ['caps', 'Capabilities to keep'], ['sample', 'Sample week']] : [];
-  var sub = h('nav', { 'class': 'tabs sub' + (cur ? ' p' + cur : ''), 'aria-label': cur === 1 ? 'Part 1 sections' : 'Sections' }, subs.map(function (t) {
+  var subBtns = subs.map(function (t) {
     return btn(t[1], function () { nav(t[0]); }, 'sm', { 'aria-pressed': view === t[0] ? 'true' : 'false' });
-  }).concat([btn('Your data', function () { nav('data'); }, 'sm datab', { 'aria-pressed': view === 'data' ? 'true' : 'false' })]));
+  });
+  if (cur === 1) subBtns.splice(3, 0, tourTab());
+  var sub = h('nav', { 'class': 'tabs sub' + (cur ? ' p' + cur : ''), 'aria-label': cur === 1 ? 'Part 1 sections' : 'Sections' }, subBtns
+    .concat([btn('Your data', function () { nav('data'); }, 'sm datab', { 'aria-pressed': view === 'data' ? 'true' : 'false' })]));
   return [parts, sub];
 }
 function nav(v) {
@@ -524,7 +530,6 @@ function homeView() {
     done ? p('A box is already saved for today. Running another and saving replaces it.', 'mut') : null,
     p('If fifteen minutes isn\u2019t there, the three Vector Check reads alone still count.', 'mut'),
     p('New here? Run the Vector Check alone for a month before adding the rest.', 'mut'),
-    tourLine(),
     h('label', { 'class': 'row' }, [
       h('input', { type: 'checkbox', checked: S.settings.timer ? true : null, onchange: function (e) { S.settings.timer = e.target.checked; persist(); } }),
       h('span', null, lnKids('Run the timer. When a segment\u2019s time is up, move on and keep what I typed.'))
