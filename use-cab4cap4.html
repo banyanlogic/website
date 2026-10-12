@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Kf1zzRMSjkjZl4h29ha7+39gelZMh2okfpjHa6E1+Jk='; style-src 'sha256-56VOkb+QZua++2AemHwDT9LnKStJfTLGv8ByBo19n7s='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-LWDZ8lYHMPoUeIELGH+oSA7cXKrN9H0Cnx3DCcvIJeQ='; style-src 'sha256-56VOkb+QZua++2AemHwDT9LnKStJfTLGv8ByBo19n7s='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <link rel="icon" href="data:,">
 <title>Cab4Cap4</title>
@@ -153,7 +153,7 @@ details.rowd>summary .badge{flex:none}
 'use strict';
 /* Cab4Cap4 v0.6 - capability for capacity for capability (Cab = capability, Cap = capacity). One's Peace every Friday; the next capability every quarter.
    Local only. No network. Text is rendered with textContent only. */
-var KEY = 'cab4cap4.v1', SCHEMA = 4, MAXBYTES = 1048576, MAXWEEKS = 520, MAXCAPS = 12, MAXROWS = 80, MAXTXT = 2000, VERSION = '0.8';
+var KEY = 'cab4cap4.v1', SCHEMA = 4, MAXBYTES = 1048576, MAXWEEKS = 520, MAXCAPS = 12, MAXROWS = 80, MAXTXT = 2000, VERSION = '0.10';
 var SEG = [
   { id: 'vector', name: 'Vector Check', secs: 180 },
   { id: 'windshield', name: 'Windshield', secs: 240 },
@@ -241,6 +241,10 @@ function cleanWeek(w, i, v) {
   };
 }
 function cleanData(o) {
+  MIG = { retagged: 0, cleared: 0, card: '', saved: 0 };
+  try { return quiet(cleanData0(o), '_mig', MIG); } finally { MIG = null; }
+}
+function cleanData0(o) {
   if (!isObj(o)) fail('Not a Cab4Cap4 or One\u2019s Peace file.');
   var v = o.schema;
   if (v !== 1 && v !== 2 && v !== 3 && v !== 4) fail('Unsupported file version.');
@@ -273,7 +277,7 @@ function cleanData(o) {
   if (v >= 4) {
     if (!Array.isArray(o.saved) || o.saved.length > 40) fail('Bad saved reads.');
     var sn = {};
-    saved = o.saved.map(function (x) { var c = cleanAgg(x); if (has(sn, c.nonce)) fail('Two saved reads share an id.'); sn[c.nonce] = 1; return c; });
+    saved = o.saved.map(function (x) { var c = cleanAgg(x); if (c._legacy) MIG.saved++; if (has(sn, c.nonce)) fail('Two saved reads share an id.'); sn[c.nonce] = 1; return c; });
   }
   return { settings: { timer: st.timer, exported: Math.min(st.exported, weeks.length), persona: v >= 4 ? st.persona : 'self' }, caps: caps, plan: plan, lead: lead, saved: saved, weeks: weeks };
 }
@@ -281,6 +285,27 @@ function cleanData(o) {
 /* ---------- storage ---------- */
 function pack(stamp) {
   return { app: 'cab4cap4', schema: SCHEMA, exported: stamp, settings: { timer: S.settings.timer, exported: S.settings.exported, persona: S.settings.persona }, capabilities: S.caps, plan: S.plan, lead: S.lead, saved: S.saved, weeks: S.weeks };
+}
+function migNote(m) {
+  if (!m || !(m.retagged || m.cleared || m.card || m.saved)) return '';
+  var a = ['This version reads people through HUMS27: the book\u2019s six domains and twenty-seven signals.'];
+  if (m.retagged) a.push('The starter rows were re-tagged to match.');
+  if (m.cleared) a.push('Of the rows you wrote, ' + m.cleared + (m.cleared === 1 ? ' has' : ' have') + ' lost the older HUMS v2 signals. Pick HUMS27 signals in Edit this row.');
+  if (m.card === 'retagged') a.push('Your next-capability card took its signals from its row.');
+  if (m.card === 'cleared') a.push('Your next-capability card lost the older HUMS v2 signals.');
+  if (m.saved) a.push('Of your saved reads, ' + m.saved + (m.saved === 1 ? ' has' : ' have') + ' lost the older HUMS v2 signals.');
+  a.push('Nothing else changed.');
+  return a.join(' ');
+}
+function migImportNote(m) {
+  if (!m || !(m.retagged || m.cleared || m.card || m.saved)) return '';
+  var a = [];
+  if (m.retagged) a.push(m.retagged + ' starter row' + (m.retagged === 1 ? ' is' : 's are') + ' re-tagged to HUMS27');
+  if (m.cleared) a.push(m.cleared + ' row' + (m.cleared === 1 ? '' : 's') + ' you wrote lose them');
+  if (m.card === 'retagged') a.push('the next-capability card takes its row\u2019s HUMS27 signals');
+  if (m.card === 'cleared') a.push('the next-capability card loses them');
+  if (m.saved) a.push(m.saved + ' saved read' + (m.saved === 1 ? '' : 's') + ' lose them');
+  return ' This file uses the older HUMS v2 signals. On import, ' + a.join('; ') + '. Nothing else in it changes.';
 }
 function persist() {
   try { localStorage.setItem(KEY, JSON.stringify(pack(''))); return true; } catch (e) { storageOK = false; return false; }
@@ -292,6 +317,7 @@ function load() {
   try {
     if (raw.length > MAXBYTES) fail('too large');
     S = cleanData(JSON.parse(raw));
+    loadNote = migNote(S._mig);
   } catch (e) {
     loadNote = 'Saved data could not be read, so the app started empty. The stored copy is untouched until you save a week.';
   }
@@ -358,10 +384,17 @@ function totalSecs(w) { return SEG.reduce(function (n, s) { return n + w.seconds
    carries no data and no referrer, and Cab4Cap4 never reads S2L2's log. */
 var BOOK = 'The Climb or the Slide';
 var S2L2_URL = 'https://banyanlogic.com/use-s2l2.html';
+var TOUR_URL = 'https://banyanlogic.com/use-cab4cap4-tour.html'; /* the how-to tour, hosted beside this app (v0.9) */
 function bookRef(where) { return h('p', { 'class': 'ref' }, [h('cite', { text: BOOK }), ' \u00B7 ' + where]); }
 function s2l2Link() {
   return h('a', { href: S2L2_URL, target: '_blank', rel: 'noopener noreferrer', referrerpolicy: 'no-referrer', 'class': 'ext' }, [
     'Open S2L2', h('span', { 'class': 'sr', text: ' (opens a new tab)' })
+  ]);
+}
+function tourLine() {
+  return h('p', { 'class': 'row' }, [
+    h('a', { href: TOUR_URL, target: '_blank', rel: 'noopener noreferrer', referrerpolicy: 'no-referrer', 'class': 'ext' }, ['Watch the tour', h('span', { 'class': 'sr', text: ' (opens a new tab)' })]),
+    h('span', { 'class': 'mut', text: 'about two and a half minutes \u00B7 new tab' })
   ]);
 }
 function s2l2Line() { return h('p', { 'class': 'row' }, [s2l2Link(), h('span', { 'class': 'mut', text: 'banyanlogic.com/use-s2l2.html \u00B7 new tab' })]); }
@@ -491,6 +524,7 @@ function homeView() {
     done ? p('A box is already saved for today. Running another and saving replaces it.', 'mut') : null,
     p('If fifteen minutes isn\u2019t there, the three Vector Check reads alone still count.', 'mut'),
     p('New here? Run the Vector Check alone for a month before adding the rest.', 'mut'),
+    tourLine(),
     h('label', { 'class': 'row' }, [
       h('input', { type: 'checkbox', checked: S.settings.timer ? true : null, onchange: function (e) { S.settings.timer = e.target.checked; persist(); } }),
       h('span', null, lnKids('Run the timer. When a segment\u2019s time is up, move on and keep what I typed.'))
@@ -990,16 +1024,25 @@ var FRONT = { held: 'Held', contested: 'Contested', ceded: 'Ceded' };
 var HORIZ = { now: 'Now', near: 'Near', far: 'Far' };
 var ROLE = { teach: 'Teach', steer: 'Steer', tend: 'Tend', test: 'Test', translate: 'Translate', own: 'Own' };
 var ROLEHINT = { teach: 'show or correct the machine', steer: 'guide it when it is unsure', tend: 'install, maintain, repair', test: 'verify and red-team it', translate: 'fit it to a real customer', own: 'answer for the outcome' };
-var BUCKETS = [
-  ['B1 Physical', [['S01', 'Feel'], ['S02', 'Rest'], ['S03', 'Nourish'], ['S04', 'Move'], ['S05', 'Sense']]],
-  ['B2 Cognitive', [['S06', 'Learn'], ['S07', 'Remember'], ['S08', 'Imagine'], ['S09', 'Focus'], ['S10a', 'Think'], ['S10b', 'Discerning']]],
-  ['B3 Emotional-Social', [['S11', 'Regulating'], ['S12', 'Mirror'], ['S13', 'Belong'], ['S14', 'Express'], ['S15', 'Resolving']]],
-  ['B4 Motivational-Volitional', [['S16', 'Want'], ['S17', 'Orienting'], ['S18a', 'Rebounding'], ['S18b', 'Forbearing'], ['S18c', 'Perspective'], ['S19', 'Will'], ['S20', 'Agency']]],
-  ['B5 Identity-Meaning', [['S21', 'Become'], ['S22', 'Self-aligned'], ['S23', 'Matter'], ['S24', 'Narrate'], ['S25', 'Bequeath']]],
-  ['B6 Transcendence', [['S26', 'Nurture'], ['S27', 'Release'], ['S28', 'Flow'], ['S29', 'Revere']]]
+/* HUMS27: the book's six domains and twenty-seven signals (Appendix · The Instruments). Ids are H01-H27. */
+var DOMAINS = [
+  ['Who We Are', [['H01', 'Feel'], ['H02', 'Ideate'], ['H03', 'Remember'], ['H04', 'Identify']]],
+  ['How We Work', [['H05', 'Think'], ['H06', 'Reflex'], ['H07', 'Rely'], ['H08', 'Dream']]],
+  ['Senses', [['H09', 'See'], ['H10', 'Hear'], ['H11', 'Smell'], ['H12', 'Taste'], ['H13', 'Touch']]],
+  ['Actions', [['H14', 'Speak'], ['H15', 'Manipulate'], ['H16', 'Move'], ['H17', 'Pee & Poo'], ['H18', 'Progeny']]],
+  ['Purposes', [['H19', 'Live'], ['H20', 'Love'], ['H21', 'Connect']]],
+  ['Health', [['H22', 'Breathe'], ['H23', 'Digest'], ['H24', 'Circulate'], ['H25', 'Down and out'], ['H26', 'Up and out'], ['H27', 'Age']]]
 ];
-var SIG = {};
-BUCKETS.forEach(function (b) { b[1].forEach(function (s) { SIG[s[0]] = s[1]; }); });
+var SIG = {}, SIGDOM = {};
+DOMAINS.forEach(function (d) { d[1].forEach(function (s) { SIG[s[0]] = s[1]; SIGDOM[s[0]] = d[0]; }); });
+var NSIG = Object.keys(SIG).length;
+/* Versions before 0.10 used HUMS v2 ids. They are recognised only so older files can be read; they are never kept. */
+var V2IDS = {};
+'S01 S02 S03 S04 S05 S06 S07 S08 S09 S10a S10b S11 S12 S13 S14 S15 S16 S17 S18a S18b S18c S19 S20 S21 S22 S23 S24 S25 S26 S27 S28 S29'.split(' ').forEach(function (x) { V2IDS[x] = 1; });
+function isV2(x) { return typeof x === 'string' && has(V2IDS, x); }
+function hasV2(a) { return Array.isArray(a) && a.some(isV2); }
+function quiet(o, k, v) { Object.defineProperty(o, k, { value: v, enumerable: false }); return o; }
+var MIG = null;
 var PROWK = ['id', 'ksa', 'task', 'machine', 'vector', 'grade', 'frontier', 'horizon', 'role', 'led', 'held', 'signals', 'mine'];
 var CANDK = ['row', 'path', 'adjacent', 'apply90', 'pull', 'reserve', 'durable', 'passon'];
 var TARGK = ['text', 'path', 'role', 'frontier', 'signals', 'from', 'machine', 'step', 'hours', 'chosen'];
@@ -1010,7 +1053,18 @@ function okSigs(a) {
   var seen = {};
   return a.every(function (x) { var ok = typeof x === 'string' && has(SIG, x) && !has(seen, x); seen[x] = 1; return ok; });
 }
-function cleanPRow(r, i) {
+/* A row saved before 0.10 carries HUMS v2 ids. An unedited starter row takes the starter's HUMS27 tags; any other row loses the old ids. */
+function migRow(r, st) {
+  if (!isObj(r) || !hasV2(r.signals)) return r;
+  var c = {}; Object.keys(r).forEach(function (k) { c[k] = r[k]; });
+  var k = typeof r.id === 'string' && /^r\d{1,6}$/.test(r.id) ? parseInt(r.id.slice(1), 10) - 1 : -1;
+  var src = st && k >= 0 && st.rows[k] && st.rows[k].task === r.task ? st.rows[k] : null;
+  c.signals = src ? src.signals.slice() : r.signals.filter(function (x) { return !isV2(x); });
+  if (MIG) { if (src) MIG.retagged++; else MIG.cleared++; }
+  return c;
+}
+function cleanPRow(r, i, st) {
+  r = migRow(r, st);
   var P = 'Planner row ' + (i + 1) + ': ';
   if (!isObj(r) || !keysOk(r, PROWK)) fail(P + 'unexpected or missing fields');
   if (typeof r.id !== 'string' || !/^r\d{1,6}$/.test(r.id)) fail(P + 'bad id');
@@ -1025,7 +1079,8 @@ function cleanPlan(pl) {
   if (!str(pl.profession, 200) || !str(pl.starter, 20) || (pl.starter !== '' && !STARTERS.some(function (s) { return s.id === pl.starter; }))) fail('Bad planner profession.');
   if (!(pl.asOf === '' || validDate(pl.asOf))) fail('Bad planner date.');
   if (!Array.isArray(pl.rows) || pl.rows.length > 40) fail('Bad planner rows.');
-  var ids = {}, rows = pl.rows.map(function (r, i) { var c = cleanPRow(r, i); if (has(ids, c.id)) fail('Two planner rows share an id.'); ids[c.id] = 1; return c; });
+  var st = null; STARTERS.forEach(function (x) { if (x.id === pl.starter) st = x; });
+  var ids = {}, rows = pl.rows.map(function (r, i) { var c = cleanPRow(r, i, st); if (has(ids, c.id)) fail('Two planner rows share an id.'); ids[c.id] = 1; return c; });
   if (!Array.isArray(pl.cands) || pl.cands.length > 12) fail('Bad candidate list.');
   var cseen = {}, cands = pl.cands.map(function (c) {
     if (!isObj(c) || !keysOk(c, CANDK) || typeof c.row !== 'string' || !has(ids, c.row) || (c.path !== 'led' && c.path !== 'held')) fail('Bad candidate.');
@@ -1037,6 +1092,13 @@ function cleanPlan(pl) {
   var t = null;
   if (pl.target !== null) {
     var g = pl.target;
+    if (isObj(g) && hasV2(g.signals)) {
+      var g2 = {}; Object.keys(g).forEach(function (k) { g2[k] = g[k]; });
+      var fromRow = rows.filter(function (r) { return r.task === g.from; })[0];
+      g2.signals = fromRow ? fromRow.signals.slice() : g.signals.filter(function (x) { return !isV2(x); });
+      if (MIG) MIG.card = fromRow ? 'retagged' : 'cleared';
+      g = g2;
+    }
     if (!isObj(g) || !keysOk(g, TARGK) || !str(g.text, 300) || !g.text.trim() || (g.path !== 'led' && g.path !== 'held') || !okEnum(g.role, ROLE, true) || !okEnum(g.frontier, FRONT) || !okSigs(g.signals) || !str(g.from, 200) || !str(g.machine, 300) || !str(g.step, 300) || !num(g.hours, 0, 168) || !validDate(g.chosen)) fail('Bad next-capability card.');
     t = { text: g.text, path: g.path, role: g.role, frontier: g.frontier, signals: g.signals.slice(), from: g.from, machine: g.machine, step: g.step, hours: g.hours, chosen: g.chosen };
   }
@@ -1050,42 +1112,42 @@ function R(ksa, task, machine, vector, grade, frontier, horizon, role, led, held
 }
 var STARTERS = [
   { id: 'cyber', name: 'Cybersecurity analyst', rows: [
-    R('K', 'Threat intelligence and vulnerability knowledge', 'AI synthesizes threat feeds, CVEs and ATT&CK mappings. General capability, widely advertised; no single source.', 'ai', 'deployed', 'contested', 'now', 'test', 'Know how your AI agents fail, and where.', 'Your environment’s normal. Your business’s risk appetite.', ['S07', 'S10b', 'S18c']),
-    R('S', 'Alert triage', 'Agents triage tier-1 alerts. In a survey of 250 security teams, most still review the verdicts and none grant full autonomy. Source: Prophet Security and ViB, State of AI in the SOC 2026.', 'agent', 'piloted', 'contested', 'now', 'steer', 'Set autonomy per workflow, review verdicts, approve containment, and measure how often the agents agree with your analysts.', 'Incident command under pressure.', ['S20', 'S11', 'S10a']),
-    R('S', 'Finding and fixing vulnerabilities', 'AI systems find and patch bugs. XBOW topped a HackerOne leaderboard, with human review before each submission. Sources: DARPA AIxCC results, 2025; XBOW, 2025.', 'agent', 'piloted', 'contested', 'now', 'test', 'Red-team the AI systems themselves, and validate their patches.', 'Imagining the attacker nobody has seen yet.', ['S08', 'S10a']),
-    R('A', 'Pattern recognition at scale', 'Pattern matching across huge volumes of telemetry. General capability; no single source.', 'ai', 'deployed', 'ceded', 'now', 'test', 'Judge the multi-stage campaigns the agents miss.', 'Ethical and legal boundary judgment.', ['S22', 'S19', 'S18b']),
-    R('K', 'Cryptography in use', 'Future quantum computers may break today’s public-key cryptography, so data stolen now can be read later. Source: NIST IR 8547, initial public draft, November 2024.', 'quantum', 'lab', 'held', 'now', 'own', 'Lead the post-quantum migration: crypto inventory, priorities, and a plan to NIST’s proposed 2030 and 2035 dates.', 'Deciding which data must stay secret for decades.', ['S17', 'S10b', 'S25'])
+    R('K', 'Threat intelligence and vulnerability knowledge', 'AI synthesizes threat feeds, CVEs and ATT&CK mappings. General capability, widely advertised; no single source.', 'ai', 'deployed', 'contested', 'now', 'test', 'Know how your AI agents fail, and where.', 'Your environment’s normal. Your business’s risk appetite.', ['H03', 'H09', 'H05']),
+    R('S', 'Alert triage', 'Agents triage tier-1 alerts. In a survey of 250 security teams, most still review the verdicts and none grant full autonomy. Source: Prophet Security and ViB, State of AI in the SOC 2026.', 'agent', 'piloted', 'contested', 'now', 'steer', 'Set autonomy per workflow, review verdicts, approve containment, and measure how often the agents agree with your analysts.', 'Incident command under pressure.', ['H14', 'H06', 'H02']),
+    R('S', 'Finding and fixing vulnerabilities', 'AI systems find and patch bugs. XBOW topped a HackerOne leaderboard, with human review before each submission. Sources: DARPA AIxCC results, 2025; XBOW, 2025.', 'agent', 'piloted', 'contested', 'now', 'test', 'Red-team the AI systems themselves, and validate their patches.', 'Imagining the attacker nobody has seen yet.', ['H08', 'H02']),
+    R('A', 'Pattern recognition at scale', 'Pattern matching across huge volumes of telemetry. General capability; no single source.', 'ai', 'deployed', 'ceded', 'now', 'test', 'Judge the multi-stage campaigns the agents miss.', 'Ethical and legal boundary judgment.', ['H06', 'H02', 'H04']),
+    R('K', 'Cryptography in use', 'Future quantum computers may break today’s public-key cryptography, so data stolen now can be read later. Source: NIST IR 8547, initial public draft, November 2024.', 'quantum', 'lab', 'held', 'now', 'own', 'Lead the post-quantum migration: crypto inventory, priorities, and a plan to NIST’s proposed 2030 and 2035 dates.', 'Deciding which data must stay secret for decades.', ['H05', 'H08', 'H18'])
   ] },
   { id: 'plumbing', name: 'Plumbing and HVAC technician', rows: [
-    R('K', 'Intake, booking, codes and estimates', 'AI agents answer calls 24/7 and book straight to the dispatch board. Source: ServiceTitan, March 2026.', 'agent', 'deployed', 'contested', 'now', 'steer', 'Read connected-equipment data and predictive alerts.', 'Heat pumps, low-GWP refrigerants and multi-trade work. How old buildings were really built.', ['S06', 'S07']),
-    R('S', 'Inspection and leak finding', 'Pipe and sewer crawlers; acoustic and pressure sensors. General capability; no single source.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Commission and diagnose connected systems, on site and remotely.', 'Confined-space repair, soldering, feeling the thread seat. No builder claims these.', ['S04', 'S05', 'S01']),
-    R('A', 'Emergencies and customer trust', 'AI routes “water leak” and “gas smell” calls to the on-call dispatcher. Source: ServiceTitan, March 2026.', 'agent', 'deployed', 'contested', 'now', 'own', 'Take the escalated emergency and own the outcome.', 'Being trusted inside a home. Calm in a flood.', ['S12', 'S11', 'S26', 'S29'])
+    R('K', 'Intake, booking, codes and estimates', 'AI agents answer calls 24/7 and book straight to the dispatch board. Source: ServiceTitan, March 2026.', 'agent', 'deployed', 'contested', 'now', 'steer', 'Read connected-equipment data and predictive alerts.', 'Heat pumps, low-GWP refrigerants and multi-trade work. How old buildings were really built.', ['H05', 'H03']),
+    R('S', 'Inspection and leak finding', 'Pipe and sewer crawlers; acoustic and pressure sensors. General capability; no single source.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Commission and diagnose connected systems, on site and remotely.', 'Confined-space repair, soldering, feeling the thread seat. No builder claims these.', ['H15', 'H13', 'H16']),
+    R('A', 'Emergencies and customer trust', 'AI routes “water leak” and “gas smell” calls to the on-call dispatcher. Source: ServiceTitan, March 2026.', 'agent', 'deployed', 'contested', 'now', 'own', 'Take the escalated emergency and own the outcome.', 'Being trusted inside a home. Calm in a flood.', ['H21', 'H06', 'H22'])
   ] },
   { id: 'nursing', name: 'Nurse', rows: [
-    R('K', 'Documentation and charting', 'Ambient AI drafts flowsheet documentation for the nurse to review. Source: Microsoft Dragon Copilot for nurses, October 2025.', 'ai', 'piloted', 'contested', 'now', 'test', 'Catch what the summary missed before you sign.', 'Clinical judgment. Knowing this patient.', ['S10b', 'S07']),
-    R('S', 'Patient education and follow-up calls', 'Voice agents handle education, admission guidance and medication-adherence calls. Source: Hippocratic AI, April 2026.', 'agent', 'piloted', 'contested', 'now', 'steer', 'Decide when to launch the AI call, and when to step in.', 'Teaching a frightened family face to face.', ['S14', 'S12']),
-    R('A', 'Bedside care', 'No builder in this research claims bedside care. Source: the research behind these sheets, 11 October 2026.', '', '', 'held', 'now', 'teach', 'Train clinical AI as a credentialed expert.', 'Touch, presence, reading a patient.', ['S01', 'S26', 'S11']),
-    R('K', 'New diagnostics', 'Wearable brain scanners built on quantum sensors have been piloted with patients; entanglement PET is a research roadmap. Sources: Université Libre de Bruxelles pilot, Physics World, June 2022; QE-PET roadmap, arXiv 2607.12182, 2026.', 'quantum', 'piloted', 'held', 'near', 'translate', 'Explain new quantum diagnostics to patients and families.', 'Interpreting a result for this patient.', ['S05', 'S14'])
+    R('K', 'Documentation and charting', 'Ambient AI drafts flowsheet documentation for the nurse to review. Source: Microsoft Dragon Copilot for nurses, October 2025.', 'ai', 'piloted', 'contested', 'now', 'test', 'Catch what the summary missed before you sign.', 'Clinical judgment. Knowing this patient.', ['H02', 'H03']),
+    R('S', 'Patient education and follow-up calls', 'Voice agents handle education, admission guidance and medication-adherence calls. Source: Hippocratic AI, April 2026.', 'agent', 'piloted', 'contested', 'now', 'steer', 'Decide when to launch the AI call, and when to step in.', 'Teaching a frightened family face to face.', ['H14', 'H01', 'H10']),
+    R('A', 'Bedside care', 'No builder in this research claims bedside care. Source: the research behind these sheets, 11 October 2026.', '', '', 'held', 'now', 'teach', 'Train clinical AI as a credentialed expert.', 'Touch, presence, reading a patient.', ['H13', 'H09', 'H20']),
+    R('K', 'New diagnostics', 'Wearable brain scanners built on quantum sensors have been piloted with patients; entanglement PET is a research roadmap. Sources: Université Libre de Bruxelles pilot, Physics World, June 2022; QE-PET roadmap, arXiv 2607.12182, 2026.', 'quantum', 'piloted', 'held', 'near', 'translate', 'Explain new quantum diagnostics to patients and families.', 'Interpreting a result for this patient.', ['H14', 'H02'])
   ] },
   { id: 'farming', name: 'Farmer', rows: [
-    R('K', 'Field mapping, rates and yield data', 'AI turns field data into maps and application rates. General capability; no single source.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Set up fields and tool settings for autonomous runs.', 'The agronomy of this ground and this weather.', ['S05', 'S17']),
-    R('S', 'Tillage and spraying', 'Autonomous tillage in Midwest corn and soybean fields; GPS-guided spray drones. Sources: John Deere, AgriNews, September 2025; a spray-drone job posting, May 2026.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Fly certified spray drones (FAA Part 107); install and maintain autonomy kits.', 'Judging when not to run.', ['S04', 'S10b']),
-    R('A', 'Watching the field', 'Cameras and sensors watch the machine and the crop. Source: John Deere’s 16-camera autonomous tillage, AgriNews, September 2025.', 'sensing', 'deployed', 'contested', 'now', 'steer', 'Monitor by phone and clear the exceptions.', 'Stewardship of the land.', ['S29', 'S25'])
+    R('K', 'Field mapping, rates and yield data', 'AI turns field data into maps and application rates. General capability; no single source.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Set up fields and tool settings for autonomous runs.', 'The agronomy of this ground and this weather.', ['H09', 'H03']),
+    R('S', 'Tillage and spraying', 'Autonomous tillage in Midwest corn and soybean fields; GPS-guided spray drones. Sources: John Deere, AgriNews, September 2025; a spray-drone job posting, May 2026.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Fly certified spray drones (FAA Part 107); install and maintain autonomy kits.', 'Judging when not to run.', ['H15', 'H06']),
+    R('A', 'Watching the field', 'Cameras and sensors watch the machine and the crop. Source: John Deere’s 16-camera autonomous tillage, AgriNews, September 2025.', 'sensing', 'deployed', 'contested', 'now', 'steer', 'Monitor by phone and clear the exceptions.', 'Stewardship of the land.', ['H22', 'H18'])
   ] },
   { id: 'logistics', name: 'Logistics and warehouse', rows: [
-    R('K', 'Routing and dispatch', 'AI plans routes and dispatch. General capability; no single source.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Answer driverless vehicles that ask for guidance (fleet response).', 'Local knowledge: the dock, the gate, the customer.', ['S07', 'S10b']),
-    R('S', 'Driving and stowing', 'Driverless trucks on Texas routes; a touch-sensing robot that handles most items at one warehouse. Sources: Aurora, MarketBeat, July 2026; Amazon Vulcan, CNBC, May 2025.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Fuel, maintain and repair robot fleets (mechatronics).', 'The last-mile exception.', ['S04', 'S05']),
-    R('A', 'Continuous operation', 'Machines can keep running across shifts. General capability; no single source.', 'robotics', 'piloted', 'contested', 'now', 'teach', 'Teach robots by demonstration.', 'Safety judgment around people.', ['S11', 'S22'])
+    R('K', 'Routing and dispatch', 'AI plans routes and dispatch. General capability; no single source.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Answer driverless vehicles that ask for guidance (fleet response).', 'Local knowledge: the dock, the gate, the customer.', ['H03', 'H02']),
+    R('S', 'Driving and stowing', 'Driverless trucks on Texas routes; a touch-sensing robot that handles most items at one warehouse. Sources: Aurora, MarketBeat, July 2026; Amazon Vulcan, CNBC, May 2025.', 'robotics', 'deployed', 'contested', 'now', 'tend', 'Fuel, maintain and repair robot fleets (mechatronics).', 'The last-mile exception.', ['H15', 'H16']),
+    R('A', 'Continuous operation', 'Machines can keep running across shifts. General capability; no single source.', 'robotics', 'piloted', 'contested', 'now', 'teach', 'Teach robots by demonstration.', 'Safety judgment around people.', ['H06', 'H15'])
   ] },
   { id: 'software', name: 'Software and QA', rows: [
-    R('K', 'Code and test writing', 'Coding agents draft code and tests; developers report output that is “almost right, but not quite”. Source: Stack Overflow Developer Survey, 2025.', 'agent', 'deployed', 'contested', 'now', 'test', 'Know where the tools are almost right, and catch it.', 'What the customer actually needs.', ['S10a', 'S12']),
-    R('S', 'Checks, patches and releases', 'Agents write checks and patch known bugs. General capability, widely advertised; no single source.', 'agent', 'piloted', 'contested', 'now', 'own', 'Decide what is worth checking. Own the release-risk call.', 'Architecture and its trade-offs.', ['S10b', 'S18c']),
-    R('A', 'Speed of output', 'Machines produce code faster than people. General capability; no single source.', 'agent', 'deployed', 'ceded', 'now', 'translate', 'Fit AI into a customer’s real systems (forward-deployed work).', 'Explaining a decision to the people who must live with it.', ['S14', 'S13'])
+    R('K', 'Code and test writing', 'Coding agents draft code and tests; developers report output that is “almost right, but not quite”. Source: Stack Overflow Developer Survey, 2025.', 'agent', 'deployed', 'contested', 'now', 'test', 'Know where the tools are almost right, and catch it.', 'What the customer actually needs.', ['H05', 'H10']),
+    R('S', 'Checks, patches and releases', 'Agents write checks and patch known bugs. General capability, widely advertised; no single source.', 'agent', 'piloted', 'contested', 'now', 'own', 'Decide what is worth checking. Own the release-risk call.', 'Architecture and its trade-offs.', ['H05', 'H24']),
+    R('A', 'Speed of output', 'Machines produce code faster than people. General capability; no single source.', 'agent', 'deployed', 'ceded', 'now', 'translate', 'Fit AI into a customer’s real systems (forward-deployed work).', 'Explaining a decision to the people who must live with it.', ['H14', 'H21'])
   ] },
   { id: 'service', name: 'Customer service', rows: [
-    R('K', 'Policy and account lookup', 'AI looks up policies and accounts. General capability; no single source.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Write the escalation rules.', 'Knowing when the policy is wrong.', ['S10b']),
-    R('S', 'Routine chats and calls', 'AI assistants handle routine chats; at least one large firm went back to hiring people for quality. Source: Klarna, reported by Maginative, May 2025.', 'agent', 'deployed', 'contested', 'now', 'own', 'Take the escalated, complex case.', 'Repairing a broken relationship.', ['S12', 'S11']),
-    R('A', 'Round-the-clock volume', 'Machines answer at any hour, at any volume. General capability; no single source.', 'agent', 'deployed', 'ceded', 'now', 'test', 'Review the quality of AI conversations.', 'Care under pressure.', ['S26', 'S22'])
+    R('K', 'Policy and account lookup', 'AI looks up policies and accounts. General capability; no single source.', 'ai', 'deployed', 'contested', 'now', 'steer', 'Write the escalation rules.', 'Knowing when the policy is wrong.', ['H05', 'H06']),
+    R('S', 'Routine chats and calls', 'AI assistants handle routine chats; at least one large firm went back to hiring people for quality. Source: Klarna, reported by Maginative, May 2025.', 'agent', 'deployed', 'contested', 'now', 'own', 'Take the escalated, complex case.', 'Repairing a broken relationship.', ['H20', 'H10', 'H01']),
+    R('A', 'Round-the-clock volume', 'Machines answer at any hour, at any volume. General capability; no single source.', 'agent', 'deployed', 'ceded', 'now', 'test', 'Review the quality of AI conversations.', 'Care under pressure.', ['H01', 'H06'])
   ] }
 ];
 STARTERS.forEach(function (s) { s.rows.forEach(function (r, i) { var t = {}; Object.keys(r).forEach(function (k) { t[k] = r[k]; }); t.id = 'r' + (i + 1); t.mine = false; cleanPRow(t, i); }); });
@@ -1101,7 +1163,8 @@ function loadStarter(st) {
   S.plan.cands = [];
   persist();
 }
-function sigNames(a) { return a.map(function (c) { return c + ' ' + SIG[c]; }).join(', '); }
+function sigName(c) { return SIGDOM[c] + ' (' + SIG[c] + ')'; }
+function sigNames(a) { return a.map(sigName).join(', '); }
 function candText(c) { var r = rowById(c.row); return r ? (c.path === 'led' ? r.led : r.held) : ''; }
 function candEval(c) {
   var gates = c.adjacent && c.apply90, score = (c.pull ? 1 : 0) + (c.reserve ? 1 : 0) + (c.durable ? 1 : 0);
@@ -1125,7 +1188,7 @@ function rowCard(r, onCands) {
   var refs = {};
   function lineEl(label, key) { refs[key] = h('span', null, null); return h('p', { 'class': 'pl' }, [h('strong', { text: label + ' ' }), refs[key]]); }
   var head = h('summary', { 'class': 'rowsum' }, [refs.k = h('span', { 'class': 'badge' }), refs.task = h('strong'), refs.fr = h('span'), refs.mk = h('span', { 'class': 'mut' })]);
-  var body = [lineEl('Machines now:', 'machine'), lineEl('Lead the machines:', 'led'), lineEl('Go deeper:', 'held'), lineEl('HUMS:', 'sig')];
+  var body = [lineEl('Machines now:', 'machine'), lineEl('Lead the machines:', 'led'), lineEl('Go deeper:', 'held'), lineEl('HUMS27:', 'sig')];
   function refresh() {
     refs.k.textContent = r.ksa;
     refs.task.textContent = r.task || '(name this task)';
@@ -1151,7 +1214,7 @@ function rowCard(r, onCands) {
     var b = btn(FRONT[k], function () { r.frontier = k; Array.prototype.forEach.call(frSel.children, function (c) { c.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); set(true); }, 'sm', { 'aria-pressed': r.frontier === k ? 'true' : 'false' });
     return b;
   }));
-  var sigBox = h('div', { 'class': 'sig' }, BUCKETS.map(function (bk) {
+  var sigBox = h('div', { 'class': 'sig' }, DOMAINS.map(function (bk) {
     return h('fieldset', null, [h('legend', { text: bk[0] })].concat(bk[1].map(function (s) {
       var cb = h('input', { type: 'checkbox', checked: r.signals.indexOf(s[0]) >= 0 ? true : null, onchange: function () {
         var i = r.signals.indexOf(s[0]);
@@ -1159,7 +1222,7 @@ function rowCard(r, onCands) {
         if (!cb.checked && i >= 0) r.signals.splice(i, 1);
         set(true);
       } });
-      return h('label', null, [cb, ' ' + s[0] + ' ' + s[1]]);
+      return h('label', null, [cb, ' ' + s[1]]);
     })));
   }));
   var edit = h('details', null, [h('summary', { text: 'Edit this row' }),
@@ -1173,7 +1236,7 @@ function rowCard(r, onCands) {
     selIn('Human-led role', r, 'role', ROLE, 'None', function () { set(true); }),
     planIn('Lead the machines: the opportunity', r, 'led', 300, set, true),
     planIn('Go deeper: the human-held work', r, 'held', 300, set, true),
-    h('details', null, [h('summary', { text: 'HUMS v2 signals this exercises (up to 8)' }), sigBox]),
+    h('details', null, [h('summary', { text: 'HUMS27 signals this exercises (up to 8)' }), sigBox]),
     armBtn('Remove this row', 'Really remove this row?', function () {
       S.plan.rows = S.plan.rows.filter(function (x) { return x.id !== r.id; });
       S.plan.cands = S.plan.cands.filter(function (c) { return c.row !== r.id; });
@@ -1271,7 +1334,7 @@ function planView() {
     function add(k, v) { if (v) { items.push(h('dt', { text: k })); items.push(h('dd', { text: v })); } }
     add('Kind', t.path === 'led' ? 'Lead the machines' + (t.role ? ': ' + ROLE[t.role] + ' (' + ROLEHINT[t.role] + ')' : '') : 'Go deeper: human-held work');
     add('From the task', t.from); add('What machines now do', t.machine); add('Frontier', FRONT[t.frontier]);
-    add('HUMS v2 signals', t.signals.length ? sigNames(t.signals) : ''); add('Chosen', t.chosen);
+    add('HUMS27 signals', t.signals.length ? sigNames(t.signals) : ''); add('Chosen', t.chosen);
     cardWrap.appendChild(h('dl', { 'class': 'w' }, items));
     cardWrap.appendChild(planIn('The smallest real first step', t, 'step', 300, function (save) { if (save) persist(); }, true));
     var hrs = h('input', { type: 'number', min: '0', max: '168', step: '0.5', inputmode: 'decimal', value: String(t.hours) });
@@ -1364,14 +1427,17 @@ function cleanShare(q) {
     if (!isObj(c) || !keysOk(c, ['theme', 'state']) || typeof c.theme !== 'string' || !has(THEMES, c.theme) || typeof c.state !== 'string' || !has(STATE, c.state)) fail('bad capabilities');
     return { theme: c.theme, state: c.state };
   });
-  var card = null;
+  var card = null, legacy = false;
   if (q.card !== null) {
     var c = q.card;
-    if (!isObj(c) || !keysOk(c, ['role', 'frontier', 'signals']) || !okEnum(c.role, ROLE, true) || !okEnum(c.frontier, FRONT) || !okSigs(c.signals)) fail('bad card');
-    card = { role: c.role, frontier: c.frontier, signals: c.signals.slice() };
+    var cs = isObj(c) && hasV2(c.signals) ? c.signals.filter(function (x) { return !isV2(x); }) : (isObj(c) ? c.signals : null);
+    if (isObj(c) && cs !== c.signals) legacy = true;
+    if (!isObj(c) || !keysOk(c, ['role', 'frontier', 'signals']) || !okEnum(c.role, ROLE, true) || !okEnum(c.frontier, FRONT) || !okSigs(cs)) fail('bad card');
+    card = { role: c.role, frontier: c.frontier, signals: cs.slice() };
   }
   if (!(q.reserve === null || num(q.reserve, 0, 168))) fail('bad reserve');
-  return { kind: q.kind, schema: 2, level: 'self', team: q.team, period: { type: q.period.type, start: q.period.start }, expires: q.expires, nonce: q.nonce, notice: NOTICE, vectors: vectors, caps: caps, card: card, reserve: q.reserve, member: q.schema === 2 ? q.member : q.nonce, seq: q.schema === 2 ? q.seq : 1 };
+  var out = { kind: q.kind, schema: 2, level: 'self', team: q.team, period: { type: q.period.type, start: q.period.start }, expires: q.expires, nonce: q.nonce, notice: NOTICE, vectors: vectors, caps: caps, card: card, reserve: q.reserve, member: q.schema === 2 ? q.member : q.nonce, seq: q.schema === 2 ? q.seq : 1 };
+  return legacy ? quiet(out, '_legacy', true) : out;
 }
 function cleanAgg(q) {
   if (!isObj(q) || !(keysOk(q, AGGK) || keysOk(q, AGGK2))) fail('not a team or leadership file (unexpected or missing fields)');
@@ -1390,14 +1456,17 @@ function cleanAgg(q) {
     if (!isObj(q.roles) || !keysOk(q.roles, ROLEK) || !ROLEK.every(function (k) { return cnt(q.roles[k]); }) || ROLEK.reduce(function (n, k) { return n + q.roles[k]; }, 0) < MINSHARE) fail('bad roles');
     roles = {}; ROLEK.forEach(function (k) { roles[k] = q.roles[k]; });
   }
-  var signals = null;
+  var signals = null, legacy = false;
   if (q.signals !== null) {
-    if (!isObj(q.signals) || Object.keys(q.signals).length > 32 || !Object.keys(q.signals).every(function (k) { return has(SIG, k) && cnt(q.signals[k]) && q.signals[k] > 0; })) fail('bad signals');
-    signals = {}; Object.keys(q.signals).sort().forEach(function (k) { signals[k] = q.signals[k]; });
+    if (!isObj(q.signals) || Object.keys(q.signals).length > 32) fail('bad signals');
+    var sk = Object.keys(q.signals).filter(function (k) { if (isV2(k) && cnt(q.signals[k])) { legacy = true; return false; } return true; });
+    if (sk.length > NSIG || !sk.every(function (k) { return has(SIG, k) && cnt(q.signals[k]) && q.signals[k] > 0; })) fail('bad signals');
+    signals = {}; sk.sort().forEach(function (k) { signals[k] = q.signals[k]; });
   }
   if (!(q.reserve === null || num(q.reserve, 0, 1000000))) fail('bad reserve');
-  return { kind: q.kind, schema: 2, seq: q.schema === 2 ? q.seq : 1, level: q.level, team: q.team, period: { type: q.period.type, start: q.period.start }, expires: q.expires, nonce: q.nonce, notice: NOTICE, meets: true,
+  var out = { kind: q.kind, schema: 2, seq: q.schema === 2 ? q.seq : 1, level: q.level, team: q.team, period: { type: q.period.type, start: q.period.start }, expires: q.expires, nonce: q.nonce, notice: NOTICE, meets: true,
     vectors: q.vectors ? { climbing: q.vectors.climbing, plateau: q.vectors.plateau, sliding: q.vectors.sliding } : null, themes: themes, roles: roles, signals: signals, reserve: q.reserve };
+  return legacy ? quiet(out, '_legacy', true) : out;
 }
 var SHAREKEY_RE = /^[STL]\|[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}\|(week|quarter)\|\d{4}-\d{2}-\d{2}$/;
 var ITEMS = ['vectors', 'caps', 'card', 'reserve', 'withdrawn'];
@@ -1534,11 +1603,11 @@ function readsView(c, scope) {
     out.push(readCard('Capability demand', [
       p(rl.length ? rl.map(function (x) { return ROLE[x.k] + ': ' + x.n; }).join(' · ') : 'No roles named on the shared cards.'),
       fb ? h('p', { 'class': 'pass', text: 'Firebreak candidate: ' + ROLE[fb.k] + ' (' + ROLEHINT[fb.k] + '). Four to six people, protected, setting the benchmark (Workbook 8.1).' }) : null,
-      top.length ? p('Most-named HUMS signals: ' + top.map(function (k) { return k + ' ' + SIG[k]; }).join(', '), 'mut') : null
+      top.length ? p('Most-named HUMS27 signals: ' + top.map(sigName).join(', '), 'mut') : null
     ], fb ? 'firebreak candidate: ' + ROLE[fb.k] : (rl.length ? ROLE[rl[0].k] + ' most named' : 'no roles named')));
     var covered = c.signals ? Object.keys(c.signals) : [];
-    var missing = BUCKETS.filter(function (b) { return !b[1].some(function (s) { return covered.indexOf(s[0]) >= 0; }); }).map(function (b) { return b[0]; });
-    out.push(readCard('The human range', [p(covered.length + ' of 32 HUMS signals appear on the shared cards.'), missing.length ? p('No card reaches: ' + missing.join(', ') + '.', 'mut') : p('Every HUMS bucket is reached by at least one card.', 'mut')], covered.length + ' of 32 signals'));
+    var missing = DOMAINS.filter(function (b) { return !b[1].some(function (s) { return covered.indexOf(s[0]) >= 0; }); }).map(function (b) { return b[0]; });
+    out.push(readCard('The human range', [p(covered.length + ' of ' + NSIG + ' HUMS27 signals appear on the shared cards.'), missing.length ? p('No card reaches: ' + missing.join(', ') + '.', 'mut') : p('Every HUMS27 domain is reached by at least one card.', 'mut')], covered.length + ' of ' + NSIG + ' signals'));
   } else out.push(readCard('Capability demand', [p('Not enough shared next-capability cards for this read yet.', 'mut')], 'not enough yet'));
   out.push(readCard('Pooled reserve', [c.reserve !== null ? h('p', { 'class': 'big', text: c.reserve + ' hours a week' }) : p('Not enough shared reserve hours for this read yet.', 'mut'), p('Capacity is the budget for transformation (Chapter 15, Principle 2).', 'mut')], c.reserve !== null ? c.reserve + ' h a week' : 'not enough yet'));
   return out;
@@ -1556,6 +1625,10 @@ function periodBtns(state) {
   return h('div', { 'class': 'row', role: 'group', 'aria-label': 'Period' }, [['week', 'This week'], ['quarter', 'This quarter']].map(function (x) {
     return btn(x[1], function () { state.per = periodFor(x[0]); state.list = []; state.rej = {}; render(); }, 'sm', { 'aria-pressed': state.per && state.per.type === x[0] ? 'true' : 'false' });
   }));
+}
+function oldNote(list, one, many) {
+  var n = list.filter(function (q) { return q._legacy; }).length;
+  return n ? h('div', { 'class': 'note', role: 'status' }, [p(n + ' ' + (n === 1 ? one : many) + (n === 1 ? ' comes' : ' come') + ' from an older version of Cab4Cap4. The older HUMS v2 signals in ' + (n === 1 ? 'it' : 'them') + ' are not counted. Everything else counts.')]) : null;
 }
 function rejSummary(r) {
   var k = Object.keys(r); if (!k.length) return null;
@@ -1596,6 +1669,7 @@ function teamView() {
     ps('Members share when they choose. Collect their files as they arrive, somewhere only you can open, and load them all here whenever you like. Each member\u2019s latest share counts, and a withdrawn share counts for nothing. Do not open members\u2019 files. Loaded shares stay in memory and are cleared when you leave this view.', 'mut'),
     h('label', null, [h('span', { 'class': 'sr', text: 'Add member share files' }), fi]),
     rejSummary(T.rej),
+    oldNote(T.list, 'share', 'shares'),
     h('p', { 'class': eff.length >= MINSHARE ? 'pass' : 'mut', text: eff.length >= MINSHARE ? 'Enough shares for a team read.' : (T.list.length ? 'Not enough shares yet. At least five are needed before anything shows.' : 'No shares loaded yet.') }),
     T.list.length ? confirmBtn('Clear loaded shares', 'Really clear them?', 'tclr', function () { T.list = []; T.rej = {}; render(); }) : null
   ]));
@@ -1661,6 +1735,7 @@ function leadView() {
     ps('Only team packets, each exported by its convener with the team\u2019s agreement, whenever they choose. Member shares are refused. Only the latest read from each team is used. Loaded packets are cleared when you leave this view.', 'mut'),
     h('label', null, [h('span', { 'class': 'sr', text: 'Add team packet files' }), fi]),
     rejSummary(LV.rej),
+    oldNote(LV.list, 'team packet', 'team packets'),
     p(teams.length ? 'Teams loaded: ' + teams.map(function (x) { return x.team; }).join(', ') : 'No team packets loaded yet.', teams.length ? null : 'mut'),
     teams.length ? confirmBtn('Clear loaded packets', 'Really clear them?', 'lclr', function () { LV.list = []; LV.rej = {}; render(); }) : null
   ]));
@@ -1731,7 +1806,7 @@ function shareCard() {
   prev.push('Team code ' + (f.code || '(none yet)') + ' · ' + periodLabel(per) + (last ? ' · this will be version ' + (last.seq + 1) + ' and replace version ' + last.seq : '') + '.');
   prev.push(f.vec ? 'Your weekly vectors: ' + (vecWeeks.length ? vecWeeks.map(function (w) { return VEC[w.vector]; }).join(', ') : 'none in this period') + '.' : 'Vectors: not shared.');
   prev.push(f.caps ? 'Capability states by theme: ' + (capStates().map(function (c) { return THEMES[c.theme] + ' ' + STATE[c.state]; }).join(', ') || 'none this period') + '.' : 'Capability states: not shared.');
-  prev.push(f.card ? (t ? 'Next-capability card: role ' + (t.role ? ROLE[t.role] : 'none') + ', ' + FRONT[t.frontier] + (t.signals.length ? ', ' + t.signals.join(' ') : '') + '. Its text is never shared.' : 'Next-capability card: none chosen.') : 'Next-capability card: not shared.');
+  prev.push(f.card ? (t ? 'Next-capability card: role ' + (t.role ? ROLE[t.role] : 'none') + ', ' + FRONT[t.frontier] + (t.signals.length ? ', HUMS27 signals ' + t.signals.map(function (c) { return c + ' ' + SIG[c]; }).join(', ') : '') + '. Its text is never shared.' : 'Next-capability card: none chosen.') : 'Next-capability card: not shared.');
   prev.push(f.res ? 'Reserve hours: ' + (lw ? lw.pay.reserve : 'none this period') + '.' : 'Reserve hours: not shared.');
   prev.push('Also in the file: a member id for this team and period only, so a newer share replaces this one. It cannot be linked to your other periods without this device.');
   prev.push('Never shared: your name, the three reads, Windshield notes, Play, parked items, capability names, or any other text.');
@@ -1768,7 +1843,7 @@ function shareCard() {
     }))]),
     tick('vec', 'My weekly vectors (' + vecWeeks.length + ' in this period)', vecWeeks.length > 0),
     tick('caps', 'The state of each capability to keep, by theme (' + themed.length + ' with a theme)', themed.length > 0 && !!lw),
-    tick('card', 'My next-capability card: role, frontier, HUMS signals', !!t),
+    tick('card', 'My next-capability card: role, frontier, HUMS27 signals', !!t),
     tick('res', 'My reserve hours', !!lw),
     unthemed.length ? p('Capabilities without a theme are never shared: ' + unthemed.map(function (c) { return c.name; }).join(', ') + '. Give them a theme in Capabilities to keep.', 'mut') : null,
     h('div', { 'class': 'preview', 'aria-live': 'polite' }, [h('strong', { text: 'Exactly what leaves this device' })].concat(prev.map(function (x) { return h('div', null, [p(x)]); }))),
@@ -1815,7 +1890,7 @@ function onFile(e) {
     try {
       var d = cleanData(JSON.parse(String(r.result)));
       pending = d;
-      importMsg = 'Valid file: ' + d.weeks.length + ' week' + (d.weeks.length === 1 ? '' : 's') + ' and ' + d.caps.length + ' capabilit' + (d.caps.length === 1 ? 'y' : 'ies') + ', and ' + d.plan.rows.length + ' planner row' + (d.plan.rows.length === 1 ? '' : 's') + (d.weeks.length ? ' (' + d.weeks[0].date + ' to ' + d.weeks[d.weeks.length - 1].date + ')' : '') + '. Nothing is changed until you replace.';
+      importMsg = 'Valid file: ' + d.weeks.length + ' week' + (d.weeks.length === 1 ? '' : 's') + ' and ' + d.caps.length + ' capabilit' + (d.caps.length === 1 ? 'y' : 'ies') + ', and ' + d.plan.rows.length + ' planner row' + (d.plan.rows.length === 1 ? '' : 's') + (d.weeks.length ? ' (' + d.weeks[0].date + ' to ' + d.weeks[d.weeks.length - 1].date + ')' : '') + '. Nothing is changed until you replace.' + migImportNote(d._mig);
     } catch (err) {
       importMsg = 'Rejected: ' + (err && err.message && err.message.length < 160 ? err.message.replace(/\.$/, '') : 'not a valid file') + '. Nothing was imported.';
     }
